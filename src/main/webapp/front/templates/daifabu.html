@@ -1,0 +1,30 @@
+<ion-content class="cezhan-content dafabuTop">
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <div class="miaoshu" ng-if="miaoshu">
+        <div>
+            <img class="war" src="img/shuoming.png" alt="">
+            <p>请使用电脑浏览器访问<a href="">www.sdmuseum.com</a>编辑你的策展</p>
+            <img class="guanbi" src="img/chacha.png" ng-click="guanbi()" alt="">
+        </div>
+    </div>
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div class="list">
+        <div class="wodecezhanListWrap" ng-repeat="item in daifabuList">
+            <div class="cezhanImgWrap">
+                <img ng-src="{{rootUrl}}{{item.mainImage}}">
+            </div>
+            <img src="img/xilie.png" alt="" class="jiaobiao" ng-if="item.isSeries">
+            <div class="wrapWords">
+                <h2 class="cezhan-h2" ng-if="item.seriesName">{{item.seriesName}}</h2>
+                <h2 class="cezhan-h2" ng-if="!item.seriesName">{{item.title}}</h2>
+                <!--<h2 class="cezhan-h2" ng-if="item.isSeries == 1">{{item.seriesName}}</h2>-->
+                <button ng-click="clickFabu($event)" data="{{item.id}}">发布</button>
+            </div>
+            <p>{{item.seriesDescription}}</p>
+        </div>
+        <ion-infinite-scroll on-infinite = "loadMore()" distance = "1%" immediate-check = "false" ng-if="moreData"></ion-infinite-scroll>
+    </div>
+</ion-content>

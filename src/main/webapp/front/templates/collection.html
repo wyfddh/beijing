@@ -1,0 +1,214 @@
+<div class="home-search-area" style="display: none">
+    <div class="home-search-area-head">
+        <img class="homeBack" src="img/38.png">
+        <input class="homeSearch" type="text" ng-change="isHsVal()" placeholder="搜索你感兴趣的内容" ng-model="hsVal">
+        <img class="qingchu" src="img/qingchu.png">
+        <span ng-click="search($event,$index)">搜索</span>
+    </div>
+    <div class="home-hot-search">
+        <div class="home-hot-search-tit">
+            <img src="img/hotSearch.png">
+            <h2>热门搜索</h2>
+        </div>
+        <div class="home-hot-search-content">
+<!--             <button><span>藏品名</span></button>
+            <button><span>关键词</span></button>
+            <button><span>关键词关键词关键...</span></button>
+            <button><span>关键词关键</span></button>
+            <button><span>关键词关键词关键...</span></button>
+ -->        </div>
+    </div>
+</div>
+<div class="collection-bigBox">
+    <header class="collection-search-box">
+        <div class="collection-text">
+            <img class="collectionSearch" src="img/11.png">
+            <input class="collection-search" type="text" placeholder="搜索你感兴趣的藏品"/>
+            <a href="#/searchPic"><img class="photo" src="img/12.png"></a>
+        </div>
+        <a href="#/collectionSpecimen"><div class="biaoben">标本化石</div>
+            <img class="arrow" src="img/arrow.png"></a>
+    </header>
+    <nav class="collection-content-search">
+        <div class="danwei">
+            <span>收藏单位</span>
+            <img class="sanjiao" src="img/sanjiao.png">
+        </div>
+        <div class="newest" ng-click="newest()">
+            <span >最新</span>
+            <span class="show">最热</span>
+            <img class="paixuDown" src="img/paixu-down-3.png">
+            <img class="xian" src="img/xian.png">
+        </div>
+        <div class="shaixuan">
+            <img class="shaixuanImg" src="img/shaixuan.png">
+            <span>筛选</span>
+            <img class="xian" src="img/xian.png">
+        </div>
+    </nav>
+    <ul class="collection-list-city">
+        <li ng-repeat="x in detailData.data.orgList" ng-click='cour($index)' ng-class="{ true :'selected',false:''} [x.isclick]">{{x.cityName}}</li>
+    </ul>
+    <ul class="city-museum">
+        <li>全部</li>
+        <li ng-repeat="y in detailData.data.orgList[indes].museum" data-cityid="{{y.cityId}}" ng-click="boWu($event,$index)">{{y.name}}<i><img src="img/yes.png"></i></li>
+        <!--<li ng-repeat="y in detailData.data.orgList[index].museums">{{y.name}}<i><img src="img/yes.png"></i></li>-->
+    </ul>
+    <div class="object-shadow"></div>
+    <div class="body-shaixuan-box">
+        <div class="shaixuan-shadow"></div>
+        <div class="shaixuan-box">
+            <div class="fenlei">
+                <span class="fenlei-tit">分类</span>
+                <span class="ciqi">{{fenlei}}</span><img class="ciqi-img" src="img/5823.png">
+            </div>
+            <div class="ciqi-content">
+                <!--<p ng-repeat="m in detailData.data.ccList" ciqi={{m.name}} repeat-done="baocunCiqi()" data-ciqiid="{{m.id}}" ng-click="ciqiContent($event,$index)" ng-class="{ true :'move',false:''}[m.isclick]">{{m.name}}</p>-->
+                <li ng-repeat="m in detailData.data.ccList" data-ciqi={{m.name}} repeat-done="fenleiAdd()" data-ciqiid="{{m.id}}" ng-click="ciqiContent($event,$index)">{{m.name}}</li>
+            </div>
+            <div class="fenlei">
+                <span class="fenlei-tit">年代</span>
+                <span class="chaodai">{{niandai}}</span><img class="ciqi-img" src="img/5823.png">
+            </div>
+            <div class="chaodai-content">
+                <p ng-repeat="n in detailData.data.ytList" data-chaodaiid="{{n.id}}"  ng-click="chaodaiContent($event,$index)" ng-class="{ true :'move',false:''} [n.isclick]">{{n.name}}</p>
+            </div>
+            <div class="shaixuan-button">
+                <div class="reset" ng-click="reset()">重置</div>
+                <div class="enter">确定</div>
+            </div>
+        </div>
+    </div>
+    <section class="overflow-scroll collection-top
+ 		scroll-content has-footer" style="z-index:-1;">
+        <div id="mask" class="mask"></div>
+        <div class="search-none" ng-show="searchNone">
+            <img src="img/searchNone.png">
+            <p>对不起，没有找到相关数据！</p>
+        </div>
+        <ion-content>
+            <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+            <div class="list" ng-repeat="n in collectionData.data.mociList">
+                <a class="item item-thumbnail-left" ng-click="getIndex($index)" href="#/collectionDetail/{{collectionDataID}}">
+                    <img ng-src={{n.picture.thumb3}}>
+                    <div class="collection-item-left">
+                        <div>
+                            <h2 class="collectionTitle"><span ng-if="n.mipOpenCulturalrelicInfo.threeDimensionalCollection!=''" class="thirdD"><img src="img/3-d.png" alt=""></span>{{n.mipOpenCulturalrelicInfo.name}}</h2>
+                            <span class="yan"><img src="img/eye.png" alt="" class="yanImg"><span>{{n.mipOpenCulturalrelicInfo.clickCounts}}</span></span>
+                        </div>
+                        <div style="clear: both"></div>
+                        <p class="year"><span>朝代:</span>{{n.mipOpenCulturalrelicInfo.yearType}}</p>
+                        <p class="zhonglei"><span>类别:</span>{{n.mipOpenCulturalrelicInfo.collectionsCategory}}</p>
+                        <div class="collection-media-box">
+                            <span ng-if="n.mipOpenCulturalrelicInfo.fVideo!=''"> <img src="img/sp.png" alt="" class="sysp"></span>
+                            <span ng-if="n.mipOpenCulturalrelicInfo.fAudio!=''"> <img src="img/yp.png" alt="" class="sysp"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="down-list"></div>
+            <ion-infinite-scroll
+                    ng-if="hasMore"
+                    on-infinite="load()"
+                    distance="5%">
+            </ion-infinite-scroll>
+        </ion-content>
+    </section>
+
+    <!--<script>-->
+    <!--$(function(){-->
+    <!--// dropload-->
+    <!--var dropload = $('.overflow-scroll').dropload({-->
+    <!--domUp : {-->
+    <!--domClass   : 'dropload-up',-->
+    <!--domRefresh : '<div class="dropload-refresh">鈫撲笅鎷夊埛鏂�</div>',-->
+    <!--domUpdate  : '<div class="dropload-update">鈫戦噴鏀炬洿鏂�</div>',-->
+    <!--domLoad    : '<div class="dropload-load"><span class="loading"></span>鍔犺浇涓�...</div>'-->
+    <!--},-->
+    <!--domDown : {-->
+    <!--domClass   : 'dropload-down',-->
+    <!--domRefresh : '<div class="dropload-refresh"></div>',-->
+    <!--domLoad    : '<div class="dropload-load"><span class="loading"></span>鍔犺浇涓�...</div>',-->
+    <!--domNoData  : '<div class="dropload-noData">鏆傛棤鏁版嵁</div>'-->
+    <!--},-->
+    <!--loadUpFn : function(me){-->
+    <!--$.ajax({-->
+    <!--type: 'GET',-->
+    <!--url: 'json/collection.json',-->
+    <!--dataType: 'json',-->
+    <!--success: function(data){-->
+    <!--var result = '';-->
+    <!--for(var i = 0; i < data.data.mociList.length; i++){-->
+    <!--result +=  '<div class="list">'-->
+    <!--+'<a class="item item-thumbnail-left">'-->
+    <!--+'<img src="'+data.data.mociList[i].fpic+'" alt="">'-->
+    <!--+'<h2>'+data.data.mociList[i].name+'</h2>'-->
+    <!--+'<p class="year">鍞愶紙鍏厓618~907骞达級</p>'-->
+    <!--+'<p class="zhonglei">闈掗摐鍣�</p>'-->
+    <!--+'<p class="high">楂�12cm</p>'-->
+    <!--+'<div class="media-box">'-->
+    <!--+'<span>3D</span>'-->
+    <!--+'<span>瑙嗛</span>'-->
+    <!--+'<span>璇煶</span>'-->
+    <!--+'</div>'-->
+    <!--+'</a>'-->
+    <!--+'</div>'-->
+    <!--;-->
+    <!--}-->
+    <!--// 涓轰簡娴嬭瘯锛屽欢杩�1绉掑姞杞�-->
+    <!--setTimeout(function(){-->
+    <!--$('.overflow-scroll').html(result);-->
+    <!--// 姣忔鏁版嵁鍔犺浇瀹岋紝蹇呴』閲嶇疆-->
+    <!--dropload.resetload();-->
+    <!--},1000);-->
+    <!--},-->
+    <!--error: function(xhr, type){-->
+    <!--alert('Ajax error!');-->
+    <!--// 鍗充娇鍔犺浇鍑洪敊锛屼篃寰楅噸缃�-->
+    <!--dropload.resetload();-->
+    <!--}-->
+    <!--});-->
+    <!--},-->
+    <!--loadDownFn : function(me){-->
+    <!--$.ajax({-->
+    <!--type: 'GET',-->
+    <!--url: 'json/collection.json',-->
+    <!--dataType: 'json',-->
+    <!--success: function(data){-->
+    <!--//                        console.log(data.data.mociList);-->
+    <!--var result = '';-->
+    <!--for(var i = 0; i < data.data.mociList.length; i++){-->
+
+    <!--result +=   '<div class="list">'-->
+    <!--+'<a class="item item-thumbnail-left">'-->
+    <!--+'<img src="'+data.data.mociList[i].fpic+'" alt="">'-->
+    <!--+'<h2>'+data.data.mociList[i].name+'</h2>'-->
+    <!--+'<p class="year">鍞愶紙鍏厓618~907骞达級</p>'-->
+    <!--+'<p class="zhonglei">闈掗摐鍣�</p>'-->
+    <!--+'<p class="high">楂�12cm</p>'-->
+    <!--+'<div class="media-box">'-->
+    <!--+'<span>3D</span>'-->
+    <!--+'<span>瑙嗛</span>'-->
+    <!--+'<span>璇煶</span>'-->
+    <!--+'</div>'-->
+    <!--+'</a>'-->
+    <!--+'</div>';-->
+    <!--}-->
+    <!--// 涓轰簡娴嬭瘯锛屽欢杩�1绉掑姞杞�-->
+    <!--setTimeout(function(){-->
+    <!--$('.overflow-scroll').append(result);-->
+    <!--// 姣忔鏁版嵁鍔犺浇瀹岋紝蹇呴』閲嶇疆-->
+    <!--dropload.resetload();-->
+    <!--},1000);-->
+    <!--},-->
+    <!--error: function(xhr, type){-->
+    <!--alert('Ajax error!');-->
+    <!--// 鍗充娇鍔犺浇鍑洪敊锛屼篃寰楅噸缃�-->
+    <!--dropload.resetload();-->
+    <!--}-->
+    <!--});-->
+    <!--}-->
+    <!--});-->
+    <!--});-->
+    <!--</script>-->
+</div>

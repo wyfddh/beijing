@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/qiluwenhua.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="wenbo.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		沂南北寨汉墓
+    		<span>作者 : 肖贵田</span>
+    	</div>
+    	<div class="detail-body">
+             <img  src="../images/hanmu01.jpg" alt="">
+    	</div>
+    	<div class="detail-footer">
+    		<div class="container">
+    			<div>
+    				<p class="text">
+    					位于山东省沂南县北寨村，1954年就已发掘，为东汉晚期墓葬。全部以石块构筑而成，面积达88.2平方米，用石280块，雕刻有画像的42块，总计有73幅画像。沂南汉墓以其保存完整、出土画像石数量多、画像内容丰富、雕刻技术精美而闻名世界。
+    				</p>
+    			     <img style="height: 5.5rem;" src="../images/hanmu02.jpg" alt="">
+    				<p class="text">
+    					沂南汉墓建筑规模庞大，犹似地下殿堂，共11室，其间穿插梁柱，以斗拱承托，仿照地面建筑而建。前室四间，主要刻画神仙类图像。中室四间，主要刻画车马出行、庭院、历史人物等画像。后部有双后室，是放死者棺椁的地方，其旁另有一侧室，侧室后端有厕所，这里多见案盘、侍者、兵器架等图像。
+    				</p>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>

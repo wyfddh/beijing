@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumBaseInfoMapper">
+	<sql id="museumBaseInfoColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.phone AS "phone",
+		a.museum_type AS "museumType",
+		b.value_ AS "museumTypeName",
+		a.province AS "province",
+		a.city AS "city",
+		a.area AS "area",
+		s.value_ AS "areaName",
+		a.detail_address AS "detailAddress",
+		a.web_url AS "webUrl",
+		a.mailbox AS "mailbox",
+		a.fax AS "fax",
+		a.zip_code AS "zipCode",
+		DATE_FORMAT(a.first_open_date, '%Y-%m-%d') AS "firstOpenDate",
+		a.is_free AS "isFree",
+		a.static_close_day AS "staticCloseDay",
+		a.museum_description AS "museumDescription",
+		a.registration_number AS "registrationNumber",
+		a.legal_person AS "legalPerson",
+		a.is_independent_person AS "isIndependentPerson",
+		a.registration_office AS "registrationOffice",
+		a.legal_person_type AS "legalPersonType",
+		a.legal_person_number AS "legalPersonNumber",
+		a.certification_level AS "certificationLevel",
+		e.value_ AS "certificationLevelName",
+		a.remarks AS "remarks",
+		a.del_flag AS "flag",
+		a.bus_line	as "busLine",
+		a.subway_line	as "subwayLine",
+		a.park_area		as "parkArea",
+		a.image_id		as "imageId",
+		a.image_url		as "imageUrl",
+		a.geography		as "geography",
+		a.func_type		as "funcType",
+		a.relation_ship	as "relationShip",
+		a.love_country	as "loveCountry",
+		a.develop_plan	as "developPlan",
+		a.rule_build	as "ruleBuild",
+		a.weibo			as "weibo",
+		a.wechat	as "wechat",
+		a.manage_way	as "manageWay",
+		a.close_type	as "closeType",
+		a.resource_unit		as "resourceUnit",
+		a.education_base	as "educationBase",
+		a.scenic_level		as "scenicLevel",
+		a.operating_expenses	as "operatingExpenses"
+	</sql>
+	
+	<sql id="museumBaseInfoJoins">
+		LEFT JOIN sys_dict_t s on (s.number = a.area and s.key_ = "dict_area")
+		LEFT JOIN sys_dict_t b on (b.number = a.museum_type and b.key_ = "museum_type")
+		LEFT JOIN sys_dict_t e on (e.number = a.certification_level and e.key_ = "identification_level")
+	</sql>
+	
+    <!-- 查机构列表数 -->
+    <select id="getCount" resultType="java.lang.Integer" parameterType="com.tj720.admin.dto.MuseumBaseInfoDto">
+    select count(1) from museum_data_progress a 
+    	JOIN mip_organization  e on (e.id = a.museum_id and e.status = 1)
+		LEFT JOIN bj_museum_base_info c on (c.museum_id = a.museum_id 
+		and c.del_flag = '2'
+		)
+		LEFT JOIN cultural_org_info d on (d.org_id = a.museum_id and d.delete_mark = '2')
+		LEFT JOIN cultural_relic_info f on (f.org_id = a.museum_id and d.delete_mark = '2')
+    	<where>
+    		a.del_flag ='2'
+			<if test="museumName != null and museumName != ''">
+				AND (a.museum_name like concat('%',#{museumName},'%') or c.phone like concat('%',#{museumName},'%')
+				   or d.org_phone like concat('%',#{museumName},'%') or f.contacts_phone like concat('%',#{museumName},'%') )
+			</if>
+			<if test="museumType != null and museumType != ''">
+				AND a.org_type = #{museumType}
+			</if>
+			<if test="area != null and area != ''">
+				AND (c.area = #{area} or d.administrative_area =#{area})
+			</if>
+			and a.museum_id in
+			<foreach collection="orgIdList" index="index" item="item" open="(" separator="," close=")">
+  					#{item}
+  		   </foreach>
+		</where>
+	  ORDER BY a.update_date DESC
+    </select>
+	<!-- 查机构列表 -->
+	<select id="selectMuseumList" resultType="com.tj720.admin.dto.MuseumBaseInfoDto" >
+		select 
+		a.id 	as "id",
+		a.museum_id as "museumId",
+		a.museum_name as "museumName",
+		case  when a.org_type ='3' 
+			    then (select  e.name from mip_area e where e.id=c.area limit 1) 
+			when a.org_type ='4' 
+				then ''
+			when a.org_type ='5' 
+				then (select  e.name from mip_area e where e.id=d.administrative_area limit 1)
+			else '' end as "area",
+		case  when a.org_type ='3' 
+			    then c.phone 
+			when a.org_type ='4' 
+				then f.contacts_phone
+			when a.org_type ='5' 
+				then d.org_phone
+			else '' end as "phone",
+		b.value_  as "museumType",
+		a.all_data_per as "allDataPer"
+		from museum_data_progress a 
+		JOIN mip_organization  e on (e.id = a.museum_id and e.status = 1)
+		LEFT JOIN bj_museum_base_info c on (c.museum_id = a.museum_id and c.del_flag = '2')
+		LEFT JOIN cultural_org_info d on (d.org_id = a.museum_id and d.delete_mark = '2')
+		LEFT JOIN cultural_relic_info f on (f.org_id = a.museum_id and f.delete_mark = '2')
+		LEFT JOIN sys_dict_t b on (b.number = a.org_type and b.key_ = "org_type")
+		<where>
+			a.del_flag='2'
+			<if test="museumName != null and museumName != ''">
+				AND (a.museum_name like concat('%',#{museumName},'%') or c.phone like concat('%',#{museumName},'%')
+				   or d.org_phone like concat('%',#{museumName},'%') or f.contacts_phone like concat('%',#{museumName},'%') )
+			</if>
+			<if test="museumType != null and museumType != ''">
+				AND a.org_type = #{museumType}
+			</if>
+			<if test="area != null and area != ''">
+				AND (c.area = #{area} or d.administrative_area =#{area})
+			</if>
+			and a.museum_id in
+			<foreach collection="orgIdList" index="index" item="item" open="(" separator="," close=")">
+  					#{item}
+  		   </foreach>
+		</where>
+				ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	
+	<!-- 查字典表值 -->
+	<select id="getDictListByKey" resultType="com.tj720.admin.common.vo.SysDictVo" parameterType="java.lang.String">
+	select
+		a.id as "id",
+		a.key_ 	as "key",
+		a.value_	as  "value",
+		a.number	as "number" 
+	from sys_dict_t a where a.key_ = #{key} order by a.number ASC
+	</select>
+	
+    <select id="selectMuseumById" resultType="com.tj720.admin.dto.MuseumBaseInfoDto">
+		SELECT 
+			<include refid="museumBaseInfoColumns"/>
+		FROM bj_museum_base_info a
+		<include refid="museumBaseInfoJoins"/>
+		WHERE a.museum_id = #{0} and a.del_flag=#{1} limit 1
+	</select>
+	
+	<insert id="insert" parameterType="com.tj720.admin.dto.MuseumBaseInfoDto">
+		INSERT INTO bj_museum_base_info(
+			id,
+			museum_id,
+			phone,
+			museum_type,
+			province,
+			city,
+			area,
+			detail_address,
+			web_url,
+			mailbox,
+			fax,
+			zip_code,
+			first_open_date,
+			is_free,
+			static_close_day,
+			museum_description,
+			registration_number,
+			legal_person,
+			is_independent_person,
+			registration_office,
+			legal_person_type,
+			legal_person_number,
+			certification_level,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag,
+			bus_line,
+			subway_line,
+			park_area,
+			image_id,
+			image_url,
+			geography,
+			func_type,
+			relation_ship,
+			love_country,
+			develop_plan,
+			rule_build,
+			weibo,
+			wechat,
+			manage_way,
+			close_type,
+			resource_unit,
+			education_base,
+			scenic_level,
+			operating_expenses
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{phone},
+			#{museumType},
+			#{province},
+			#{city},
+			#{area},
+			#{detailAddress},
+			#{webUrl},
+			#{mailbox},
+			#{fax},
+			#{zipCode},
+			<if test="firstOpenDate != null and firstOpenDate !=''" >
+			STR_TO_DATE(#{firstOpenDate},'%Y-%m-%d'),
+			</if>
+			<if test="firstOpenDate == null or firstOpenDate ==''" >
+			null,
+			</if>
+			#{isFree},
+			#{staticCloseDay},
+			#{museumDescription},
+			#{registrationNumber},
+			#{legalPerson},
+			#{isIndependentPerson},
+			#{registrationOffice},
+			#{legalPersonType},
+			#{legalPersonNumber},
+			#{certificationLevel},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{remarks},
+			#{flag},
+			#{busLine},
+			#{subwayLine},
+			#{parkArea},
+			#{imageId},
+			#{imageUrl},
+			#{geography},
+			#{funcType},
+			#{relationShip},
+			#{loveCountry},
+			#{developPlan},
+			#{ruleBuild},
+			#{weibo},
+			#{wechat},
+			#{manageWay},
+			#{closeType},
+			#{resourceUnit},
+			#{educationBase},
+			#{scenicLevel},
+			#{operatingExpenses}
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.tj720.admin.dto.MuseumBaseInfoDto">
+		UPDATE bj_museum_base_info SET 	
+			phone = #{phone},
+			museum_type = #{museumType},
+			province = #{province},
+			city = #{city},
+			area = #{area},
+			detail_address = #{detailAddress},
+			web_url = #{webUrl},
+			mailbox = #{mailbox},
+			fax = #{fax},
+			zip_code = #{zipCode},
+			<if test="firstOpenDate != null and firstOpenDate !=''" >
+			first_open_date = STR_TO_DATE(#{firstOpenDate},'%Y-%m-%d'),
+			</if>
+			<if test="firstOpenDate == null or firstOpenDate ==''" >
+			first_open_date=null,
+			</if>
+			is_free = #{isFree},
+			static_close_day = #{staticCloseDay},
+			museum_description = #{museumDescription},
+			registration_number = #{registrationNumber},
+			legal_person = #{legalPerson},
+			is_independent_person = #{isIndependentPerson},
+			registration_office = #{registrationOffice},
+			legal_person_type = #{legalPersonType},
+			legal_person_number = #{legalPersonNumber},
+			certification_level = #{certificationLevel},
+			update_by = #{updateId},
+			update_date = #{updateTime},
+			del_flag = #{flag},
+			bus_line=#{busLine},
+			subway_line=#{subwayLine},
+			park_area=#{parkArea},
+			image_id=#{imageId},
+			image_url=#{imageUrl},
+			geography=#{geography},
+			func_type=#{funcType},
+			relation_ship=#{relationShip},
+			love_country=#{loveCountry},
+			develop_plan=#{developPlan},
+			rule_build=#{ruleBuild},
+			weibo=#{weibo},
+			wechat=#{wechat},
+			manage_way=#{manageWay},
+			close_type=#{closeType},
+			resource_unit = #{resourceUnit},
+			education_base =#{educationBase},
+			scenic_level	=#{scenicLevel},
+			operating_expenses =#{operatingExpenses}
+		WHERE id = #{id} 
+	</update>
+	
+	<insert id="insertProgress" parameterType="com.tj720.admin.dto.MuseumDataProgressDto">
+		INSERT INTO museum_data_progress(
+			id,
+			museum_id,
+			museum_name,
+			base_per,
+			house_per,
+			cost_per,
+			service_per,
+			person_per,
+			digitization_per,
+			safe_per,
+			collection_per,
+			all_data_per,
+			org_type,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{museumName},
+			'0',
+			'0',
+			'0',
+			'0',
+			'0',
+			'0',
+			'0',
+			'0',
+			'0',
+			#{orgType},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="updateProgress" parameterType="com.tj720.admin.dto.MuseumDataProgressDto">
+		UPDATE museum_data_progress SET 
+		<if test="museumName != null" >	
+		museum_name = #{museumName},
+		</if>
+		<if test="basePer != null" >	
+		base_per = #{basePer},
+		</if>
+		<if test="housePer != null" >	
+		house_per = #{housePer},
+		</if>
+		<if test="costPer != null" >	
+		cost_per = #{costPer},
+		</if>
+		<if test="servicePer != null" >	
+		service_per = #{servicePer},
+		</if>
+		<if test="personPer != null" >	
+		person_per = #{personPer},
+		</if>
+		<if test="digitizationPer != null" >	
+		digitization_per = #{digitizationPer},
+		</if>
+		<if test="safePer != null" >	
+		safe_per = #{safePer},
+		</if>
+		<if test="collectionPer != null" >	
+		collection_per = #{collectionPer},
+		</if>
+		<if test="allDataPer != null" >	
+		all_data_per = #{allDataPer},
+		</if>
+		<if test="orgType != null" >	
+		org_type = #{orgType},
+		</if>
+		update_by = #{updateId},
+		update_date = #{updateTime}
+		WHERE museum_id = #{museumId}
+		<if test="flag != null and flag != ''"> 
+		and del_flag=#{flag}
+		</if>
+	</update>
+	
+	<!-- 查博物馆资料完成度详情 -->
+	<select id="getDetail" resultType="com.tj720.admin.dto.MuseumDataProgressDto">
+	    select 
+		    a.id 	as "id",
+		    a.museum_id 	as "museumId",
+		    a.museum_name	as "museumName",
+		    a.base_per		as "basePer",
+		    a.house_per		as "housePer",
+		    a.cost_per		as "costPer",
+		    a.service_per	as "servicePer",
+		    a.person_per	as "personPer",
+		    a.digitization_per	as "digitizationPer",
+		    a.safe_per	as "safePer",
+		    a.collection_per	as "collectionPer",
+		    a.all_data_per	as "allDataPer",
+		    a.update_date	as "updateTime"
+		    from museum_data_progress a 
+		where a.museum_id=#{0} and a.del_flag=#{1} limit 1 
+    </select>
+    
+    <delete id="deleteProgress">
+    	delete from museum_data_progress
+        where museum_id = #{museumId} 
+    </delete>
+    
+    <delete id="deleteBase">
+    	delete from bj_museum_base_info
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+    
+    <update id="updateFlag">
+	    UPDATE bj_museum_base_info SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+    
+    <select id="getAreaList" resultType="java.util.HashMap">
+    	select a.id,a.name from mip_area a where a.pid='2'
+    </select>
+</mapper>

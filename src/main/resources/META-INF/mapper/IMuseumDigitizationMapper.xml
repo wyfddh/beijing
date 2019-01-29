@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumDigitizationMapper">
+    
+	<sql id="museumDigitizationColumns">
+		a.id                   		as "id", 
+		a.museum_id          	 	as "museumId", 
+		a.access_net              	as "accessNet", 
+		a.local_net          		as "localNet", 
+		a.net_address 			    as "netAddress", 
+		a.wifi_cover 				as "wifiCover", 
+		a.management_sys 			as "managementSys", 
+		a.collection_system 		as "collectionSystem", 
+		a.digital_management 		as "digitalManagement", 
+		a.collection_software 		as "collectionSoftware", 
+		a.thematic_library 			as "thematicLibrary", 
+		a.infornation_collection 	as "infornationCollection", 
+		a.three_d 					as "threeD", 
+		a.over_view 				as "overView", 
+		a.video 					as "video", 
+		a.knowledge_anime 			as "knowledgeAnime", 
+		a.game 						as "game", 
+		a.ar 						as "ar", 
+		a.vr 						as "vr", 
+		a.virtual_display 			as "virtualDisplay", 
+		a.display_wall 				as "displayWall", 
+		a.touch_screen 				as "touchScreen", 
+		a.shadow 					as "shadow", 
+		a.auto_alarm 				as "autoAlarm", 
+		a.auto_outfire 				as "autoOutfire", 
+		a.warehouse_monitor 		as "warehouseMonitor", 
+		a.zhanchen_monitor 			as "zhanchenMonitor", 
+		a.yunshu_monitor 			as "yunshuMonitor", 
+		a.digital_office 			as "digitalOffice"
+	</sql>
+	
+	<sql id="museumDigitizationJoins">
+	</sql>
+	
+    
+	<select id="selectForm" resultType="com.tj720.admin.dto.MuseumDigitizationDto" >
+		SELECT 
+			<include refid="museumDigitizationColumns"/>
+		FROM museum_digitization a
+		<include refid="museumDigitizationJoins"/>
+		WHERE a.museum_id = #{0} and a.del_flag =#{1} limit 1
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO museum_digitization(
+			id,                   	
+			museum_id,          	
+			access_net,            
+			local_net,          	
+			net_address, 			
+			wifi_cover, 			
+			management_sys, 		
+			collection_system, 	
+			digital_management, 	
+			collection_software, 	
+			thematic_library, 		
+			infornation_collection,
+			three_d, 				
+			over_view, 			
+			video, 				
+			knowledge_anime, 		
+			game, 					
+			ar, 					
+			vr, 					
+			virtual_display, 		
+			display_wall, 			
+			touch_screen, 			
+			shadow, 				
+			auto_alarm, 			
+			auto_outfire, 			
+			warehouse_monitor, 	
+			zhanchen_monitor, 		
+			yunshu_monitor, 		
+			digital_office, 		
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{accessNet},
+			#{localNet},
+			#{netAddress},
+			#{wifiCover},
+			#{managementSys},
+			#{collectionSystem},
+			#{digitalManagement},
+			#{collectionSoftware},
+			#{thematicLibrary},
+			#{infornationCollection},
+			#{threeD},
+			#{overView},
+			#{video},
+			#{knowledgeAnime},
+			#{game},
+			#{ar},
+			#{vr},
+			#{virtualDisplay},
+			#{displayWall},
+			#{touchScreen},
+			#{shadow},
+			#{autoAlarm},
+			#{autoOutfire},
+			#{warehouseMonitor},
+			#{zhanchenMonitor},
+			#{yunshuMonitor},
+			#{digitalOffice},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_digitization SET 	
+			access_net =#{accessNet},         			
+	        local_net =#{localNet},        	
+	        net_address =#{netAddress},			
+	        wifi_cover 	 =#{wifiCover},		
+	        management_sys =#{managementSys},		
+	        collection_system 	=#{collectionSystem},
+	        digital_management 	=#{digitalManagement},
+	        collection_software =#{collectionSoftware},	
+	        thematic_library 	=#{thematicLibrary},	
+	        infornation_collection =#{infornationCollection},
+	        three_d 	=#{threeD},
+	        over_view 	=#{overView},
+	        video 		=#{video},
+	        knowledge_anime =#{knowledgeAnime},		
+	        game 		=#{game},			
+	        ar 			=#{ar},		
+	        vr 			=#{vr},		
+	        virtual_display =#{virtualDisplay},		
+	        display_wall 	=#{displayWall},		
+	        touch_screen 	=#{touchScreen},		
+	        shadow 			=#{shadow},	
+	        auto_alarm 		=#{autoAlarm},	
+	        auto_outfire 	=#{autoOutfire},		
+	        warehouse_monitor 	=#{warehouseMonitor},
+	        zhanchen_monitor 	=#{zhanchenMonitor},	
+	        yunshu_monitor 		=#{yunshuMonitor},
+	        digital_office 		=#{digitalOffice},
+			update_by = #{updateId},
+			update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteBase">
+    	delete from museum_digitization
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+
+	 <update id="updateFlag">
+	    UPDATE museum_digitization SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+	
+</mapper>

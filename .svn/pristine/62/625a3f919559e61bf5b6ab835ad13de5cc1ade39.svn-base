@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+li{
+	list-style: none;
+}
+
+.oce-block{
+	width: 300px;
+	height:40px;
+	float: left;
+	margin:0;
+}
+.oce-block li{
+	float: left;
+	width: 100px;
+	height: 40px;
+	border:1px solid #CCCCCC ;
+	text-align: center;
+	line-height: 40px;
+}
+.active{
+	background-color:rgba(239, 243, 248, 1);
+	border-bottom: none;
+}
+.text{
+	width: 200px;
+	margin: 0 auto;
+}
+.td-width{
+	overflow: auto;
+}
+.td-width td{
+	width: 12%;
+}
+.input input{
+	width: 200px;
+}

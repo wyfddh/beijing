@@ -1,0 +1,61 @@
+<header class="commonHeader">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>统计报表</h2>
+</header>
+<section class="overflow-scroll scroll-content hasCommonHeader" style="z-index: -1;width: 100%;">
+    <ion-content class="statisticContent">
+        <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+        <div class="top">
+            <h6>收藏单位统计</h6>
+            <div class="statisticNum">
+                <p><img src="img/staticImg.png" alt=""><span>全{{proCity}}收藏单位数量</span></p>
+                <p class="num">{{dataNum.count}}</p>
+            </div>
+            <h6 class="jianbao">简报</h6>
+            <p class="contentJianbao">
+                第一次全国可移动文物普查中，我{{proCity}}收藏单位共计<span>{{dataNum.ypCount}}</span>家。截止{{dataNum.time}}，我{{proCity}}收藏单位为<span>{{dataNum.count}}</span>家，较第一次全国可移动文物普查新增<span>{{dataNum.count2}}</span>家。
+            </p>
+            <!--省级跳到省级-->
+            <button class="check" ui-sref="collectionUnit" ng-if="dataNum.level == '1'">查看收藏单位{{leapContent}}</button>
+            <!--市级跳到市级-->
+            <button class="check" ui-sref="collectionUnitName({id:museumId})" ng-if="dataNum.level == '2'">查看收藏单位{{leapContent}}</button>
+        </div>
+        <!--//可移动文物统计-->
+        <div class="canMove">
+            <h6>可移动文物统计</h6>
+            <div class="leftCircle circle">
+                <div>
+                    <p class="tit">全{{proCity}}第一次可移动文物普查数量</p>
+                    <p class="num">{{dataNum.ypSum}}</p>
+                </div>
+            </div>
+            <div class="rightCircle circle">
+                <div>
+                    <p class="tit">全{{proCity}}当前可移动文物收藏数量</p>
+                    <p class="num">{{dataNum.oaSum}}</p>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+            <h6 class="jianbao">简报</h6>
+            <p class="contentJianbao">
+                第一次全国可移动文物普查中，我{{proCity}}收藏的藏品数量共计{{dataNum.ypSum}}件／套。截止{{dataNum.time}}，我{{proCity}}藏品收藏数量为{{dataNum.oaSum}}件/套，较第一次全国可移动文物普查新增{{differenceValue}}件/套。
+            </p>
+            <div class="button_wrap">
+                <!--省级跳到省级-->
+                <button ng-if="dataNum.level == '1'" ui-sref="canMoveBaceProvince">可移动文物基本情况统计</button>
+                <!--市级跳到市级-->
+                <button ng-if="dataNum.level == '2'" ui-sref="canMoveBaceProvince({id:cityId})">可移动文物基本情况统计</button>
+                <!--省级跳到省级-->
+                <button ng-if="dataNum.level == '1'" ui-sref="canMoveCollectionArea">可移动文物地区分布统计</button>
+                <!--市级跳到市级-->
+                <button ng-if="dataNum.level == '2'" ui-sref="canMoveCollectionCity({id:areaId})">可移动文物地区分布统计</button>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="foot">
+            <p>想查看完整版统计报表，请在PC端输入</p>
+            <p><a href="">http://www.wwsdw.org/mip/toLogin.do</a></p>
+            <i class="icon ion-chevron-right"></i>
+        </div>
+    </ion-content>
+</section>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 第三方连接驱动 -->
+
+	<classPathEntry location="E:\work\mybatis\mysql-connector-java-5.1.38.jar" />
+
+	<context id="context1" targetRuntime="MyBatis3">
+		<!-- 数据库相关属性设置 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.5.199:3306/jx_bj20180801?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="root" password="123456" />
+
+		<!-- 生成实体类地址 -->
+
+		<javaModelGenerator targetPackage="com.tj720.admin.model"
+			targetProject="E:\work\mybatis\Mybatis_geneator\Entity">
+
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 是否针对string类型的字段在set的时候进行trim调用 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- 生成mapxml文件 -->
+
+		<sqlMapGenerator targetPackage="\Mapper"
+			targetProject="E:\work\mybatis\Mybatis_geneator">
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+
+		<!-- 生成mapxml对应client，也就是接口dao -->
+
+		<javaClientGenerator targetPackage="com.tj720.admin.dao.map"
+			targetProject="E:\work\mybatis\Mybatis_geneator\Dao" type="XMLMAPPER">
+
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<!--例 -->
+		<table schema="bjadmin" tableName="cultural_org_info" domainObjectName="CulturalOrgInfo" />
+		<table schema="bjadmin" tableName="cultural_relic_equipment_detail" domainObjectName="CulturalRelicEquipmentDetail" />
+		<table schema="bjadmin" tableName="cultural_relic_info" domainObjectName="CulturalRelicInfo" />
+		<table schema="bjadmin" tableName="cultural_relic_personnel_change" domainObjectName="CulturalRelicPersonnelChange" />
+		<table schema="bjadmin" tableName="cultural_relic_personnel_detail" domainObjectName="CulturalRelicPersonnelDetail" />
+	</context>
+</generatorConfiguration>

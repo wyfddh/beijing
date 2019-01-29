@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.collection.CollectionYearTypeMapper">
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.collection.CollectionYearType">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="parentId" jdbcType="VARCHAR" property="parentid" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="fullname" jdbcType="VARCHAR" property="fullname" />
+    <result column="fc_counts" jdbcType="INTEGER" property="fcCounts" />
+    <result column="open_counts" jdbcType="INTEGER" property="openCounts" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="path_json" jdbcType="VARCHAR" property="pathJson" />
+    <result column="path_name" jdbcType="VARCHAR" property="pathName" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="sequence" jdbcType="INTEGER" property="sequence" />
+    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, parentId, code, name, fullname, fc_counts, open_counts, path, path_json, path_name, 
+    createTime, status, sequence, short_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from collection_year_type
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from collection_year_type
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.collection.CollectionYearType">
+    insert into collection_year_type (id, parentId, code, 
+      name, fullname, fc_counts, 
+      open_counts, path, path_json, 
+      path_name, createTime, status, 
+      sequence, short_name)
+    values (#{id,jdbcType=VARCHAR}, #{parentid,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{fullname,jdbcType=VARCHAR}, #{fcCounts,jdbcType=INTEGER}, 
+      #{openCounts,jdbcType=INTEGER}, #{path,jdbcType=VARCHAR}, #{pathJson,jdbcType=VARCHAR}, 
+      #{pathName,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, 
+      #{sequence,jdbcType=INTEGER}, #{shortName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.collection.CollectionYearType">
+    insert into collection_year_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="parentid != null">
+        parentId,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="fullname != null">
+        fullname,
+      </if>
+      <if test="fcCounts != null">
+        fc_counts,
+      </if>
+      <if test="openCounts != null">
+        open_counts,
+      </if>
+      <if test="path != null">
+        path,
+      </if>
+      <if test="pathJson != null">
+        path_json,
+      </if>
+      <if test="pathName != null">
+        path_name,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sequence != null">
+        sequence,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null">
+        #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="fcCounts != null">
+        #{fcCounts,jdbcType=INTEGER},
+      </if>
+      <if test="openCounts != null">
+        #{openCounts,jdbcType=INTEGER},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="pathJson != null">
+        #{pathJson,jdbcType=VARCHAR},
+      </if>
+      <if test="pathName != null">
+        #{pathName,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sequence != null">
+        #{sequence,jdbcType=INTEGER},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.collection.CollectionYearType">
+    update collection_year_type
+    <set>
+      <if test="parentid != null">
+        parentId = #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null">
+        fullname = #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="fcCounts != null">
+        fc_counts = #{fcCounts,jdbcType=INTEGER},
+      </if>
+      <if test="openCounts != null">
+        open_counts = #{openCounts,jdbcType=INTEGER},
+      </if>
+      <if test="path != null">
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="pathJson != null">
+        path_json = #{pathJson,jdbcType=VARCHAR},
+      </if>
+      <if test="pathName != null">
+        path_name = #{pathName,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sequence != null">
+        sequence = #{sequence,jdbcType=INTEGER},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.collection.CollectionYearType">
+    update collection_year_type
+    set parentId = #{parentid,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      fullname = #{fullname,jdbcType=VARCHAR},
+      fc_counts = #{fcCounts,jdbcType=INTEGER},
+      open_counts = #{openCounts,jdbcType=INTEGER},
+      path = #{path,jdbcType=VARCHAR},
+      path_json = #{pathJson,jdbcType=VARCHAR},
+      path_name = #{pathName,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=TINYINT},
+      sequence = #{sequence,jdbcType=INTEGER},
+      short_name = #{shortName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="getCommonYearList" resultMap="BaseResultMap">
+  	SELECT
+	a.id,
+	MAX(a.`NAME`) AS NAME,
+	max(a.`CODE`) AS CODE,
+	SUM(a.collectCount) AS collectCount
+		FROM
+			(
+				SELECT
+					(
+						CASE 
+						WHEN a.parentId = '46' or a.id = '139' or a.id = '140' or a.id = '141' THEN
+							a.id
+						ELSE
+							'999999'
+						END
+					) AS id,
+					(
+						CASE 
+						WHEN a.parentId = '46' or a.id = '139' or a.id = '140' or a.id = '141'  THEN
+							a. NAME
+						ELSE
+							'其他'
+						END
+					) AS NAME,
+					(
+						CASE 
+						WHEN a.parentId = '46' or a.id = '139' or a.id = '140' or a.id = '141' THEN 
+							a. CODE
+						ELSE
+							'999999'
+						END
+					) AS CODE,
+					(
+						CASE 
+						WHEN a.parentId = '46' or a.id = '139' or a.id = '140' or a.id = '141' THEN 
+							a.sequence
+						ELSE
+							'1'
+						END
+					) AS sequence,
+					IFNULL(c.num, 0) AS collectCount
+				FROM
+					(
+						SELECT
+							b.collection_year_type,
+							count(1) AS num
+						FROM
+							collection_info b
+						WHERE
+							"1" = "1"
+						<if test="repertoryState == 1">
+						and b.data_state = #{screenState}
+						</if>
+						<if test="repertoryState == 2">
+							and b.data_state = "4"
+						</if>
+						<if test="orgId != null and orgId != ''">
+							and b.collection_org_id = #{orgId}
+						</if>
+						<if test="orgType == 2">
+					      and b.collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+					   	  </if>
+						<if test="collectionCategory != null and collectionCategory != ''">
+							and b.collection_category = #{collectionCategory}
+						</if>
+						<if test="autoCheck != null and autoCheck != ''">
+							and b.collection_year_type IN (
+								"320000",
+								"321000",
+								"319000",
+								"451000",
+								"452000",
+								"453000"
+							) 
+							GROUP BY
+							b.collection_year_type
+						</if>
+						<if test="autoCheck == null or autoCheck == ''">
+					        GROUP BY
+							b.collection_year_type
+	      				</if>
+						
+					) c
+				RIGHT JOIN collection_year_type a ON (
+					c.collection_year_type = a. CODE
+				)
+				WHERE
+					a. STATUS = '1'
+			) a
+		GROUP BY
+			a.id
+		ORDER BY
+			a.sequence DESC
+  	
+  </select>
+</mapper>

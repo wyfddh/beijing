@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumSafeEnsureMapper">
+    
+	<sql id="museumSafeEnsureColumns">
+		a.id                   		as "id", 
+		a.museum_id          	 	as "museumId", 
+		a.risk_provision			as "riskProvision",
+		a.conformance_norm          as "conformanceNorm", 
+		a.safe_system          		as "safeSystem", 
+		a.safe_record 			    as "safeRecord", 
+		a.safe_plan 				as "safePlan", 
+		a.safe_installation 		as "safeInstallation", 
+		a.guard_against_theft 		as "guardAgainstTheft", 
+		a.light_protection 			as "lightProtection", 
+		a.shockproof 				as "shockproof", 
+		a.waterproof 			    as "waterproof", 
+		a.fire_device 				as "fireDevice", 
+		a.fire_system 				as "fireSystem", 
+		a.fire_check_record 		as "fireCheckRecord", 
+		a.tour_safety 				as "tourSafety", 
+		a.evacuation_map 			as "evacuationMap", 
+		a.emergency_equipment 		as "emergencyEquipment", 
+		a.public_safe_plan 			as "publicSafePlan"
+	</sql>
+	
+	
+    
+	<select id="selectForm" resultType="com.tj720.admin.dto.MuseumSafeEnsureDto" >
+		SELECT 
+			<include refid="museumSafeEnsureColumns"/>
+		FROM museum_safe_ensure a
+		WHERE a.museum_id = #{0} and a.del_flag =#{1} limit 1
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO museum_safe_ensure(
+			id,                   	
+			museum_id,    
+			risk_provision,      	
+			conformance_norm,      
+			safe_system,          	
+			safe_record, 			
+			safe_plan, 			
+			safe_installation, 	
+			guard_against_theft, 	
+			light_protection, 		
+			shockproof, 			
+			waterproof, 			
+			fire_device, 			
+			fire_system, 			
+			fire_check_record, 	
+			tour_safety, 			
+			evacuation_map, 		
+			emergency_equipment, 	
+			public_safe_plan, 		
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{riskProvision},
+			#{conformanceNorm},
+			#{safeSystem},
+			#{safeRecord},
+			#{safePlan},
+			#{safeInstallation},
+			#{guardAgainstTheft},
+			#{lightProtection},
+			#{shockproof},
+			#{waterproof},
+			#{fireDevice},
+			#{fireSystem},
+			#{fireCheckRecord},
+			#{tourSafety},
+			#{evacuationMap},
+			#{emergencyEquipment},
+			#{publicSafePlan},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_safe_ensure SET 	
+			risk_provision=#{riskProvision},
+			conformance_norm= #{conformanceNorm},     
+			safe_system=    #{safeSystem},      	
+			safe_record= 	#{safeRecord},		
+			safe_plan= 		#{safePlan},	
+			safe_installation=	#{safeInstallation},
+			guard_against_theft= #{guardAgainstTheft},	
+			light_protection= 	#{lightProtection},	
+			shockproof= 		#{shockproof},	
+			waterproof= 		#{waterproof},	
+			fire_device= 		#{fireDevice},	
+			fire_system= 		#{fireSystem},	
+			fire_check_record= 	#{fireCheckRecord},
+			tour_safety= 		#{tourSafety},	
+			evacuation_map=		#{evacuationMap},
+			emergency_equipment= #{emergencyEquipment},	
+			public_safe_plan= 	#{publicSafePlan},
+			update_by = #{updateId},
+			update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteBase">
+    	delete from museum_safe_ensure
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+
+	 <update id="updateFlag">
+	    UPDATE museum_safe_ensure SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+	
+</mapper>

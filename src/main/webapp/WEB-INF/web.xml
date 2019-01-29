@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+		 version="2.4">
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/*</url-pattern>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+			<http-method>HEAD</http-method>
+			<http-method>OPTIONS</http-method>
+			<http-method>TRACE</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+		<init-param>
+			<param-name>cors.allowed.methods</param-name>
+			<param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.allowed.headers</param-name>
+			<param-value>Access-Control-Allow-Origin,Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
+		</init-param>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 设置中文字符集 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	
+	
+  <filter>
+    <filter-name>securityServlet</filter-name>
+    <filter-class>com.design.interceptors.SecurityServlet</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>securityServlet</filter-name>
+    <url-pattern>*</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <!-- 上传组件   start -->
+  <servlet>
+		<servlet-name>TokenServlet</servlet-name>
+		<servlet-class>com.design.core.stream.servlet.TokenServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TokenServlet</servlet-name>
+		<url-pattern>/designTk</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>StreamServlet</servlet-name>
+		<servlet-class>com.design.core.stream.servlet.StreamServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StreamServlet</servlet-name>
+		<url-pattern>/designUpload</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FormDataServlet</servlet-name>
+		<servlet-class>com.design.core.stream.servlet.FormDataServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FormDataServlet</servlet-name>
+		<url-pattern>/designFd</url-pattern>
+	</servlet-mapping>
+  <!-- 上传组件   end-->
+
+	<!-- spring配置 -->
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			
+			<param-value>classpath:springMVC.xml, classpath:spring-*.xml,classpath:design-spring-*.xml</param-value>
+			 <!-- 
+			 <param-value>classpath:springMVC.xml, classpath:spring-mybatis.xml</param-value>-->
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 加载spring配置文件 -->
+	<display-name>admin</display-name>  
+	 <welcome-file-list>
+	    <welcome-file>/back/loginOut.do</welcome-file>
+	 </welcome-file-list>
+	 <error-page>
+    	<error-code>404</error-code>
+    	<location>/resources/html/404.html</location>
+  	</error-page>
+	 <error-page>
+    	<error-code>500</error-code>
+    	<location>/resources/html/500.html</location>
+  	</error-page>
+  	
+    <listener>
+        <display-name>ImageIO service provider loader/unloader</display-name>
+        <listener-class>com.twelvemonkeys.servlet.image.IIOProviderContextListener</listener-class>
+    </listener>
+</web-app>

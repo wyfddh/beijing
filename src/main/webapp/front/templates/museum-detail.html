@@ -1,0 +1,245 @@
+<div class="museumDetail-Box">
+    <header class="museum-detail-head">
+        <img class="detail-left-arrow" src="img/38.png">
+        <h2>{{museumDetailHead}}</h2>
+    </header>
+    <section class="overflow-scroll has-header scroll-content museumdetail-top">
+        <div id="mask" class="mask"></div>
+        <div class="museum-jieshao">
+            <header class="museum-jieshao-head">
+                <span>{{museumDetailHead}}</span>
+                <img src="img/jieshao.png">
+            </header>
+            <h2>场馆介绍</h2>
+            <div class="jieshaoContent" ng-bind-html="introduce"></div>
+        </div>
+        <div class="museum-buyTicket">
+            <header class="museum-buyTicket-head">
+                <span>{{museumDetailHead}}</span>
+                <img src="img/jieshao.png">
+            </header>
+            <h2>如何买票</h2>
+            <div class="jieshaoContent" ng-bind-html="buyTicket"></div>
+        </div>
+        <div class="museum-nearby">
+            <header class="museum-nearby-head">
+                <span>{{museumDetailHead}}</span>
+                <img src="img/jieshao.png">
+            </header>
+            <h2>周边服务</h2>
+            <div class="jieshaoContent" ng-bind-html="nearby"></div>
+        </div>
+        <div class="museum-visitNotes">
+            <header class="museum-visitNotes-head">
+                <span>{{museumDetailHead}}</span>
+                <img src="img/jieshao.png">
+            </header>
+            <h2>参观须知</h2>
+            <div class="jieshaoContent" ng-bind-html="visitNotes"></div>
+        </div>
+        <div class="museum-serviceInformation">
+            <header class="museum-serviceInformation-head">
+                <span>{{museumDetailHead}}</span>
+                <img src="img/jieshao.png">
+            </header>
+            <h2>服务信息</h2>
+            <div class="jieshaoContent" ng-bind-html="serviceInformation"></div>
+        </div>
+        <div class="swiper-container museumdetailPic">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="x in museumDetailData.data.carouselList" repeat-done="swiperFn()"><img ng-src={{x.backUrl}}></div>
+                <!--<div class="swiper-slide" style="background-image:url(img/two.jpg)"></div>-->
+                <!--<div class="swiper-slide" style="background-image:url(img/three.png)"></div>-->
+                <!--<div class="swiper-slide" style="background-image:url(img/four.png)"></div>-->
+        <div class="music-c broAudio" ng-if="fAudio"></div>
+        <i class="music-note broAudio" ng-if="fAudio"><audio id="audio" ng-src={{sce(fAudio)}} autoplay preload loop></audio></i>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="mix-museum" ng-if="levelMuseum != null">
+            <h2>{{levelMuseum}}</h2>
+            <img ng-show="free" class="mix-museum-free" src="img/free.png">
+        </div>
+        <div class="museum-position" ng-click="toMap()">
+            <img src="img/2p.png">
+            <p>{{address}}</p>
+            <img src="img/arrow.png">
+        </div>
+        <div class="museum-time">
+            <img src="img/1t.png">
+            <p>{{openingHours}}</p>
+        </div>
+        <div class="mix-museum-content" >
+            <div class="mix-museum-content-list" ng-click="changguanjieshao()">
+                <img src="img/menpiao.png">
+                <p>场馆介绍</p>
+            </div>
+            <div class="mix-museum-content-list" ng-click="howBuyTicket()">
+                <img src="img/howBuyTicket.png">
+                <p>如何买票</p>
+            </div>
+            <div class="mix-museum-content-list" ng-click="aroundService()">
+                <img src="img/aroundService.png">
+                <p>周边服务</p>
+            </div>
+            <div class="mix-museum-content-list" ng-click="howLooking()">
+                <img src="img/howLooking.png">
+                <p>参观须知</p>
+            </div>
+            <div class="mix-museum-content-list" ng-click="howService()">
+                <img src="img/howService.png">
+                <p>服务信息</p>
+            </div>
+        </div>
+        <div ng-if="headline" class="browse-box">
+            <a ng-click="goBrowse()" href="#/homebrowse">
+                <div class="zhanxun">
+                    <h2>展览</h2>
+                    <span ng-if="showSprSize">更多</span>
+                    <img src="img/arrow.png" ng-if="showSprSize">
+                </div>
+            </a>
+            <a href="#/browseDetail/{{browseId}}">
+                <div class="zhanxun-content">
+                    <img class="zhanxunContentPic" ng-src={{zhanxunContentPic}}>
+                    <h2>{{headline}}</h2>
+                    <div class="zhanxun-date" ng-if="isStaTime"><img src="img/aaaaaa.png"><span>{{staTime+'-'+overTime}}</span></div>
+                    <div class="zhanxun-museum"><img src="img/4t.png"><span style="color: #008582">{{musExhibition}}</span></div>
+                    <!--
+                    <div class="zhanxun-museum"><img src="img/shuxie.png"><span>编辑人:{{editor}}</span></div>
+                    -->
+                </div>
+            </a>
+        </div>
+        <!--<div class="browse-box">-->
+            <!--<a ng-click="goBrowse()" href="#/homebrowse">-->
+                <!--<div class="zhanxun">-->
+                    <!--<h2>展览</h2>-->
+                    <!--<span>更多</span>-->
+                    <!--<img src="img/arrow.png">-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<a href="#/browseDetail/{{browseId}}">-->
+                <!--<div class="zhanxun-content">-->
+                    <!--<img class="zhanxunContentPic" src='img/shuxie.png'>-->
+                    <!--<h2>手术的方式告诉</h2>-->
+                    <!--<div class="zhanxun-date" ng-if="isStaTime"><img src="img/aaaaaa.png"><span>{{staTime+'-'+overTime}}</span></div>-->
+                    <!--<div class="zhanxun-museum"><img src="img/4t.png"><span>sdafdasa</span></div>-->
+                    <!--<div class="zhanxun-museum"><img src="img/shuxie.png"><span>编辑人:小马</span></div>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <div ng-if="viName" class="virtual-box">
+            <a href="#/virtual-museum" ng-click="goVirtual()">
+                <div class="fake-museum">
+                    <h2>虚拟展厅</h2>
+                    <span ng-if="showVirSize">更多</span>
+                    <img src="img/arrow.png" ng-if="showVirSize">
+                </div>
+            </a>
+            <a ng-href={{toFake}}>
+                <div class="fake-museum-content">
+                    <img ng-src={{fakeImg}}>
+                    <h2>{{viName}}</h2>
+                    <p>{{viIntro}}</p>
+                </div>
+            </a>
+        </div>
+        <a href="#/collection/" ng-click="goCollect()">
+            <div class="musueum-collection">
+                <h2>馆内藏品</h2>
+                <span>更多</span>
+                <img src="img/arrow.png">
+            </div>
+        </a>
+        <div class="musueum-collection-content">
+            <a href="#/collectionDetail/{{collectionId}}" ng-click="getIndex($index)" ng-repeat="y in museumDetailData.data.culList">
+                <div class="wrapMuseumCollect">
+                    <div class="musueum-collection-content-list">
+                        <img ng-src={{y.picture.thumb3}}>
+                    </div>
+                    <h2 class="museumTitleContant">{{y.mipOpenCulturalrelicInfo.name}}</h2>
+                </div>
+            </a>
+            <!--<div class="musueum-collection-content-list">-->
+                <!--<img src="img/1467.png">-->
+                <!--<h2>红山文化玉龙</h2>-->
+            <!--</div>-->
+            <!--<div class="musueum-collection-content-list">-->
+                <!--<img src="img/1467.png">-->
+                <!--<h2>红山文化玉龙</h2>-->
+            <!--</div>-->
+            <!--<div class="musueum-collection-content-list">-->
+                <!--<img src="img/1467.png">-->
+                <!--<h2>红山文化玉龙</h2>-->
+            <!--</div>-->
+            <!--<div class="musueum-collection-content-list">-->
+                <!--<img src="img/1467.png">-->
+                <!--<h2>红山文化玉龙</h2>-->
+            <!--</div>-->
+            <!--<div class="musueum-collection-content-list">-->
+                <!--<img src="img/1467.png">-->
+                <!--<h2>红山文化玉龙</h2>-->
+            <!--</div>-->
+        </div>
+    </section>
+</div>
+<div class="baidumap">
+    <iframe id="map" src=''></iframe>
+    <img class="mapReturn" src="img/return.png">
+</div>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+	$('.music-note').hide();
+	$('.music-c').get(0).style.animationPlayState = "paused";
+	$(document).one('touchstart',function(e) {
+		$('#audio').get(0).touchstart = true;
+		$('#audio').get(0).play();
+		$('.music-note').show();
+		$('.music-c').get(0).style.animationPlayState = "running";
+		return false;
+	});
+}
+$(document).ready(function(){
+	function audioAutoPlay(){
+		if($('#audio').length>0)
+			$('#audio').get(0).play();
+		var inteval=setInterval(function(){
+			if($('#audio').length>0){
+				clearInterval(inteval);
+				audioPlay();
+			}
+		},300);
+	}
+	function audioPlay(){
+		wx.config({
+			// 配置信息, 即使不正确也能使用 wx.ready
+			debug: false,
+			appId: 'wxe8fafa38eddf2956',
+			timestamp: 1,
+			nonceStr: '',
+			signature: '',
+			jsApiList: []
+		});
+		wx.ready(function() {
+			$('#audio').get(0).load().play();
+	        $('.music-note').show();
+	        $('.music-c').get(0).style.animationPlayState = "running";
+		});
+	    $(".broAudio").click(function() {
+	        if ($("#audio")[0].paused) {
+	            // 暂停中
+	            $("#audio")[0].play();
+                $('.music-c').get(0).style.animationPlayState = "running";
+	        } else {
+	            // 播放中
+	            $("#audio")[0].pause();
+                $('.music-c').get(0).style.animationPlayState = "paused";
+	        }
+	    });
+	}
+	audioAutoPlay();
+});
+</script>

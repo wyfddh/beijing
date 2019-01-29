@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.MuseumCollectionInfoMapper">
+    
+	<sql id="museumCollectionColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.total_num AS "totalNum",
+		a.relics_num AS "relicsNum",
+		a.first_level AS "firstLevel",
+		a.second_level AS "secondLevel",
+		a.third_level AS "thirdLevel",
+		a.classify_storage	as "classifyStorage",
+		a.fenku_storage	as "fenkuStorage",
+		a.special_storage	as "specialStorage",
+		a.outfit	as "outfit",
+		a.card	as "card",
+		a.collection_record	as "collectionRecord",
+		a.manage_system	as "manageSystem",
+		a.safety_operation	as "safetyOperation",
+		a.storehouse_manage	as "storehouseManage",
+		a.storehouse_diary	as "storehouseDiary",
+		a.collection_method	as "collectionMethod",
+		a.standard	as "standard",
+		a.conservation	as "conservation",
+		a.conservation_regular	as "conservationRegular",
+		a.academic_board	as "academicBoard",
+		a.research_depart	as "researchDepart",
+		a.laboratory	as "laboratory",
+		a.lab_aspect	as "labAspect"
+	</sql>
+	
+	<sql id="museumCollectionJoins">
+	</sql>
+	
+    
+	<select id="selectForm" resultType="com.tj720.admin.dto.MuseumCollectionDto" >
+		SELECT 
+			<include refid="museumCollectionColumns"/>
+		FROM museum_collection_info a
+		<include refid="museumCollectionJoins"/>
+		WHERE a.museum_id = #{0} and a.del_flag=#{1} limit 1
+	</select>
+	
+
+	<insert id="insert">
+		INSERT INTO museum_collection_info(
+			id,
+			museum_id,
+			total_num,
+			relics_num,
+			first_level,
+			second_level,
+			third_level,
+			classify_storage,
+			fenku_storage,
+			special_storage,
+			outfit,
+			card,
+			collection_record,
+			manage_system,
+			safety_operation,
+			storehouse_manage,
+			storehouse_diary,
+			collection_method,
+			standard,
+			conservation,
+			conservation_regular,
+			academic_board,
+			research_depart,
+			laboratory,
+			lab_aspect,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{totalNum},
+			#{relicsNum},
+			#{firstLevel},
+			#{secondLevel},
+			#{thirdLevel},
+			#{classifyStorage},
+			#{fenkuStorage},
+			#{specialStorage},
+			#{outfit},
+			#{card},
+			#{collectionRecord},
+			#{manageSystem},
+			#{safetyOperation},
+			#{storehouseManage},
+			#{storehouseDiary},
+			#{collectionMethod},
+			#{standard},
+			#{conservation},
+			#{conservationRegular},
+			#{academicBoard},
+			#{researchDepart},
+			#{laboratory},
+			#{labAspect},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_collection_info SET 	
+			total_num = #{totalNum},
+			relics_num = #{relicsNum},
+			first_level = #{firstLevel},
+			second_level = #{secondLevel},
+			third_level = #{thirdLevel},
+			classify_storage=#{classifyStorage},
+			fenku_storage=#{fenkuStorage},
+			special_storage=#{specialStorage},
+			outfit=#{outfit},
+			card=#{card},
+			collection_record=#{collectionRecord},
+			manage_system=#{manageSystem},
+			safety_operation=#{safetyOperation},
+			storehouse_manage=#{storehouseManage},
+			storehouse_diary=#{storehouseDiary},
+			collection_method=#{collectionMethod},
+			standard=#{standard},
+			conservation=#{conservation},
+			conservation_regular=#{conservationRegular},
+			academic_board=#{academicBoard},
+			research_depart=#{researchDepart},
+			laboratory=#{laboratory},
+			lab_aspect=#{labAspect},
+			update_by = #{updateId},
+			update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteBase">
+    	delete from museum_collection_info
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+    
+    <update id="updateFlag">
+	    UPDATE museum_collection_info SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+	
+</mapper>

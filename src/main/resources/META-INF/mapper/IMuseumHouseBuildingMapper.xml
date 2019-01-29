@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumHouseBuildingMapper">
+    
+	<sql id="museumHouseBuildingColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.house_name AS "houseName",
+		a.house_floor_area AS "floorArea",
+		a.level AS "level",
+		a.ownership AS "ownership"
+	</sql>
+	
+	<sql id="museumHouseBuildingJoins">
+	</sql>
+
+	<select id="selectForm" resultType="com.tj720.admin.dto.MuseumBaseHouseDto" >
+		SELECT
+			a.id as "id",
+			a.museum_id as "museumId",
+			a.all_building_area  as "allBuildingArea",
+			a.all_floor_area  as "allFloorArea",
+			a.exhibition_area	as "exhibitionArea",
+			a.public_area	as "publicArea",
+			a.collection_area	as "collectionArea",
+			a.office_area	as	"officeArea",
+			a.repair_site	as "repairSite",
+			a.repair_area	as "repairArea"
+		FROM museum_base_house a
+		WHERE a.museum_id = #{0} and a.del_flag = #{1} limit 1
+	</select>
+
+
+	<select id="selectList" resultType="com.tj720.admin.dto.MuseumHouseBuildingDto" >
+		SELECT 
+			<include refid="museumHouseBuildingColumns"/>
+		FROM museum_house_building a
+		<include refid="museumHouseBuildingJoins"/>
+		<where>
+			a.del_flag = #{1} and a.museum_id = #{0}
+		</where>		
+				ORDER BY a.update_date DESC
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO museum_house_building(
+			id,
+			museum_id,
+			house_name,
+			house_floor_area,
+			level,
+			ownership,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{houseName},
+			#{floorArea},
+			#{level},
+			#{ownership},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{remarks},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_house_building SET 	
+			museum_id = #{museumId},
+			house_name = #{houseName},
+			house_floor_area = #{floorArea},
+			level = #{level},
+			ownership = #{ownership},
+			update_by = #{updateId},
+			update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+
+	<!--逻辑删除-->
+	<delete id="deleteByLogic">
+		delete from museum_house_building
+        where id = #{id} and del_flag in ('1','3')
+	</delete>
+
+	<insert id="insertBase">
+		INSERT INTO museum_base_house(
+		id,
+		museum_id,
+		all_floor_area,
+		all_building_area,
+		exhibition_area,
+		public_area,
+		collection_area,
+		office_area,
+		repair_site,
+		repair_area,
+		create_by,
+		create_date,
+		update_by,
+		update_date,
+		del_flag
+		) VALUES (
+		#{id},
+		#{museumId},
+		#{allFloorArea},
+		#{allBuildingArea},
+		#{exhibitionArea},
+		#{publicArea},
+		#{collectionArea},
+		#{officeArea},
+		#{repairSite},
+		#{repairArea},
+		#{creatorId},
+		#{createTime},
+		#{updateId},
+		#{updateTime},
+		#{flag}
+		)
+	</insert>
+
+	<update id="updateBase">
+		UPDATE museum_base_house SET
+		all_floor_area = #{allFloorArea},
+		all_building_area = #{allBuildingArea},
+		exhibition_area =#{exhibitionArea},
+		public_area=#{publicArea},
+		collection_area=#{collectionArea},
+		office_area=#{officeArea},
+		repair_site=#{repairSite},
+		repair_area=#{repairArea},
+		update_by = #{updateId},
+		update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteBase">
+    	delete from museum_base_house
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+    
+    <update id="updateFlag">
+	    UPDATE museum_base_house SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+    
+    <delete id="deleteBaseTwo">
+    	delete from museum_house_building
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+    
+    <select id="selectBuildingById" resultType="com.tj720.admin.dto.MuseumHouseBuildingDto">
+    select 
+    <include refid="museumHouseBuildingColumns"/>
+    from museum_house_building a where a.id=#{id} limit 1
+    </select>
+    
+    <update id="updateFlagTwo">
+	    UPDATE museum_house_building SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+
+</mapper>

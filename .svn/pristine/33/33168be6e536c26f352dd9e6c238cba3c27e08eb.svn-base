@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		牙璧
+    		<span>作者 : 王海玉</span>
+    	</div>
+    	<div class="detail-body">
+    		<img src="../images/yabi.jpg" alt="">
+    		<p class="text">
+    			 牙璧，新石器时代龙山文化，五莲丹土遗址出土，一级文物，现藏于五莲县博物馆。该牙璧青黄玉质，整体近圆形，周边有三个向同一方向旋转的牙，据形态可叫三牙璧，外径12.71厘米，内径6.6厘米，孔大而规整。牙璧又叫玉璇玑，是玉璧的一种变体，根据出牙数量的多少，牙璧可分为二牙璧、三牙璧、四牙璧、五牙璧等四大类。其中以三牙璧的发现数量最多，比例几近90%，其他种类较少。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                目前看来，牙璧分布范围较为广泛，以山东地区和辽东半岛最为集中，最早见于大汶口文化中期，以距今5000—4300年的大汶口文化晚期和龙山文化前期发现数量最多。丹土遗址是目前发现牙璧较多的遗址。
+            </p>
+            <p class="text">
+                牙璧基本都出自墓葬，由于其分布区域广，形制差别大，关于其功能和用途学界多有讨论，归纳起来至少有三种用途：一是装饰，这类牙璧形制一般较小，且多出在女性墓葬中；二是用于祭祀和宗教的礼器。已发现的相当一部分牙璧个体较大、器形规整、制作精良，这类应该是用于宗教和祭祀的礼仪活动中，丹土遗址的出土的这个牙璧就属于这一类。牙璧同向旋转的造型与旋涡有相似之处，可能与当时沿海地区的航海活动不无关联。此外，还有少量特殊形制的，可能有其他特殊用途。
+            </p>
+    	</div>
+    </body>
+</html>

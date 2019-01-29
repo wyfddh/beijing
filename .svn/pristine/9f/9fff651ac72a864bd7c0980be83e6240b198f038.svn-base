@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.CulturalSafeListMapper">
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.CulturalSafeList">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="museum_id" jdbcType="VARCHAR" property="museumId" />
+    <result column="fk_id" jdbcType="VARCHAR" property="fkId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="creater" jdbcType="VARCHAR" property="creater" />
+    <result column="updater" jdbcType="VARCHAR" property="updater" />
+    <result column="delete_mark" jdbcType="VARCHAR" property="deleteMark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, museum_id, fk_id, update_time, create_time, creater, updater, delete_mark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cultural_safe_list
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cultural_safe_list
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.CulturalSafeList">
+    insert into cultural_safe_list (id, museum_id, fk_id, 
+      update_time, create_time, creater, 
+      updater, delete_mark)
+    values (#{id,jdbcType=VARCHAR}, #{museumId,jdbcType=VARCHAR}, #{fkId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{creater,jdbcType=VARCHAR}, 
+      #{updater,jdbcType=VARCHAR}, #{deleteMark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.CulturalSafeList">
+    insert into cultural_safe_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="museumId != null">
+        museum_id,
+      </if>
+      <if test="fkId != null">
+        fk_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="updater != null">
+        updater,
+      </if>
+      <if test="deleteMark != null">
+        delete_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="museumId != null">
+        #{museumId,jdbcType=VARCHAR},
+      </if>
+      <if test="fkId != null">
+        #{fkId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="updater != null">
+        #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteMark != null">
+        #{deleteMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.CulturalSafeList">
+    update cultural_safe_list
+    <set>
+      <if test="museumId != null">
+        museum_id = #{museumId,jdbcType=VARCHAR},
+      </if>
+      <if test="fkId != null">
+        fk_id = #{fkId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="updater != null">
+        updater = #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteMark != null">
+        delete_mark = #{deleteMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.CulturalSafeList">
+    update cultural_safe_list
+    set museum_id = #{museumId,jdbcType=VARCHAR},
+      fk_id = #{fkId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      creater = #{creater,jdbcType=VARCHAR},
+      updater = #{updater,jdbcType=VARCHAR},
+      delete_mark = #{deleteMark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="getCulturalSafeFileList" resultType="com.tj720.admin.model.CulturalSafeList" parameterType="java.lang.String">
+  	SELECT
+		a.id,
+		a.museum_id as "museumId",
+		a.fk_id as "fkId",
+		b.att_name as "attName",
+		b.att_path as "attPath"
+	FROM
+		cultural_safe_list a,
+		mip_attachment b
+	WHERE
+		b.att_id=a.fk_id
+		and a.museum_id = #{museumId}
+		AND a.delete_mark = #{level}
+	ORDER BY
+		a.update_time DESC
+  </select>
+  
+    <delete id="deleteByExample" parameterType="java.lang.String">
+    delete from cultural_safe_list
+    where museum_id=#{museumId} and delete_mark=#{flag}
+  </delete>
+  
+</mapper>

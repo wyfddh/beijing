@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumRecordMapper">
+    
+    <sql id="museumBaseInfoColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.phone AS "phone",
+		a.museum_type AS "museumType",
+		b.value_ AS "museumTypeName",
+		a.province AS "province",
+		a.city AS "city",
+		a.area AS "area",
+		s.value_ AS "areaName",
+		a.detail_address AS "detailAddress",
+		a.web_url AS "webUrl",
+		a.mailbox AS "mailbox",
+		a.fax AS "fax",
+		a.zip_code AS "zipCode",
+		DATE_FORMAT(a.first_open_date, '%Y-%m-%d') AS "firstOpenDate",
+		a.is_free AS "isFree",
+		a.static_close_day AS "staticCloseDay",
+		a.museum_description AS "museumDescription",
+		a.registration_number AS "registrationNumber",
+		a.legal_person AS "legalPerson",
+		a.is_independent_person AS "isIndependentPerson",
+		a.registration_office AS "registrationOffice",
+		a.legal_person_type AS "legalPersonType",
+		f.value_	as "legalPersonTypeName",
+		a.legal_person_number AS "legalPersonNumber",
+		a.certification_level AS "certificationLevel",
+		e.value_ AS "certificationLevelName",
+		a.update_by as "updateId",
+		a.update_date	as "updateTime"
+	</sql>
+	
+	
+	
+	<sql id="museumBaseHouseColumns">
+		a.id as "id",
+		a.museum_id as "museumId",
+		a.all_building_area  as "allBuildingArea",
+		a.all_floor_area  as "allFloorArea",
+		a.update_by as "updateId",
+		a.update_date	as "updateTime"
+	</sql>
+	<sql id="museumHouseBuildingColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.house_name AS "houseName",
+		a.house_floor_area AS "houseFloorArea",
+		a.level AS "level",
+		a.ownership AS "ownership",
+		a.update_by as "updateId",
+		a.update_date	as "updateTime"
+	</sql>
+	
+	<sql id="museumPublicServiceColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.park_num AS "parkNum",
+		a.toilet_num AS "toiletNum",
+		a.tour_guide AS "tourGuide",
+		a.goods_depository AS "goodsDepository",
+		a.food_service AS "foodService",
+		a.information_desk AS "informationDesk",
+		a.product_service AS "productService",
+		a.resting_area AS "restingArea",
+		a.communication_service AS "communicationService",
+		a.regular_medicine AS "regularMedicine",
+		a.spot_rescue AS "spotRescue",
+		a.atm AS "atm",
+		a.barrier_free_structures AS "barrierFreeStructures",
+		a.free_umbrella AS "freeUmbrella",
+		a.free_wheelchair AS "freeWheelchair",
+		a.update_by as "updateId",
+		a.update_date	as "updateTime"
+	</sql>
+	
+	<sql id="museumBaseInfoJoins">
+		LEFT JOIN sys_dict_t s on (s.number = a.area and s.key_ = "dict_area")
+		LEFT JOIN sys_dict_t b on (b.number = a.museum_type and b.key_ = "museum_type")
+		LEFT JOIN sys_dict_t e on (e.number = a.certification_level and e.key_ = "identification_level")
+		LEFT JOIN sys_dict_t f on (f.number = a.legal_person_type and f.key_ = "registration_type")
+	</sql>
+	
+	
+	<sql id="museumDigitizationColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.management_sys AS "managementSys",
+		a.warehouse_monitor AS "warehouseMonitor",
+		a.zhanchen_monitor AS "zhanchenMonitor",
+		a.yunshu_monitor AS "yunshuMonitor",
+		a.digital_management AS "digitalManagement",
+		a.collection_software AS "collectionSoftware",
+		a.thematic_library AS "database",
+		a.infornation_collection AS "infornationCollection",
+		a.update_by as "updateId",
+		a.update_date	as "updateTime"
+	</sql>
+	
+	<sql id="museumPromotionColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.broadcast AS "broadcast",
+		a.tv AS "tv",
+		a.newspaper AS "newspaper",
+		a.wechat AS "wechat",
+		a.weibo AS "weibo",
+		a.app AS "app",
+		a.applets AS "applets",
+		a.website AS "website",
+		a.other AS "other",
+		a.other_detail AS "otherDetail",
+		a.update_by as "updateId",
+		a.update_date	as "updateTime"
+	</sql>
+	
+	<sql id="museumCollectionColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.total_num AS "totalNum",
+		a.relics_num AS "relicsNum",
+		a.first_level AS "firstLevel",
+		a.second_level AS "secondLevel",
+		a.third_level AS "thirdLevel",
+		a.update_by as "updateId",
+		a.update_date	as "updateTime"
+	</sql>
+	
+	<select id="baseCount" resultType="java.lang.Integer" >
+		SELECT count(1)
+		FROM bj_museum_base_info a
+		WHERE 
+		1=1
+        <if test="museumId != null and museumId != ''">
+          and a.museum_id = #{museumId} 
+        </if>
+        <if test="flag != null and flag != ''">
+            and a.del_flag =#{flag} 
+        </if>
+		ORDER BY a.update_date DESC
+	</select>
+	
+	<select id="baseEditList" resultType="com.tj720.admin.dto.MuseumBaseInfoDto" >
+		SELECT 
+			<include refid="museumBaseInfoColumns"/>
+		FROM bj_museum_base_info a
+		<include refid="museumBaseInfoJoins"/>
+		WHERE 
+		1=1
+		<if test="museumId != null and museumId != ''">
+		  and a.museum_id = #{museumId} 
+		</if>
+		<if test="flag != null and flag != ''">
+            and a.del_flag =#{flag} 
+        </if>
+		
+		ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	
+	
+    
+	
+	<select id="baseHouseCount" resultType="java.lang.Integer" >
+		SELECT count(1)
+		FROM museum_base_house a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC
+	</select>
+	
+	<select id="baseHouseEditList" resultType="com.tj720.admin.dto.MuseumBaseHouseDto" >
+		SELECT   
+			<include refid="museumBaseHouseColumns"/>
+		FROM museum_base_house a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	
+	<select id="buildCount" resultType="java.lang.Integer" >
+		SELECT count(1)
+		FROM museum_house_building a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC
+	</select>
+	
+	<select id="buildEditList" resultType="com.tj720.admin.dto.MuseumHouseBuildingDto" >
+		SELECT 
+			<include refid="museumHouseBuildingColumns"/>
+		FROM museum_house_building a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	
+	<select id="serviceCount" resultType="java.lang.Integer" >
+		SELECT count(1)
+		FROM museum_public_service a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC
+	</select>
+	
+	<select id="publicServiceEditList" resultType="com.tj720.admin.dto.MuseumPublicServiceDto" >
+		SELECT 
+			<include refid="museumPublicServiceColumns"/>
+		FROM museum_public_service a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	
+	<select id="digitizationCount" resultType="java.lang.Integer" >
+		SELECT count(1)
+		FROM museum_digitization a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC
+	</select>
+	
+	<select id="digitizationEditList" resultType="com.tj720.admin.dto.MuseumDigitizationDto" >
+		SELECT 
+			<include refid="museumDigitizationColumns"/>
+		FROM museum_digitization a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	
+	<select id="promotionCount" resultType="java.lang.Integer" >
+		SELECT count(1)
+		FROM museum_promotion a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC
+	</select>
+	
+	<select id="promotionEditList" resultType="com.tj720.admin.dto.MuseumPromotionDto" >
+		SELECT 
+			<include refid="museumPromotionColumns"/>
+		FROM museum_promotion a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	
+	<select id="collectionCount" resultType="java.lang.Integer" >
+		SELECT count(1)
+		FROM museum_collection_info a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC
+	</select>
+	
+	<select id="collectionEditList" resultType="com.tj720.admin.dto.MuseumCollectionDto" >
+		SELECT 
+			<include refid="museumCollectionColumns"/>
+		FROM museum_collection_info a
+		WHERE a.museum_id = #{museumId} and a.del_flag =#{flag} 
+		ORDER BY a.update_date DESC LIMIT #{startInt},#{endInt}
+	</select>
+	<select id="baseEditRecordList" resultType="java.util.HashMap" >
+                SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            bj_museum_base_info t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    bj_museum_base_info
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+        <if test=" startRow == -1">
+        limit #{pageSize}
+    </if>
+    <if test=" startRow != -1">
+        limit #{startRow},#{pageSize}
+    </if>
+    </select>
+    
+    <select id="countEditRecordList" resultType="java.lang.Integer" >
+                SELECT
+            count(1)
+        FROM
+            bj_museum_base_info t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    bj_museum_base_info
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="getEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from bj_museum_base_info t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    <select id="baseHouseRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_base_house t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="baseHouseEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_base_house t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+	        limit #{pageSize}
+	    </if>
+	    <if test=" startRow != -1">
+	        limit #{startRow},#{pageSize}
+	    </if>
+    </select>
+    
+    <select id="getBaseHouseEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_base_house t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="buildEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_house_building t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="buildEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_house_building t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getbuildEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_house_building t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+     <select id="publicServiceEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_public_service t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="publicServiceEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_public_service t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getPublicServiceEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_public_service t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="digitizationEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_digitization t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="digitizationEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_digitization t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getDigitizationEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_digitization t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="promotionEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_promotion t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="promotionEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_promotion t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getPromotionEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_promotion t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="collectionEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_collection_info t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="collectionEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_collection_info t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+        
+    </select>
+    
+    <select id="getCollectionEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_collection_info t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="safeEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_safe_ensure t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="safeEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_safe_ensure t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getSafeEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_safe_ensure t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="warehouseEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_warehouse t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="warehouseEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_warehouse t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+        
+    </select>
+    
+    <select id="getWarehouseEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_warehouse t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+     <select id="showRoomEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_show_room t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="showRoomEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_show_room t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+        
+    </select>
+    
+    <select id="getShowRoomEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_show_room t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="displayShowEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+           count(1)
+        FROM
+            museum_display_show t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="displayShowEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.museum_id as museumId,t.del_flag as delFlag,t.create_date as createDate,u.name as createBy
+        FROM
+            museum_display_show t,mip_user u
+        WHERE
+            t.museum_id IN (
+                SELECT
+                    museum_id
+                FROM
+                    museum_base_house
+                GROUP BY
+                    museum_id
+                HAVING
+                    count(museum_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+         and u.id = t.create_by
+        ORDER BY t.museum_id,t.create_date desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getDisplayShowEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from museum_display_show t,mip_user u
+             where u.id = t.create_by
+         <if test="museumId != null and museumId != ''">
+           and t.museum_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.del_flag = #{delFlag}
+         </if>
+<!--          <if test="id != null and id != ''"> -->
+<!--            and t.id = #{id} -->
+<!--          </if> -->
+        ORDER BY t.museum_id,t.create_date desc
+    </select>
+    
+    <select id="relicsBureauEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+            count(1)
+        FROM
+            cultural_relic_info t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_relic_info
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+    </select>
+    
+    <select id="relicsBureauEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.org_id as museumId,t.delete_mark as delFlag,t.create_time as createDate,u.name as createBy
+        FROM
+            cultural_relic_info t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_relic_info
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getRelicsBureauEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from cultural_relic_info t,mip_user u
+             where u.id = t.creater
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+        ORDER BY t.org_id,t.create_time desc
+    </select>
+    
+    <select id="relicsBureauPersonChangeEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+            count(1)
+        FROM
+            cultural_relic_personnel_change t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_relic_personnel_change
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+    </select>
+    
+    <select id="relicsBureauPersonChangeEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.org_id as museumId,t.delete_mark as delFlag,t.create_time as createDate,u.name as createBy
+        FROM
+            cultural_relic_personnel_change t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_relic_personnel_change
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getRelicsBureauPersonChangeEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from cultural_relic_personnel_change t,mip_user u
+             where u.id = t.creater
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+        ORDER BY t.org_id,t.create_time desc
+    </select>
+    
+    <select id="relicsBureauPersonDetailEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+            count(1)
+        FROM
+            cultural_relic_personnel_detail t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_relic_personnel_detail
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+    </select>
+    
+    <select id="relicsBureauPersonDetailEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.org_id as museumId,t.delete_mark as delFlag,t.create_time as createDate,u.name as createBy
+        FROM
+            cultural_relic_personnel_detail t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_relic_personnel_detail
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getRelicsBureauPersonDetailEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from cultural_relic_personnel_detail t,mip_user u
+             where u.id = t.creater
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+        ORDER BY t.org_id,t.create_time desc
+    </select>
+    
+    <select id="relicsUnitEditRecordCount" resultType="java.lang.Integer" >
+        SELECT
+            count(1)
+        FROM
+            cultural_org_info t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_org_info
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+    </select>
+    
+    <select id="relicsUnitEditRecordList" resultType="java.util.HashMap" >
+        SELECT
+            t.id,t.org_id as museumId,t.delete_mark as delFlag,t.create_time as createDate,u.name as createBy
+        FROM
+            cultural_org_info t,mip_user u
+        WHERE
+            t.org_id IN (
+                SELECT
+                    org_id
+                FROM
+                    cultural_org_info
+                GROUP BY
+                    org_id
+                HAVING
+                    count(org_id) > 1
+            )
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+         and u.id = t.creater
+        ORDER BY t.creater,t.create_time desc
+         <if test=" startRow == -1">
+            limit #{pageSize}
+        </if>
+        <if test=" startRow != -1">
+            limit #{startRow},#{pageSize}
+        </if>
+    </select>
+    
+    <select id="getRelicsUnitEditRecordList" resultType="java.util.HashMap" >
+            select t.*,u.name as createTor from cultural_org_info t,mip_user u
+             where u.id = t.creater
+         <if test="museumId != null and museumId != ''">
+           and t.org_id = #{museumId}
+         </if>
+         <if test="delFlag != null and delFlag != ''">
+           and t.delete_mark = #{delFlag}
+         </if>
+        ORDER BY t.org_id,t.create_time desc
+    </select>
+    
+    
+    <select id="getColumnComentList" resultType="java.util.HashMap" >
+            select COLUMN_NAME ,column_comment  from INFORMATION_SCHEMA.Columns where table_name = #{tableName} 
+    </select>
+    
+    <select id="getDictList" resultType="java.util.HashMap" >
+            select t.key_ as dictKey,t.number as number,t.value_ as dictValue from sys_dict_t t
+			where t.key_ = #{key}
+			<if test="number != null and number != ''">
+                and t.number = #{number}
+            </if>			
+    </select>
+	
+	
+</mapper>

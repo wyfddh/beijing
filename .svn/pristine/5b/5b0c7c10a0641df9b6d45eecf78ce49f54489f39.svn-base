@@ -1,0 +1,37 @@
+<header class="virtual-museum">
+    <a href="#/home"><img src="img/5arrow.png"></a>
+    <h2>虚拟展厅</h2>
+</header>
+<div class="virtual-cezhan-table">
+    <div ng-class="{hot: true, hover: isActive}" ng-click="isActive=true">热门</div>
+    <div ng-class="{new: true, hover: !isActive}" ng-click="isActive=false">最新</div>
+</div>
+<section class="overflow-scroll virtual-top hot-top
+ 		scroll-content has-footer" style="z-index:-1;">
+    <ion-content>
+        <div class="down-list"></div>
+        <ion-infinite-scroll
+                ng-if="hasVirtual"
+                on-infinite="loaded()"
+                distance="5%">
+        </ion-infinite-scroll>
+    </ion-content>
+</section>
+<section class="overflow-scroll virtual-top new-top
+ 		scroll-content has-footer" style="z-index:-1;">
+    <ion-content>
+        <div class="down-list"></div>
+        <ion-infinite-scroll
+                ng-if="hasVirtual"
+                on-infinite="load()"
+                distance="5%">
+        </ion-infinite-scroll>
+    </ion-content>
+    <!--<div class="list">-->
+        <!--<a class="item item-thumbnail-left">-->
+            <!--<img src="img/3081.png">-->
+            <!--<h2>最新汉代画像艺术展</h2>-->
+            <!--<p>汉代画像石是中国汉代画像石艺术的接触代表,他以质朴深沉的民族本土意识...</p>-->
+        <!--</a>-->
+    <!--</div>-->
+</section>

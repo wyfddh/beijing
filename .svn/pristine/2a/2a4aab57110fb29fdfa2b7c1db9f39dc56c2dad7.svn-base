@@ -1,0 +1,92 @@
+<section class="overflow-scroll
+             scroll-content has-footer">
+    <div class="home-head">
+        <img src="img/mobileLogo.png">
+    </div>
+    <div class="swiper-container homePic">
+        <div class="swiper-wrapper">
+            <!--repeat-done="swiperFn()"-->
+            <div class="swiper-slide" ng-repeat="x in homeUrlData.data[1].carList">
+                <img ng-src={{x.pic.frontBackUrl}}>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <!--<div class="swiper-button-prev swiper-button-white swiper-button-disabled"></div>-->
+        <!--<div class="swiper-button-next swiper-button-white"></div>-->
+        <div class="swiper-pagination"></div>
+        <!--<div class="music-c"></div>-->
+        <!--<i class="music-note"><audio src="audio/happy.mp3" autoplay preload loop></audio></i>-->
+    </div>
+<div class="homebk has-footer">
+    <ul class="home-list">
+        <a style="text-decoration: none;" class="home-item" href="#/collection/{{collectionsCategory}}"><img src="img/homeCollection.png"><p>藏品</p></a>
+        <a style="text-decoration: none;" class="home-item" href="#/museum"><img src="img/museum.png"><p>博物馆</p></a>
+        <a style="text-decoration: none;" class="home-item" href="#/homebrowse"><img src="img/browse.png"><p>展览</p></a>
+        <a style="text-decoration: none;" class="home-item" href="baike/index.html"><img src="img/baike.png"><p>文物百科</p></a>
+        <a style="text-decoration: none;" class="home-item" href="#/virtual-museum"><img src="img/virtual.png"><p>虚拟展厅</p></a>
+        <a style="text-decoration: none;" class="home-item" href="#/searchPic"><img src="img/soutu.png"><p>以图搜图</p></a>
+        <a style="text-decoration: none;" class="home-item" ng-click="goPinglun()"><img src="img/pinglun.png"><p>我的评论</p></a>
+        <a style="text-decoration: none;" class="home-item" ng-click="goCollection()"><img src="img/shoucang.png"><p>我的收藏</p></a>
+        <a style="text-decoration: none;" class="home-item" ng-click="goCezhan()"><img src="img/cezhan.png"><p>我的策展</p></a>
+    </ul>
+</div>
+</section>
+<!--<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+//$(document).ready(function(){
+//	function audioAutoPlay() {
+//		wx.config({
+//			// 配置信息, 即使不正确也能使用 wx.ready
+//			debug: false,
+//			appId: 'wxe8fafa38eddf2956',
+//			timestamp: 1,
+//			nonceStr: '',
+//			signature: '',
+//			jsApiList: []
+//		});
+//		wx.ready(function() {
+//			$('audio').get(0).play();
+//	        $('.music-note').show();
+//	        $('.music-c').get(0).style.animationPlayState = "running";
+//		});
+//	}
+//	audioAutoPlay();
+//});
+//if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+//  $('.music-note').hide();
+//  $('.music-c').get(0).style.animationPlayState = "paused";
+//  $(document).one('touchstart',
+//    function(e) {
+//      $('audio').get(0).touchstart = true;
+//      $('audio').get(0).play();
+//      $('.music-note').show();
+//      $('.music-c').get(0).style.animationPlayState = "running";
+//      return false;
+//    });
+//}
+</script>-->
+<!--<script>-->
+<!--$(document).ready(function(){-->
+	<!--function audioAutoPlay() {-->
+		<!--var audio = $('audio').get(0);-->
+		<!--audio.play();-->
+		<!--document.addEventListener("WeixinJSBridgeReady", function () {-->
+			<!--audio.play();-->
+			<!--$('.music-note').show();-->
+			<!--$('.music-c').get(0).style.animationPlayState = "running";-->
+		<!--}, false);-->
+	<!--}-->
+	<!--audioAutoPlay();-->
+<!--});-->
+<!--if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {-->
+	<!--$('.music-note').hide();-->
+	<!--$('.music-c').get(0).style.animationPlayState = "paused";-->
+	<!--$(document).one('touchstart',function(e) {-->
+		<!--$('audio').get(0).touchstart = true;-->
+		<!--$('audio').get(0).play();-->
+		<!--$('.music-note').show();-->
+		<!--$('.music-c').get(0).style.animationPlayState = "running";-->
+		<!--return false;-->
+	<!--});-->
+<!--}-->
+<!--</script>-->

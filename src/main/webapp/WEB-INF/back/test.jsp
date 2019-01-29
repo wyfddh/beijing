@@ -1,0 +1,354 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="back/favicon.ico" >
+<link rel="Shortcut Icon" href="back/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="back/lib/html5.js"></script>
+<script type="text/javascript" src="back/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="back/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="back/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="back/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="back/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="back/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>后台测试页面</title>
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<header class="navbar-wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a> <span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.0</span> <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+			<nav class="nav navbar-nav">
+				<ul class="cl">
+					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" onclick="article_add('添加资讯','article-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+							<li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
+							<li><a href="javascript:;" onclick="product_add('添加资讯','product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
+							<li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+				<ul class="cl">
+					<li>超级管理员</li>
+					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="#">个人信息</a></li>
+							<li><a href="#">切换账户</a></li>
+							<li><a href="#">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+<aside class="Hui-aside">
+	<input runat="server" id="divScrollValue" type="hidden" value="" />
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 内容管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="article-list.html" title="展讯列表">展讯列表</a></li>
+					<li><a href="article-list.html" title="虚拟展厅管理">虚拟展厅管理</a></li>
+					<li><a href="article-list.html" title="博物馆信息管理">博物馆信息管理</a></li>
+					<li><a href="article-list.html" title="博物馆栏目管理">博物馆栏目管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 藏品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="back/fCCollection/info.do" title="一普数据列表">一普数据列表</a></li>
+					<li><a href="article-list.html" title="藏品数据列表">藏品数据列表</a></li>
+					<li><a href="article-list.html" title="馆际交流授权">馆际交流授权</a></li>
+					<li><a href="article-list.html" title="馆际交流申请">馆际交流申请</a></li>
+					<li><a href="article-list.html" title="藏品变更审核">藏品变更审核</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 策展管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="<%=request.getContextPath()%>/testInterface/toTest.do" title="图片管理">展览列表</a></li>
+					<li><a href="picture-list.html" title="图片管理">展览审核</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="http://h-ui.duoshuo.com/admin/" title="评论列表">评论列表</a></li>
+					<li><a href="feedback-list.html" title="意见反馈">意见反馈</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 轮播图管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 公众号管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 百科管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+		</dl>
+		<dl id="menu-tongji">
+			<dt><i class="Hui-iconfont">&#xe61a;</i> 系统统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="charts-1.html" title="折线图">折线图</a></li>
+					<li><a href="charts-2.html" title="时间轴折线图">时间轴折线图</a></li>
+					<li><a href="charts-3.html" title="区域图">区域图</a></li>
+					<li><a href="charts-4.html" title="柱状图">柱状图</a></li>
+					<li><a href="charts-5.html" title="饼状图">饼状图</a></li>
+					<li><a href="charts-6.html" title="3D柱状图">3D柱状图</a></li>
+					<li><a href="charts-7.html" title="3D饼状图">3D饼状图</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="system-base.html" title="系统设置">系统设置</a></li>
+					<li><a href="system-category.html" title="栏目管理">栏目管理</a></li>
+					<li><a href="system-data.html" title="数据字典">数据字典</a></li>
+					<li><a href="system-shielding.html" title="屏蔽词">屏蔽词</a></li>
+					<li><a href="system-log.html" title="系统日志">系统日志</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 个人中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+		</dl>
+	</div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">我的桌面</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+			<p class="f-20 text-success">欢迎使用H-ui.admin <span class="f-14">v2.3</span>后台模版！</p>
+			<p>登录次数：18 </p>
+			<p>上次登录IP：222.35.131.79.1  上次登录时间：2014-6-14 11:19:55</p>
+			<p>${user.roleName }+${user.password}</p>
+			
+			<table class="table table-border table-bordered table-bg">
+				<thead>
+					<tr>
+						<th colspan="7" scope="col">信息统计</th>
+					</tr>
+					<tr class="text-c">
+						<th>统计</th>
+						<th>资讯库</th>
+						<th>图片库</th>
+						<th>产品库</th>
+						<th>用户</th>
+						<th>管理员</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="text-c">
+						<td>总数</td>
+						<td>92</td>
+						<td>9</td>
+						<td>0</td>
+						<td>8</td>
+						<td>20</td>
+					</tr>
+					<tr class="text-c">
+						<td>今日</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr class="text-c">
+						<td>昨日</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr class="text-c">
+						<td>本周</td>
+						<td>2</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr class="text-c">
+						<td>本月</td>
+						<td>2</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-border table-bordered table-bg mt-20">
+				<thead>
+					<tr>
+						<th colspan="2" scope="col">服务器信息</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th width="30%">服务器计算机名</th>
+						<td><span id="lbServerName">http://127.0.0.1/</span></td>
+					</tr>
+					<tr>
+						<td>服务器IP地址</td>
+						<td>192.168.1.1</td>
+					</tr>
+					<tr>
+						<td>服务器域名</td>
+						<td>www.h-ui.net</td>
+					</tr>
+					<tr>
+						<td>服务器端口 </td>
+						<td>80</td>
+					</tr>
+					<tr>
+						<td>服务器IIS版本 </td>
+						<td>Microsoft-IIS/6.0</td>
+					</tr>
+					<tr>
+						<td>本文件所在文件夹 </td>
+						<td>D:\WebSite\HanXiPuTai.com\XinYiCMS.Web\</td>
+					</tr>
+					<tr>
+						<td>服务器操作系统 </td>
+						<td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
+					</tr>
+					<tr>
+						<td>系统所在文件夹 </td>
+						<td>C:\WINDOWS\system32</td>
+					</tr>
+					<tr>
+						<td>服务器脚本超时时间 </td>
+						<td>30000秒</td>
+					</tr>
+					<tr>
+						<td>服务器的语言种类 </td>
+						<td>Chinese (People's Republic of China)</td>
+					</tr>
+					<tr>
+						<td>.NET Framework 版本 </td>
+						<td>2.050727.3655</td>
+					</tr>
+					<tr>
+						<td>服务器当前时间 </td>
+						<td>2014-6-14 12:06:23</td>
+					</tr>
+					<tr>
+						<td>服务器IE版本 </td>
+						<td>6.0000</td>
+					</tr>
+					<tr>
+						<td>服务器上次启动到现在已运行 </td>
+						<td>7210分钟</td>
+					</tr>
+					<tr>
+						<td>逻辑驱动器 </td>
+						<td>C:\D:\</td>
+					</tr>
+					<tr>
+						<td>CPU 总数 </td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>CPU 类型 </td>
+						<td>x86 Family 6 Model 42 Stepping 1, GenuineIntel</td>
+					</tr>
+					<tr>
+						<td>虚拟内存 </td>
+						<td>52480M</td>
+					</tr>
+					<tr>
+						<td>当前程序占用内存 </td>
+						<td>3.29M</td>
+					</tr>
+					<tr>
+						<td>Asp.net所占内存 </td>
+						<td>51.46M</td>
+					</tr>
+					<tr>
+						<td>当前Session数量 </td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>当前SessionID </td>
+						<td>gznhpwmp34004345jz2q3l45</td>
+					</tr>
+					<tr>
+						<td>当前系统用户名 </td>
+						<td>NETWORK SERVICE</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+		<footer class="footer">
+			<p>感谢jQuery、layer、laypage、Validform、UEditor、My97DatePicker、iconfont、Datatables、WebUploaded、icheck、highcharts、bootstrap-Switch<br>
+				Copyright &copy;2015 H-ui.admin v3.0 All Rights Reserved.<br>
+				本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+		</footer>
+	</div>
+</section>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="back/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="back/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="back/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="back/static/h-ui.admin/js/H-ui.admin.page.js"></script> 
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+
+<!--此乃百度统计代码，请自行删除-->
+<script>
+var as = ""+${user.roleName };
+alert(as);
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--/此乃百度统计代码，请自行删除-->
+</body>
+</html>

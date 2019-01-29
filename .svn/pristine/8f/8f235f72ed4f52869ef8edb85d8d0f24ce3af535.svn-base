@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <script src="../js/resizerem.js"></script>
+    <script src="../js/mui/js/mui.js"></script>
+    <link href="../js/mui/css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/qiluwenhua.css">
+</head>
+
+<body>
+    <header>
+        <a class="lf" href="wenbo.html"></a>
+        <a class="rt" href="../../index.html"></a>
+    </header>
+    <div class="detail-title">
+        <i></i> 古籍善本的类型
+        <span>作者 : 徐战</span>
+    </div>
+    <div class="detail-body">
+        <img style="width: 5.6rem;height:4.3rem;" src="../images/shanben.png" alt="">
+    </div>
+    <div class="detail-footer">
+        <div class="container">
+            <div>
+                <p class="text">
+                    在当前收藏热中，古籍以其特有的历史价值，潜力巨大的升值空间，引起越来越多收藏爱好者的关注。鉴藏古籍，首先要对古籍版本的类别以及相关知识有一个基本了解。
+                </p>
+                <p class="text">
+                    古籍版本的分类极其繁琐，常见的有稿本、写本、抄本、刻本、影印本、影刻本、影写本等。
+                </p>
+                <p class="text">
+                    稿本：分两种，一种指作者的手稿本，另一种指清稿本。手稿本是由作者亲笔书写的作品，有一定判断难度，需要鉴藏者具备丰厚的知识基础。手稿本在古籍版本中的地位十分突出，因此深得收藏者偏爱；清稿本是指誊清的稿本，可能是作者自己誊清，也可能是由别人誊清，一般不易甄别。
+                </p>
+                <p class="text">
+                    写本：是相对稿本、抄本而言。写本具备三大特点，一是时代早。我们今天所能见到的写本都是唐代以前的，那时是手写书籍，唐以后才逐渐有了刻本书；二是地位高。一本书无论时代早晚，凡出自名流学者之手，都会以写本称呼，而不称其抄本；三是内容多涉及宗教。古人多以抄录佛经、道经的方式还愿或以此修道养身，是对宗教的一种崇信，称为写经。
+                </p>
+                <p class="text">
+                    抄本：依据某一底本而再行传写者，称为抄本。在古书版本著录、行文时，抄本经常出现。另有一种影抄本，是把透明纸覆在底本上面，按其原有字体、行款照样摹写的书本。
+                </p>
+                <p class="text">
+                    刻本：也称刊本，是指雕版印刷而成的书本。雕版是将书稿按照一定的行款、字数写出版样，描绘出边栏界行，版口鱼尾，然后贴上版，依样雕刻。印制时敷墨上版，再铺纸刷印。雕版印刷在唐代已很流行，明代达到巅峰。唐朝的《金刚经》可谓雕版印刷的经典之作。雕版印刷也造就了一批藏书家和版本学家。
+                </p>
+                <p class="text">
+                    影印本：影印图书大约有３种方式：一种是珂罗版影印，一种是石印，再者是胶印。工序基本上都是先照相，而且是依原本照相。影印本在古籍中很普遍。
+                </p>
+                <p class="text">
+                   影刻本：指以某一版本为底本，逐叶覆纸，将原底本的边栏界行、版口鱼尾、行款字体等毫无改变地照样勾摹下来，然后上版雕刻。在历代刻本中，人们对宋元本最为推崇。宋元本在书法、雕刻、印刷、用纸等方面十分讲究。孝宗年间官刻《武经龟鉴》，大字本《淮海先生闲居集》、小字本《嘉?集》等具有很高的艺术欣赏价值。随着宋元刻本的日渐稀少，也提升了它的经济价值，曾经就有明代藏书家朱大韶以美女换宋本的传说，足见宋元本的价值不菲。
+                </p>
+                <p class="text">
+                    影写本：也称为影抄本，版样与影刻本无区别，在此不作赘述。除了以上常见的版本分类以外，还有诸如石印本、巾箱本、百衲本、坊刻本、私刻本、官刻本、批校本等称谓。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

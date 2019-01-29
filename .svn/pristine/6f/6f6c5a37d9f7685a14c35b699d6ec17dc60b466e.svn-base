@@ -1,0 +1,6700 @@
+html {
+	height: 100%;
+	/**background: #1da028;
+	min-width: 1200px;
+	*/
+	overflow: hidden
+}
+
+
+
+/**
+----------------��ʽdefault--------start-------------
+*/
+
+.platform-default #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-default #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-default #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-default #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-default #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-default #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-default #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-default #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-default #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-default #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-default #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-default #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-default #pf-hd .pf-nav-prev,.platform-default #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-default #pf-hd .pf-nav-prev:hover,.platform-default #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-default #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-default #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-default #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-default #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-default #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-default #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-default #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-default #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-default #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-default #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-default #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-default #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-default #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-default #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-default #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-default #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-default #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-default #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-default #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-default #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-default #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-default #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-default #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-default #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #293846
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-default #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-default #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-default #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-default #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-default #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-default #pf-ft .system-name,.platform-default #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-default #pf-ft .system-name .iconfont,.platform-default #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-default #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-default #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-default .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-default .top {
+	background-color: #293846;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-default .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-default .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-default .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-default .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-default .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-default .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-default .logoyou li a{
+	color: #00407c;
+}
+.platform-default .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-default .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-default .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-default .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-default .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-default .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-default .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-default .dibu {
+	background-color:#293846;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽdefault--------end-------------
+*/
+
+
+
+
+/**
+----------------Ĭ����ʽ5c64c2---------start------------
+*/
+
+.platform-5c64c2 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-5c64c2 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-5c64c2 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-5c64c2 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-5c64c2 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-5c64c2 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-5c64c2 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-5c64c2 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-5c64c2 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-5c64c2 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-5c64c2 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-5c64c2 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-5c64c2 #pf-hd .pf-nav-prev,.platform-5c64c2 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-5c64c2 #pf-hd .pf-nav-prev:hover,.platform-5c64c2 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-5c64c2 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-5c64c2 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-5c64c2 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-5c64c2 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-5c64c2 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-5c64c2 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-5c64c2 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-5c64c2 #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-5c64c2 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-5c64c2 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-5c64c2 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-5c64c2 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #5c64c2
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-5c64c2 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-5c64c2 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-5c64c2 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-5c64c2 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-5c64c2 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-5c64c2 #pf-ft .system-name,.platform-5c64c2 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-5c64c2 #pf-ft .system-name .iconfont,.platform-5c64c2 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-5c64c2 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-5c64c2 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-5c64c2 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-5c64c2 .top {
+	background-color: #5c64c2;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-5c64c2 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-5c64c2 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-5c64c2 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-5c64c2 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-5c64c2 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-5c64c2 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-5c64c2 .logoyou li a{
+	color: #00407c;
+}
+.platform-5c64c2 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-5c64c2 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-5c64c2 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-5c64c2 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-5c64c2 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-5c64c2 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-5c64c2 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-5c64c2 .dibu {
+	background-color:#5c64c2;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ5c64c2--------end-------------
+*/
+
+
+
+/**
+----------------��ʽ5c64c2---------start------------
+*/
+
+.platform-50833b #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-50833b #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-50833b #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-50833b #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-50833b #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-50833b #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-50833b #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-50833b #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-50833b #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-50833b #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-50833b #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-50833b #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-50833b #pf-hd .pf-nav-prev,.platform-50833b #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-50833b #pf-hd .pf-nav-prev:hover,.platform-50833b #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-50833b #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-50833b #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-50833b #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-50833b #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-50833b #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-50833b #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-50833b #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-50833b #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-50833b #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-50833b #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-50833b #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-50833b #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-50833b #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-50833b #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-50833b #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-50833b #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #50833b
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-50833b #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-50833b #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-50833b #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-50833b #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-50833b #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-50833b #pf-ft .system-name,.platform-50833b #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-50833b #pf-ft .system-name .iconfont,.platform-50833b #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-50833b #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-50833b #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-50833b .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-50833b .top {
+	background-color: #50833b;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-50833b .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-50833b .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-50833b .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-50833b .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-50833b .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-50833b .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-50833b .logoyou li a{
+	color: #00407c;
+}
+.platform-50833b .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-50833b .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-50833b .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-50833b .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-50833b .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-50833b .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-50833b .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-50833b .dibu {
+	background-color:#50833b;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ5c64c2--------end-------------
+*/
+
+/**
+----------------��ʽ874d19--------start-------------
+*/
+
+.platform-874d19 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-874d19 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-874d19 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-874d19 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-874d19 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-874d19 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-874d19 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-874d19 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-874d19 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-874d19 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-874d19 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-874d19 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-874d19 #pf-hd .pf-nav-prev,.platform-874d19 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-874d19 #pf-hd .pf-nav-prev:hover,.platform-874d19 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-874d19 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-874d19 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-874d19 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-874d19 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-874d19 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-874d19 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-874d19 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-874d19 #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-874d19 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-874d19 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-874d19 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-874d19 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-874d19 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-874d19 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-874d19 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-874d19 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #874d19
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-874d19 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-874d19 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-874d19 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-874d19 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-874d19 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-874d19 #pf-ft .system-name,.platform-874d19 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-874d19 #pf-ft .system-name .iconfont,.platform-874d19 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-874d19 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-874d19 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-874d19 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-874d19 .top {
+	background-color: #874d19;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-874d19 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-874d19 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-874d19 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-874d19 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-874d19 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-874d19 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-874d19 .logoyou li a{
+	color: #00407c;
+}
+.platform-874d19 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-874d19 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-874d19 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-874d19 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-874d19 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-874d19 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-874d19 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-874d19 .dibu {
+	background-color:#874d19;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ874d19--------end-------------
+*/
+
+
+/**
+----------------��ʽ-f46f43---------start-----------
+*/
+
+.platform-f46f43 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-f46f43 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-f46f43 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-f46f43 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-f46f43 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-f46f43 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-f46f43 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-f46f43 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-f46f43 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-f46f43 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-f46f43 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-f46f43 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-f46f43 #pf-hd .pf-nav-prev,.platform-f46f43 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-f46f43 #pf-hd .pf-nav-prev:hover,.platform-f46f43 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-f46f43 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-f46f43 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-f46f43 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-f46f43 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-f46f43 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-f46f43 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-f46f43 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-f46f43 #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-f46f43 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-f46f43 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-f46f43 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-f46f43 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-f46f43 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-f46f43 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-f46f43 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-f46f43 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #f46f43
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-f46f43 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-f46f43 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-f46f43 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-f46f43 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-f46f43 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-f46f43 #pf-ft .system-name,.platform-f46f43 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-f46f43 #pf-ft .system-name .iconfont,.platform-f46f43 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-f46f43 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-f46f43 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-f46f43 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-f46f43 .top {
+	background-color: #f46f43;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-f46f43 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-f46f43 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-f46f43 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-f46f43 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-f46f43 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-f46f43 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-f46f43 .logoyou li a{
+	color: #00407c;
+}
+.platform-f46f43 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-f46f43 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-f46f43 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-f46f43 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-f46f43 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-f46f43 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-f46f43 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-f46f43 .dibu {
+	background-color:#f46f43;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-f46f43--------end-------------
+*/
+
+
+/**
+----------------��ʽ-22c9b2---------start-----------
+*/
+
+.platform-22c9b2 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-22c9b2 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-22c9b2 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-22c9b2 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-22c9b2 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-22c9b2 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-22c9b2 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-22c9b2 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-22c9b2 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-22c9b2 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-22c9b2 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-22c9b2 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-22c9b2 #pf-hd .pf-nav-prev,.platform-22c9b2 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-22c9b2 #pf-hd .pf-nav-prev:hover,.platform-22c9b2 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-22c9b2 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-22c9b2 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-22c9b2 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-22c9b2 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-22c9b2 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-22c9b2 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-22c9b2 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-22c9b2 #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-22c9b2 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-22c9b2 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-22c9b2 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-22c9b2 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #22c9b2
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-22c9b2 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-22c9b2 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-22c9b2 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-22c9b2 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-22c9b2 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-22c9b2 #pf-ft .system-name,.platform-22c9b2 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-22c9b2 #pf-ft .system-name .iconfont,.platform-22c9b2 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-22c9b2 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-22c9b2 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-22c9b2 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-22c9b2 .top {
+	background-color: #22c9b2;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-22c9b2 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-22c9b2 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-22c9b2 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-22c9b2 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-22c9b2 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-22c9b2 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-22c9b2 .logoyou li a{
+	color: #00407c;
+}
+.platform-22c9b2 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-22c9b2 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-22c9b2 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-22c9b2 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-22c9b2 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-22c9b2 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-22c9b2 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-22c9b2 .dibu {
+	background-color:#22c9b2;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-22c9b2--------end-------------
+*/
+
+/**
+----------------��ʽ-b24079---------start-----------
+*/
+
+.platform-b24079 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-b24079 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-b24079 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-b24079 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-b24079 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-b24079 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-b24079 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-b24079 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-b24079 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-b24079 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-b24079 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-b24079 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-b24079 #pf-hd .pf-nav-prev,.platform-b24079 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-b24079 #pf-hd .pf-nav-prev:hover,.platform-b24079 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-b24079 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-b24079 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-b24079 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-b24079 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-b24079 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-b24079 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-b24079 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-b24079 #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-b24079 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-b24079 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-b24079 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-b24079 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-b24079 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-b24079 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-b24079 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-b24079 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #b24079;
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-b24079 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-b24079 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-b24079 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-b24079 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-b24079 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-b24079 #pf-ft .system-name,.platform-b24079 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-b24079 #pf-ft .system-name .iconfont,.platform-b24079 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-b24079 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-b24079 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-b24079 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-b24079 .top {
+	background-color: #b24079;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-b24079 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-b24079 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-b24079 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-b24079 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-b24079 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-b24079 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-b24079 .logoyou li a{
+	color: #00407c;
+}
+.platform-b24079 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-b24079 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-b24079 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-b24079 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-b24079 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-b24079 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-b24079 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-b24079 .dibu {
+	background-color:#b24079;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-b24079--------end-------------
+*/
+
+/**
+----------------��ʽ-83686c---------start-----------
+*/
+
+.platform-83686c #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-83686c #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-83686c #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-83686c #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-83686c #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-83686c #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-83686c #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-83686c #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-83686c #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-83686c #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-83686c #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-83686c #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-83686c #pf-hd .pf-nav-prev,.platform-83686c #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-83686c #pf-hd .pf-nav-prev:hover,.platform-83686c #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-83686c #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-83686c #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-83686c #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-83686c #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-83686c #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-83686c #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-83686c #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-83686c #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-83686c #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-83686c #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-83686c #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-83686c #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-83686c #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-83686c #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-83686c #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-83686c #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #83686c
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-83686c #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-83686c #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-83686c #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-83686c #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-83686c #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-83686c #pf-ft .system-name,.platform-83686c #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-83686c #pf-ft .system-name .iconfont,.platform-83686c #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-83686c #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-83686c #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-83686c .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-83686c .top {
+	background-color: #83686c;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-83686c .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-83686c .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-83686c .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-83686c .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-83686c .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-83686c .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-83686c .logoyou li a{
+	color: #00407c;
+}
+.platform-83686c .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-83686c .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-83686c .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-83686c .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-83686c .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-83686c .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-83686c .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-83686c .dibu {
+	background-color:#83686c;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-83686c--------end-------------
+*/
+
+/**
+----------------��ʽ-293846---------start-----------
+*/
+
+.platform-293846 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-293846 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-293846 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-293846 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-293846 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-293846 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-293846 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-293846 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-293846 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-293846 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-293846 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-293846 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-293846 #pf-hd .pf-nav-prev,.platform-293846 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-293846 #pf-hd .pf-nav-prev:hover,.platform-293846 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-293846 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-293846 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-293846 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-293846 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-293846 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-293846 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-293846 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-293846 #pf-bd {
+	position: absolute;
+	top: 29px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-293846 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-293846 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-293846 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-293846 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-293846 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-293846 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-293846 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-293846 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #293846
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-293846 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-293846 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-293846 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-293846 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-293846 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-293846 #pf-ft .system-name,.platform-293846 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-293846 #pf-ft .system-name .iconfont,.platform-293846 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-293846 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-293846 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-293846 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-293846 .top {
+	background-color: #293846;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-293846 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-293846 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-293846 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-293846 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-293846 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-293846 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-293846 .logoyou li a{
+	color: #00407c;
+}
+.platform-293846 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-293846 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-293846 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-293846 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-293846 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-293846 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-293846 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-293846 .dibu {
+	background-color:#293846;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-293846--------end-------------
+*/
+
+/**
+----------------��ʽ-cc3432---------start-----------
+*/
+
+.platform-cc3432 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-cc3432 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-cc3432 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-cc3432 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-cc3432 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-cc3432 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-cc3432 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-cc3432 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-cc3432 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-cc3432 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-cc3432 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-cc3432 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-cc3432 #pf-hd .pf-nav-prev,.platform-cc3432 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-cc3432 #pf-hd .pf-nav-prev:hover,.platform-cc3432 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-cc3432 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-cc3432 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-cc3432 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-cc3432 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-cc3432 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-cc3432 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-cc3432 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-cc3432 #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-cc3432 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-cc3432 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-cc3432 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-cc3432 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-cc3432 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-cc3432 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-cc3432 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-cc3432 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #cc3432
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-cc3432 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-cc3432 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-cc3432 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-cc3432 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-cc3432 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-cc3432 #pf-ft .system-name,.platform-cc3432 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-cc3432 #pf-ft .system-name .iconfont,.platform-cc3432 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-cc3432 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-cc3432 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-cc3432 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-cc3432 .top {
+	background-color: #cc3432;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-cc3432 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-cc3432 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-cc3432 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-cc3432 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-cc3432 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-cc3432 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-cc3432 .logoyou li a{
+	color: #00407c;
+}
+.platform-cc3432 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-cc3432 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-cc3432 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-cc3432 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-cc3432 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-cc3432 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-cc3432 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-cc3432 .dibu {
+	background-color:#cc3432;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-cc3432--------end-------------
+*/
+
+
+/**
+----------------��ʽ-0070C1---------start-----------
+*/
+
+.platform-0070C1 #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-0070C1 #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-0070C1 #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-0070C1 #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-0070C1 #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-0070C1 #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-0070C1 #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-0070C1 #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-0070C1 #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-0070C1 #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-0070C1 #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #158EFF;
+}
+
+.platform-0070C1 #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-0070C1 #pf-hd .pf-nav-prev,.platform-0070C1 #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-0070C1 #pf-hd .pf-nav-prev:hover,.platform-0070C1 #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-0070C1 #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-0070C1 #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-0070C1 #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-0070C1 #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-0070C1 #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-0070C1 #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-0070C1 #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-0070C1 #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-0070C1 #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-0070C1 #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-0070C1 #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-0070C1 #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-0070C1 #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-0070C1 #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-0070C1 #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-0070C1 #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #0070C1
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-0070C1 #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-0070C1 #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-0070C1 #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-0070C1 #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-0070C1 #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-0070C1 #pf-ft .system-name,.platform-0070C1 #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-0070C1 #pf-ft .system-name .iconfont,.platform-0070C1 #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-0070C1 #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-0070C1 #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-0070C1 .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-0070C1 .top {
+	background-color: #0070C1;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-0070C1 .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-0070C1 .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-0070C1 .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-0070C1 .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-0070C1 .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-0070C1 .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-0070C1 .logoyou li a{
+	color: #00407c;
+}
+.platform-0070C1 .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-0070C1 .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-0070C1 .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-0070C1 .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-0070C1 .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-0070C1 .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-0070C1 .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-0070C1 .dibu {
+	background-color:#0070C1;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-0070C1--------end-------------
+*/
+/**
+----------------��ʽ-627f7e---------start-----------
+*/
+
+.platform-627f7e #pf-hd {
+	height: 70px;
+	position: relative;
+	z-index: 2;
+	/**
+	background-color: #208FDE;
+	background: url('../images/main/xg_left.png?1464005190') left center
+		no-repeat, url('../images/main/xg_right.png?1464005212') right center
+		no-repeat, url('../images/main/top_bottombg.png?1464006836') left
+		bottom repeat-x
+		*/
+}
+
+.platform-627f7e #pf-hd .pf-logo {
+	float: left;
+	padding: 0 15px;
+	height: 100%;
+	width: 300px;
+	line-height: 70px
+}
+
+.platform-627f7e #pf-hd .pf-logo img {
+	vertical-align: middle;
+	margin-left: -10px
+}
+
+.platform-627f7e #pf-hd .pf-logo .system-name {
+	display: none;
+	float: left;
+	line-height: 70px;
+	font-size: 26px;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+.platform-627f7e #pf-hd .pf-nav {
+	float: left
+}
+
+.platform-627f7e #pf-hd .pf-nav .pf-nav-item {
+	float: left;
+	height: 70px;
+	color: #fff;
+	padding: 0 15px;
+	border-right: 1px solid #5C6D7D
+}
+
+.platform-627f7e #pf-hd .pf-nav .pf-nav-item a {
+	display: block;
+	color: #fff;
+	text-decoration: none
+}
+
+.platform-627f7e #pf-hd .pf-nav .pf-nav-item .iconfont {
+	display: block;
+	margin-top: 12px;
+	font-size: 26px;
+	height: 30px;
+	text-align: center
+}
+
+.platform-627f7e #pf-hd .pf-nav .pf-nav-item.current {
+	/**background-color: #208FDE;*/
+	background: url('../images/main/navbg.png?1465303472')
+}
+
+.platform-627f7e #pf-hd .pf-nav .pf-nav-item.current a {
+	color: #fff
+}
+
+.platform-627f7e #pf-hd .pf-nav-wrap {
+	position: relative;
+	float: left;
+	width: 90%;
+	border-left: 1px solid #5C6D7D;
+}
+
+.platform-627f7e #pf-hd .pf-nav-wrap .pf-nav-ww {
+	float: left;
+	height: 70px;
+	width: 100%;
+	overflow: hidden
+}
+
+.platform-627f7e #pf-hd .pf-nav-prev,.platform-627f7e #pf-hd .pf-nav-next {
+	position: absolute;
+	right: -32px;
+	top: 10px;
+	width: 26px;
+	height: 23px;
+	border-radius: 3px 3px 0 0;
+	background: #208FDE;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 23px
+}
+
+.platform-627f7e #pf-hd .pf-nav-prev:hover,.platform-627f7e #pf-hd .pf-nav-next:hover {
+	background: #fff;
+	color: #208FDE
+}
+
+#pf-hd .pf-nav-prev.disabled,.platform-627f7e #pf-hd .pf-nav-next.disabled {
+	color: #cccccc;
+	background: #fff;
+	cursor: default
+}
+
+.platform-627f7e #pf-hd .pf-nav-next {
+	top: 36px;
+	border-radius: 0 0 3px 3px
+}
+
+.platform-627f7e #pf-hd .pf-user {
+	position: relative;
+	float: right;
+	padding: 0 10px;
+	height: 70px;
+	line-height: 70px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-photo {
+	float: left;
+	margin: 0px 10px 0 0;
+	width: 48px;
+	height: 48px
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-photo img {
+	margin: 4px
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-name {
+	float: left;
+	max-width: 150px;
+	color: #fff;
+	font-size: 14px;
+	margin-right: 5px
+}
+
+.platform-627f7e #pf-hd .pf-user .xiala {
+	color: #fff;
+	position: relative;
+	top: -2px
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-panel {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	background: #fff;
+	z-index: 111;
+	border: 1px solid #e1e1e1;
+	box-shadow: 1px 1px 2px #ddd
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-panel li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	padding: 0 15px
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-panel li a {
+	color: #000;
+	text-decoration: none
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-panel li .iconfont {
+	margin-right: 10px;
+	color: #000
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-panel li:hover {
+	background: #f1f1f1
+}
+
+.platform-627f7e #pf-hd .pf-user .pf-user-panel li:hover .iconfont {
+	color: #208FDE
+}
+
+.platform-627f7e #pf-hd .pf-user:hover {
+	background: url('../images/main/top_userbg.png?1464007598')
+}
+
+.platform-627f7e #pf-hd .pf-user:hover .pf-user-panel {
+	display: block
+}
+
+.platform-627f7e #pf-bd {
+	position: absolute;
+	top: 29px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	padding: 0 0 0 220px;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-627f7e #pf-bd.toggle {
+	padding-left: 0
+}
+
+.platform-627f7e #pf-bd.toggle #pf-sider {
+	margin-left: -440px
+}
+
+.platform-627f7e #pf-bd.toggle #pf-sider .pf-model-name .toggle-icon {
+	position: fixed;
+	top: 84px;
+	left: 0;
+	z-index: 10;
+	background-position: -22px 0
+}
+
+.platform-627f7e #pf-bd #pf-sider {
+	float: left;
+	height: 100%;
+	margin-left: -220px;
+	width: 223px;
+	background: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
+	transition: all 0.3s ease
+}
+
+.platform-627f7e #pf-bd #pf-sider .pf-model-name {
+	position: relative;
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	color: #2d4112;
+	background: #e3e3e3;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px
+}
+
+.platform-627f7e #pf-bd #pf-sider .pf-model-name .iconfont {
+	font-size: 20px
+}
+
+.platform-627f7e #pf-bd #pf-sider .pf-model-name .pf-sider-icon {
+	float: left;
+	margin: 10px 15px 0 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px
+}
+
+.platform-627f7e #pf-bd #pf-sider .pf-model-name .toggle-icon {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 19px;
+	height: 22px;
+	background: url(../images/main/sider-toggle.png) no-repeat;
+	background-position: 0 0;
+	cursor: pointer
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li {
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li a {
+	display: block;
+	padding: 0 15px;
+	height: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li .sider-nav-title {
+	float: left;
+	width: 112px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 14px
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li .iconfont {
+	float: right;
+	font-size: 12px;
+	color: #acacab
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li .sider-nav-icon {
+	float: left;
+	margin: 0 10px 0 0;
+	color: #293846;
+	font-size: 20px
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li.current {
+	border-bottom: none;
+	background: #627f7e
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li.current>a {
+	border-left: 3px solid #ffa405;
+	padding-left: 12px;
+	color: #fff
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li.current .iconfont {
+	color: #fff
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li.current .sider-nav-icon {
+	color: #fff
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li .sider-nav-s {
+	display: none;
+	padding: 10px 0;
+	background: #f1f1f1;
+	color: #000;
+	font-size: 12px;
+	border-bottom: 1px solid #dbdbdb
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active {
+	background: #fff
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li .sider-nav-s li.active a {
+	color: #208FDE;
+	font-weight: bold
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li .sider-nav-s a {
+	height: 31px;
+	line-height: 31px;
+	color: #000;
+	font-size: 12px;
+	padding-left: 40px;
+	background: url('../images/main/left_list.png?1463555463') no-repeat
+		30px center
+}
+
+.platform-627f7e #pf-bd #pf-sider .sider-nav>li.current .sider-nav-s {
+	display: block
+}
+
+.platform-627f7e #pf-bd #pf-page {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 {
+	min-width: 980px !important;
+	height: 100% !important
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs-header {
+	border-top: none
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs li {
+	border-top: 1px solid #bfbfbf;
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close {
+	background: url('../images/main/tabs_close_pf.png?1464531592')
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close {
+	background: url('../images/main/tabs_close_hover.png?1464355659')
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs {
+	padding-left: 24px !important
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected {
+	border-top: 3px solid #208FDE
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs-panels {
+	border-bottom: none !important
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner {
+	background: #dbdbdb;
+	color: #000;
+	border-bottom: 1px solid #bfbfbf;
+	height: 42px !important;
+	line-height: 42px !important
+}
+
+.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,.platform-627f7e #pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner
+	{
+	background: #fff
+}
+
+.platform-627f7e #pf-bd #pf-page .panel-body {
+	overflow: hidden
+}
+
+.platform-627f7e #pf-ft {
+	position: absolute;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	bottom: 3px;
+	background: #f1f1f1;
+	border-top: 1px solid #cacaca
+}
+
+.platform-627f7e #pf-ft .system-name,.platform-627f7e #pf-ft .copyright-name {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	color: #8b8b8b
+}
+
+.platform-627f7e #pf-ft .system-name .iconfont,.platform-627f7e #pf-ft .copyright-name .iconfont {
+	color: #208FDE;
+	margin-right: 3px
+}
+
+.platform-627f7e #pf-ft .copyright-name {
+	float: right
+}
+
+.platform-627f7e #pf-ft .copyright-name .iconfont {
+	font-size: 8px;
+}
+
+.platform-627f7e .menu .menu-active {
+	background: #208FDE;
+	color: #fff
+}
+
+.platform-627f7e .top {
+	background-color: #627f7e;
+	height:70px;
+	
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.platform-627f7e .logo {
+	margin-left: 10px;
+	float: left;
+	width: 600px;
+	padding-top: 0px;
+}
+.platform-627f7e .logozuo {
+	float: left;
+	width: 89px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.platform-627f7e .logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 22px;
+	color: #19AA8D;
+	margin-top: 22px;
+}
+
+.platform-627f7e .shortcut_logozi {
+	float: left;
+	margin-left: 0px;
+	font-size: 25px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.platform-627f7e .logoyou {
+	float: right;
+	margin-right: 25px;
+	margin-top: 16px;
+	font-size: 16px;
+	color: #00407c;
+	line-height: 20px;
+}
+.platform-627f7e .logoyou li {
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.platform-627f7e .logoyou li a{
+	color: #00407c;
+}
+.platform-627f7e .logoyou li a:hover{
+	color: #FFFFFF;
+}
+.platform-627f7e .daohang {
+	background-color:#208FDE;
+	background-repeat: repeat-x;
+	height: 3px;
+}
+.platform-627f7e .dh_z {
+	float: left;
+	font-size: 16px;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.platform-627f7e .dh_z li {
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.platform-627f7e .dh_z li a{
+	color: #FFFFFF;
+}
+.platform-627f7e .dh_z li a:hover{
+	color: #FF3300;
+}
+.platform-627f7e .dh_y {
+	float: right;
+	height: 52px;
+	padding-right: 10px;
+	font-size: 16px;
+	line-height: 65px;
+	color: #19AA8D;
+}
+.platform-627f7e .dibu {
+	background-color:#627f7e;
+	height: 30px;
+	width: 100%;
+	line-height: 20px;
+	color: #004156;
+	text-align: center;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+
+/**
+----------------��ʽ-627f7e--------end-------------
+*/
+

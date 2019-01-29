@@ -1,0 +1,10 @@
+#\u653f\u52a1\u4e91\u751f\u4ea7\u73af\u5883
+jdbc.url=jdbc\:mysql\://192.141.6.5\:3306/bjadmin_20181031?useUnicode\=true&characterEncoding\=UTF-8
+jdbc.username=bjadmin
+jdbc.password=tj720@1234qwer
+jdbc.dbType=mysql
+jdbc.driverClassName.mysql=com.mysql.jdbc.Driver
+validationQuery.sqlserver=SELECT 1
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.hbm2ddl.auto=none
+

@@ -1,0 +1,14 @@
+<header class="commonHeader">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>收藏单位名单</h2>
+</header>
+<section class="overflow-scroll scroll-content hasCommonHeader" style="z-index: -1;width: 100%;">
+    <ion-content class="unitWrap">
+        <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+        <div class="cityList" ng-repeat="item in relicMuseumList">
+            <div class="cityItem">
+                <span>{{item.museumName}}</span>
+            </div>
+        </div>
+    </ion-content>
+</section>

@@ -1,0 +1,12 @@
+<header class="commonHeader">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>策展</h2>
+</header>
+<section class="overflow-scroll hasCommonHeader scroll-content has-footer cezhan-top" style="z-index: -1;width: 100%;">
+    <div class="wodecezhan-table">
+        <div ng-class="{true:'wodetableActive',false:''}[table == 0]" ng-click="changeTab0()">待发布</div>
+        <div ng-class="{true:'wodetableActive',false:''}[table == 1]" ng-click="changeTab1()">已发布</div>
+        <!--<div ng-class="{true:'wodetableActive',false:''}[table == 2]" ng-click="changeTab2()">已下架</div>-->
+    </div>
+    <div ui-view></div>
+</section>

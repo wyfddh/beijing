@@ -1,0 +1,19 @@
+cacert.pem为可信任根证书文件，最新来源地址 https://curl.haxx.se/ca/cacert.pem。用户请保持更新
+
+WoSign.jks是生成的WoSign机构的信任库文件，该文件由jdk keytool工具根据Wosign的证书文件生成
+
+demo中演示了用这两个文件中的任意一个来验证服务端证书的方法，推荐用cacert.pem文件，方法更通用，有效期更长
+
+
+=================
+Note：
+http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8158633
+
+jdk的X509协议实现有个bug，该bug覆盖影响jdk7和8，直到jdk8 b111版本也未能修复，预计修复版本到jdk9。该bug重现方式，你不能使用utf-16的格式保存源码，否则在CertificateFactory.generateCertificates读取证书文件时，就会出现编码错误。只能使用utf-8的源码文件
+
+Note:
+使用pem证书文件时，因该文件的内容由Base64编码，jdk1.6的早期版本，会因对Base64编码的解析问题，出现如下错误提示:
+
+java.security.cert.CertificateParsingException: invalid DER-encoded certificate data
+
+这个错误在jdk1.6下无解，属于jdk自身的问题，解决办法是更换jdk1.7及其以上版本，在jdk1.7下，你仍然可以降级到jdk1.6使用

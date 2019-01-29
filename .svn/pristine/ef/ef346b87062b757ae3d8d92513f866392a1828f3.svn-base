@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="27px" viewBox="0 0 30 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>删除</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="删除" transform="translate(-1.000000, -3.000000)" fill-rule="nonzero">
+            <g>
+                <rect id="Rectangle-path" fill="#000000" opacity="0" x="0" y="0" width="32" height="33"></rect>
+                <path d="M30.32,8.25 L20.9,8.25 L18.52,5.15625 L13.48,5.15625 L11.1,8.25 L1.68,8.25 L1.68,6.1875 L10.14,6.1875 L12.52,3.09375 L19.48,3.09375 L21.86,6.1875 L30.32,6.1875 L30.32,8.25 Z M25.12,29.90625 L6.88,29.90625 L4.5,11.488125 L6.5,11.199375 L8.62,27.84375 L23.38,27.84375 L25.5,11.199375 L27.5,11.488125 L25.12,29.90625 Z" id="Shape" fill="#231815"></path>
+                <path d="M11.78,13.2825 L13.78,13.2825 L13.78,25.265625 L11.78,25.265625 L11.78,13.2825 Z M18.22,13.2825 L20.22,13.2825 L20.22,25.265625 L18.22,25.265625 L18.22,13.2825 Z" id="Shape" fill="#231815"></path>
+            </g>
+        </g>
+    </g>
+</svg>

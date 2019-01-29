@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    classpath:org/springframework/beans/factory/xml/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context
+    classpath:org/springframework/context/config/spring-context-3.2.xsd
+    http://www.springframework.org/schema/aop
+    classpath:org/springframework/aop/config/spring-aop-3.2.xsd
+    http://www.springframework.org/schema/tx
+    classpath:org/springframework/transaction/config/spring-tx-3.2.xsd">
+    
+    <!-- 1.引入属性文件 -->
+    <context:property-placeholder location="classpath:config.properties" />
+    
+    <!-- 2.自动扫描service包(自动注入) -->
+    <context:component-scan base-package="com.tj720.admin.service" />
+    
+    <!-- ========================================配置数据源========================================= -->
+    <bean id="mybatisDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<!-- 基本属性 url、user、password 数据源驱动类可不写，Druid默认会自动根据URL识别DriverClass -->
+		<!--<property name="driverClassName" value="${jdbc.driver}"></property> -->
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="1" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="200" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<property name="validationQuery" value="SELECT 'x'" />
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<!-- 配置监控统计拦截的filters -->
+		<!-- <property name="filters" value="stat,slf4j" /> -->
+		<!--时间配置 -->
+		<property name="loginTimeout" value="100" />
+		<property name="queryTimeout" value="1000" />
+		<property name="transactionQueryTimeout" value="1000" />
+		<!-- 打开removeAbandoned功能 -->
+        <property name="removeAbandoned" value="true" />
+        <!-- 1200秒 -->
+        <property name="removeAbandonedTimeout" value="1200" />
+		<!--  -->
+		<property name="filters" value="config" />
+        <property name="connectionProperties" value="config.decrypt=false" />
+	</bean>
+    
+    
+    <!-- 3.配置C3P0数据源 -->
+     <!--<bean id="mybatisDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"  
+        destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClassName}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="acquireIncrement" value="1"></property>
+        <property name="initialPoolSize" value="1"></property>
+        <property name="minPoolSize" value="1"></property>
+        <property name="maxPoolSize" value="200"></property>
+    </bean>  
+   
+    <bean id="mybatisDataSource" destroy-method="close"
+		class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+    -->
+    <!-- ========================================针对myBatis的配置项============================== -->
+    <!-- 4.配置sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    	
+    	<property name="configLocation" value="classpath:META-INF/mapper/mybatis-config.xml" />
+        <!-- 实例化sqlSessionFactory时需要使用上述配置好的数据源以及SQL映射文件 -->
+        <!-- 数据源 -->
+        <property name="dataSource" ref="mybatisDataSource" />
+        <!-- sql映射文件路径 -->
+        <!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
+        <property name="mapperLocations" value="classpath:META-INF/mapper/*Mapper.xml" />
+    </bean>
+    
+    <!-- 5.配置扫描器  -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 扫描com.tj720.mip.web.dao.map这个包以及它的子包下的所有映射接口类 -->
+        <property name="basePackage" value="com.tj720.admin.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+    
+    <!-- ========================================配置事务============================== -->
+    <!-- 6.声明式事务管理 -->
+    <!--定义事物管理器，由spring管理事务 -->
+    <bean name="mybatisTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 配置数据源 -->
+        <property name="dataSource" ref="mybatisDataSource" />
+    </bean>
+
+    <!-- 通知 -->
+    <tx:advice id="transactionAdvice" transaction-manager="mybatisTransactionManager">
+        <tx:attributes>
+             <!-- 传播行为 -->
+            <tx:method name="add*" propagation="REQUIRED" />
+            <tx:method name="append*" propagation="REQUIRED" />
+            <tx:method name="save*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="modify*" propagation="REQUIRED" />
+            <tx:method name="edit*" propagation="REQUIRED" />
+            <tx:method name="insert*" propagation="REQUIRED" />
+            <tx:method name="delete*" propagation="REQUIRED" />
+            <tx:method name="remove*" propagation="REQUIRED" />
+
+			<tx:method name="list*" propagation="NOT_SUPPORTED"  read-only="true"/>
+            <tx:method name="count*" propagation="NOT_SUPPORTED"  read-only="true"/>
+            <tx:method name="get*" propagation="NOT_SUPPORTED"  read-only="true"/>
+            <tx:method name="find*" propagation="NOT_SUPPORTED" read-only="true" />
+            <tx:method name="load*" propagation="NOT_SUPPORTED" read-only="true" />
+            <tx:method name="search*" propagation="NOT_SUPPORTED" read-only="true" />
+            <tx:method name="datagrid*" propagation="NOT_SUPPORTED" read-only="true" />
+
+        </tx:attributes>
+    </tx:advice>
+    
+    <!-- 配置aop  -->
+    <aop:config>
+        <aop:pointcut id="transactionPointcut" expression="execution(* com.tj720.admin.service..*Impl.*(..))" />
+        <aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
+    </aop:config>
+    
+</beans>

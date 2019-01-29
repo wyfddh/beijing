@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		东汉元和四年铜壶
+    		<span>作者 : 布明虎</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 4.4rem;height: 5.2rem;" src="../images/tonghu.png" alt="">
+    		<p class="text">
+    			 兰陵县文物管理所藏，通高36、口径16、腹径28、底径15、圈足径25厘米。1980年出土于山东省临沂市兰陵县（旧称苍山县）卞庄镇南城里村，柞城故城东南角。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                “元和四年”壶，口微侈，方唇，束颈，鼓腹，八棱八面折腰式圈足。肩部饰两对称兽形铺首衔环，肩及腹部共饰凸弦纹八道。圈足外有隶书铭文两行：“元和四年江陵黄阳君作宜子孙及酒食吏人得之致两千石□人得之致两千万田家得之千厨万仓”，共计四十字。
+            </p>
+            <p class="text">  
+                “元和四年”壶，通过铭文可知其铸造年代为元和四年，历史上采用“元和”年号纪年的帝王有两位，分别是东汉第三位皇帝汉章帝刘炟与唐代第十二位皇帝唐宪宗李纯。该壶形制与唐代铜壶风格截然不同，而与江苏高淳下坝、湖北蕲春县陈家大地出土壶相近，这两件铜壶年代皆为汉代；同时其铭文亦有鲜明的汉代特征，故“元和四年”壶之“元和四年”当为汉章帝刘炟元和四年。“元和四年”壶铭文中出现了地名“江陵”和作器的人名“黄阳君”，甚至出现“宜子孙、致两千石”等吉语，与东汉以前有严格的工官器类相差甚远，应是私人作坊所造。
+            </p>
+    	</div>
+    </body>
+</html>

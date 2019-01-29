@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumVisitorMapper">
+    
+	<sql id="museumVisitorColumns">
+		 a.id,
+		 a.museum_id as "museumId",	
+		 a.year,		
+		 a.month,		
+		 a.month_total as "monthTotal",
+		 a.hand_fill as "handFill",   
+		 a.day1,		
+		 a.day2,		
+		 a.day3,		
+		 a.day4,		
+		 a.day5,		
+		 a.day6,		
+		 a.day7,		
+		 a.day8,		
+		 a.day9,		
+		 a.day10,		
+		 a.day11,		
+		 a.day12,		
+		 a.day13,		
+		 a.day14,		
+		 a.day15,		
+		 a.day16,		
+		 a.day17,		
+		 a.day18,		
+		 a.day19,		
+		 a.day20,		
+		 a.day21,		
+		 a.day22,		
+		 a.day23,		
+		 a.day24,		
+		 a.day25,		
+		 a.day26,		
+		 a.day27,		
+		 a.day28,		
+		 a.day29,		
+		 a.day30,		
+		 a.day31	
+	</sql>
+	
+	<select id="selectVisitorMonthList" resultType="com.tj720.admin.dto.MuseumVisitorDto">
+		SELECT
+			<include refid="museumVisitorColumns"/>
+		FROM museum_visitor_number a
+		<where>
+			a.year=#{year} and a.museum_id = #{museumId}
+		</where>
+		  ORDER BY a.month ASC
+	</select>
+	
+	<select id="selectVisitorDay" resultType="com.tj720.admin.dto.MuseumVisitorDto">
+		SELECT
+			<include refid="museumVisitorColumns"/>
+		FROM museum_visitor_number a
+		<where>
+			a.year=#{year} and a.museum_id = #{museumId} and a.month=#{month}
+		</where>
+		  limit 1
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO museum_visitor_number(
+			 id,
+			 museum_id,	
+			 year,		
+			 month,		
+			 month_total,
+			 hand_fill,   
+			 day1,		
+			 day2,		
+			 day3,		
+			 day4,		
+			 day5,		
+			 day6,		
+			 day7,		
+			 day8,		
+			 day9,		
+			 day10,		
+			 day11,		
+			 day12,		
+			 day13,		
+			 day14,		
+			 day15,		
+			 day16,		
+			 day17,		
+			 day18,		
+			 day19,		
+			 day20,		
+			 day21,		
+			 day22,		
+			 day23,		
+			 day24,		
+			 day25,		
+			 day26,		
+			 day27,		
+			 day28,		
+			 day29,		
+			 day30,		
+			 day31,		
+			 create_by,
+             create_date,
+             update_by,
+             update_date
+		) VALUES (
+			 #{id},
+			 #{museumId},	
+			 #{year},		
+			 #{month},		
+			 #{monthTotal},
+			 #{handFill},   
+			 #{day1},		
+			 #{day2},		
+			 #{day3},		
+			 #{day4},		
+			 #{day5},		
+			 #{day6},		
+			 #{day7},		
+			 #{day8},		
+			 #{day9},		
+			 #{day10},		
+			 #{day11},		
+			 #{day12},		
+			 #{day13},		
+			 #{day14},		
+			 #{day15},		
+			 #{day16},		
+			 #{day17},		
+			 #{day18},		
+			 #{day19},		
+			 #{day20},		
+			 #{day21},		
+			 #{day22},		
+			 #{day23},		
+			 #{day24},		
+			 #{day25},		
+			 #{day26},		
+			 #{day27},		
+			 #{day28},		
+			 #{day29},		
+			 #{day30},		
+			 #{day31},		
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime}
+		)
+	</insert>
+	
+	<!-- 更新每天参观人数数据 -->
+	<update id="updateDay">
+		UPDATE museum_visitor_number SET 	
+			 day1 = #{day1},		
+			 day2 = #{day2},		
+			 day3 = #{day3},	
+			 day4 = #{day4},		
+			 day5 = #{day5},		
+			 day6 = #{day6},		
+			 day7 = #{day7},		
+			 day8 = #{day8},		
+			 day9 = #{day9},		
+			 day10 = #{day10},		
+			 day11 = #{day11},		
+			 day12 = #{day12},		
+			 day13 = #{day13},		
+			 day14 = #{day14},		
+			 day15 = #{day15},		
+			 day16 = #{day16},		
+			 day17 = #{day17},		
+			 day18 = #{day18},		
+			 day19 = #{day19},		
+			 day20 = #{day20},		
+			 day21 = #{day21},		
+			 day22 = #{day22},		
+			 day23 = #{day23},		
+			 day24 = #{day24},		
+			 day25 = #{day25},		
+			 day26 = #{day26},		
+			 day27 = #{day27},		
+			 day28 = #{day28},		
+			 day29 = #{day29},		
+			 day30 = #{day30},		
+			 day31 = #{day31},		
+			 update_by = #{updateId},
+			 update_date = #{updateTime}
+		WHERE year=#{year} and month=#{month} 
+				and museum_id=#{museumId}
+	</update>
+	
+	<!-- 更新月份参观人数数据 -->
+    <update id="updateMonth">
+	    UPDATE museum_visitor_number SET 
+	    	month_total = #{monthTotal},
+	    	hand_fill = #{handFill},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE month = #{month} and year = #{year} 
+	  		and museum_id=#{museumId}
+    </update>
+    
+    <!-- 查询已经录入数据的年份 -->
+    <select id="getYearList" resultType="java.util.HashMap" parameterType="java.lang.String" >
+    	select DISTINCT a.year from museum_visitor_number a 
+    	where a.museum_id = #{museumId} ORDER BY a.year DESC
+    </select>
+</mapper>

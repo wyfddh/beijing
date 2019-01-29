@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="../index.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		亚丑钺
+    		<span>作者 : shawn</span>
+    	</div>
+    	<div class="detail-body">
+    		<img src="../images/detail04.png" alt="">
+    		<p class="text">
+    			“亚丑”钺，商代，1965年出土于山东青州苏埠屯，现藏山东省博物馆。“亚丑”钺通长32.7厘米，刃宽34.5厘米，长方形，方内，双穿，两肩有棱，弧形刃，器身作透雕人面纹，极富威严。钺正反两面铭“亚丑”二字，故得此名。
+    		</p>
+            <a href="javascript:">
+            <span></span>查看藏品</a>
+    	</div>
+    	<div class="detail-footer">
+    		<div class="container">
+    			<p class="title">
+    				<span>·</span>简介
+    			</p>
+    			<div>
+    				<p class="text">
+    					人面铜钺1966年出土于山东益都苏埠屯一号大墓，现藏山东省博物馆。同出的人面钺共有两件，这是其中铸有铭文的一件。钺长32.7厘米，刃宽34.5厘米，肩宽23.3厘米，钺身作镂空人面纹眉、瞳、鼻突起，狰狞可怖。刃角外侈，在正背两面的人面形口部的两侧，各有一个“亚丑”铭记，铭文左为正写，右为反书，因此，该人面铜钺又叫亚丑钺。
+    				</p>
+    				<img src="../images/detail05.png" alt="">
+    				<p class="text">
+    					1965、1966年间，山东省博物馆在青州市苏埠屯发掘了两座商代大型墓葬，“亚丑”钺出自编号为M1的墓中，同时出土的另一件铜钺，通长31.8厘米，刃宽35.8厘米，扁方形，方形内，肩部有两穿，刃部宽大，器身透雕张口怒目的人面纹，眉目鼻均突起，口稍凹下。苏埠屯1号墓是一座拥有四条墓道的大墓，墓室呈长方形，墓口南北长15米，东西宽10.7米，深8.25米，墓室中部有木板筑成的“亚”字形椁室。两件铜钺均出自北墓道口的位置。同出的其它铜器上也见有“亚丑”铭文，因此，专家推测这里可能是“亚丑”族的墓地，该墓主人则可能是仅次于商王的方伯一类的人物。
+    				</p>
+    			</div>
+    		</div>
+    		<div class="container">
+    			<p class="title">
+    				<span>·</span>用途
+    			</p>
+    			<div>
+    				<p class="text">
+    					钺在古代有着几种不同的用途。首先，它是一种实用的作战兵器，《史记·鲁周公世家》载：“周公把大钺，召公把小钺，以夹武王。”即是以铜钺作为守护的武器。《殷本纪》也说：“汤自把钺，以伐昆吾，逐伐桀。”可见钺应是具有一定身份地位的王公贵族使用的武器。由此又引伸出钺的另一个用途，即权力的象征。另外，钺还是一种刑具，《说文解字》：“钺，大斧也。”《国语·鲁语》载：“大刑用甲兵，其次用斧钺。”韦昭注：“斧钺，军戮。”总之，钺除作为一种特殊的武器和刑具外，更重要的则是权力和社会地位的象征。
+    				</p>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>

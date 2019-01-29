@@ -1,0 +1,33 @@
+<ion-content class="cezhan-content dafabuTop">
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <div class="miaoshu" ng-if="miaoshu">
+        <div>
+            <img class="war" src="img/shuoming.png" alt="">
+            <p>如果您不想让别人看到你的策展，可点击下架按钮撤回您发布的策展。</p>
+            <img class="guanbi" src="img/chacha.png" ng-click="guanbi()" alt="">
+        </div>
+    </div>
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div class="list">
+        <div class="wodecezhanListWrap" ng-repeat="item in yifabuList">
+            <div class="cezhanImgWrap">
+                <img ng-src="{{rootUrl}}{{item.mainImage}}">
+            </div>
+            <img src="img/xilie.png" alt="" class="jiaobiao" ng-if="item.isSeries">
+            <div class="wrapWords">
+                <h2 class="cezhan-h2 hh2" ng-if="item.isSeries == 1">{{item.title}}</h2>
+                <h2 class="cezhan-h2 hh2" ng-if="item.isSeries == 0">{{item.seriesName}}</h2>
+                <div class="cezhanTalk">
+                    <img src="img/talk.png" class="zanImg">
+                    <span class="zanNum">{{item.commentCounts}}</span>
+                </div>
+                <button class="xiajia" ng-click="xiajia($event)" data="{{item.id}}">下架</button>
+            </div>
+            <p>{{item.seriesDescription}}</p>
+        </div>
+        <ion-infinite-scroll on-infinite = "loadMore()" distance = "1%" immediate-check = "false" ng-if="moreData"></ion-infinite-scroll>
+    </div>
+</ion-content>

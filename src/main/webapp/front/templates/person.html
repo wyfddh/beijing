@@ -1,0 +1,51 @@
+<div class="bar bar-header">
+    <h1 id="shawn" class="title">
+        <div id="login-title-box" class="login-title-box">
+            <a href="#/login"><span>登录</span></a>/<a href="#/registerStepOne"><span>注册</span></a>
+            <!--<a href="#/login"><span>登录</span></a>/<a><span>注册</span></a>-->
+        </div>
+    </h1>
+    <h1 id="welcome" class="title"><div class="login-title-box"><span class="user_name">欢迎！{{userName}}</span><span ng-click="esc()" class="esc">注销</span></div></h1>
+</div>
+
+<!--<h2 class="dili">中国 北京</h2>-->
+<img class="person" src="img/first-person.png">
+<section class="overflow-scroll has-subheader has-header scroll-content has-footer">
+    <div class="list">
+        <div class="item item-icon-left item-icon-right">
+            <i class="icon"><img src="img/people.png"></i>
+            个人信息
+            <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+        <div class="item item-icon-left item-icon-right" ng-click="myPinglun()">
+            <i class="icon"><img src="img/xiaoxi.png"></i>
+            我的评论
+            <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+        <div class="item item-icon-left item-icon-right" ng-click="isLogin()">
+            <i class="icon"><img src="img/146.png"></i>
+            我的收藏
+            <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+        <div class="item item-icon-left item-icon-right" ng-click="myCezhan()">
+            <i class="icon"><img src="img/pintu.png"></i>
+            我的策展
+            <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+        <div class="item item-icon-left item-icon-right" ng-click="goChangePassWord()">
+            <i class="icon"><img src="img/suo.png"></i>
+            修改密码
+            <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+        <div class="item item-icon-left item-icon-right" ng-click="tongjibaobiao()" ng-show="exitShow">
+            <i class="icon"><img src="img/tj.png"></i>
+            统计报表
+            <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+        <!--<div class="item item-icon-left item-icon-right" ui-sref="statisticCity">-->
+            <!--<i class="icon"><img src="img/suo.png"></i>-->
+            <!--统计报表市级-->
+            <!--<i class="icon ion-ios-arrow-forward"></i>-->
+        <!--</div>-->
+    </div>
+</section>

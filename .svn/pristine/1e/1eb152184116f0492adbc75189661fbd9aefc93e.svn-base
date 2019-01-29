@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.collection.CollectionSubmitMapper">
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.collection.CollectionSubmit">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="data_state" jdbcType="VARCHAR" property="dataState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, org_id, org_name, create_date, create_by, update_date, update_by, data_state
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from collection_submit
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from collection_submit
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.collection.CollectionSubmit">
+    insert into collection_submit (id, org_id, org_name, 
+      create_date, create_by, update_date, 
+      update_by, data_state)
+    values (#{id,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, #{orgName,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=VARCHAR}, #{dataState,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.collection.CollectionSubmit">
+    insert into collection_submit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="orgName != null">
+        org_name,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="dataState != null">
+        data_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null">
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="dataState != null">
+        #{dataState,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.collection.CollectionSubmit">
+    update collection_submit
+    <set>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null">
+        org_name = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="dataState != null">
+        data_state = #{dataState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.collection.CollectionSubmit">
+    update collection_submit
+    set org_id = #{orgId,jdbcType=VARCHAR},
+      org_name = #{orgName,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      data_state = #{dataState,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="getInfoByOrgId" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+    from collection_submit
+    where org_id = #{orgId}
+  </select>
+  
+  <select id="countSubmitList" parameterType="java.util.Map" resultType="java.lang.Integer">
+  select count(1) from (
+  	select * from (
+  	select (IFNULL(a.data_state,0)) as dataState
+  	from collection_submit a 
+	RIGHT JOIN mip_organization b on a.org_id = b.id
+	where 1 = 1
+	<if test="orgTypeId == 2">
+  		<if test="orgIdList != null and orgIdList.size > 0">
+  			and b.id in
+  			<foreach collection="orgIdList" item="orgId" open="(" close=")" separator=",">
+	      		#{orgId}
+	      	</foreach>
+  		</if>
+  	</if>
+  	and b.id &lt;&gt; 0
+  	
+   ) t where 1=1
+  	<if test="dataState != null and dataState != ''">
+  		and t.dataState = #{dataState}
+  	</if>
+  ) o
+  
+ 	
+  	
+  	
+  </select>
+  <select id="getSubmitList" parameterType="java.util.Map" resultMap="BaseResultMap">
+  select * from (
+  	select b.id as orgId,b.name as orgName,a.update_date, (IFNULL(a.data_state,0)) as dataState
+  	from collection_submit a 
+	RIGHT JOIN mip_organization b on a.org_id = b.id
+	where 1 = 1
+	<if test="orgTypeId == 2">
+  		<if test="orgIdList != null and orgIdList.size > 0">
+  			and b.id in
+  			<foreach collection="orgIdList" item="orgId" open="(" close=")" separator=",">
+	      		#{orgId}
+	      	</foreach>
+  		</if>
+  	</if>
+  	and b.id &lt;&gt; 0
+  	
+   ) t where 1=1
+  	<if test="dataState != null and dataState != ''">
+  		and t.dataState = #{dataState}
+  	</if>
+  	order by t.dataState desc
+  	limit #{start},#{end}
+  </select>
+  
+</mapper>

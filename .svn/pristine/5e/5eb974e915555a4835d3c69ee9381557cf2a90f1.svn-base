@@ -1,0 +1,120 @@
+[{
+        "functionid": "f63e90a4641b005801641b0ff7f60028",
+        "functionicon": "fa fa-credit-card fa-fw",
+        "subs": [],
+        "functionname": " 指标管理",
+        "id": "f63e90a4641b005801641b0ff7f60028",
+        "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1530720132097&jumpPage=pagegen/cgform/configformList",
+        "busscode": "B201800003"
+    }, {
+        "functionid": "f63e90a4641b005801641b0ff7f60028",
+        "functionicon": "fa fa-hospital-o fa-fw",
+        "subs": [],
+        "functionname": " 数据源管理",
+        "id": "f63e90a4641b005801641b0ff7f60028",
+        "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1530842987354&jumpPage=pagegen/cgform/selectBackList",
+        "busscode": "B1530600834811"
+    }, {
+        "functionid": "f63e90a4641b005801641b0ff7f60028",
+        "functionicon": "fa fa-slideshare fa-fw",
+        "functionname": " 表单管理",
+        "id": "f63e90a4641b005801641b0ff7f60028",
+        "functionurl": "",
+        "busscode": "B201800003",
+        "subs": [{
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "",
+            "subs": [],
+            "functionname": "业务表单",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1530720176225&resource_id=&buss_type=1&jumpPage=pagegen/buss/configformDefineList",
+            "busscode": "B201800003"
+        }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-wpforms",
+            "subs": [],
+            "functionname": "非业务表单",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1530720176225&buss_type=2&jumpPage=pagegen/buss/configformDefineList",
+            "busscode": "B201800003"
+        }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-wpforms",
+            "subs": [],
+            "functionname": "内置表单",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1530720176225&buss_type=3&jumpPage=pagegen/buss/configformDefineList",
+            "busscode": "B201800003"
+        }]
+    }, {
+        "functionid": "f63e90a4641b005801641b0ff7f60028",
+        "functionicon": "fa fa-hospital-o fa-fw",
+        "subs": [],
+        "functionname": " 业务发布",
+        "id": "f63e90a4641b005801641b0ff7f60028",
+        "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1530716962445&jumpPage=pagegen/buss/configformList",
+        "busscode": "B201800003"
+    }, {
+        "functionid": "f63e90a4641b005801641b0ff7f60028",
+        "functionicon": "fa fa-hospital-o fa-fw",
+        "functionname": " 业务测试",
+        "id": "f63e90a4641b005801641b0ff7f60028",
+        "functionurl": "",
+        "busscode": "B1531130580865",
+        "subs": [{
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-hospital-o fa-fw",
+            "subs": [],
+            "functionname": " 测试键值保存2",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1531385488541",
+            "busscode": "B1531130580865"
+        }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-hospital-o fa-fw",
+            "subs": [],
+            "functionname": " 测试建表保存",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1531365739134",
+            "busscode": "B1531130580865"
+        }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-hospital-o fa-fw",
+            "subs": [],
+            "functionname": " 测试1",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1531445558466",
+            "busscode": "B1531130580865"
+        }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-hospital-o fa-fw",
+            "subs": [],
+            "functionname": " 测试11111",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1531889812225",
+            "busscode": "B1531130580865"
+                     }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-hospital-o fa-fw",
+            "subs": [],
+            "functionname": " 展览",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1531970118237",
+            "busscode": "B1531130580865"
+                     }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-hospital-o fa-fw",
+            "subs": [],
+            "functionname": " 教育",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1532076252044",
+            "busscode": "B1531130580865"
+                     }, {
+            "functionid": "f63e90a4641b005801641b0ff7f60028",
+            "functionicon": "fa fa-hospital-o fa-fw",
+            "subs": [],
+            "functionname": " 测试所有控件",
+            "id": "f63e90a4641b005801641b0ff7f60028",
+            "functionurl": "listPageGenController.do?goConfigformList&releaseCode=B1532078000274",
+            "busscode": "B1531130580865"
+                     }]}]

@@ -1,0 +1,2 @@
+ALTER TABLE cultural_relic_info ADD repair_workplace_address varchar(300) DEFAULT NULL COMMENT '修复工作场所地址';
+ALTER TABLE cultural_relic_info ADD repair_workplace_area decimal(10,2) DEFAULT '0.00' COMMENT '修复工作场所面积';

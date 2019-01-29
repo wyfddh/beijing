@@ -1,0 +1,105 @@
+/*
+* @Author: Administrator
+* @Date:   2017-05-15 16:42:07
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-05-17 19:23:28
+*/
+header{
+	height: 0.9rem;
+	line-height: 0.9rem;
+	border-bottom: 0.01rem solid #DCDCDC;
+	position: relative;
+}
+header a.lf{
+	position: absolute;
+	display: inline-block;
+	width: 0.19rem;
+	height: 0.29rem;
+	top:0.32rem;
+	left:0.18rem;
+	background: url(../images/detail-left.png) no-repeat left;
+	background-size: 100% 100%;
+}
+header a.rt{
+	position: absolute;
+	width: 0.38rem;
+	height: 0.38rem;
+	top:0.28rem;
+	right:0.20rem;
+	background: url(../images/detail-home.png) no-repeat right;
+	background-size: 100% 100%;
+}
+.detail-title{
+	height:0.76rem;
+	line-height: 0.76rem;
+	font-size: 0.32rem;
+}
+.detail-title i{
+	float: left;
+	height: 0.76rem;
+	width: 0.08rem;
+	background:#008582;
+	margin-right: 0.22rem;
+}
+.detail-title span{
+	float: right;
+	margin-right: 0.2rem;
+	color: #8D8D8D;
+}
+.detail-body{
+	position:relative;
+	overflow:hidden;
+}
+.detail-body img{
+	width: 6.4rem;
+	height: 4.2rem;
+	margin:0 auto;
+}
+.detail-body p.text{
+	padding:0.25rem 0.3rem;
+	line-height: 0.34rem;
+}
+.detail-body a {
+	float:right;
+	margin-bottom:0.2rem;
+	margin-right: 0.25rem;
+	font-size:0.24rem;
+	color:#008582;
+}
+.detail-body a span{
+	display:inline-block;
+	position:relative;
+	top:0.09rem;
+	width:0.32rem;
+	height:0.35rem;
+	margin-right:0.1rem;
+	background:url(../images/search.png) no-repeat left;
+	background-size: 100% 100%;
+}
+.detail-footer .title{
+	height: 0.62rem;
+	line-height: 0.62rem;
+	border-top:0.01rem solid #DCDCDC;
+	border-bottom:0.01rem solid #DCDCDC;
+	font-size: 0.26rem;
+	padding-left: 0.1rem;
+	color: #008582;
+}
+.detail-footer .title span{
+	font-weight: bold;
+	font-size: 0.3rem;
+	margin-right: 0.12rem;
+}
+.detail-body p.text{
+	text-indent:0.52rem;
+}
+.detail-footer p.text{
+	padding:0.25rem 0.3rem;
+	line-height: 0.34rem;
+	text-indent:0.52rem;
+}
+.detail-footer .container div img{
+	width: 5.78rem;
+	height: 3.69rem;
+	margin: 0 auto;
+}

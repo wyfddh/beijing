@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		八角星纹彩陶豆
+    		<span>作者 : 王海玉</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 5.2rem;height: 6.4rem;" src="../images/gaobingbei.jpg" alt="">
+    		<p class="text">
+    			 蛋壳黑陶高柄杯，新石器时代龙山文化，1960年出土于山东潍坊姚官庄遗址，现藏于山东博物馆。此杯口径12、内径4.9、通高16.9、柄高13.2厘米。泥质黑陶，漆黑光亮，巧妙的套杯组合形式，杯如草帽，宽沿、深腹，竹节纹细长柄，杯套入柄内。陶杯壁薄如蛋壳，极轻极薄，而得名蛋壳陶。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                蛋壳黑陶的制作中，选用淘洗非常细腻的陶土，快轮拉坯与车制相结合而成型，采用封窑还原和渗碳工艺，用匣钵装置烧制而成，这开启了后世用匣钵烧制细瓷的先河。如此制造出的黑陶高柄杯器形规整，造型统一，显示出专业化生产的特点。如此轻薄，能够完整保存下来实属不易。作为山东史前陶器的巅峰代表，体现了新石器时代陶器制作的最高水平。
+            </p>
+            <p class="text">
+                高柄杯一般用途为酒器，而薄如蛋壳、漆黑光亮的蛋壳黑陶高柄杯出自龙山文化墓葬中，已脱离实用的范畴，演变为专用礼器，堪称稀世珍品。
+            </p>
+    	</div>
+    </body>
+</html>

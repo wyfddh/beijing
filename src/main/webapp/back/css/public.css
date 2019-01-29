@@ -1,0 +1,17 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+button,input{
+	outline: none;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+}

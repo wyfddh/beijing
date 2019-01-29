@@ -1,0 +1,88 @@
+<header class="commonHeader borderNone">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>可移动文物基本情况</h2>
+</header>
+<section class="overflow-scroll scroll-content hasCommonHeader" style="z-index: -1;width: 100%;">
+    <ion-content>
+        <div class="navWrap">
+            <div class="btnUnActive btnActive" data="0" ng-click="checkStatistics($event,0)">类别</div>
+            <div class="btnUnActive" data="1" ng-click="checkStatistics($event,1)">年代</div>
+            <div class="btnUnActive" data="2" ng-click="checkStatistics($event,2)">级别</div>
+            <div class="btnUnActive" data="3" ng-click="checkStatistics($event,3)">完残</div>
+        </div>
+        <div class="shaixuanWrap">
+            <div class="shaixuanTitle" ng-click="coverShow()">
+                <span class="aaa"><span>{{cityMuseumTitle}}</span></span>
+                <div class="sanjiao"></div>
+            </div>
+        </div>
+        <div class="tab_wrap">
+            <div class="tabClass tabPos tabActive">
+                <div class="cityList" ng-repeat="cateItem in categoryList" ng-show="num == 0">
+                    <div class="cityItem">
+                        <span>{{cateItem.name}}</span>
+                        <span class="museumNum">{{cateItem.count}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tabYear tabPos tabUnActive">
+                <h6 class="timeStatistics">年代统计图</h6>
+                <div id="timeChart"></div>
+                <div class="tuli">
+                    <ul>
+                        <li ng-repeat="yearType in yearTypeList"><div class="fangkuang{{yearType.id}}"></div><span>{{yearType.id}}{{yearType.name}}</span></li>
+                    </ul>
+                </div>
+                <h6 class="kaoguStatistics">考古学年代和中国历史学年代统计</h6>
+                <div class="tabClass mt" ng-show="num == 1">
+                    <div class="cityList" ng-repeat="timeType in timeTypeList">
+                        <div class="cityItem">
+                            <span>{{timeType.name}}</span>
+                            <span class="museumNum">{{timeType.count}}</span>
+                        </div>
+                    </div>
+                    <!--<div class="cityList">-->
+                        <!--<div class="cityItem">-->
+                            <!--<span>玉石器、宝石</span>-->
+                            <!--<span class="museumNum">16</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="tabRunk tabPos tabUnActive">
+                <h6 class="gradeStatistics">级别统计表</h6>
+                <div id="gradeChart"></div>
+                <div class="tuli">
+                    <ul>
+                        <li ng-repeat="gradeItem in gradeList"><div class="fangkuang{{gradeItem.id}}"></div><span>{{gradeItem.name}}</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tabFull tabPos tabUnActive">
+                <h6 class="fullStatistics">完残状态统计</h6>
+                <div id="fullChart"></div>
+            </div>
+        </div>
+
+    </ion-content>
+</section>
+<div class="zhezhaoceng" ng-show="showCover" ng-click="coverHide()"></div>
+<div class="cityCover" ng-show="showCover">
+    <div class="cityMuseum" ng-show="showCityList">
+        <!--判断如果是市级管理员就不让他显示，省级管理员才显示-->
+        <ul class="cityLeft">
+            <!--<li class="cityActive" ng-click="cityAll($event)">全部</li>-->
+            <li ng-click="cityClick($event,$index)" ng-repeat="item in cityList" data="{{item.cityId}}">{{item.name}}</li>
+        </ul>
+        <ul class="museumList">
+            <!--<li class="liActive" ng-click="museumAll($event)"><span>全部</span><i class="icon ion-checkmark-round iActive"></i></li>-->
+            <li ng-click="museumClick($event)" ng-repeat="item1 in museumList" data1="{{item1.orgId}}">{{item1.name}}<i class="icon ion-checkmark-round"></i></li>
+        </ul>
+    </div>
+    <div class="cityMuseum" ng-show="!showCityList">
+        <ul class="museumList1">
+            <!--<li class="liActive" ng-click="museumAll($event)"><span>全部</span><i class="icon ion-checkmark-round iActive"></i></li>-->
+            <li ng-click="museumClick($event)" ng-repeat="item1 in museumListCity" data1="{{item1.orgId}}">{{item1.name}}<i class="icon ion-checkmark-round"></i></li>
+        </ul>
+    </div>
+</div>

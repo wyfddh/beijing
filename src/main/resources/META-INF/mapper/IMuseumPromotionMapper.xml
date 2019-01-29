@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumPromotionMapper">
+    
+	<sql id="museumPromotionColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.broadcast AS "broadcast",
+		a.tv AS "tv",
+		a.newspaper AS "newspaper",
+		a.wechat AS "wechat",
+		a.weibo AS "weibo",
+		a.app AS "app",
+		a.applets AS "applets",
+		a.website AS "website",
+		a.other AS "other",
+		a.other_detail AS "otherDetail"
+	</sql>
+	
+	<sql id="museumPromotionJoins">
+	</sql>
+	
+    
+	<select id="selectForm" resultType="com.tj720.admin.dto.MuseumPromotionDto" >
+		SELECT 
+			<include refid="museumPromotionColumns"/>
+		FROM museum_promotion a
+		<include refid="museumPromotionJoins"/>
+		WHERE a.museum_id = #{0} and a.del_flag=#{1} limit 1
+	</select>
+	
+
+	<insert id="insert">
+		INSERT INTO museum_promotion(
+			id,
+			museum_id,
+			broadcast,
+			tv,
+			newspaper,
+			wechat,
+			weibo,
+			app,
+			applets,
+			website,
+			other,
+			other_detail,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{broadcast},
+			#{tv},
+			#{newspaper},
+			#{wechat},
+			#{weibo},
+			#{app},
+			#{applets},
+			#{website},
+			#{other},
+			#{otherDetail},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{remarks},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_promotion SET 	
+			museum_id = #{museumId},
+			broadcast = #{broadcast},
+			tv = #{tv},
+			newspaper = #{newspaper},
+			wechat = #{wechat},
+			weibo = #{weibo},
+			app = #{app},
+			applets = #{applets},
+			website = #{website},
+			other = #{other},
+			other_detail = #{otherDetail},
+			update_by = #{updateId},
+			update_date = #{updateTime},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteBase">
+    	delete from museum_promotion
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+    
+    <update id="updateFlag">
+	    UPDATE museum_promotion SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+	
+</mapper>

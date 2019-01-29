@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <script src="../js/resizerem.js"></script>
+        <script src="../js/mui/js/mui.js"></script>
+        <link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+        <header>
+            <a class="lf" href="cangping.html"></a>
+            <a class="rt" href="../../index.html"></a>
+        </header>
+        <div class="detail-title">
+            <i></i>
+            新石器时代时代大汶口文化玉笄
+            <span>作者 : 滕卫</span>
+        </div>
+        <div class="detail-body">
+            <img style="width: 4.8rem;height: 6.4rem;" src="../images/yumang.jpg" alt="">
+            <p class="text">
+                藏品名称：新石器时代时代大汶口文化玉笄
+                <!-- <br><br>
+                藏品一普编号：3701022180000110006320 -->
+            </p>
+            <!-- <a href="javascript:">
+            <span></span>查看藏品</a> -->
+        </div>
+        <div class="detail-footer">
+            <div class="container">
+                <p class="title">
+                    <span>·</span>藏品简介
+                </p>
+                <div>
+                    <p class="text">
+                        新石器时代大汶口文化玉笄，长8.9厘米，1959年山东泰安大汶口出土，现藏山东博物馆。该器为绾发用的实用器，玉色青中泛黄，间有白色沁斑。器体磨制光滑，素面无纹，一端略宽，磨成钝尖，另一端近尖部两侧有小刻口，截面呈菱形。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="title">
+                    <span>·</span>用途
+                </p>
+                <div>
+                    <p class="text">
+                        笄是古人用来簪发和连冠用的饰物，后世称为"簪"。《说文》："笄，簪也"。玉笄是绾发用的细长尖头形玉器，有些上端有各色造型和纹饰。玉笄的用处是插入发髻，使其不会散开。男子的玉笄则兼有绾发、固冠双重作用。
+                    </p>
+                    <p class="text">
+                        玉笄早在新石器时代已经出现，商代玉笄制作有了较大的进步，殷墟妇好墓出土的夔龙首玉笄，头部扁平，雕成夔龙形，大钩喙，短尾上卷，用勾撤法琢出"臣"字眼，笄杆光滑平素，整个器形典雅、古朴。商以后直至宋代玉笄数量不多，形制无大的变化，自汉代始笄首普遍加以装饰，笄身仍主要呈光素圆柱。宋代玉笄雕造趋于精致，首部花纹比例加大，多雕鸟兽、花草形。明清两代玉笄制作最精。明代有长短两种，短粗的是男子用来持冠的，细长的则是女子簪发用。明代精致者常见刻有"陆子冈"款，明清玉笄尺寸一般长在15厘米以下，略短于商周时期的笄。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		郑夑《双松图》
+    		<span>作者 : 徐战</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 6rem;height: 12.8rem;" src="../images/tuzhou.png" alt="">
+    		<p class="text">
+    			 清代著名画家郑燮的代表作《双松图》1954年入藏山东博物馆，纸本，墨笔，画心纵201厘米，横101厘米。书法绘画俱佳，保存品相完好。上世纪八十年代初，艺术家启功、谢稚柳、徐邦达等老专家在全国书画巡回鉴定中，定其为珍贵文物一级，是郑燮难得一见的珍贵作品。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                郑燮一生画竹最多，次则兰、石，偶有画松。此《双松图》就是他画松的妙品，作于乾隆二十三年(1759年)，是郑燮鼎盛时期的绘画代表作品之一。图中一远一近两棵松树擎天而立，旁立三枝细竹，艰瘦挺拔，直冲云天，墨色水灵，浓淡有致，逼真地表现出竹的质感。在构图上，郑燮将松、竹、石的位置关系和题诗处理得十分协调。竹的纤细清飒更衬托了松的另一番风情。
+            </p>
+    	</div>
+    </body>
+</html>

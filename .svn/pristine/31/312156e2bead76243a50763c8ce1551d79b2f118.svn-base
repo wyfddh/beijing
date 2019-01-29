@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        html, body {
+            position: relative;
+            background:rgba(255,255,255,1);
+        }
+        body {
+            background:rgba(255,255,255,1);
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container,.swipercont {
+            width:657px;
+            height:493px;
+        }
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+        .gallery-top {
+            width:657px;
+            height:493px;
+        }
+        .gallery-thumbs {
+            height:139px;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+        .gallery-thumbs .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+        .gallery-thumbs .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+       .content{
+           padding: 30px;
+           width:1234px;
+           height:632px;
+           background:rgba(255,255,255,1);
+           display: flex;
+           justify-content: space-between;
+       }
+        .conright{
+            width:540px;
+        }
+        .title{
+            
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .title1{
+            width: 280px;
+            
+            font-size:20px;
+            font-family:PingFang-SC-Heavy;
+            font-weight:800;
+            color:rgba(102,102,102,1);
+            line-height:28px;
+        }
+        .title2{
+            width: 200px;
+            text-align: right;
+            height:20px;
+            font-size:14px;
+            font-family:PingFang-SC-Heavy;
+            font-weight:800;
+            color:#666;
+            line-height:20px;
+        }
+        .title2 span{
+            cursor: pointer;
+        }
+        .title2 span.cur{
+            color:#168EFD;
+        }
+        .baseList{
+            margin-top: 15px;
+        }
+        .baseList:after{
+            content:".";
+            display:block;
+            height:0;
+            clear:left;
+            visibility:hidden;
+        }
+        .baseList li{
+            float: left;
+            width: 259px;
+            height:20px;
+            font-size:14px;
+            font-family:PingFang-SC-Medium;
+            font-weight:500;
+            color:#168EFD;
+            line-height:20px;
+            margin-top: 15px;
+        }
+        .baseList li .btn{
+            padding: 2px 15px;
+            border-radius:12px;
+            border:1px solid;
+            font-size:14px;
+            font-family:PingFang-SC-Medium;
+            font-weight:500;
+            color:#168EFD;
+            line-height:20px;
+        }
+        .headline{
+            height:20px;
+            font-size:14px;
+            font-family:PingFang-SC-Heavy;
+            font-weight:800;
+            color:rgba(102,102,102,1);
+            line-height:20px;
+            margin-top: 30px;
+        }
+        .description{
+            width:533px;
+            margin-top: 10px;
+            font-size:14px;
+            font-family:PingFang-SC-Medium;
+            font-weight:500;
+            color:rgba(102,102,102,1);
+            line-height:20px;
+        }
+        .layui-table td, .layui-table th{
+        padding:6px 15px
+        }
+        .mylist:after{
+            content:".";
+            display:block;
+            height:0;
+            clear:left;
+            visibility:hidden;
+        }
+        .myitem{
+            width: 250px;
+            float: left;
+            font-size:14px;
+            font-family:PingFang-SC-Medium;
+            font-weight:500;
+            color:rgba(102,102,102,1);
+            line-height:20px;
+        }
+        .ccontent2{
+            display: none;
+        }
+        .abc{
+         color:rgba(102,102,102,1)
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="swipercont">
+<div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+</div>
+<div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+
+    </div>
+</div>
+    </div>
+    <div class="conright">
+      <div class="title">
+          <div class="title1" id="collectionName"></div>
+          <div class="title2">
+              <span class="cur">基本信息</span>/
+              <span>更多详情</span>
+          </div>
+      </div>
+        <div class="ccontent1">
+            <ul class="baseList">
+                <li>
+                    <span class="abc">年代：</span>
+                    <span class="btn" id="collectionYearTypeName">金</span>
+                </li>
+                <li>
+                    <span class="abc">质地：</span>
+                    <span class="btn" id="collectionTextureName">陶</span>
+                </li>
+                <li>
+                    <span class="abc">级别：</span>
+                    <span class="btn" id="collectionLevelName">一级文物</span>
+                </li>
+                <li>
+                    <span class="abc">质地类别：</span>
+                    <span class="btn" id="collectionTextureCategoryName">单一质地</span>
+                </li>
+                <li>
+                    <span class="abc">类别：</span>
+                    <span class="btn" id="collectionCategoryName">铁器</span>
+                </li>
+                <li>
+                    <span class="abc">质地子类别：</span>
+                    <span class="btn" id="collectionTextureSonCategoryName">无机质</span>
+                </li>
+            </ul>
+            <p class="headline">简介</p>
+            <p class="description" id="collectionIntroduction"></p>
+            <p class="headline">藏品参数</p>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>通长</th>
+                    <th>通宽</th>
+                    <th>通高</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="collectionLength"></td>
+                    <td id="collectionWidth"></td>
+                    <td id="collectionHigh"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>具体尺寸</th>
+                    <th>具体范围</th>
+                    <th>具体质量</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="collectionSpecificSize"></td>
+                    <td id="massRangeName"></td>
+                    <td id="massConcrete"></td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="headline">保存情况</p>
+            <ul class="mylist">
+                <li class="myitem">
+                    <span>保存状态：</span>
+                    <span id="saveStateName">状态稳定，不需修复</span>
+                </li>
+                <li class="myitem">
+                    <span>完残程度：</span>
+                    <span id="degreeDisabilityName">基本完整</span>
+                </li>
+                <li class="myitem">
+                    <span>完残状况：</span>
+                    <span id="residualStatus">脱釉、口沿残破</span>
+                </li>
+            </ul>
+        </div>
+        <div class="ccontent2">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td>原名</td>
+                    <td id="collectionOldName">abc</td>
+                </tr>
+                <tr>
+                    <td>文物来源</td>
+                    <td id="collectionComeFromName">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>普查编号</td>
+                    <td id="generalSurveyNum">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>藏品编号</td>
+                    <td id="collectionCodeNum">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>收藏单位</td>
+                    <td id="collectionOrgName">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>收藏单位编号</td>
+                    <td id="collectionOrgNum">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>藏品编号类型</td>
+                    <td id="collectionCodeTypeName">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>入藏时间范围</td>
+                    <td id="timeFrameName">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>入藏年度</td>
+                    <td id="collectedYear">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>包含文物数量</td>
+                    <td id="containCollectionCountName">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>实际数量</td>
+                    <td id="collectionCount">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>著者</td>
+                    <td id="collectionWriter">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>版本</td>
+                    <td id="collectionVersion">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>存卷</td>
+                    <td id="collectionKeepFile">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>录入员</td>
+                    <td id="entryDataPerson">2016-11-29</td>
+                </tr>
+                <tr>
+                    <td>审核员</td>
+                    <td id="reviewPerson">2016-11-29</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Swiper JS -->
+<script src="js/swiper.min.js"></script>
+<script src="js/lib/jquery-1.10.2.min.js"></script>
+<script src="js/layui/layui.js"></script>
+<!-- Initialize Swiper -->
+<script>
+</script>
+<script>
+  $(function(){
+    var pathName=window.document.location.pathname;
+    var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+    var id = JSON.parse(localStorage["dataId"]);
+    $.ajax({
+      type:'post',
+      url:projectName + '/collectionInfo/collectionDetail.do',
+      data:{"id":id},
+      success:function(res) {
+        if (res.success == 1) {
+          var data = res.data;
+          console.log(data);
+          $("#collectionName").text(data.collectionName);
+          $("#collectionYearTypeName").text(data.collectionYearTypeName);
+          $("#collectionTextureName").text(data.collectionTextureName);
+          $("#collectionLevelName").text(data.collectionLevelName);
+          $("#collectionTextureCategoryName").text(data.collectionTextureCategoryName);
+          $("#collectionCategoryName").text(data.collectionCategoryName);
+          $("#collectionTextureSonCategoryName").text(data.collectionTextureSonCategoryName);
+          $("#collectionIntroduction").text(data.collectionIntroduction);
+          $("#collectionLength").text(data.collectionLength);
+          $("#collectionWidth").text(data.collectionWidth);
+          $("#collectionHigh").text(data.collectionHigh);
+          $("#collectionSpecificSize").text(data.collectionSpecificSize);
+          $("#massRangeName").text(data.massRangeName);
+          $("#massConcrete").text(data.massConcrete);
+          $("#saveStateName").text(data.saveStateName);
+          $("#degreeDisabilityName").text(data.degreeDisabilityName);
+          $("#residualStatus").text(data.residualStatus);
+          $("#collectionOldName").text(data.collectionOldName);
+          $("#collectionComeFromName").text(data.collectionComeFromName);
+          $("#generalSurveyNum").text(data.generalSurveyNum);
+          $("#collectionCodeNum").text(data.collectionCodeNum);
+          $("#collectionOrgName").text(data.collectionOrgName);
+          $("#collectionOrgNum").text(data.collectionOrgNum);
+          $("#collectionCodeTypeName").text(data.collectionCodeTypeName);
+          $("#timeFrameName").text(data.timeFrameName);
+          $("#collectedYear").text(data.collectedYear);
+          $("#containCollectionCountName").text(data.containCollectionCountName);
+          $("#collectionCount").text(data.collectionCount);
+          $("#collectionWriter").text(data.collectionWriter);
+          $("#collectionVersion").text(data.collectionVersion);
+          $("#collectionKeepFile").text(data.collectionKeepFile);
+          $("#entryDataPerson").text(data.entryDataPerson);
+          $("#reviewPerson").text(data.reviewPerson);
+          var picList = data.picList;
+         
+          if(picList != null && picList.length>0){
+	          for (var i = 0;i < picList.length;i++) {
+	            var picStr = "<div class='swiper-slide' style='background-image:url("+ picList[i].attPath +")'></div>"
+	            $(".swiper-wrapper").append(picStr);
+	          }
+          }
+          var galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+          });
+          var galleryTop = new Swiper('.gallery-top', {
+            spaceBetween: 10,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            thumbs: {
+              swiper: galleryThumbs
+            }
+          });
+          $(".title2 span").on('click',function () {
+            if($(this).hasClass("cur")){
+              return
+            }else{
+              $(this).addClass("cur").siblings().removeClass("cur");
+            }
+            if($(this).index()==0){
+              $(".ccontent1").show()
+              $(".ccontent2").hide()
+            }else{
+              $(".ccontent2").show()
+              $(".ccontent1").hide()
+            }
+          })
+        }
+      }
+    })
+
+  });
+</script>
+</body>
+</html>

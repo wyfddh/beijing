@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		西周颂簋
+    		<span>作者 : 布明虎</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 5rem;height: 3.8rem;" src="../images/zhousong01.png" alt="">
+    		<p class="text">
+    			 西周后期盛食器，山东博物馆藏。通高30.1厘米,口径24.2厘米。隆盖，顶有圈形把手。圆腹，圈足，下附三兽足。腹部两侧有一对兽首耳。口沿上下各饰窃曲纹一周，盖与腹均饰横条脊纹，圈足饰重环纹。形制庄重。盖器同铭，各铸十五行一百五十二字。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                颂簋和现藏北京故宫博物院、台北故宫博物院和上海博物馆的颂鼎以及台北故宫博物院的颂壶，铭文内容相同，是同一组青铜器。因器主是西周王室一个叫“颂”的官员，遂以“颂”为器名。颂簋、颂鼎、颂壶又被称为“三颂”，其中簋存世数量最多，器盖俱全的有6组，曾分别被刘喜海、刘鹗、吴士芬、端方等人收藏，此外，尚见两个单独的簋盖。山东博物馆的颂簋，就是刘喜海的旧藏。
+            </p>
+            <p class="text">  
+                颂簋制作于西周晚期，陕西宝鸡出土，后流散民间。嘉庆十九年（1814年）刘墉从孙，著名金石学家、学者刘喜海在北京购得，藏于山东老家。后归山东盐运使、布政使李宗岱。又被到黄县丁树贞收藏。丁家破落后，弟兄分割财产，器、盖被分别收藏。20世纪40年代，器为胶东古物管理委员会黄县文管分会收集，后转入山东省博物馆收藏。20世纪50年代，丁氏后人张秀琳女士将所藏簋盖捐献给山东省博物馆，颂簋始成完璧。颂簋现成为山东博物馆镇馆之宝之一。
+            </p>
+             <img style="width: 4.8rem;height: 4rem;" src="../images/zhousong02.png" alt="">
+             <p class="text">  
+                铭文大意为：周王册命颂掌管成周贮（匿）甘家，监督新造，积贮货物，以为宫御之用。周王赏赐颂玄衣、省纯、赤市、朱黄、攸勒等物品。颂接受命册，退出中廷，然后再回返，向周王献纳瑾璋。比较完整地反映了西周王室策命官员的制度。
+            </p>
+    	</div>
+    </body>
+</html>

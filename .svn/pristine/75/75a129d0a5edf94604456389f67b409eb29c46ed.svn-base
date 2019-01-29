@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.InsideInfoMapper">
+    
+	<select id="queryInsideInfoDetailById" parameterType="map" resultType="com.tj720.admin.dto.InsideInfoDto" >
+		 SELECT 
+		  a.info_id AS infoId,
+		  a.info_title AS infoTitle,
+		  a.info_content AS infoContent,
+		  a.status AS STATUS,
+		  a.created_by AS createdBy,
+		  b.receiver_id as receiverId,
+		  a.last_updated_time AS lastUpdatedTime,
+		  b.read_flag AS readFlag,
+		  DATE_FORMAT(b.submit_time,'%Y-%m-%d %H:%i:%s') AS submitTime 
+		FROM
+		  sys_inside_info_t a 
+		  LEFT JOIN sys_inside_info_rec_t b 
+		    ON a.info_id = b.info_id 
+		WHERE 1=1 
+		  AND b.receiver_id = #{receiverId}
+		  AND b.info_id = #{infoId}   
+	</select>
+	
+	<select id="queryInsideInfoListDetailById" parameterType="map" resultType="com.tj720.admin.dto.InsideInfoDto" >
+		 SELECT 
+		  a.info_id AS infoId,
+		  a.info_title AS infoTitle,
+		  a.info_content AS infoContent,
+		  a.status AS STATUS,
+		  a.created_by AS createdBy,
+		  b.receiver_id as receiverId,
+			c.`name` as receiverName,
+		  a.last_updated_time AS lastUpdatedTime,
+		  b.read_flag AS readFlag,
+		  DATE_FORMAT(b.submit_time,'%Y-%m-%d %H:%i:%s') AS submitTime 
+		FROM
+		  sys_inside_info_t a 
+		  LEFT JOIN sys_inside_info_rec_t b 
+		    ON a.info_id = b.info_id 
+			LEFT JOIN mip_user c on(b.receiver_id = c.id)
+			WHERE 1=1 
+		  AND b.info_id = #{infoId}   
+	</select>
+
+	<select id="getCount"   resultType="java.lang.Integer">
+		SELECT 
+			count(1) as cou
+		FROM
+		  sys_inside_info_t a 
+		  LEFT JOIN sys_inside_info_rec_t b 
+		    ON a.info_id = b.info_id 
+		WHERE a.status  <![CDATA[ <> ]]> 0 AND  b.receiver_id = #{receiverId}
+		<if test="readFlag != null and readFlag != ''">
+			and b.read_flag= #{readFlag}
+		</if>
+		<if test="submitTimeStart != null and submitTimeStart !=''">
+			and b.submit_time <![CDATA[ >= ]]> #{submitTimeStart}
+		</if>
+		<if test="submitTimeEnd != null and submitTimeEnd != ''">
+			and b.submit_time <![CDATA[ <= ]]> #{submitTimeEnd}
+		</if>
+		<if test="infoTitle != null and infoTitle != ''">
+			and a.info_title like CONCAT('%',#{infoTitle},'%')
+		</if>
+	</select>
+
+	<select id="selectList" resultType="map" >
+		SELECT 
+		  a.info_id AS infoId,
+		  a.info_title AS infoTitle,
+		  a.info_content AS infoContent,
+		  a.status AS status,
+		  a.created_by AS createdBy,
+		  a.last_updated_time AS lastUpdatedTime,
+		  b.read_flag AS readFlag,
+  		  b.submit_time AS submitTime
+		FROM
+		  sys_inside_info_t a 
+		  LEFT JOIN sys_inside_info_rec_t b 
+		    ON a.info_id = b.info_id 
+		WHERE a.status <![CDATA[ <> ]]> 0 AND b.receiver_id = #{receiverId}
+		<if test="readFlag != null and readFlag != ''">
+			and b.read_flag= #{readFlag}
+		</if>
+		<if test="submitTimeStart != null and submitTimeStart !=''">
+			and b.submit_time <![CDATA[ >= ]]> #{submitTimeStart}
+		</if>
+		<if test="submitTimeEnd != null and submitTimeEnd != ''">
+			and b.submit_time <![CDATA[ <= ]]> #{submitTimeEnd}
+		</if>
+		<if test="infoTitle != null and infoTitle != ''">
+			and a.info_title like CONCAT('%',#{infoTitle},'%')
+		</if>
+		ORDER BY a.last_updated_time DESC
+	</select>
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="infoId">
+		INSERT INTO sys_inside_info_t (
+		  info_title,
+		  info_content,
+		  status,
+		  created_by,
+		  created_time,
+		  last_updated_time,
+		  last_updated_by
+		) VALUES (
+			#{infoTitle},
+			#{infoContent},
+			#{status},
+			#{createdBy},
+			NOW(),
+			NOW(),
+			#{lastUpdatedBy}
+		)
+	</insert>
+
+	<insert id="saveRecInfo" >
+		INSERT INTO sys_inside_info_rec_t (
+		  info_id,
+		  submit_time,
+		  submit_by,
+		  status,
+		  read_flag,
+		  receiver_id,
+		  read_time
+		) VALUES (
+			#{infoId},
+			NOW(),
+			#{createdBy},
+			1,
+			0,
+			#{receiverId},
+			NULL
+		)
+	</insert>
+	
+	<!--修改为已读状态-->
+	<update id="updateReadFlag">
+		UPDATE 
+		  sys_inside_info_rec_t 
+		SET
+		  read_flag = 1 , read_time = NOW() 
+		WHERE read_flag = 0 
+		  AND receiver_id = #{receiverId} 
+		  AND info_id = #{infoId}
+	</update>
+	
+	<!--逻辑删除-->
+	<update id="delete">
+		UPDATE 
+		  sys_inside_info_t a 
+		  LEFT JOIN sys_inside_info_rec_t b 
+		    ON a.info_id = b.info_id 
+		    SET a.status = 0,
+			  a.last_updated_time = NOW(),
+			  a.last_updated_by = #{lastUpdatedBy},
+			  b.status = 0 
+		WHERE a.info_id = #{infoId} 
+	</update>
+	
+	<insert id="batchSave" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="infoId">
+		INSERT INTO sys_inside_info_t (
+		  info_title,
+		  info_content,
+		  status,
+		  created_by,
+		  created_time,
+		  last_updated_time,
+		  last_updated_by
+		) VALUES 
+		<foreach collection="list" item="item" index="index" separator=",">
+			(
+				#{item.infoTitle},
+				#{item.infoContent},
+				#{item.status},
+				#{item.createdBy},
+				NOW(),
+				NOW(),
+				#{item.lastUpdatedBy}
+			)
+		</foreach>
+	</insert>
+	<insert id="batchSaveRecInfo" parameterType="java.util.List">
+		INSERT INTO sys_inside_info_rec_t (
+		  info_id,
+		  submit_time,
+		  submit_by,
+		  status,
+		  read_flag,
+		  receiver_id,
+		  read_time
+		) VALUES 
+		<foreach collection="list" item="item" index="index" separator=",">
+			(
+				#{item.infoId},
+				NOW(),
+				#{item.createdBy},
+				1,
+				0,
+				#{item.receiverId},
+				NULL
+			)
+		</foreach>
+	</insert>
+	
+	<select id="selectListForDesk" resultType="map" >
+		SELECT 
+		  a.info_id AS infoId,
+		  a.info_title AS infoTitle,
+		  a.info_content AS infoContent,
+		  a.status AS status,
+		  a.created_by AS createdBy,
+		  b.receiver_id as receiverId,
+		  DATE_FORMAT(a.last_updated_time,'%Y-%m-%d %H:%i:%s') AS lastUpdatedTime,
+		  b.read_flag AS readFlag,
+  		  DATE_FORMAT(b.submit_time,'%Y-%m-%d %H:%i:%s') AS submitTime,
+  		  m.name orgName
+		FROM
+		  sys_inside_info_t a ,sys_inside_info_rec_t b,mip_organization m,mip_user c
+		WHERE a.info_id = b.info_id and a.status ='2' and b.receiver_id = #{receiverId} 
+			and c.id = b.submit_by and c.org_id = m.id
+		<if test="submitTimeStart != null and submitTimeStart !=''">
+			and b.submit_time <![CDATA[ >= ]]> #{submitTimeStart}
+		</if>
+		<if test="submitTimeEnd != null and submitTimeEnd != ''">
+			and b.submit_time <![CDATA[ <= ]]> #{submitTimeEnd}
+		</if>
+		<if test="infoTitle != null and infoTitle != ''">
+			and (a.info_title like CONCAT('%',#{infoTitle},'%') or m.name like CONCAT('%',#{infoTitle},'%'))
+		</if>
+		ORDER BY a.last_updated_time DESC
+		limit #{limit}
+	</select>
+	
+	<select id="getUserListByOrgList" parameterType="java.util.List" resultType="map">
+		select a.id,a.name from mip_user a 
+		where a.status='1' and a.isdelete='0' and org_id in
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+  					#{item}
+  		 </foreach>
+		
+	</select>
+	
+		<!-- （发布）更新消息 -->
+	<update id="update">
+		UPDATE  sys_inside_info_t a 
+		    SET a.info_title = #{infoTitle},
+			  a.info_content = #{infoContent},
+			  a.status = #{status},
+			  a.last_updated_time = NOW(),
+			  a.last_updated_by = #{createdBy}
+		WHERE a.info_id = #{infoId} 
+	</update>
+	<select id="getMessageCount"  resultType="java.lang.Integer">
+	   select count(1) from (
+	   SELECT 
+		  a.info_id, count(1)
+		FROM
+		  sys_inside_info_t a ,sys_inside_info_rec_t b,mip_user c
+		 where a.info_id = b.info_id and b.submit_by = #{userId}
+			and  b.receiver_id = c.id
+			GROUP BY a.info_id) aa
+	</select>
+	<select id="selectMessageList" resultType="map">
+		SELECT 
+		  a.info_id AS infoId,
+		  a.info_title AS infoTitle,
+		  a.info_content AS infoContent,
+		  a.created_by AS createdBy,
+		  GROUP_CONCAT(b.read_flag) AS readFlag,
+			GROUP_CONCAT(b.receiver_id) as receiverId,
+		  GROUP_CONCAT(c.name) as receiverName,
+  		  DATE_FORMAT(b.submit_time,'%Y-%m-%d %H:%i:%s') AS submitTime
+		FROM
+		  sys_inside_info_t a ,sys_inside_info_rec_t b,mip_user c
+		 where a.info_id = b.info_id and b.submit_by = #{userId}
+			and  b.receiver_id = c.id
+			GROUP BY a.info_id
+		 order by b.submit_time desc
+			limit #{pageStart} , #{pageSize}
+	</select>
+</mapper>

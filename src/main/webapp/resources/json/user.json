@@ -1,0 +1,76 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 3,
+  "data": [
+    {
+      "usersId": "1",
+      "userName": "张培",
+      "userEmail": "北京文物局",
+      "userSex": "男",
+      "userStatus": "0",
+      "userGrade": "4",
+      "userEndTime": "2018-01-31 10:00",
+      "userDesc" : "layuiCMS作者，原名‘请叫我马哥’",
+      "number": "17198665201",
+      "type": "普通用户",
+      "role": "管理员",
+      "key": "正常"
+    },{
+      "usersId": "2",
+      "userName": "周思成",
+      "userEmail": "故宫博物院",
+      "userSex": "保密",
+      "userStatus": "0",
+      "userGrade": "3",
+      "userEndTime": "2018-01-14 15:35",
+      "userDesc" : "layui框架作者，性别至今是个谜。。。",
+      "number": "17198665201",
+      "type": "管理员",
+      "role": "博物馆用户",
+      "key": "停用"
+    },
+    {
+      "usersId": "3",
+      "userName": "李梦三",
+      "userEmail": "中国美术馆",
+      "userSex": "男",
+      "userStatus": "1",
+      "userGrade": "2",
+      "userEndTime": "2018-01-25 16:25",
+      "userDesc" : "fly社区管理员，据传与layui作者有奸情，故帐号被封。",
+      "number": "17198665201",
+      "type": "普通用户",
+      "role": "博物馆用户",
+      "key": "正常"
+    },
+    {
+      "usersId": "4",
+      "userName": "李九思",
+      "userEmail": "鲁迅博物馆",
+      "userSex": "男",
+      "userStatus": "1",
+      "userGrade": "2",
+      "userEndTime": "2018-01-25 16:25",
+      "userDesc" : "fly社区管理员，据传与layui作者有奸情，故帐号被封。",
+      "number": "17198665201",
+      "type": "普通用户",
+      "role": "博物馆用户",
+      "key": "停用"
+    },
+    {
+      "usersId": "5",
+      "userName": "王忠",
+      "userEmail": "中国军事博物馆",
+      "userSex": "男",
+      "userStatus": "1",
+      "userGrade": "2",
+      "userEndTime": "2018-01-25 16:25",
+      "userDesc" : "fly社区管理员，据传与layui作者有奸情，故帐号被封。",
+      "number": "17198665201",
+      "type": "普通用户",
+      "role": "博物馆用户",
+      "key": "正常"
+    }
+  ]
+}

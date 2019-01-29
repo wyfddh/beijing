@@ -1,0 +1,52 @@
+<header class="commonHeader">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>统计报表</h2>
+</header>
+<section class="overflow-scroll scroll-content hasCommonHeader" style="z-index: -1;width: 100%;">
+    <ion-content class="statisticContent">
+        <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+        <div class="top">
+            <h6>收藏单位统计</h6>
+            <div class="statisticNum">
+                <p><img src="img/staticImg.png" alt=""><span>全市收藏单位数量</span></p>
+                <p class="num">603</p>
+            </div>
+            <h6 class="jianbao">简报</h6>
+            <p class="contentJianbao">
+                第一次全国可移动文物普查中，我省收藏单位共计<span>600</span>家。截止2017年4月，我省收藏单位为<span>610</span>家，较第一次全国可移动文物普查新增<span>3</span>家。
+            </p>
+            <button class="check" ui-sref="collectionUnitName">查看收藏单位数量分布</button>
+        </div>
+        <!--//可移动文物统计-->
+        <div class="canMove">
+            <h6>可移动文物统计</h6>
+            <div class="leftCircle circle">
+                <div>
+                    <p class="tit">全省第一次可移动文物普查数量</p>
+                    <p class="num">1,220,000</p>
+                </div>
+            </div>
+            <div class="rightCircle circle">
+                <div>
+                    <p class="tit">全省当前可移动文物收藏数量</p>
+                    <p class="num">1,220,000</p>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+            <h6 class="jianbao">简报</h6>
+            <p class="contentJianbao">
+                第一次全国可移动文物普查中，我省收藏的藏品数量共计１,２２０,０００件／套。截止2017年4月，我省藏品收藏数量为1,250,000件/套，较第一次全国可移动文物普查新增30,000件/套。
+            </p>
+            <div class="button_wrap">
+                <button>可移动文物基本情况统计</button>
+                <button ui-sref="canMoveCollectionCity">可移动文物地区分布统计</button>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="foot">
+            <p>想查看完整版统计报表，请在PC端输入</p>
+            <p><a href="">http://www.wwsdw.org/mip/toLogin.do</a></p>
+            <i class="icon ion-chevron-right"></i>
+        </div>
+    </ion-content>
+</section>

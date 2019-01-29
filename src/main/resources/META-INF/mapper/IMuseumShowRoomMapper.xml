@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumShowRoomMapper">
+    
+	<sql id="museumShowRoomColumns">
+	  a.id  as "id",
+	  a.museum_id  as "museumId",
+	  a.name  as "name",
+	  a.area  as "area",
+	  a.room_lighting  as "roomLighting",
+	  a.collection_protect  as "collectionProtect",
+	  a.monitor  as "monitor",
+	  a.fire_fighting  as "fireFighting",
+	  a.fire_prevention  as "firePrevention",
+	  a.guard_against_theft  as "guardAgainstTheft",
+	  a.light_protection  as "lightProtection",
+	  a.shockproof  as "shockproof",
+	  a.waterproof  as "waterproof"
+	</sql>
+	
+    
+	<select id="selectForm" resultType="com.tj720.admin.dto.MuseumShowRoomDto" >
+		SELECT 
+			<include refid="museumShowRoomColumns"/>
+		FROM museum_show_room a
+		WHERE a.id = #{id}  limit 1
+	</select>
+
+	<select id="selectList" resultType="com.tj720.admin.dto.MuseumShowRoomDto" >
+		SELECT
+		<include refid="museumShowRoomColumns"/>
+		FROM museum_show_room a
+		<where>
+			a.del_flag =#{1} and a.museum_id = #{0}
+		</where>
+		ORDER BY a.update_date DESC
+	</select>
+
+	<insert id="insert">
+		INSERT INTO museum_show_room(
+			  id,
+			  museum_id,
+			  name,
+			  area,
+			  room_lighting,
+			  collection_protect,
+			  monitor,
+			  fire_fighting,
+			  fire_prevention,
+			  guard_against_theft,
+			  light_protection,
+			  shockproof,
+			  waterproof,
+			  create_by,
+			  create_date,
+			  update_by,
+			  update_date, 
+			  del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{name},
+			#{area},
+			#{roomLighting},
+			#{collectionProtect},
+			#{monitor},
+			#{fireFighting},
+			#{firePrevention},
+			#{guardAgainstTheft},
+			#{lightProtection},
+			#{shockproof},
+			#{waterproof},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_show_room SET 	
+			  name  =#{name},
+			  area  =#{area},
+			  room_lighting  =#{roomLighting},
+			  collection_protect  =#{collectionProtect},
+			  monitor  =#{monitor},
+			  fire_fighting  =#{fireFighting},
+			  fire_prevention  =#{firePrevention},
+			  guard_against_theft  =#{guardAgainstTheft},
+			  light_protection  =#{lightProtection},
+			  shockproof  =#{shockproof},
+			  waterproof  =#{waterproof},
+			  update_by = #{updateId},
+			  update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+	
+	<!--物理删除-->
+	<delete id="deleteByLogic">
+		delete from museum_show_room 
+		WHERE id = #{id} and del_flag in('1','3')
+	</delete>
+	
+	<delete id="deleteBase">
+    	delete from museum_show_room
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+    
+    <update id="updateFlag">
+	    UPDATE museum_show_room SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+	
+</mapper>

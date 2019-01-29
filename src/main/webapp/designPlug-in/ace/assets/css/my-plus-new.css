@@ -1,0 +1,151 @@
+@charset "utf-8";
+.li-archive{
+	background-color:#FFFFFF !important;
+	color:#000000 !important;
+}
+
+.bg1-nav  .active{
+	background-color:#63abd4;
+	color: #FFFFFF;
+}
+
+.bg1-nav li:hover{
+	background-color:#63abd4;
+	color: #FFFFFF;
+}
+
+.bg1-nav li{
+	cursor: pointer;
+}
+
+
+.ps-wrap .kk-s {
+	margin-right: 80px;
+	margin-left: 20px;
+	float: left;
+	position: absolute;
+	left: 0px;
+}
+
+.link-cen{
+	height: 100px;
+}
+
+.bg1-nav {
+    height: 50px;
+}
+
+
+.profile-picture .p-scroll {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.profile-picture .p-scroll .ps-wrap{
+	    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+ .profile-picture .p-scroll .ps-main{
+	
+    top: 0px;
+    margin-left: 20px;
+    float: left;
+    position: absolute;
+    width: 140px;
+    left: 0px;
+	
+}
+
+
+.profile-picture .p-scroll .ps-item {
+    text-align: left;
+    margin-right: 2px;
+    float: left;
+    border-width: 2px;
+    border-color: #e4393c;
+    margin-bottom: 5px;
+}
+
+.p-scroll .ps-item a {
+    cursor: default;
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 1px;
+}
+
+.p-scroll .ps-item img {
+    width: 35px;
+    height: 35px;
+}
+
+.p-scroll .ps-item a.curr {
+    padding: 0;
+    border-width: 2px;
+    border-color: #e4393c;
+}
+
+.profile-picture .p-focus {
+    bottom: 0px;
+    position: absolute;
+    opacity: 1;
+    background: rgba(0,0,0,.7);
+    padding: 3px 8px;
+    color: #fff;
+    left: 1px;
+    border: medium none;
+}
+
+
+.p-scroll .ps-next {
+    position: absolute;
+    width: 20px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    color: #aaa;
+    font-size: 16px;
+    font-family: "\5b8b\4f53";
+    cursor: pointer;
+}
+.p-scroll .ps-next {
+    left: 140px;
+    top: 5px;
+}
+
+
+.p-scroll .ps-prev {
+    position: absolute;
+    width: 20px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    color: #aaa;
+    font-size: 16px;
+    font-family: "\5b8b\4f53";
+    cursor: pointer;
+}
+.p-scroll .ps-prev {
+    left: 0px;
+    top: 5px;
+}
+
+
+.rig {
+    right: 40px;
+    position: absolute;
+}
+.link-cen .lef, .rig {
+    line-height: 80px;
+    font-size: 30px;
+    color: #555555;
+    cursor: pointer;
+    font-family: "\5b8b\4f53";
+}
+
+
+
+

@@ -1,0 +1,14 @@
+delete from temp_expertreview; 
+delete from temp_expertreviewallocate; 
+delete from temp_initialreview; 
+delete from temp_projectorallocate; 
+delete from temp_reviewadvice; 
+delete from temp_schemeadvice; 
+delete from temp_schemeattach; 
+delete from temp_schemeexpert; 
+delete from temp_schemeinfo; 
+delete from temp_schemememo; 
+delete from temp_schemeregister; 
+delete from temp_schemereport; 
+delete from temp_userflowaction; 
+delete from temp_userinfo; 

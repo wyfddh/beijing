@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+            width:100%;
+            height:100%;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .content{
+            width:500px;
+            height:500px;
+            border:1px solid #000;
+        }
+        .box{
+            width:100px;
+            height:200px;
+            border:1px solid #000;
+        }
+        .show{
+            width:200px;
+            height:500px;
+            border:1px solid red;
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="red" class="box">
+            <p>展台1</p>
+            <img src="" width="100px" height="100px" alt="">
+        </div>
+        <button class="submit" disabled>提交</button>
+        <div id="green" class="box">
+            <p>展台2</p>
+            <img src="" width="100px" height="100px" alt="">
+        </div><button class="submit" disabled>提交</button>
+    </div>
+    <div class="show">
+        <ul>
+
+        </ul>
+    </div>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

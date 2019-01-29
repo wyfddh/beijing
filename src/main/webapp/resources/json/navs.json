@@ -1,0 +1,196 @@
+{
+	"contentManagement": [
+		{
+			"title": "系统配置",
+			"icon": "&#xe630;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "条例分类配置",
+					"icon": "&#xe61c;",
+					"href": "legalType/list.do",
+					"spread": false
+				},
+				{
+					"title": "站内消息",
+					"icon": "&#xe61c;",
+					"href": "insideInfo/list.do",
+					"spread": false
+				}
+			]
+		},
+		{
+			"title": "藏品管理",
+			"icon": "&#xe630;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "藏品库",
+					"icon": "&#xe61c;",
+					"href": "collections/list.do?pageType=1",
+					"spread": false
+				},
+				{
+					"title": "公开藏品库",
+					"icon": "&#xe61c;",
+					"href": "openCollection/list.do",
+					"spread": false
+				},
+				{
+					"title": "馆际交流藏品库",
+					"icon": "&#xe61c;",
+					"href": "collectDcBorrow/list.do",
+					"spread": false
+				},
+				{
+					"title": "藏品登录",
+					"icon": "&#xe61c;",
+					"href": "collections/list.do?pageType=2",
+					"spread": false
+				},
+				{
+					"title": "藏品动态统计",
+					"icon": "&#xe61c;",
+					"href": "objectChange/statisticsInfo.do",
+					"spread": false
+				},
+				{
+					"title": "藏品变动列表",
+					"icon": "&#xe61c;",
+					"href": "objectChange/list.do",
+					"spread": false
+				}
+			]
+		},
+		{
+			"title": "公众服务",
+			"icon": "icon-text",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "文章管理",
+					"icon": "&#xe61c;",
+					"href": "cmsArticel/goList.do",
+					"spread": false
+				},
+				{
+					"title": "栏目管理",
+					"icon": "&#xe61c;",
+					"href": "cmsSubject/goList.do",
+					"spread": false
+				},
+				{
+					"title": "友情链接",
+					"icon": "&#xe61c;",
+					"href": "cmsFriendlyLink/goList.do",
+					"spread": false
+				},
+				{
+					"title": "轮播图管理",
+					"icon": "&#xe61c;",
+					"href": "banner/goList.do",
+					"spread": false
+				},
+				{
+					"title": "虚拟展厅",
+					"icon": "&#xe61c;",
+					"href": "virtual/goList.do",
+					"spread": false
+				},
+				{
+					"title": "展览展讯",
+					"icon": "&#xe61c;",
+					"href": "spreadtrum/goList.do",
+					"spread": false
+				},
+				{
+					"title": "学术讲座",
+					"icon": "&#xe61c;",
+					"href": "activityAdmin/goLectureList.do",
+					"spread": false
+				},
+				{
+					"title": "亲子活动",
+					"icon": "&#xe61c;",
+					"href": "activityAdmin/goActivityList.do",
+					"spread": false
+				}
+			]
+		},
+	
+		{
+			"title": "组织权限管理",
+			"icon": "&#xe630;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "组织管理",
+					"icon": "&#xe61c;",
+					"href": "organization/museum/info.do",
+					"spread": false
+				},
+				{
+					"title": "用户管理",
+					"icon": "&#xe61c;",
+					"href": "userManagemen/list.do",
+					"spread": false
+				}, {
+					"title": "角色管理",
+					"icon": "&#xe61c;",
+					"href": "role/info.do",
+					"spread": false
+				}, {
+					"title": "菜单管理",
+					"icon": "&#xe61c;",
+					"href": "menu/goList.do",
+					"spread": false
+				}
+			]
+		},
+	
+		{
+			"title": "政务管理",
+			"icon": "&#xe630;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "法律法规",
+					"icon": "&#xe609;",
+					"href": "legal/list.do",
+					"spread": false
+				},
+				{
+					"title": "通知公告发布",
+					"icon": "&#xe609;",
+					"href": "notice/publish/goList.do",
+					"spread": false
+				},{
+					"title": "通知公告接收",
+					"icon": "&#xe609;",
+					"href": "notice/receive/goList.do",
+					"spread": false
+				},
+				{
+					"title": "机构资料",
+					"icon": "&#xe61c;",
+					"href": "museuminfo/museumList.do",
+					"spread": false
+				},
+				{
+					"title": "我的单位信息",
+					"icon": "&#xe61c;",
+					"href": "museuminfo/museumDetail.do",
+					"spread": false
+				}
+				
+			]
+		}
+	]
+}
+
+

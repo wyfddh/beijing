@@ -1,0 +1,154 @@
+body {
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	font-size:14px;
+	FONT-FAMILY:微软雅黑,新宋体, Arial, Helvetica, sans-serif;
+	/**background-image: url(resources/fc/images/bj.jpg);*/
+}
+/**浠ヤ笅鏄鎵�湁甯歌鐨勫璞＄殑榛樿鏍峰紡*/
+.formtable INPUT,TEXTAREA,SELECT {
+	LINE-HEIGHT:26px;
+	margin:0;
+	padding-left:4;
+	padding-right:4;
+}
+.formtable TH,TD{
+	margin:0;
+	LINE-HEIGHT:26px;
+	padding-left:4;
+	padding-right:4;
+}
+
+.ListHead {
+	height:22px; 
+	background-color:#E1F0F2;
+	/**background:url(/images/main/list_bg1.jpg) repeat-x  top;*/
+	font-size:14px;
+	font-weight:normal;
+	text-align:center;
+	padding-left:4;
+	padding-right:4;
+	padding-top:1;
+	padding-bottom:1;
+	cursor:hand;
+	/**
+	background-color:#DCE3EB;
+	border-bottom:4px #DCE3EB solid;
+	border:1px inset;
+	height:22px;
+	border-left:1px  solid;
+	border-top:0px;
+	text-align:center;
+	cursor:hand;
+	*/
+}
+
+.ListDouble {
+	height:22px; 
+	background:#DCE3EB;
+	font-size:14px;
+	font-weight:normal;
+	padding-left:4;
+	padding-right:4;
+	padding-top:1;
+	padding-bottom:1;
+}
+
+.ListSingle {
+	height:22px; 
+	background:#fff;
+	font-size:14px;
+	font-weight:normal;
+	padding-left:4;
+	padding-right:4;
+	padding-top:1;
+	padding-bottom:1;
+}
+
+.read{
+	height:21px;
+	LINE-HEIGHT: 21px;
+    cursor:hand;
+	margin-top:0px;
+	border-left:1px solid #D2D7D9; 
+	border-top:1px solid #D2D7D9; 
+	border-right:1px solid #D2D7D9; 
+	border-bottom:1px solid #D2D7D9; 
+	FONT-SIZE: 16px;
+	padding:0;
+	readonly:true;
+
+}
+.formtable .inputxt{
+	height:26px;
+	LINE-HEIGHT:26px;
+	FONT-SIZE: 14px;
+	border-left:1px solid #6699FF;
+	border-top:1px solid #6699FF;
+	border-right:1px solid #6699FF;
+	border-bottom:1px solid #6699FF;
+	margin-top:0px;
+	padding:0px 0px;
+}
+.formtable select{
+	padding:1px 1px;
+	width:155px;
+}
+.Validform_label {
+	font-size: 14px;
+	/**font-weight: bold;*/
+	color: black;
+}
+.formtable
+{
+	width:100%;
+	background-color:#ccc;
+	align:right;
+	margin-top: 10px;
+}
+.main_table{margin:6px auto;  border-left:1px solid #d3d3d3; border-top:1px solid #d3d3d3}
+.main_table td{line-height:26px; padding:2px; border-bottom:1px solid #d3d3d3; border-right:1px solid #d3d3d3}
+.table_title{background:#f7f7f7; padding:6px; text-align:center; font-weight:bold}
+.formtable tr 
+{ 
+	background-color:#eee;
+	align:right;
+}
+.value
+{
+	background-color:#FFFFFF;
+	padding:2px 1px;
+	align:left; 
+}
+
+.swfupload{
+	vertical-align:top;
+}
+.passwordStrength{
+
+}
+.passwordStrength b{
+	font-weight:normal;
+}
+.passwordStrength b,.passwordStrength span{
+	display:inline-block; 
+	vertical-align:middle;
+	line-height:16px;
+	line-height:18px\9;
+	height:16px;
+}
+.passwordStrength span{
+	width:45px; 
+	text-align:center; 
+	background-color:#d0d0d0; 
+	border-right:1px solid #fff;
+}
+.passwordStrength .last{
+	border-right:none;
+}
+.passwordStrength .bgStrength{
+	color:#fff;
+	background-color:#71b83d;
+}

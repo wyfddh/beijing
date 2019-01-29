@@ -1,0 +1,24 @@
+.listColor{
+    color: #ffffff!important;
+}
+.listColor:hover{
+    background: #16b57f;
+}
+#menu-comments  li a:hover{
+    background: #16b57f;
+}
+.Hui-aside .menu_dropdown dt{
+    border:none;
+    font-size: 1rem;
+}
+.fabu-aside>div{
+	margin-top:21px;
+	width: 82px;
+	margin: 0 auto;
+}
+.fabu-aside>div>p{
+	width: 82px;
+	height: 82px;
+	border:4px solid #F1F2F7;
+	border-radius:50%;
+}

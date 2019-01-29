@@ -1,0 +1,27 @@
+<ion-content class="cezhan-content scrolltop">
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div class="list">
+        <a class="cezhanListWrap" ui-sref="cezhanDetail({id:item.id})" ng-repeat="item in cezhanList">
+            <div class="cezhanImgWrap">
+                <img ng-src="{{rootUrl}}{{item.mainImage}}">
+            </div>
+            <img src="img/xilie.png" alt="" class="jiaobiao" ng-if="item.isSeries">
+            <div class="wrapWords">
+                <h2 class="cezhan-h2" ng-if="item.isSeries == 0">{{item.title}}</h2>
+                <h2 class="cezhan-h2" ng-if="item.isSeries == 1">{{item.seriesName}}</h2>
+                <p class="cezhanPerson">{{item.author}}</p>
+                <div class="cezhanTalk">
+                    <img src="img/talk.png">
+                    <span class="talk-number">{{item.commentCounts}}</span>
+                    <img src="img/6493.png">
+                    <span class="talk-number">{{item.likeCounts}}</span>
+                </div>
+            </div>
+        </a>
+        <ion-infinite-scroll on-infinite = "loadMore()" distance = "1%" immediate-check = "false" ng-if="moreData"></ion-infinite-scroll>
+    </div>
+</ion-content>

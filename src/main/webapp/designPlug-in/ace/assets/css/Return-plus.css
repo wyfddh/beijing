@@ -1,0 +1,31 @@
+@charset "utf-8";
+.rad{
+	color: #FF0000;
+}
+.page-header{
+	margin: 0 ;
+	background-color:rgba(239, 243, 248, 1);
+}
+.btn{
+    margin-left:20px;
+}
+.tab-content{
+	width: 1000px;		
+	margin: 10px auto;	
+}
+.tab-cen{
+	width: 100%;
+	border: 1px solid #CCCCCC;
+	
+}
+.tab-cen td{
+	border: 1px solid #CCCCCC;
+	height:50px;
+	padding: 10px;
+}
+.tab-cen input{
+	border: none;
+}
+.tab-cen textarea{
+	border: none;
+}

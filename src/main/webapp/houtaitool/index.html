@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>革命文物筛选平台</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="../back/favicon.ico">
+    <script src="js/lib/jquery-1.10.2.min.js"></script>
+    <script src="js/lib/base64.js"></script> 
+    <script src="js/layui/layui.js"></script>
+    <script src="js/lib/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+<div class="layui-tab layui-tab-brief mb0 pb0" lay-filter="docDemoTabBrief" style="width:1400px;margin-left: auto;margin-right:auto">
+    <ul class="layui-tab-title">
+        <li class="layui-this plr25" data="1" lay-id="a1"><span>一普库</span><span class="ml20">(</span><span class="num">0</span><span>)</span></li>
+        <li class="plr25" data="2" lay-id="a2"> <span>革命文物库</span><span class="ml20">(</span><span class="num">0</span><span>)</span></li>
+    </ul>
+    <div class="layui-tab-content mb0 pb0" style="padding-left:0;padding-top:8px">
+        <div class="layui-tab-item layui-show ">
+            <div class="layui-tab layui-tab-skin mb0 pb0" lay-filter="optionTabBrief">
+                <ul class="layui-tab-title pl0">
+                    <li class="layui-this" data="1" lay-id="b1"><span>待筛选</span><span class="ml20">(</span><span class="num">0</span><span>)</span></li>
+                    <li data="2" lay-id="b2"><span>疑似</span><span class="ml20">(</span><span class="num">0</span><span>)</span></li>
+                    <li data="3" lay-id="b3"><span>已排除</span><span class="ml20">(</span><span class="num">0</span><span>)</span></li>
+                </ul>
+                <div class="derail layui-form">
+                    <span>是否隐藏年代不符的藏品</span>
+                    <div class="layui-form-item layui-input-inline" style="margin-top:-5px">
+                        <div class="layui-input-line">
+                            <input type="checkbox" lay-text="是|否" lay-skin="switch" lay-filter="switch" checked>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+        </div>
+    </div>
+</div>
+<div class="search" style="margin:0 auto">
+    <div class="typeCont">
+       <div class="typeTitle">藏品分类</div>
+       <ul class="typeList">
+       </ul>
+        <a href="javascript:void (0);" class="getMore typeBtn">更多></a>
+    </div>
+    <div class="yearCont">
+        <div class="yearTitle">常用年代</div>
+        <ul class="yearList">
+        </ul>
+        <a href="javascript:void (0);" class="getMore typeBtn">更多></a>
+    </div>
+    <div class="levelCont">
+        <div class="levelTitle">所属级别</div>
+        <ul class="levelList">
+        </ul>
+        <!--<a href="javascript:void (0);" class="getMore typeBtn">更多></a>-->
+    </div>
+  
+    <div class="seachSelect layui-form">
+        <div class="layui-row">
+            <div class="layui-form-item layui-input-inline mr20">
+                <div class="searchBtns">
+                    <input type="key" name="title" id="key" required  lay-verify="required" placeholder="依藏品名称关键词搜索（可输入多个，用逗号隔开，回车即可）" autocomplete="off" class="layui-input">
+                    <img src="img/searchBtn.png" alt="" id="searchBtn" width="21px" height="21px" >
+                </div>
+            </div>
+            <div class="layui-form-item layui-input-inline">
+                <div class="layui-input-inline">
+                    <select name="collectionTexture" lay-verify="required" id="collectionTexture" placeholder="藏品质地">
+                        <option value="" >藏品质地</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-input-inline layui-hide" id="exhibitingDiv">
+                <div class="layui-input-inline">
+                    <select name="exhibiting" lay-verify="required" id="exhibiting" placeholder="是否在展">
+                        <option value="" >是否在展</option>
+                    </select>
+                </div>
+            </div> 
+            <div class="layui-form-item layui-input-inline">
+                <div class="layui-input-inline">
+                    <select name="degreeDisability" lay-verify="required" id="degreeDisability" placeholder="完残程度">
+                        <option value="" >完残程度</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-input-inline">
+                <div class="layui-input-inline">
+                    <select name="collectionComeFrom" lay-verify="required" id="collectionComeFrom" placeholder="文物来源">
+                        <option value="" >文物来源</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-input-inline">
+                <div class="layui-input-inline">
+                    <select name="saveState" lay-verify="required" id="saveState" placeholder="保存状态">
+                        <option value="" >保存状态</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-input-inline">
+                <div class="layui-input-inline">
+                    <select name="org" lay-verify="required" id="org" lay-search placeholder="收藏单位">
+                        <option value="" >收藏单位</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zhankai">
+            <span class="zhankai1 cur">收起  ︿</span>
+            <span class="zhankai2">展开  ﹀</span>
+    </div>
+    <div class="layui-form">
+        <input type="text" class="layui-hide" name="repertoryState" id="repertoryState" value="1">
+        <input type="text" class="layui-hide" name="screenState" id="screenState" value="1">
+        <input type="text" class="layui-hide" name="autoCheck" id="autoCheck" value="1">
+        <input type="text" class="layui-hide" name="collectionCategory" id="collectionCategory" value="">
+        <input type="text" class="layui-hide" name="collectionYearType" id="collectionYearType" value="">
+        <input type="text" class="layui-hide" name="collectionLevel" id="collectionLevel" value="">
+    </div>
+</div>
+<script type="text/html" id="collectiontoolbar">
+    <div class="layui-group">
+        <button class="myBtn" id="batchSure" lay-event="batchSure">确定</button>
+        <button class="myBtn" id="batchHandle" lay-event="batchHandle">确定同时排除本页其他</button>
+        <button class="myBtn" id="batchExclude" lay-event="batchExclude">排除</button>
+        <button class="myBtn" id="batchLike" lay-event="batchLike">疑似</button>
+        <button class="myBtn layui-hide" id="batchExhibiting" lay-event="batchExhibiting">标记为在展</button>
+        <button class="myBtn daochu" lay-event="batchExport">导出 <span>…</span>
+         <ul class="daochuList">
+             <li class="daochuItem">导出选中数据</li>
+             <li class="daochuItem">导出当前查询结果</li>
+         </ul>  
+        </button>
+		<button class="myBtn layui-hide" id="filterSubmit" style="float:right" lay-event="filterSubmit">筛选完成</button>
+		<button class="myBtn layui-hide" id="getSubmitList" style="float:right" lay-event="getSubmitList">完成情况列表</button>
+    </div>
+</script>
+<div class="selectedNum" style="margin:10px auto 0">
+    <img src="img/Group21.svg" alt="" width="16px" height="16px">
+    <span>共<b id="totalNum">0</b>条数据!&nbsp;&nbsp; </span><span>已选择 <b id="checkboxNum">0</b> 条</span>
+</div>
+<div class="agileTable" style="margin:0px auto 0">
+    <table class="layui-hide" id="collection" lay-filter="collection"></table>
+</div>
+<script type="text/html" id="barDemo">
+    {{#  if(d.dataState < '4'){ }}
+    <a class="layui-btn layui-btn-xs" lay-event="sure">确定</a>
+    {{#  } }}
+    {{#  if(d.dataState != '3'){ }}
+    <a class="layui-btn layui-btn-xs" lay-event="exclude">排除</a>
+    {{#  } }}
+    {{#  if(d.dataState != '2'){ }}
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="like">疑似</a>
+    {{#  } }}
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="detail">查看</a>
+    {{#  if(d.dataState == '4'){ }}
+        {{#  if(d.exhibiting == '1'){ }}
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="noexhibiting">取消在展</a>
+        {{#  } else { }}
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="exhibiting">在展</a>
+        {{#  } }}
+    {{#  } }}
+</script>
+</body>
+</html>

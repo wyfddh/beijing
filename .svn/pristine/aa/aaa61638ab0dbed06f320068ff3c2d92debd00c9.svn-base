@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		大汶口文化玉串饰
+    		<span>作者 : 肖贵田</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 5.3rem;height: 6.4rem;" src="../images/yuchuan.jpg" alt="">
+    		<p class="text">
+    			 新石器时代大汶口文化，1971年邹县（今邹城市）野店遗址出土，现藏于山东博物馆。玉串饰由11枚玉佩件组成，其中有8件单环璧，1件双连璧，1件四连璧，1件绿松石坠。单环璧直径3～5.1厘米，双环璧长6.8厘米，四连环璧长4.8厘米，绿松石坠长3厘米。玉串饰出土于一座贵族女子墓中，当是项饰。玉片较薄，呈青色或白色，运用了磨光技术和两面钻孔技术。所谓两面钻孔技术，即运用“以玉攻玉”原理，在被选定的石坯的特定部位的正、背面，用质地较硬的工具带动“解玉砂”进行两面琢钻，使其穿孔；这种孔的孔壁多为漏斗状，孔眼呈上口大、中间细、下口大的蜂腰状。该玉串饰代表了大汶口文化时期玉器先进的工艺水平。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+    	</div>
+    </body>
+</html>

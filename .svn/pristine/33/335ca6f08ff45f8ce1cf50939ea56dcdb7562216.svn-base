@@ -1,0 +1,43 @@
+<header class="moreCollection-search-box">
+    <a href="#/museumDetail"><img class="left-arrow" src="img/39.png"></a>
+    <div class="collection-text">
+        <input class="collection-search" type="text" placeholder="搜索你感兴趣的藏品"/>
+    </div>
+    <div class="biaoben">标本化石</div>
+    <img class="arrow" src="img/arrow.png">
+</header>
+<nav class="moreCollection-content-search">
+    <!--<span class="xian"></span>-->
+    <div class="area">
+        <span>最新</span>
+        <img src="img/paixu-down-3.png">
+    </div>
+    <img class="xian" src="img/xian.png">
+    <div class="object">
+        <img src="img/shaixuan.png">
+        <span>筛选</span>
+    </div>
+</nav>
+<section class="overflow-scroll collection-top scroll-content has-footer" style="z-index:-1;">
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <div class="list" ng-repeat="n in collectionData.data.mociList">
+            <a class="item item-thumbnail-left" ng-click="getIndex($index)" href="#/collectionDetail/{{collectionDataID}}">
+                <img ng-src="{{n.mipOpenCulturalrelicInfo.fpic}}">
+                <div class="collection-item-left">
+                    <h2>{{n.mipOpenCulturalrelicInfo.name}}</h2>
+                    <p class="year">{{n.mipOpenCulturalrelicInfo.yearType}}</p>
+                    <p class="zhonglei">{{n.mipOpenCulturalrelicInfo.collectionsCategory}}</p>
+                    <p class="high">{{n.mipOpenCulturalrelicInfo.size}}</p>
+                    <div class="media-box">
+                        <span>3D</span>
+                        <span>视频</span>
+                        <span>语音</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="down-list"></div>
+        <ion-infinite-scroll on-infinite = "loadMore()" distance = "1%" immediate-check = "false" ng-if="moreData"></ion-infinite-scroll>
+    </ion-content>
+</section>

@@ -1,0 +1,50 @@
+<header class="home-browse-head">
+    <div class="home-browse-area">
+        <h2>所在地区</h2>
+        <img class="sanjiao" src="img/sanjiao.png">
+    </div>
+    <p>正在展览</p>
+    <div><img class="home-browse-zhanxun" src="img/15812.png"></div>
+</header>
+<ul class="browse-list-city">
+    <li ng-repeat="x in homeBrowseData.data.cityList" ng-click='browseList($index)' ng-class="{ true :'selected',false:''} [x.isclick]">{{x.cityName}}</li>
+</ul>
+<ul class="browse-city-musueum">
+    <li>全部</li>
+    <li ng-repeat="y in homeBrowseData.data.cityList[index].museum" data-cityid="{{y.cityId}}" ng-click="cityMuseum($index,$event)" ng-class="{ true :'selected',false:''} [y.isclick]">{{y.name}}<i><img src="img/yes.png"></i></li>
+</ul>
+<ul class="zhanxun-list">
+    <a href="#/provinceDetail"><li>省外展览</li></a>
+    <a href="#/foreignDetail"><li>国外展览</li></a>
+    <a href="#/homebrowseBefore"><li>往期回顾</li></a>
+</ul>
+<div class="object-shadow"></div>
+<section class="overflow-scroll browse-top
+ 		scroll-content has-footer" style="z-index:-1;">
+    <div id="mask" class="mask"></div>
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div class="list" ng-repeat="n in homeBrowseListData.data.newSpreList">
+        <a class="item item-thumbnail-left" ng-click="getBrowseIndex($index)" href="#/browseDetail/{{browseDataID}}">
+            <img ng-src={{n.pictureThumb}}>
+            <h2>{{n.headline}}</h2>
+            <div class="browse-date" ng-if="n.staTime!=''"><img src="img/1t.png"><span>{{n.staTime+'-'+n.overTime}}</span></div>
+            <div class="browse-museum"><img src="img/4t.png">{{n.musExhibition}}</div>
+            <!--
+            <div class="browse-museum"><img src="img/shuxie.png"><span>编辑人:{{n.editor}}</span></div>
+            -->
+        </a>
+    </div>
+        <div class="down-list"></div>
+        <ion-infinite-scroll
+                immediate-check="false"
+                ng-if="hasMoreBrowse"
+                on-infinite="load()"
+                distance="5%">
+        </ion-infinite-scroll>
+    </ion-content>
+</section>

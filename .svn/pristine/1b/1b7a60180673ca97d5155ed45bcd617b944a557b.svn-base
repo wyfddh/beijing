@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		清 “宣德款”铜炉
+    		<span>作者 : 布明虎</span>
+    	</div>
+    	<div class="detail-body">
+    		<img src="../images/tonglu.png" alt="">
+    		<p class="text">
+    			有明三百年间，物之佳者不可胜数，最能代表或者反映此时段精品的当首推宣德炉。宣德炉作为明代工艺品中的珍品，它的铸造成功，可谓空前绝后，不但开启了后世铜炉的先河，而且在很长一段历史中，宣德炉实际成为铜香炉的代称。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                清洒金卷云足铜炉，山东博物馆藏。高11.8、口径13厘米。圆口，直腹，腹面洒金，卷云足，外底铸“宣德年制”四字阳文篆书款，包浆润泽。
+            </p>
+            <p class="text">  
+                据《宣德彝器图谱》记载，宣德皇帝深感内廷、宗庙、郊坛陈设的鼎彝式样鄙陋，于是下令利用暹罗等地进献的风磨铜，参考《宣和博古图》、《考古图》等史籍，及内藏柴、汝、官、哥、定等名窑器物“款式典雅者”，重新设计、铸造各式铜器。因首造于宣德年间，故后人称之为“宣德炉”。宣德炉以精为基，设计博采众长，铸造精选原料，炼之多达十二次，且掺入贵重的金、银及珠宝。宣德炉以色见长，“宣炉最妙在色。假色外炫，真色内融，从黯淡中发奇光，正如好女子肌肤柔腻可掐”。宣德炉以形而雅，尤以乳足、花边、鱼鳅蜒蚰诸耳、熏冠、象鼻、石榴足、香奁、花素方圆鼎为最佳。
+            </p>
+            <p class="text">
+                嵌金是一种工艺，是用赤金熏撵入铜内，大片的叫金片，成点形的叫金点，大小相同的叫雨雪点。这种使用特种工艺制作的铜炉，价值往往比普通铜炉高数倍。为炉配置底座，明代中后期以后蔚然成风，到了清代，就更为常见了。
+            </p>
+            <p class="text">
+                因宣德炉特为珍贵，从明代宣德年间到民国时期，再到今天，仿制宣德炉活动从未间断。至今国内各大博物馆内收藏的许多宣德炉。山东博物馆藏的这件洒金卷云足铜炉，圆口，直腹，胎体厚重，质密坚实，造型规范，线条流畅，底色深沉，金片光亮，凝重与富丽浑然一体，为清代仿宣德精品之作。
+            </p>
+    	</div>
+    </body>
+</html>

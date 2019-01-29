@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.collection.CollectionCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.collection.CollectionCategory">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="sequence" jdbcType="INTEGER" property="sequence" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, type, status, sequence, createTime, short_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from collection_category
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from collection_category
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.collection.CollectionCategory">
+    insert into collection_category (id, name, type, 
+      status, sequence, createTime, 
+      short_name)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{status,jdbcType=TINYINT}, #{sequence,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{shortName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.collection.CollectionCategory">
+    insert into collection_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sequence != null">
+        sequence,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sequence != null">
+        #{sequence,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.collection.CollectionCategory">
+    update collection_category
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sequence != null">
+        sequence = #{sequence,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.collection.CollectionCategory">
+    update collection_category
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      sequence = #{sequence,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      short_name = #{shortName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="getListByType"  resultMap="BaseResultMap">
+  	
+		SELECT
+		d.id,
+		max(d. NAME) AS NAME,
+		max(d.short_name) AS short_name,
+		SUM(d.collectCount) AS collectCount
+		FROM
+		(
+		SELECT
+		(
+		CASE a.type
+		WHEN '文物' THEN
+		a.id
+		ELSE
+		'999999'
+		END
+		) AS id,
+		(
+		CASE a.type
+		WHEN '文物' THEN
+		a. NAME
+		ELSE
+		'其他'
+		END
+		) AS NAME,
+		(
+		CASE a.type
+		WHEN '文物' THEN
+		a.short_name
+		ELSE
+		'其他'
+		END
+		) AS short_name,
+		IFNULL(c.num, 0) AS collectCount,
+		(
+		CASE a.type
+		WHEN '文物' THEN
+		a.sequence
+		ELSE
+		'999999999'
+		END
+		) AS sequence
+		FROM
+		(
+		SELECT
+		b.collection_category,
+		count(1) AS num
+		FROM
+		collection_info b 
+		WHERE
+		1 = 1
+		  <if test="repertoryState == 1">
+	      and b.data_state = #{screenState}
+	      </if>
+	      <if test="repertoryState == 2">
+	      and b.data_state = "4"
+	      </if>
+	      <if test="orgId != null and orgId != ''">
+	      and b.collection_org_id = #{orgId}
+	      </if>
+	      <if test="orgType == 2">
+	      and b.collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+	   	  </if>
+	      <if test="autoCheck != null and autoCheck != ''">
+	     and	b.collection_year_type  IN (
+					"320000",
+					"321000",
+					"319000",
+					"451000",
+					"452000",
+					"453000"
+				) 
+		      GROUP BY
+			b.collection_category
+	     
+	      
+	      </if>
+	      <if test="autoCheck == null or autoCheck == ''">
+	        GROUP BY
+			b.collection_category
+	      </if>
+		
+		) c
+		RIGHT JOIN collection_category a ON (c.collection_category = a.id)
+		WHERE
+		"1" = "1"
+		AND a. STATUS = '1'
+		) d
+		GROUP BY
+		d.id
+  </select>
+</mapper>

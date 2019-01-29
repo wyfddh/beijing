@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		清太平有象尊和熏炉
+    		<span>作者 : 布明虎</span>
+    	</div>
+    	<div class="detail-body">
+    		<img src="../images/xunlu01.png" alt="">
+    		<p class="text">
+    			明朝晚期，战乱频繁，“太平有象”作为和平安定的象征，开始盛行。康乾时期，经济快速发展，社会稳定，人口增长迅速，封建经济达到高度繁荣。茶余饭后，人们更加追求艺术背后蕴藏的吉祥含义，尤以“太平有象”的图案最为盛行。山东博物馆就馆藏有二件清中期太平有象尊和熏炉。完美的体现了清乾隆时期高超的制作技术，更给予了他们美好的寓意。太平有象尊，通高37.8厘米。象直立，卷鼻垂尾，背负高颈尊，器身原嵌彩色宝石，寓意“太平有象”。 瓶与平同音，代表太平。《汉书·王莽传》：“天下太平，五谷成熟”。太平有象即太平盛世，五谷丰登，国泰民安。
+    		</p>
+            <img style="width: 4.6rem;height: 6.4rem;" src="../images/xunlu02.png" alt="">
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                太平有象即太平盛世，五谷丰登，国泰民安。它来源于《汉书·王莽传》：“天下太平，五谷成熟”。又据《资治通鉴·唐纪六十》中所记载，“太平有象”一词取自“太平无象”。在唐文宗太和六年（832年），皇帝向宰相牛僧儒问道：“什么样子才算得上是天下太平？”牛僧儒回答说：“太平无象，今四夷不至交侵，百姓不至流散，虽非至理，亦谓小康。陛下若别求太平，非臣等所及。”意思是时世安乐，天下太平，并无一定的标准。这大概就是太平有象最早的出处了。
+            </p>
+            <p class="text">  
+                传说，佛从天而降就是乘象而来，因为它与圣人下降联系在一起，又与“祥”字同音，因此在我国传统习俗中象征着“祥瑞”。而宝瓶的“瓶”字通平安的“平”字，象背上的珍宝花瓶被看作是观世音菩萨手中的净水瓶，内盛圣水，洒向人间能为天下百姓带来和平幸福。“太”在古汉字中与“大”同解，象背的宝瓶很大，应称大瓶，也可称太瓶。
+            </p>
+            <p class="text">
+                这样“太瓶有象”就成为“太平有象”的吉祥图案了。再加上瓶内所插的磬（吉庆）、画戟（同级）、蝙蝠（福乐）、如意、阴阳鱼及花卉（四季常开）、五谷，就构成了一组有着巧妙含义的祝词。它共有三层意思，一是代表太平有象，幸福如意；二是指吉庆有余，连升三级；三则是寓意五谷丰登，四季平安。
+            </p>
+    	</div>
+    </body>
+</html>

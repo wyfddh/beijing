@@ -1,0 +1,54 @@
+<div class="login">
+    <a href="#/person"><img src="img/39.png"></a>
+    <h2>登录</h2>
+</div>
+<div class="login-content">
+    <form name="signUpForm" method="post"
+          ng-submit="submit()" novalidate>
+        <div class="tel">
+            <img src="img/user.png">
+            <!--ng-minlength="11" ng-maxlength="11" ng-pattern="/^1[3|4|5|8][0-9]\d{4,8}$/"-->
+            <input ng-trim="true" class="tel-control" maxlength="11" id="tel" placeholder="请输入手机号" type="tel" name="tel"
+                   ng-model="tel" required>
+        </div>
+        <div class="tel">
+            <img src="img/lock.png">
+            <input ng-trim="true" class="password-control" maxlength="18" id="pwd" placeholder="请输入密码" type="password" name="password" ng-required="true" ng-maxlength="18" ng-model="password">
+        </div>
+        <div class="mistake-box">
+            <span class="tel-tip" ng-if="(signUpForm.tel.$error.minlength||signUpForm.tel.$error.maxlength||signUpForm.tel.$error.pattern)&&signUpForm.tel.$touched"><img src="img/cha.png"><i>请输入有效手机号</i></span>
+                <span class="tel-tip"
+                      ng-if="signUpForm.tel.$error.required&&signUpForm.tel.$touched"><img src="img/cha.png"><i>请输入手机号</i></span>
+            <span class="pwd-tip" ng-if="(signUpForm.password.$error.minlength||signUpForm.password.$error.maxlength)&&signUpForm.password.$touched"><img src="img/cha.png"><i>密码错误，请重新输入</i></span>
+                <span class="pwd-tip"
+                      ng-if="signUpForm.password.$error.required&&signUpForm.password.$touched"><img src="img/cha.png"><i>请输入密码</i></span>
+        </div>
+        <span class="error" ng-show="error"><i>您输入的密码错误次数过多，锁定2小时</i></span>
+        <div class="code-box" ng-show="codeShow">
+            <input id="code" ng-model="verificationcode" type="number" placeholder="请输入验证码">
+            <div class="idCode" ng-click="changeImg($event)"><img src="../getImgCode.do"></div>
+            <img class="refres" ng-click="changeImg($event)" src="img/code.png">
+        </div>
+        <!--ng-disabled="signUpForm.tel.$dirty && signUpForm.tel.$invalid ||-->
+        <!--signUpForm.password.$dirty && signUpForm.password.$invalid"-->
+        <div class="button-box">
+            <button class="button">确认
+            </button>
+        </div>
+    </form>
+    <div class="special-login">
+            <span class="forget-password">
+                <a href="#/forgotPassword"><i>忘记密码？</i></a>
+            </span>
+        <span class="register">没有账号？，立即<a href="#/registerStepOne"><i>注册</i></a></span>
+        <img class="huo" src="img/huo.png">
+        <img ng-click="wxlogin()" class="wx" src="img/wx.png">
+        <img class="qq" src="img/qq.png">
+        <!--<span id="qqLoginBtn"></span>-->
+    </div>
+</div>
+<!--<script>-->
+    <!--QC.Login({-->
+        <!--btnId:"qqLoginBtn"	//插入按钮的节点id-->
+    <!--});-->
+<!--</script>-->

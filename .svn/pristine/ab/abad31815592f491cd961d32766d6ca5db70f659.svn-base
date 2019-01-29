@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <script src="../js/resizerem.js"></script>
+        <script src="../js/mui/js/mui.js"></script>
+        <link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+        <header>
+            <a class="lf" href="cangping.html"></a>
+            <a class="rt" href="../../index.html"></a>
+        </header>
+        <div class="detail-title">
+            <i></i>
+            明鲁王朱檀九旒冕  
+            <span>作者 : 孙洋</span>
+        </div>
+        <div class="detail-body">
+            <img src="../images/luwangmian.jpg" alt="">
+            <p class="text">
+                藏品名称：明鲁王朱檀九旒冕 
+                <!-- <br><br>
+                藏品一普编号：3701022180000110019140 -->
+            </p>
+            <!-- <a href="javascript:">
+            <span></span>查看藏品</a> -->
+        </div>
+        <div class="detail-footer">
+            <div class="container">
+                <p class="title">
+                    <span>·</span>藏品简介
+                </p>
+                <div>
+                    <p class="text">
+                        明鲁王朱檀九旒冕，明洪武二十二年 （1389），1971年山东邹县（今邹城）明鲁王朱檀墓出土，现藏山东博物馆。高18厘米，板长49.4厘米，宽23.5厘米，帽筒径17.6厘米。用于衮冕服制中，是明代最重要的礼冠。藤篾编制，表面敷罗绢黑漆，镶以金圈、金边；冠的两侧有梅花金穿，贯一金簪。冕的顶部有板，前圆后方，板表为黑色。板前后系垂旒，各九道。每道旒上穿有赤、白、青、黄、黑五色玉珠九颗。板下为玉衡，连接于冠上两凹槽内；玉衡两端垂充耳一对，充耳用玄系青玉瑱各一块。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="title">
+                    <span>·</span>简介
+                </p>
+                <div>
+                    <p class="text">
+                        冕，是帝王的礼帽，皇帝、太子、封王的专署配饰。冕冠的形制在过去绘画中常见，像武梁祠汉代刻石上的黄帝、尧、舜天子像，唐代闫立本画的历代帝王图，宋代作的晋文公复国图，明人所作的圣迹图中的孔子像等。这些画像人物都是头戴冕冠，身穿冕服，冠冕堂皇，仪表威严。
+                    </p>
+                     <p class="text">
+                        在冠冕制度中，旒的多少是辨别身份的一大标志，据《明史》记载，明朝天子戴的冕前后分别垂着12道旒，每道旒上有红黄青白黑共12颗玉珠，太子用11旒、11珠，亲王只能用9旒、9珠。鲁荒王这个九旒冕前后共垂着9道旒，每道上9颗五彩玉珠，共用珠162颗，垂悬九旒正是明代亲王冠冕的定制。朱元璋做了皇帝后，更是强调“复汉官之威仪”，朱氏王朝持续了276年，冕冠冕服的崇高地位也保持了276年，直到爱新觉罗氏入主中原，冕服制度才被废止。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="title">
+                    <span>·</span>意义
+                </p>
+                <div>
+                    <p class="text">
+                        明鲁王的九旒冕，是我国目前发现唯一一件保存完好的明初亲王冕冠实物，是研究我国古代服饰、礼制极为珍贵的实物资料。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

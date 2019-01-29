@@ -1,0 +1,530 @@
+.info_all{
+	background-color: #f1f2f7;
+	height: 100%;
+	width: 956px;
+	margin: 0 auto;
+}
+.info_content{
+	background-color: white;
+	border-top-left-radius: 5px;
+	padding-left: 30px;
+	box-sizing: border-box;
+	padding-top: 15px;
+}
+.info_content_alert{
+	height: 50px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #f1f2f7;
+	margin-bottom: 15px;
+	position: relative;
+}
+.info_content_reason{
+	line-height: 50px;
+	font-size: 18px;
+  	font-family: "Microsoft YaHei";
+  	color: rgb(51, 51, 51);
+  	font-weight: bold;
+}
+.info_content_close{
+	position: absolute;	
+	right: 100px;
+	top: 0;
+	padding: 10px 22px;
+	background-color: #2a9bcf;
+	border-radius: 5px;
+	font-size: 14px;
+  	font-family: "Microsoft YaHei";
+  	color: rgb(254, 255, 255);
+  	line-height: 14px;
+  	cursor: pointer;
+}
+.info_content_close>img{
+	display: block;
+	float: left;
+	margin-right: 5px;
+}
+
+.info_content_message_col{
+	height: 29px;
+	margin-bottom: 14px;
+}
+.info_content_message_col>span{
+	line-height: 29px;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	display: block;
+	float: left;
+	width: 78px;
+	text-align: right;
+	box-sizing: border-box;
+}
+.info_content_message_col>span>span{
+	line-height: 29px;
+	font-size: 14px;
+	background-image: url(../images/info_must.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: rgb(51, 51, 51);
+	padding-left: 14px;
+}
+.info_content_message_col>input{
+	padding: 4px 16px;
+	background-color: #fcfcfc;
+	border:none;
+	border-radius: 5px;	
+	color: rgb(51, 51, 51);
+	font-size: 14px;
+	line-height: 14px;
+  	font-family: "Microsoft YaHei";
+  	outline: none;
+  	margin-left: 12px;
+  	width: 214px;
+  	box-sizing: border-box;
+}
+.info_content_message_col>select{
+	padding: 4px 13px;
+	background-color: #fcfcfc;
+	border:none;
+	border-radius: 5px;	
+	color: rgb(51, 51, 51);
+	font-size: 14px;
+	line-height: 14px;
+  	font-family: "Microsoft YaHei";
+  	outline: none;
+  	margin-left: 12px;
+  	width: 214px;
+}
+.info_content_message_col>textarea{
+	padding: 4px 13px;
+	background-color: #fcfcfc;
+	border:none;
+	border-radius: 5px;	
+	color: rgb(51, 51, 51);
+	font-size: 14px;
+	line-height: 14px;
+  	font-family: "Microsoft YaHei";
+  	outline: none;
+  	margin-left: 12px;
+  	width: 820px;
+  	height: 100px;
+  	resize: none;
+}
+
+
+
+.info_content_message_contact>input[type="radio"]{
+	width: 32px;
+}
+.info_content_message_contact>input[type="text"]{
+	width: 84px;
+	
+}
+.info_content_message_address select:nth-of-type(1){
+	width: 70px !important;
+	padding-right: 5px;
+}
+.info_content_message_address select:nth-of-type(2){
+	width: 112px !important;
+	padding-right: 5px;
+	margin-left: 27px;
+}
+.info_content_message_detailAddress{
+	height: auto;
+}
+.info_content_message_detailAddress>p{
+	font-size: 12px;
+  	font-family: "Microsoft YaHei";
+ 	color: rgb(153, 153, 153);
+ 	padding-left: 90px;
+ 	margin-top: 5px;
+}
+.info_content_message_logo{
+	height: auto !important;
+}
+.info_content_message_logo:after{
+	content: ".";
+	display: block;
+	clear: both;
+	opacity: 0;
+	height: 0;
+	visibility: hidden;
+}
+.info_content_message_logo>div{
+	float: left;
+	padding-left: 12px;
+}
+.info_content_message_logo form{
+	display: none;
+}
+.info_content_message_logo img{
+	width: 150px;
+	height: 150px;
+	display: block;
+	margin-bottom: 12px;
+	border-radius: 5px;
+}
+.info_content_message_logo p{
+	width: 150px;
+	text-align: center;
+}
+.info_content_message_logo p>span{
+	text-decoration: underline;
+  	font-size: 14px;
+  	font-family: "PingFang SC";
+  	color: rgb(0, 135, 128);
+  	cursor: pointer;
+}
+
+.info_content_message_business{
+	height: auto !important;
+	padding-bottom: 100px;
+	margin-top: 25px;
+}
+.info_content_message_business:after{
+	content: ".";
+	display: block;
+	clear: both;
+	opacity: 0;
+	height: 0;
+	visibility: hidden;
+}
+.info_content_message_business>div{
+	float: left;
+	padding-left: 12px;
+}
+.info_content_message_business form{
+	display: none;
+}
+.info_content_message_business img{
+	width: 260px;
+	height: 260px;
+	display: block;
+	margin-bottom: 12px;
+	border-radius: 5px;
+}
+.info_content_message_business p{
+	width: 260px;
+	text-align: center;
+}
+.info_content_message_business p>span{
+	text-decoration: underline;
+  	font-size: 14px;
+  	font-family: "PingFang SC";
+  	color: rgb(0, 135, 128);
+  	cursor: pointer;
+}
+
+
+.info_big_img{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 99999;
+	display: none;
+}
+.info_big_img>img{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 500px;
+	height: 500px;
+}
+
+
+.info_save{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 1008px;
+	box-shadow:0px -10px 12px #ebf0ef;
+	background-color: white;
+	padding: 12px 0 0px 604px;
+	box-sizing: border-box;
+	height: 76px;
+}
+.info_save span{
+	font-size: 14px;
+	line-height: 14px;
+  	font-family: "Microsoft YaHei";
+  	color: rgb(255, 255, 255);
+  	padding: 12px 19px;
+  	background-color: #008780;
+  	cursor: pointer;
+  	display: block;
+  	float: left;
+  	margin-right: 30px;
+  	border-radius: 5px;
+}
+
+/*寮圭獥鏍峰紡*/
+.info_alert{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.3);
+	display: none;
+}
+.info_alert>div{
+	position: fixed;
+	width: 452px;
+	height: 318px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto ;
+	background-color: white;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.info_alert_close{
+	height: 52px;
+	box-sizing: border-box;
+	padding: 12px 0 0 425px;
+	background-color: #008780;
+	color: white;
+	font-size: 25px;
+}
+.info_alert_close span{
+	cursor: pointer;
+}
+.info_alert_content{
+	height: 266px;
+	position: relative;
+}
+.info_alert_text{
+	height: 190px;
+}
+.info_alert_btn{
+	width: 233px;
+	margin: 0 auto;
+}
+.info_alert_btn_sure{
+	float: left;
+	padding: 9px 20px;
+	display: block;
+	background-color: #008780;
+	color: white;
+	border-radius: 5px;
+	height: 20px;
+	line-height: 20px;
+	cursor: pointer;
+}
+.info_alert_btn_cancel{
+	float: left;
+	padding: 9px 20px;
+	display: block;
+	background-color:white
+	color:  #008780;
+	border: 1px solid #008780;
+	border-radius: 5px;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+.info_alert_btn img{
+	display: block;
+	float: left;
+	margin-right: 5px;
+}
+
+/*寰呭鏍窩SS鏍峰紡*/
+.shengHeZhong{}
+.shengHeZhong input{
+	border: none !important;
+	pointer-events: none;
+}
+.shengHeZhong select{
+	border: none !important;
+	pointer-events: none;	
+}
+.shengHeZhong textarea{
+	border: none !important;
+	pointer-events: none;	
+}
+
+.shengHeZhong .info_upload_logo{
+	display: none !important;
+}
+.shengHeZhong .info_upload_business{
+	display: none !important;
+}
+.shengHeZhong .info_save_3{
+	display: none !important;
+}
+.shengHeZhong .info_save_4{
+	display: none !important;
+}
+
+/*瀹℃牳閫氳繃CSS鏍峰紡*/
+.shengHeTongGuo{}
+.shengHeTongGuo .info_upload_business{
+	display: none !important;
+}
+.shengHeTongGuo .info_save_4{
+	display: none !important;
+}
+
+/*瀹℃牳涓嶉�氳繃CSS鏍峰紡*/
+.shengHeShiBai{}
+.shengHeShiBai .info_save_3{
+	display: none !important;
+}
+
+
+.checkList{
+	padding: 30px;
+	display: none;
+}
+.checkList>div{
+	margin: 12px 0;
+}
+.checkList input{
+	line-height: 26px;
+    border-radius: 5px;
+}
+.checkList select{
+	line-height: 26px;
+    border-radius: 5px;    
+    width: 190px;
+    padding: 4px 4px 4px 20px;
+    border: solid 1px #ddd;
+}
+.checkList .star{
+	margin-top: 20px;
+}
+.checkList .star button{
+	background: #2A9BCF;
+    color: #fff;
+    border-radius: 5px;
+}
+.checkList .star button.b2{
+	background: #fff;
+    color: #2A9BCF;
+    border-color: #2A9BCF;
+}
+
+
+
+.checkList_table{
+	
+	background-color: #F1F2F7;
+	height: 66px;
+	padding-top: 20px;
+	box-sizing: border-box;
+	
+}
+.checkList_table>a{
+	display: block;
+	text-decoration: none;
+	padding: 16px 38px 16px;
+	border-top-left-radius:5px ;
+	border-top-right-radius: 5px;
+	color: black;
+	float: left;
+	font-size: 14px;
+  	font-family: "Microsoft YaHei";
+  	color: black;
+  	line-height: 14px;
+  	height: 14px;
+  	box-sizing: content-box;
+  	cursor: pointer;
+}
+
+.checkList_table_active{
+	color: rgb(42, 155, 207) !important;
+	background-color: white;
+}
+
+/*弹窗样式*/
+.checkList_title{
+	border: 1px solid #f1f2f7;
+	width: 214px;
+	padding: 6px 10px;
+	font-size: 14px;
+	background-color: #fcfcfc;
+	border-radius: 5px;
+}
+.checkList_content{
+	border: 1px solid #f1f2f7;
+	width: 620px;
+	height: 296px;
+	padding: 6px 10px;
+	font-size: 14px;
+	background-color: #fcfcfc;
+	border-radius: 5px;
+	resize:none;
+}
+.zj_checkList_save{
+    display: block;
+    float: left;
+	background-color: #2a9bcf;
+	color: white;
+	padding: 9px 15px 9px 35px;
+	border-radius: 5px;
+	text-decoration: none;
+	height: 18px;
+	line-height: 18px;
+	border: 1px solid #2a9bcf;
+	height: 36px;
+	background-image: url(../images/save.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	margin: 32px 0 15px 0px;
+	cursor: pointer;
+}
+.zj_checkList_cancel{
+	display: block;
+	float: left;
+	background-color: white;
+	color: #2a9bcf;
+	padding: 9px 15px 9px 35px;
+	border-radius: 5px;
+	text-decoration: none;
+	height: 18px;
+	line-height: 18px;
+	border: 1px solid #2a9bcf;
+	height: 36px;
+	background-image: url(../images/cancel.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	margin: 32px 0 15px 15px;
+	cursor: pointer;
+}
+
+/*操作*/
+.checkList_shenhe{
+	
+	font-size: 12px;
+  	font-family: "Microsoft YaHei";
+  	color: rgb(42, 155, 207);
+  	padding: 2px 5px;
+  	border: 1px solid rgb(42, 155, 207);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/*弹窗样式*/
+.layui-layer-title{
+	font-size: 18px;
+	font-weight: bold;
+	border-top-left-radius:5px !important;
+	border-top-right-radius:5px !important;
+	background-color: white !important;
+	height: 75px !important;
+	line-height: 75px !important;
+	border-bottom:6px solid #f1f2f7 !important;
+}
+.layui-layer{
+	border-radius: 5px !important;
+}

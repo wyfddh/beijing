@@ -1,0 +1,138 @@
+<div class="home-search-area" style="display: none">
+    <div class="home-search-area-head">
+        <img class="homeBack" src="img/39.png">
+        <input class="homeSearch" type="text" ng-change="isHsVal()" placeholder="搜索你感兴趣的内容" ng-model="hsVal">
+        <img class="qingchu" src="img/qingchu.png">
+        <span ng-click="search($event,$index)">搜索</span>
+    </div>
+    <div class="home-hot-search">
+        <div class="home-hot-search-tit">
+            <img src="img/hotSearch.png">
+            <h2>热门搜索</h2>
+        </div>
+        <div class="home-hot-search-content">
+            <button><span>藏品名</span></button>
+            <button><span>关键词</span></button>
+            <button><span>关键词关键词关键...</span></button>
+            <button><span>关键词关键</span></button>
+            <button><span>关键词关键词关键...</span></button>
+        </div>
+    </div>
+</div>
+<div class="collection-bigBox">
+    <header class="collection-search-box">
+        <div class="collection-text">
+            <img ng-click="search($event,$index)" class="collectionSearch" src="img/11.png">
+            <input class="collection-search" type="text" placeholder="搜索你感兴趣的藏品"/>
+            <img class="photo" src="img/12.png">
+        </div>
+        <a href="#/collection/{{collectionsCategory}}"><div class="wenwu">文物</div>
+            <img class="arrow" src="img/arrow.png"></a>
+    </header>
+    <nav class="collection-content-search">
+        <div class="danwei">
+            <span>收藏单位</span>
+            <img class="sanjiao" src="img/sanjiao.png">
+        </div>
+        <div class="newest" ng-click="newest()">
+            <span >最新</span>
+            <span class="show">最热</span>
+            <img class="paixuDown" src="img/paixu-down-3.png">
+            <img class="xian" src="img/xian.png">
+        </div>
+        <div class="shaixuan">
+            <img class="shaixuanImg" src="img/shaixuan.png">
+            <span>筛选</span>
+            <img class="xian" src="img/xian.png">
+        </div>
+    </nav>
+    <ul class="collection-list-city">
+        <li ng-repeat="x in detailData.data.orgList" ng-click='cour($index)' ng-class="{ true :'selected',false:''} [x.isclick]">{{x.cityName}}</li>
+    </ul>
+    <ul class="city-museum">
+        <li>全部</li>
+        <li ng-repeat="y in detailData.data.orgList[indes].museum" data-cityid="{{y.cityId}}" ng-click="boWu($event,$index)">{{y.name}}<i><img src="img/yes.png"></i></li>
+        <!--<li ng-repeat="y in detailData.data.orgList[index].museums">{{y.name}}<i><img src="img/yes.png"></i></li>-->
+    </ul>
+    <div class="object-shadow"></div>
+    <div class="body-shaixuan-box">
+        <div class="shaixuan-shadow"></div>
+        <div class="shaixuan-box">
+            <div class="fenlei">
+                <span class="fenlei-tit">分类</span>
+                <span class="ciqi">{{fenlei}}</span><img class="ciqi-img" src="img/5823.png">
+            </div>
+            <div class="ciqi-content">
+                <li ng-repeat="m in detailData.data.ccList" data-ciqiid="{{m.id}}" ng-click="ciqiContent($event,$index)" ng-class="{ true :'move',false:''} [m.isclick]">{{m.name}}</li>
+            </div>
+            <div class="fenlei">
+                <span class="fenlei-tit">年代</span>
+                <span class="chaodai">{{niandai}}</span><img class="ciqi-img" src="img/5823.png">
+            </div>
+            <div class="chaodai-content">
+                <p ng-repeat="n in detailData.data.ytList" data-chaodaiid="{{n.id}}"  ng-click="chaodaiContent($event,$index)" ng-class="{ true :'move',false:''} [n.isclick]">{{n.name}}</p>
+            </div>
+            <div class="shaixuan-button">
+                <div class="reset" ng-click="reset()">重置</div>
+                <div class="enter">确定</div>
+            </div>
+        </div>
+    </div>
+    <section class="overflow-scroll collection-top
+ 		scroll-content has-footer" style="z-index:-1;">
+        <div id="mask" class="mask"></div>
+        <div class="search-none" ng-show="searchNone">
+            <img src="img/searchNone.png">
+            <p>没有找到对应藏品，更换关键词试试吧~~</p>
+        </div>
+        <ion-content>
+            <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+            <div class="list" ng-repeat="n in collectionData.data.mociList">
+                <a class="item item-thumbnail-left" ng-click="getIndex($index)" href="#/collectionSpecimenDetail/{{collectionDataID}}">
+                    <img ng-src={{n.picture.thumb3}}>
+                    <div class="collection-item-left">
+                        <h2>{{n.mipOpenFossilInfo.name}}</h2>
+                        <p class="year">{{n.mipOpenFossilInfo.yearType}}</p>
+                        <p class="zhonglei">{{n.mipOpenFossilInfo.collectionsCategory}}</p>
+                        <div class="collection-media-box">
+                            <span ng-if="n.mipOpenFossilInfo.threeDimensionalCollection!=''">3D</span>
+                            <span ng-if="n.mipOpenFossilInfo.fVideo!=''">视频</span>
+                            <span ng-if="n.mipOpenFossilInfo.fAudio!=''">语音</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="down-list"></div>
+            <ion-infinite-scroll
+                    ng-if="hasMore"
+                    on-infinite="load()"
+                    distance="5%">
+            </ion-infinite-scroll>
+        </ion-content>
+    </section>
+</div>
+<!--<script>-->
+    <!--$(".danwei").on("touchend",function(){-->
+        <!--$(this).toggleClass("acts");-->
+        <!--$(this).siblings().removeClass("acts");-->
+        <!--if($(this).hasClass('acts')){-->
+            <!--$(".collection-list-city").slideDown();-->
+            <!--/* $(".city-museum").slideDown(); */-->
+            <!--/* $(".object-shadow").show(); */-->
+        <!--}else{-->
+            <!--$(".collection-list-city").slideUp();-->
+            <!--$(".city-museum").slideUp();-->
+            <!--/* $(".object-shadow").hide(); */-->
+        <!--}-->
+    <!--});-->
+    <!--$(".shaixuan").on("touchend",function(){-->
+        <!--$(".body-shaixuan-box").show();-->
+        <!--$(".shaixuan-shadow").show();-->
+        <!--$(".shaixuan-box").slideDown();-->
+    <!--});-->
+    <!--$(".enter").on("touchend",function(){-->
+        <!--$(".shaixuan-shadow").hide();-->
+        <!--$(".shaixuan-box").slideUp();-->
+        <!--$(".body-shaixuan-box").hide();-->
+    <!--});-->
+<!--</script>-->

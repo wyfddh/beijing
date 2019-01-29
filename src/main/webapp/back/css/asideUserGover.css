@@ -1,0 +1,18 @@
+.listColor:hover{
+    background: #747474;
+}
+.Hui-aside .menu_dropdown li a:hover{
+    background: #747474;
+}
+.listColor{
+    color: #ffffff!important;
+}
+.Hui-aside .menu_dropdown dt{
+    border:none;
+    font-size: 1rem;
+}
+.asidemanage{
+    height: 100%;
+    position: fixed;
+    background: #4b4b4b;
+}

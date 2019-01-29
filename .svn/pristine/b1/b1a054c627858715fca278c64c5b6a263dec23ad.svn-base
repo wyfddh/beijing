@@ -1,0 +1,27 @@
+<div class="registerStepOne-head">
+    <a href="#/forgotPassword"><img src="img/39.png"></a>
+    <h2>设置新密码</h2>
+</div>
+<div class="registerStepOne-content">
+        <!--<div class="password-yes">-->
+            <!--<img src="img/passwordYes.png">-->
+            <!--<span>验证通过！请设置密码</span>-->
+        <!--</div>-->
+        <!--<div class="registerPhone">-->
+            <!--<input id="nickName" ng-trim="true" ng-keyup="userName()" maxlength="10"  placeholder="设置用户昵称" type="text"-->
+                   <!--ng-model="nickName">-->
+        <!--</div>-->
+        <div class="registerPhone">
+            <input id="password"  ng-keyup="userPassword()"  maxlength="18"  placeholder="输入密码" type="password"
+                   ng-model="password">
+        </div>
+        <div class="registerPhone">
+            <input id="confirmPassword" ng-trim="true" ng-keyup="userRepeatPassword()"  maxlength="18"  placeholder="确认密码" type="password"
+                   ng-model="confirmPassword" required>
+        </div>
+        <div class="mistake-box">
+            <span class="password-tip" ng-if="isPassword"><img src="img/cha.png"><i>8到18位字符，只能是数字，字母组成(区分大小写)</i></span><br>
+            <span class="Confirm-tip" ng-if="isRepeatPassword"><img src="img/cha.png"><i>两次输入密码不一致，请重新输入</i></span>
+        </div>
+        <button class="button" ng-disabled="isCkick" ng-click="success()">完成</button>
+</div>

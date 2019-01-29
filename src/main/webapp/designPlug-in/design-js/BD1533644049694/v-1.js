@@ -1,0 +1,10 @@
+/**--单击事件备注信息--******/
+try{
+	$("[id='BD1533644049694@T15336357700008058']").click(function(){
+		/**--执行方法体-start--******/
+			$.saveData(false);
+alert($.mainId);
+window.close(); 
+		/**--执行方法体-end--******/
+	});
+}catch(e){}

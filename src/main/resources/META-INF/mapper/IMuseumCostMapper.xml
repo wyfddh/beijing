@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumCostMapper">
+    
+	<sql id="museumCostColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.cost_type AS "costType",
+		a.description AS "description",
+		a.money AS "money",
+		DATE_FORMAT(a.cost_time, '%Y-%m-%d')  AS "costTime"
+	</sql>
+	
+	<sql id="museumCostJoins">
+	</sql>
+	
+	<select id="selectCostList" resultType="com.tj720.admin.dto.MuseumCostDto" >
+		SELECT
+			<include refid="museumCostColumns"/>
+		FROM museum_cost a
+		<include refid="museumCostJoins"/>
+		<where>
+			a.del_flag = #{1}
+			and a.museum_id = #{0}
+		</where>
+		  ORDER BY a.update_date DESC
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO museum_cost(
+			id,
+			museum_id,
+			cost_type,
+			description,
+			money,
+			<if test="costTime != null and costTime !=''" >
+			cost_time,
+			</if>
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{costType},
+			#{description},
+			#{money},
+			<if test="costTime != null and costTime !=''" >
+			STR_TO_DATE(#{costTime},'%Y-%m-%d'),
+			</if>
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{remarks},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_cost SET 	
+			museum_id = #{museumId},
+			cost_type = #{costType},
+			description = #{description},
+			money = #{money},
+			<if test="costTime != null and costTime !=''" >
+			cost_time = STR_TO_DATE(#{costTime},'%Y-%m-%d'),
+			</if>
+			<if test="costTime == null or costTime ==''" >
+			cost_time=null,
+			</if>
+			update_by = #{updateId},
+			update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+	
+	<!--逻辑删除-->
+	<delete id="deleteByLogic">
+		delete from museum_cost 
+		WHERE id = #{id} and del_flag in ('1','3')
+	</delete>
+	
+	<delete id="deleteBase">
+    	delete from museum_cost
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+    
+    <update id="updateFlag">
+	    UPDATE museum_cost SET 
+	    	del_flag = #{flag},
+	    	update_by = #{updateId},
+			update_date = #{updateTime}
+	  	WHERE id = #{id}
+    </update>
+	
+</mapper>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)http://www.17sucai.com/preview/1/2017-02-03/%E8%8F%9C%E5%8D%95/index.html -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基于jquery ui可自由拖拽的弹性圆形菜单效果</title>
+	
+	<link rel="stylesheet" type="text/css" href="./css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./css/demo.css">
+	
+	<link rel="stylesheet prefetch" href="./css/foundation-icons.css">
+	<link rel="stylesheet prefetch" href="./css/fi-list.svg">
+	
+	<link rel="stylesheet" href="./css/style.css">
+	
+</head><style type="text/css" id="14636944216"></style>
+<body style="cursor: auto;">
+	
+<div class="center title">
+		<h2>拖动菜单在您想要的地方！</h2>
+	</div>
+	<div class="my-menu-center menu">
+		<div id="myMenu"></div>
+	</div>
+	
+
+	
+	<script src="./js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<script src="./js/anime.js"></script>
+	<script src="./js/index.js"></script>
+	
+
+</body></html>
+
+<script type="text/javascript">
+
+var menu = new Menu("#myMenu");
+var item1 = new Item("list");
+var item2 = new Item("torso", "#FF5C5C");
+var item3 = new Item("social-facebook", "#5CD1FF");
+var item4 = new Item("paypal", "#FFF15C");
+var item5 = new Item("link", "#64F592");
+
+menu.add(item1);
+menu.add(item2);
+menu.add(item3);
+menu.add(item4);
+menu.add(item5);
+$(document).delay(50).queue(function(next) {
+    menu.open();
+    next();
+    $(document).delay(1000).queue(function(next) {
+        menu.close();
+        next();
+    });
+});
+</script>

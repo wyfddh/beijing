@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		商举方鼎
+    		<span>作者 : 布明虎</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 5.4rem;height: 6.4rem;" src="../images/fangding01.png" alt="">
+    		<p class="text">
+    			 商代晚期青铜器，1957年长清小屯出土，山东博物馆藏。高23、口长16、宽14.2厘米。炊食器，体呈长方形，立耳，略束颈，微鼓腹，四柱足，四隅有扉棱。口沿下饰夔纹，腹饰巨睛凝视的兽面纹，足饰阴线蝉纹。腹内壁铸铭文“举祖辛禹”及徽号。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                举方鼎上的铭文铸刻于器腹内壁，外折的口沿部分。商代青铜器的铭文一般字数较少，早期只有个别青铜器上有铭文出现，到中期，有铭文的青铜器增多，但字数仍然有限，一直到商末超过十字铭文的也寥寥无几，因此商代被称为“简铭期”。由于字数的限制，商代铭文内容也比较简单，主要用于标记氏族名、器名、徽号等。铭文被释读为“举祖辛禹”，第一字为族徽符号。商代金文中多见字，从宋代起人们就对此字倍感兴趣，宋代学者将其释为“析子孙”。近代，丁山、郭沫若先生则将其释为“冀"字。著名考古学家于省吾先生通过形、音、义的综合分析及少数民族文字的旁证材料，并结合文献，将其释为“举”字，认为其形状像大人举子于床，是抚育幼子的意思。古代生子言“举”者，为收养之意，不举则是抛弃之意。商代金文之所以有此字，当是由于他们的祖先有过“举子”的故事，或者有“弃子复举”的故事，所以后世子孙才造出象征性的文字，以为族群的标志。现在学术界多认同于省吾先生的意见，将此字释读为“举”，而此鼎也被命名为“举方鼎”。
+            </p>
+            <img style="width: 3rem;height: 7rem;" src="../images/fangding02.png" alt="">
+            <p class="text">  
+                带有“举”字铭文的青铜器，至少已发现168件，另有40余件为“举”族复合族徽或其变体，合计已超过210件。通过对甲骨卜辞和青铜器铭文等的研究，得知举族是商代晚期一支强大的宗族，在商王室中担任重要官职，受到商王重用，武丁时期，曾多次参与征伐西部边邑异族的战争，为商王室立下赫赫战功。至西周时期，周王对商代遗民采取了分而治之的政策，举族及其支族被迁到各个诸侯国，并逐渐融入到周人及其他族人之中，从此举族逐渐退出历史舞台。
+            </p>
+    	</div>
+    </body>
+</html>

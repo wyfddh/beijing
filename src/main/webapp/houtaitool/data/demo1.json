@@ -1,0 +1,18 @@
+{
+  "code": 0
+,"msg": ""
+,"count": 30
+,"data": [{
+  "id": "10001"
+,"username": "杜甫"
+,"email": "xianxin@layui.com"
+,"sex": "男"
+,"city": "男"
+,"sign": "点击此处，显示更多。当内容超出时，点击单元格会自动显示更多内容。"
+,"experience": "116"
+,"ip": "192.168.0.8"
+,"logins": "108"
+ , "img":"../../../images/public/Group71.svg"
+,"joinTime": "2016-10-14"
+}]
+}

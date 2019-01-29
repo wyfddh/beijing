@@ -1,0 +1,99 @@
+form{
+	width: 100%;
+	height: 100%;
+}
+.verification_code{
+    display: none;
+}
+
+.msg{
+	display: none;
+}
+.bg_box{
+	width: 100%;
+	height: 100%;
+	background: url(../images/bg_login2.png)no-repeat;
+	background-size:cover ;
+	overflow: hidden;
+}
+.bg_banner{
+	width: 100%;
+	height: 602px;
+	background: url(../images/bg_login1.png);
+	background-size: cover;
+	margin-top: 49px;
+	position: relative;
+}
+.bg_box>span{
+	color: #ffffff;
+	text-align: center;
+	font-size: 42px;
+	display: block;
+	padding-top: 50px;
+}
+.login{
+	width: 365px;
+	height:468px;
+	background: #FFFFFF;
+	position: absolute;
+	right: 450px;
+	top: 64px;
+	border-top: 3px solid #2a9bcf;
+	overflow: hidden;
+}
+.Input_box>div{
+	margin-top: 26px;
+	position: relative;
+}
+.input_img img{
+	position: absolute;
+	left: 12px;
+	top: 12px;
+}
+.Input_box input,.Input_box button{
+	width: 100%;
+	height: 46px;
+	border-radius: 5px;
+}
+.Input_box button{
+	margin-top: 6px;
+	border: 0;
+	background: #2A9BCF;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+.focus{
+	border: 1px solid #2A9BCF !important;
+}
+.Input_box input{
+	border: 1px solid rgb(204, 204, 204);
+	font-size: 14px;
+	text-indent: 44px;
+}
+.login_content>span{
+	font-weight: bold;
+	font-size: 18px;
+	display: block;
+	text-align: center;
+	padding-top: 48px;
+}
+.login_content{
+	width: 272px;
+	margin: 0 auto;
+}
+.bg_login{
+	width: 100%;
+	height: 160px;
+	margin-top: 14px;
+	background: url(../images/landscape.png)no-repeat;
+	background-size:cover ;
+	
+}
+#verificationCode{
+	    text-indent: 0px !important;
+	    height:30px !important;
+	    font-size:12px
+}
+#msg{
+	margin:0;
+}

@@ -1,0 +1,51 @@
+<div class="r0 p10 pt0 col-xs-12 BGFFF" ng-controller="dictionaryInportFromSqlCtrl">
+<div class="col-xs-12 p0 mt10">
+	<form ng-submit="submitForm('user/article/dictionary/importFromSql.do')">
+		<table class="table table-bordered">
+			<tr>
+				<td class="tc w100">标题</td>
+				<td class="tc">
+						<input  class="form-control" type="text" ng-model="model.name">
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tc">模块</td>
+				<td class="tl">
+					* 点击选择模块
+					<input class="form-control cursor" type="text"  id="moduleName" required readonly ng-model="model.moduleName"
+							ng-click="loadPickByName('iwidth=240|iheight=320|tagName=moduleName|tag=moduleId|code=PROJECT_MODULE|def='+model.moduleId,$event)">
+				</td>
+			</tr>
+			<tr>
+				<td class="tc">简介</td>
+				<td class="tc">
+					<textarea  class="form-control no-resize" rows="5" ng-model="model.brief"></textarea></td>
+			</tr>
+			<tr>
+				<td class="tc">数据库类型</td>
+				<td class="tc">
+					<select class="form-control" ng-model="model.isMysql">
+						<option value="true" ng-selected="model.isMysql=='true'">mysql</option>
+						<option value="false" ng-selected="model.isMysql=='false'">sqlservice</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="tc">创建表格SQL</td>
+				<td class="tc">
+					<textarea  class="form-control no-resize" rows="8" ng-model="model.sql" placeholder="请输入标准的mysql/sqlservice建表语句，一次只允许输入一张表，建议直接通过客户端拷贝建表语句"></textarea></td>
+			</tr>
+			<tr>
+					<td class="tc">排序</td>
+					<td class="tc">
+					<input class="form-control" min="0" max="10000" required type="number" ng-model="model.sequence"></td>
+			</tr>
+	</table>
+	<button type="submit" class="btn btn-success fr">提交</button>
+	</form>
+	
+</div>
+</div>
+<div class="cb"></div>
+

@@ -1,0 +1,425 @@
+@charset "utf-8";
+body{
+	font-family:"微软雅黑";
+	font-size:14px;	
+	overflow-x: hidden;
+}
+body,ul,li,p{
+	margin: 0;
+	padding: 0;
+   
+}
+/*.my-icms2{
+	line-height:40px;
+}*/
+/*.my-icms{
+	background-color: #EEEEEE;	
+}*/
+.my-icms li{
+	margin-left: 15px;
+	float: left;
+	list-style: none;
+	text-align: center;
+   
+}
+.my-icms th,.my-icms td{
+	text-align: center;
+	height: 40px;
+
+}
+input[type="text"]{
+	border: none;	
+	border-bottom: 1px solid #CCCCCC;
+	width: 95%;
+}
+.rad{
+	color:#FF0000;
+}
+.page-content{
+
+	width: 100%;
+	padding: 0 10px 24px;	
+}
+
+.nav-top{
+	width: 100%;
+	height:70px;
+	background-color:#438EB9;
+	position: relative;		
+}
+.nav-ch,.nav-btu{   
+	color: #FFFFFF;	
+}
+.nav-ch{	
+	padding-top: 30px;
+}
+.nav-ch li{	
+    width: 150px;
+    height: 40px;
+    background-color: #63abd4;
+	float: left;
+	line-height: 40px;
+	cursor:pointer; cursor:hand;
+}
+/*#tc1,#tc2{
+	line-height: 40px;
+}*/
+.nav-btu,.nav-btn{			
+	float: right;
+	
+}
+
+.bg1,.bg2{
+	margin-top: 10px;
+	width: 100%;	
+}
+.bg1-cen{	
+	padding-top: 20px;		
+}
+.nav-btn{
+	width: 100%;
+	height: 40px;	
+	background-color:#eee;		
+}
+.nav-btn ul{	
+	float: right;
+	margin-right: 10px;
+}
+.nav-btn ul li{
+	width: 60px;
+	height: 35px;
+	line-height: 35px;
+	margin-top: 3px;		
+}
+.nav-btn ul li a,.fenye li a{
+	color: #FFFFFF;
+}
+.fenye1{
+	height: 30px;
+	background-color: #eee;
+}
+.fenye{		
+	float: right;
+	padding: 5px;
+}
+.fenye li{
+	height: 20px;
+	width: 30px;
+	background-color: #63abd4;
+	border-radius: 10px;
+	line-height: 20px;
+}
+.link{	
+	clear: both;
+	height: 200px;
+	background-color: #FFFFFF;
+}
+.a-p1,.a-p2{
+	width:80px;
+	padding: 10px;
+}
+.a-p1{
+	float: left;	
+}
+.a-p2{
+	float: right;	
+}
+.link-cen,.link-top{
+   border-bottom: 1px solid #CCCCCC;
+}
+.link-top{
+	height: 40px;	
+}
+.link-cen{
+	height: 120px;
+	padding-right:50px ;
+	padding-left: 50px;	
+	word-wrap: break-word;
+	resize: horizontal;
+	overflow: hidden;
+	margin:10px 0 30px 0 ;
+	
+}
+.link-cen p{
+	width: 80px;
+	height:80px;
+	line-height: 80px;
+	font-size: 36px;
+	position: relative;	
+	border: 1px dotted #CCCCCC;
+}
+.link-cen p a{
+	color:#555555;
+}
+.times{
+	font-size: 14px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.times:hover{
+	color: #FF0000;
+}
+.link-cen a{
+	color: #555;
+	display: block;		
+	line-height: 80px;	
+	font-size: 30px;
+}
+.link-cen p:hover{
+	border: 1px dotted #F0981C;
+}
+.bg1-nav{
+	height:55px;	
+	padding: 3px 50px 0 50px;	
+	position: relative;
+	resize: horizontal;
+	overflow: hidden;
+	
+}
+.bg1-nav span a{	
+	line-height: 60px;	
+	font-size: 30px;
+	color:#555555;
+}
+.lef{
+	position: absolute;
+    left: 40px;
+    color: #eee;
+}
+.rig{
+	position: absolute;
+	right:40px;
+	  color: #eee;
+}
+.bg1-nav li{
+	width: 60px;
+	height: 40px;
+	margin-top: 5px;
+	line-height: 40px;
+	border-radius: 5px;
+	background-color:#EEEEEE;
+	position: relative;
+}
+.bg1-nav li:hover{
+	background-color:#63abd4;
+}
+.bg1-nav li img{
+	position: absolute;
+	top:-6px;
+	right: -5px;   
+} 
+.bg1-nav2 li{
+	line-height: 47px;
+	width: 47px;
+	height: 47px;
+	margin-top: 5px;
+	border-radius: 22.5px;
+}
+.bg1-nav li a{
+	color: #FFFFFF;
+}
+.bg1-top{
+	border: 1px solid #CCCCCC;
+}
+.size-imga img{
+	width: 50px;
+	height: 50px;
+	margin-left:10px;	
+}
+#left{
+	width: 100%;
+	float: left;	
+   margin-top:5px;
+}
+
+.btn:hover{
+	background-color: #FFFFFF !important;
+	color: #3C537C !important;
+	/* border: none !important; */
+}
+.profile-info-name{
+	width: 120px;
+	color: #555555;
+}
+.profile-user-info-striped .profile-info-name{
+	color: #060606;
+	background-color: #EEEEEE;
+}
+
+.help-block{
+	width: 35px;
+	height:35px;
+	background-color: #438EB9;
+	color: #FFFFFF;
+	text-align: center;
+	line-height:35px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	 cursor:pointer; cursor:hand;
+	float: left;
+	opacity: 0.6;
+}
+
+.help-cen{
+	width:403px;
+	height:500px;
+	border:1px solid #438EB9;
+	float: right;
+	margin-top: 5px;
+	background-color: #438EB9;
+	overflow: auto;	
+	
+}
+.nav-search{
+	padding: 5px;
+	color: #FFFFFF;
+}
+.help-link-cen{
+	width: 390px;
+	background-color: #EEEEEE;
+	margin-top: 10px;
+	min-height: 450px;
+	overflow: auto;
+}
+.help-link-cen1{
+    float:left;
+    border-right: 1px solid #DDDDDD;
+    height: 450px;
+    width: 40%;  
+    overflow:auto;
+    padding: 10px;
+}
+.help-link-cen1 ul li{
+	padding-top: 5px;		
+}
+.help-link-cen2{
+	width: 60%;
+	padding: 5px;
+    height: 450px;
+	float: right;
+	color: #555555;	
+	overflow: auto;
+}
+.nav-search{
+	right: 0px;
+}
+.nav-search .nav-search-input{
+	width: 180px;
+}
+
+/*//查询授权表*/
+.data-por{
+	margin: 5px;
+	padding: 5px;
+	background: #eee;
+}
+.data-table-a{
+	margin-top:5px ;
+	border:1px solid #CCCCCC;
+	width: 100%;
+}
+.data-table-a th{
+	border:1px solid #CCCCCC;
+	background: #EEEEEE;
+}
+.data-table-a td{
+	border:1px solid #CCCCCC;
+}
+.data-table-a li{
+	text-align: left;
+	width: 130px;
+}
+
+/*//个人来源弹窗 */
+.sixdd {
+			width: 100%;
+			padding: 5px 5px;
+			background: #fff;
+			border: solid #ddd;
+			box-shadow: 0px 5px 10px #000;
+		}
+		
+		.tab-content {
+			background: #E5E5E5;
+		}
+		
+		.tab-cen-top {
+			background: #fff;
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-top: 5px;
+		}
+		
+		.tab-cen-top p span input {
+			width: 160px;
+			height: 30px;
+		}
+		
+		.tab-cen-top p span textarea {
+			height: 60px;
+			width: 100%;
+		}
+		.tab-cen-sec .plus-sp{
+			position: absolute;
+			right: 20px;
+		}
+		.tab-cen-sec .plus-sp a{
+			margin-left: 10px;
+		}
+		.tab-cen-JG {
+			height: 400px;
+		}
+		.table-cen-sm {
+			width: 100%;
+			
+		}
+		.table-cen-sm th {
+			background: #EEEEEE;
+		}
+		.table-cen-sm td {
+			border: 1px solid #CCCCCC;
+			text-align: center;
+			height: 30px;
+		}
+		.nav-tab-cen {
+			height: 350px;
+			border-bottom: 1px solid #ccc;
+		}
+		.navfoot {
+			margin-top: 5px;
+			background: #FFFFFF;
+			border-radius: 3px;
+			text-align: right;
+		}
+		.plus-tan {
+			width: 350px;
+			height: 250px;
+			background: #FFFFFF;
+			border: 2px solid #CCCCCC;
+			position: absolute;
+			right: 60px;
+			z-index: 99;
+			padding: 10px;
+		}
+		.plus-tan table {
+			width: 100%;
+		}
+		.plus-tan td,
+		.plus-tan th {
+			height: 30px;
+			text-align: right;
+			
+		}
+		.plus-tan td input,
+		.plus-tan td textarea {
+			width: 250px;
+			border-radius: 5px !important;
+		}
+		
+		
+		.title_background{
+			background: #EEEEEE;
+			color: #000000;
+		}

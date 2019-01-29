@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.collection.CollectDictMapper">
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.collection.CollectDict">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="dict_type" jdbcType="VARCHAR" property="dictType" />
+    <result column="dict_code" jdbcType="VARCHAR" property="dictCode" />
+    <result column="dict_name" jdbcType="VARCHAR" property="dictName" />
+    <result column="dict_order" jdbcType="VARCHAR" property="dictOrder" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="pid" jdbcType="VARCHAR" property="pid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, dict_type, dict_code, dict_name, dict_order, description, create_by, create_date, 
+    pid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from collect_dict
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from collect_dict
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.collection.CollectDict">
+    insert into collect_dict (id, dict_type, dict_code, 
+      dict_name, dict_order, description, 
+      create_by, create_date, pid
+      )
+    values (#{id,jdbcType=VARCHAR}, #{dictType,jdbcType=VARCHAR}, #{dictCode,jdbcType=VARCHAR}, 
+      #{dictName,jdbcType=VARCHAR}, #{dictOrder,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{pid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.collection.CollectDict">
+    insert into collect_dict
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="dictType != null">
+        dict_type,
+      </if>
+      <if test="dictCode != null">
+        dict_code,
+      </if>
+      <if test="dictName != null">
+        dict_name,
+      </if>
+      <if test="dictOrder != null">
+        dict_order,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="dictType != null">
+        #{dictType,jdbcType=VARCHAR},
+      </if>
+      <if test="dictCode != null">
+        #{dictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dictName != null">
+        #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictOrder != null">
+        #{dictOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.collection.CollectDict">
+    update collect_dict
+    <set>
+      <if test="dictType != null">
+        dict_type = #{dictType,jdbcType=VARCHAR},
+      </if>
+      <if test="dictCode != null">
+        dict_code = #{dictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dictName != null">
+        dict_name = #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictOrder != null">
+        dict_order = #{dictOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pid != null">
+        pid = #{pid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.collection.CollectDict">
+    update collect_dict
+    set dict_type = #{dictType,jdbcType=VARCHAR},
+      dict_code = #{dictCode,jdbcType=VARCHAR},
+      dict_name = #{dictName,jdbcType=VARCHAR},
+      dict_order = #{dictOrder,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      pid = #{pid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="getDictListByKeys" parameterType="java.util.List" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from collect_dict
+    where "1" = "1"
+    and dict_type in
+    <foreach collection="list" item="item" separator="," open="(" close=")">
+      #{item}
+    </foreach>
+    ORDER BY create_date
+  </select>
+
+  <select id="getDictListByKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from collect_dict
+    where "1" = "1"
+    <if test="key != null and key != ''">
+      and dict_type = #{key}
+    </if>
+    <if test="dictCode != null and dictCode != ''" >
+      and dict_code = #{dictCode}
+    </if>
+    <if test="dictName != null and dictName != ''">
+      and dict_name like concat('%',#{dictName},'%')
+    </if>
+    ORDER BY create_date
+  </select>
+  <select id="getDictListAndCount" resultMap="BaseResultMap">
+    
+  		select a.id,a. dict_code,a.dict_name, IFNULL(c.num,0) as collectCount from ( select collection_level, sum(num) as num from (
+				SELECT b.collection_level, count(1) as num
+				from collection_info b
+				where "1" = "1"
+				
+	<if test="map.repertoryState == 1">
+	and b.data_state = #{map.screenState}
+	</if>
+	<if test="map.repertoryState == 2">
+		and b.data_state = "4"
+	</if>
+	 
+    
+    <if test="map.collectionYearType != null and map.collectionYearType != ''">
+    	<if test="map.collectionYearType == 999999">
+	      	and b.collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+    	</if>
+    	<if test="map.collectionYearType != 999999">
+	      	and b.collection_year_type = #{map.collectionYearType}
+    	</if>
+    </if>
+    <if test="map.collectionCategory != null and map.collectionCategory != ''">
+    	<if test="map.collectionCategory == 999999">
+    		and b.collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+    	</if>
+    	<if test="map.collectionCategory != 999999">
+	      	and b.collection_category = #{map.collectionCategory}
+    	</if>
+    </if>
+   <if test="map.orgId != null and map.orgId != ''">
+      and b.collection_org_id = #{map.orgId}
+     </if>
+     <if test="map.orgType == 2">
+      and b.collection_org_id in (select id from mip_organization where parent_id = #{map.orgTypeId})
+   	  </if>
+     <if test="map.autoCheck != null and map.autoCheck != ''">
+      and b.collection_year_type IN (
+								"320000",
+								"321000",
+								"319000",
+								"451000",
+								"452000",
+								"453000"
+							) 
+      			GROUP by b.collection_level
+      	
+     
+      	) v
+				GROUP BY v.collection_level
+      </if>
+      <if test="map.autoCheck == null or map.autoCheck == ''">
+      	GROUP BY b.collection_level
+      	) v
+	GROUP BY v.collection_level
+      </if>
+				) c
+				RIGHT JOIN collect_dict a on(c.collection_level = a.dict_code)
+				where a.dict_type = #{item}
+				ORDER BY
+					a.create_date
+  </select>
+   <select id="getOrgAreaByOrgId" parameterType="java.lang.String" resultType="com.tj720.admin.dto.MuseumBaseInfoDto" >
+    	select a.id as id,b.name as province,c.name as city,d.name as area
+    	from bj_museum_base_info a
+    	left join mip_area b on a.province = b.id
+    	left join mip_area c on a.city = c.id
+    	left join mip_area d on a.area = d.id
+    	where a.museum_id = #{orgId}
+    	and a.del_flag = "1"
+    </select>
+  
+</mapper>

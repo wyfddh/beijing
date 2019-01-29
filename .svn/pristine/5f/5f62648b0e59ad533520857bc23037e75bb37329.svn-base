@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.1.xsd
+						http://www.springframework.org/schema/task
+						http://www.springframework.org/schema/task/spring-task-3.1.xsd ">
+
+	<!-- 注解式配置方式 -->
+	<task:annotation-driven/> 
+	<context:annotation-config/>  
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>  
+    <context:component-scan base-package="com.tj720.web.timer" />
+
+	<!--声明式配置方式    要调用的工作 -->
+	<!-- <bean id="testTask" class="com.lcm.up.web.task.TestTask"></bean>
+	<task:scheduled-tasks>
+		<task:scheduled ref="testTask" method="cancleOrderTask" cron="0 0/5 * * * ?" />
+		<task:scheduled ref="testTask" method="affirmOrderTask" cron="0 0/10 * * * ?" />
+		<task:scheduled ref="testTask" method="autoPraiseTask" cron="0 0/10 * * * ?" />
+	</task:scheduled-tasks> -->
+</beans>

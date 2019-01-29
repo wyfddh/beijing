@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <script src="../js/resizerem.js"></script>
+        <script src="../js/mui/js/mui.js"></script>
+        <link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+        <header>
+            <a class="lf" href="cangping.html"></a>
+            <a class="rt" href="../../index.html"></a>
+        </header>
+        <div class="detail-title">
+            <i></i>
+            近现代齐白石虾轴 
+            <span>作者 : 孙洋</span>
+        </div>
+        <div class="detail-body">
+            <img style="width: 2.24rem;height: 6.4rem;" src="../images/xiazhou.jpg" alt="">
+            <p class="text">
+                藏品名称：近现代齐白石虾轴
+                <!-- <br><br>
+                藏品一普编号：3701022180000110018778 -->
+            </p>
+            <!-- <a href="javascript:">
+            <span></span>查看藏品</a> -->
+        </div>
+        <div class="detail-footer">
+            <div class="container">
+                <p class="title">
+                    <span>·</span>藏品简介
+                </p>
+                <div>
+                    <p class="text">
+                        近现代齐白石虾轴，三级文物，现藏山东博物馆。纸本，纵213厘米，横49厘米。款识：八十五岁白石。钤印：老白（白文）。行书题写：“南岳山下第三亭枫林亭，曾骑竹马之儿童。” 表明自己虽为老叟，但有一颗儿童般的心。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="title">
+                    <span>·</span>特征
+                </p>
+                <div>
+                    <p class="text">
+                        造型简练，充满情趣。画中八只虾形态各异，栩栩如生，寥寥几笔，用墨色的深浅浓淡，表现出一种动感。其中六只用淡墨描绘虾躯体，更能显现出虾体晶莹剔透的感觉。根据齐白石长期的观察，虾在游动时眼睛是外横的，所以他将眼睛改为两个横。脑袋中间用一点焦墨，焦墨对虾眼的描绘更能凸显虾的精神。虾的腰部，一笔一节，连续数笔，形成了虾腰节奏由粗渐细。虾的一对前爪，由细而粗，长臂钳挺而有力，虾的尾部也是寥寥几笔，既有弹力，又有透明感。虾的触须用数条淡墨线画出，弯曲变化。图中虽没有一点水痕，只有大片的留白，却让人感到八只虾游得兴致正酣。齐白石创作这幅作品时八十五岁，正处于艺术创作的顶峰，画出了“似与不似之间”最极致的虾。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="title">
+                    <span>·</span>作者简介
+                </p>
+                <div>
+                    <p class="text">
+                        齐白石（1864—1957），名璜，字濒生。白石原为其号，另有别号借山吟馆主者、寄萍老人等，湖南湘潭人。早年做木工，后结交当地文人，学习绘画、篆刻、书法、诗文等。以鬻画治印为生。早年多次出游南北等地，1917年定居北京，开始了职业卖画刻印生涯。建国后，当选为中国美术家协会主席，1955年获世界和平理事会“年度国际和平奖”，1963年被世界和平理事会推举为世界十大文化名人之一。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

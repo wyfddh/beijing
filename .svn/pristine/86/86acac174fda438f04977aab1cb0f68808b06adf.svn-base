@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A simple jQuery image cropping plugin.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, jQuery plugin, image cropping, image crop, image move, image zoom, image rotate, image scale, front-end, frontend, web development">
+    <meta name="author" content="Fengyuan Chen">
+    <title>Cropper</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cropper.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        @media (min-width: 576px) {
+            .container{
+                width: 760px;
+                height: 285px;
+            }
+        }
+        body{
+            background-color: rgb(247, 247, 247);
+        }
+        .person{
+            font-size: 12px;
+            font-family: "NSimSun";
+            color: rgb(31, 148, 145);
+            line-height: 1.827;
+            text-align: justifyLeft;
+        }
+        input{
+            background-color: rgb(255, 255, 255);
+            width: 240px;
+            height: 20px;
+            outline: none;
+            border: none;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .warn{
+            font-size: 12px;
+            font-family: "NSimSun";
+            color: rgb(204, 204, 204);
+            line-height: 1.827;
+            text-align: justifyLeft;
+        }
+    </style>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Content -->
+<div class="container" style="margin-top: 10px">
+    <div>
+        <div>
+            <div class="img-container">
+                <img id="image" src="img/cropperPic.jpg" alt="Picture">
+            </div>
+        </div>
+        <div>
+            <div class="docs-preview clearfix">
+                <div class="img-preview preview-lg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 docs-buttons">
+            <!--移动和重置遮罩
+            <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-primary btn-sm" data-method="setDragMode" data-option="move" title="Move">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="拖动">
+                      <span class="fa fa-arrows"></span>
+                    </span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-method="setDragMode" data-option="crop" title="Crop">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="重置裁剪框">
+                      <span class="fa fa-crop"></span>
+                    </span>
+                </button>
+            </div>-->
+
+            <!--放大和缩小
+            <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-primary btn-sm" data-method="zoom" data-option="0.1" title="Zoom In">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="放大">
+                      <span class="fa fa-search-plus"></span>
+                    </span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-method="zoom" data-option="-0.1" title="Zoom Out">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="缩小">
+                      <span class="fa fa-search-minus"></span>
+                    </span>
+                </button>
+            </div>-->
+
+            <!--上下左右
+            <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-primary btn-sm" data-method="move" data-option="-10" data-second-option="0" title="Move Left">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="左移">
+                      <span class="fa fa-arrow-left"></span>
+                    </span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-method="move" data-option="10" data-second-option="0" title="Move Right">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="右移">
+                      <span class="fa fa-arrow-right"></span>
+                    </span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-method="move" data-option="0" data-second-option="-10" title="Move Up">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="上移">
+                      <span class="fa fa-arrow-up"></span>
+                    </span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" data-method="move" data-option="0" data-second-option="10" title="Move Down">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="下移">
+                      <span class="fa fa-arrow-down"></span>
+                    </span>
+                </button>
+            </div>-->
+
+            <!--重置上传图片-->
+            <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-primary btn-sm" data-method="reset" title="重置">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="重置">
+                      <span class="fa fa-refresh"></span>
+                    </span>
+                </button>
+                <label class="btn btn-primary btn-upload btn-sm" for="inputImage" title="Upload image file">
+                    <form id="registerForm" enctype="multipart/form-data"  method="post" action=""> <!-- class="sr-only" id="inputImage" -->
+                        <input type="file" name="file" class="sr-only" id="inputImage" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+                        <input type="hidden" id="tailor" name="tailor" vlaue="" >
+                        <input type="hidden" id="cezhan_id" name="id" vlaue="" >
+                        <input type="hidden" id="num" name="num" vlaue="" >
+                        <input type="hidden" id="commit_title" name="title" vlaue="" >
+                    </form>
+
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="上传图片">
+              <span class="fa fa-upload"></span>
+            </span>
+                </label>
+            </div>
+
+            <!--确认选择和返回-->
+            <button type="button" class="btn btn-success btn-sm confirm" style="cursor: pointer" title="确认上传">确认上传</button>
+            <!-- <button type="button" class="btn btn-success btn-sm back" title="返回" style="cursor: pointer" onclick="$('.close',window.parent.document).click()">返回</button> -->
+
+            <div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="getCroppedCanvasTitle">Cropped</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a class="btn btn-primary" id="download" href="javascript:void(0);" download="cropped.jpg">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 20px"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.9.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://fengyuanchen.github.io/js/common.js"></script>
+<script src="js/cropper.js"></script>
+<script src="js/mainLogo.js"></script>
+<script src="../back/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+    $(".confirm").click(function () {
+        if(!$('#inputImage').val()){
+            layer.msg("请先上传图片",{time:2000});
+            return false;
+        }
+        $("#tailor").val(JSON.stringify($("#image").cropper("getData")));
+        var formData = new FormData($("#registerForm")[0]);
+        $.ajax({
+            url: '../file/cutPicture.do?thumWidth=70&thumHeight=70&typeId=21',
+            type: "post",
+            data: formData,
+            dataType: "json",
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (result) {
+                console.log(result);
+                if(result.success == 1){
+                    var url = result.data.rootUrl + result.data.url;                 //拿到图片的路径
+                    var relativeUrl = result.data.url;                               //图片的相对url
+                    var picId = result.data.picId;                                   //拿到图片的id
+                    //              把标题和图片清空
+                    //再把url返回去保存
+                    layer.msg("上传成功",{time:2000});
+                    window.parent.$("#upLogo").attr("src",url);         //图片回显
+                    window.parent.$("#logoId").val(picId);              //把图片的id传过去
+                    window.parent.$("#logoUrl").val(url);              //把图片的url传过去
+                    window.parent.layer.closeAll();
+                }else if(result.success == 0){
+                    var errorMsg = result.data || result.error.message;
+                    parent.layer.open({
+                        title: '提示',
+                        content: errorMsg
+                    })
+                }
+            },
+            error: function (errData) {
+                layer.alert(data.message,{
+                    icon:0,
+                    skin:'layer-ext-moon'
+                });
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

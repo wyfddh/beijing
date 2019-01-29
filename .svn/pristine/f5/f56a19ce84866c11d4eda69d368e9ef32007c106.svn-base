@@ -1,0 +1,133 @@
+<header class="browse-detail-head">
+    <a href="#/homebrowse"><img class="detail-left-arrow" src="img/38.png"></a>
+    <h2 ng-bind="head"></h2>
+</header>
+<section class="overflow-scroll browseDetail-top
+ 		scroll-content has-header" style="z-index:-1;">
+    <a href="#/museumDetail/{{toMuseumDetail}}" ng-click="backMuseumDetail()">
+        <div class="browse-detail-name">
+            <img src="img/4t.png">
+            <h2 ng-bind="name"></h2>
+            <img src="img/arrow.png">
+        </div>
+    </a>
+	<!-- <div class="music-c" ng-if="fAudio"></div>
+	<i class="music-note" ng-if="fAudio"><audio ng-src={{sce(fAudio)}} autoplay preload loop></audio></i> -->
+	 <div class="music-c broAudio" ng-if="fAudio"></div>
+        <i class="music-note broAudio" ng-if="fAudio"><audio id="audio" ng-src={{sce(fAudio)}} autoplay preload loop></audio></i>
+    <a href="{{viMoveUrl}}" ng-if="viMoveUrl">
+        <div class="browse-detail-name">
+            <img src="img/vs.png">
+            <h2 style="font-size:0.3rem;">虚拟展厅</h2>
+            <img src="img/arrow.png">
+        </div>
+    </a>
+    <div class="browse-detail-type" ng-show="Time">
+        <img src="img/1t.png">
+        <h2 ng-bind="time"></h2>
+    </div>
+    <!--
+    <div class="browse-detail-type" ng-show="editor">
+        <img src="img/shuxie.png">
+        <h2>编辑人：{{editor}}</h2>
+    </div>
+    -->
+    <div class="browse-detail-content">
+        <p ng-bind-html="content">
+        </p>
+    </div>
+</section>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+// if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+// 	$('.music-note').hide();
+// 	$('.music-c').get(0).style.animationPlayState = "paused";
+// 	$(document).one('touchstart',function(e) {
+// 		$('audio').get(0).touchstart = true;
+// 		$('audio').get(0).play();
+// 		$('.music-note').show();
+// 		$('.music-c').get(0).style.animationPlayState = "running";
+// 		return false;
+// 	});
+// }
+// $(document).ready(function(){
+// 	function audioAutoPlay(){
+// 		if($('audio').length>0)
+// 			$('audio').get(0).play();
+// 		var inteval=setInterval(function(){
+// 			if($('audio').length>0){
+// 				clearInterval(inteval);
+// 				audioPlay();
+// 			}
+// 		},300);
+// 	}
+// 	function audioPlay(){
+// 		wx.config({
+// 			// 配置信息, 即使不正确也能使用 wx.ready
+// 			debug: false,
+// 			appId: 'wxe8fafa38eddf2956',
+// 			timestamp: 1,
+// 			nonceStr: '',
+// 			signature: ' ',
+// 			jsApiList: []
+// 		});
+// 		wx.ready(function() {
+// 			$('audio').get(0).load().play();
+// 	        $('.music-note').show();
+// 	        $('.music-c').get(0).style.animationPlayState = "running";
+// 		});
+// 	}
+// 	audioAutoPlay();
+// });
+if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+	$('.music-note').hide();
+	$('.music-c').get(0).style.animationPlayState = "paused";
+	$(document).one('touchstart',function(e) {
+		$('#audio').get(0).touchstart = true;
+		$('#audio').get(0).play();
+		$('.music-note').show();
+		$('.music-c').get(0).style.animationPlayState = "running";
+		return false;
+	});
+}
+$(document).ready(function(){
+	function audioAutoPlay(){
+		if($('#audio').length>0)
+			$('#audio').get(0).play();
+		var inteval=setInterval(function(){
+			if($('#audio').length>0){
+				clearInterval(inteval);
+				audioPlay();
+			}
+		},300);
+	}
+	function audioPlay(){
+		wx.config({
+			// 配置信息, 即使不正确也能使用 wx.ready
+			debug: false,
+			appId: 'wxe8fafa38eddf2956',
+			timestamp: 1,
+			nonceStr: '',
+			signature: '',
+			jsApiList: []
+		});
+		wx.ready(function() {
+			$('#audio').get(0).load().play();
+	        $('.music-note').show();
+	        $('.music-c').get(0).style.animationPlayState = "running";
+		});
+	    $(".broAudio").click(function() {
+	        if ($("#audio")[0].paused) {
+	            // 暂停中
+	            $("#audio")[0].play();
+                $('.music-c').get(0).style.animationPlayState = "running";
+	        } else {
+	            // 播放中
+	            $("#audio")[0].pause();
+                $('.music-c').get(0).style.animationPlayState = "paused";
+	        }
+	    });
+	}
+	audioAutoPlay();
+});
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		北魏贾智渊造背屏三尊像
+    		<span>作者 : 肖贵田</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 4.2rem;height: 6.4rem;" src="../images/sanzunxiang.jpg" alt="">
+    		<p class="text">
+    			 北魏正光六年（525年），通高220、宽138厘米。原置于山东青州西王孔庄古庙中，1918年一位日本古玩商从当地购得此像，妄图运往日本，因当地官员干涉，未能成行，1953年移至山东博物馆保存。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                石屏正面高浮雕三尊像。中间一尊为佛像，面带微笑，双手施无畏与愿印，身穿“褒衣博带”式袈裟，立于莲花座上。两侧各一尊菩萨像，面容清秀，内穿交领外衣，外着宽大披帛，披长串交叉的璎珞，下身穿长裙；一手拿莲蕾抚于胸前，一手下垂持一物，立于莲花座上。石屏的正面装饰十分华丽，上端外侧为11尊帛带飘飘的飞天；里侧最上为一倒悬飞腾的龙，其下呈环形分布9尊小型化佛；中部为主尊佛像的头光和背光。在三尊像之间浅浮雕两位供养人像，各手持一枝莲蕾，面向佛像而礼。石屏的背面整齐分布着182个小龛，每龛一佛，号为“千佛”，十分壮观。
+            </p>
+            <p class="text">
+                底座的正面正中刻写发愿文：大魏正光六年岁次乙巳四月乙亥朔十九日癸巳，清信士佛弟子贾智渊妻张宝珠等，并为七世父母、历劫诸师、兄弟姊妹、所亲眷属、香火同邑，常与佛会，愿令一切众生，普同斯，愿弟子等生生世世值佛闻法，永离众苦，乃至成佛，心无退转。该造像制作精致，特征明显，纪年明确，是山东早期石质造像年代的重要标尺。
+            </p>
+    	</div>
+    </body>
+</html>

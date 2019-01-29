@@ -1,0 +1,34 @@
+<header class="commonHeader">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>收藏单位数量分布</h2>
+</header>
+<section class="overflow-scroll scroll-content hasCommonHeader" style="z-index: -1;width: 100%;">
+    <ion-content class="unitWrap">
+        <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+        <!--ng-click="slideToggle()"-->
+        <div class="cityList" ng-repeat="item in cityList">
+            <div class="cityItem" ng-click="showMuseum($event)">
+                <span>{{item.cityName}}</span>
+                <span>{{item.museumCount}}</span>
+                <div><i class="icon ion-chevron-right"></i></div>
+            </div>
+            <div class="museumWrap hide" ng-repeat=" item1 in item.museumList">
+                <a  href="#/museumDetail/{{item1.id}}"><div class="museumList">{{item1.name}}</div></a>
+            </div>
+        </div>
+        <!--<div class="cityList">-->
+            <!--<div class="cityItem">-->
+                <!--<span>青岛市</span>-->
+                <!--<span>16</span>-->
+                <!--<div><i class="icon ion-chevron-right"></i></div>-->
+            <!--</div>-->
+            <!--<div class="museumWrap hide">-->
+                <!--<div class="museumList">山东博物馆</div>-->
+                <!--<div class="museumList">山东博物馆</div>-->
+                <!--<div class="museumList">山东博物馆</div>-->
+                <!--<div class="museumList">山东博物馆</div>-->
+                <!--<div class="museumList">山东博物馆</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </ion-content>
+</section>

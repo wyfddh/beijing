@@ -1,0 +1,17 @@
+<header class="commonHeader borderNone">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>策展</h2>
+</header>
+<section class="overflow-scroll hasCommonHeader scroll-content has-footer cezhan-top" style="z-index: -1;width: 100%;">
+    <div class="howCezhan">
+        <img class="new-img" src="img/180.png">
+        <p>如何策展？</p>
+        <img class="x" src="img/x.png">
+    </div>
+
+    <div class="cezhan-table">
+        <div ui-sref="cezhan.hot" ng-class="{hot: true, hover: isActive}" ng-click="isActive=true">热门</div>
+        <div ui-sref="cezhan.new" ng-class="{new: true, hover: !isActive}" ng-click="isActive=false">最新</div>
+    </div>
+    <div ui-view></div>
+</section>

@@ -1,0 +1,82 @@
+<div class="daolan">
+    <a style="width: 0.8rem;display: inline-block;float: left;height: 0.8rem" href="#/collectionDetail/{{collectionID}}"><img src="img/39.png"></a>
+    <h2 style="width: 8.17188rem;">{{daolanName}}</h2>
+    <!--<p>详情</p>-->
+</div>
+<section class="overflow-scroll has-header
+             scroll-content has-footer">
+    <div class="daolan-pic">
+        <img ng-src={{daolanPic}} ng-click="showBigPic($event)">
+        <div class="music-c" ng-if="daolanMusic"></div>
+       <i class="music-note" ng-if="daolanMusic"><audio ng-src={{sce(daolanMusic)}} autoplay preload loop></audio></i>
+    </div>
+    <div class="daolan-jieshao">
+        <h2>藏品名称</h2>
+    </div>
+    <div class="daolan-jieshao-content">
+        <p>{{daolanName}}</p>
+    </div>
+    <div class="daolan-jieshao">
+        <h2>年代</h2>
+    </div>
+    <div class="daolan-jieshao-content">
+        <p>{{niandai}}</p>
+    </div>
+    <div class="daolan-jieshao">
+        <h2>收藏单位</h2>
+    </div>
+    <div class="daolan-jieshao-content">
+        <p>{{danwei}}</p>
+    </div>
+    <div class="daolan-jieshao">
+        <h2>藏品介绍</h2>
+    </div>
+    <div class="daolan-jieshao-content">
+        <p>{{daolanContent}}</p>
+    </div>
+    <div class="daolan-jieshao" ng-if="daolanVideo">
+        <h2>文物视频</h2>
+    </div>
+    <div class="daolan-video" ng-if="daolanVideo">
+        <div id="mediaplayer"></div>
+    </div>
+</section>
+<!--<script>-->
+    <!--jwplayer('mediaplayer').setup({-->
+        <!--'flashplayer': 'lib/jwplayer.flash.swf',-->
+        <!--'image': 'http://assets.jq22.com/plugin/2016-04-25-11-04-36.jpg',-->
+        <!--'id': 'playerID',-->
+        <!--'width': '100%',-->
+        <!--'aspectratio':'10:6',-->
+        <!--'file': 'http://jq22com.qiniudn.com/jq22com.mp4'-->
+    <!--});-->
+<!--</script>-->
+<div id="imgCoverWrap">
+    <img src={{daolanPic}} alt="" ng-click="hideCover()">
+</div>
+<script>
+$(document).ready(function(){
+	  function audioAutoPlay() {
+	    var audio = $('audio').get(0);
+	    audio.play();
+	    document.addEventListener("WeixinJSBridgeReady", function () {
+	    	audio.play();
+	        $('.music-note').show();
+	        $('.music-c').get(0).style.animationPlayState = "running";
+	    }, false);
+	  }
+	  audioAutoPlay();
+	});
+	if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+	  $('.music-note').hide();
+	  $('.music-c').get(0).style.animationPlayState = "paused";
+	  $(document).one('touchstart',
+	    function(e) {
+	      $('audio').get(0).touchstart = true;
+	      $('audio').get(0).play();
+	      $('.music-note').show();
+	      $('.music-c').get(0).style.animationPlayState = "running";
+	      return false;
+	    });
+	}
+</script>

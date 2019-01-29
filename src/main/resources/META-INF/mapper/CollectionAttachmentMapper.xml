@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.collection.CollectionAttachmentMapper">
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.collection.CollectionAttachment">
+    <id column="att_id" jdbcType="VARCHAR" property="attId" />
+    <result column="att_name" jdbcType="VARCHAR" property="attName" />
+    <result column="att_size" jdbcType="BIGINT" property="attSize" />
+    <result column="att_path" jdbcType="VARCHAR" property="attPath" />
+    <result column="att_isJunk" jdbcType="CHAR" property="attIsjunk" />
+    <result column="att_date" jdbcType="TIMESTAMP" property="attDate" />
+    <result column="att_type" jdbcType="VARCHAR" property="attType" />
+    <result column="attr_user" jdbcType="VARCHAR" property="attrUser" />
+    <result column="att_fk_id" jdbcType="VARCHAR" property="attFkId" />
+    <result column="att_file_type" jdbcType="INTEGER" property="attFileType" />
+    <result column="att_source" jdbcType="VARCHAR" property="attSource" />
+    <result column="is_main" jdbcType="CHAR" property="isMain" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    att_id, att_name, att_size, att_path, att_isJunk, att_date, att_type, attr_user, 
+    att_fk_id, att_file_type, att_source, is_main
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from collection_attachment
+    where att_id = #{attId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from collection_attachment
+    where att_id = #{attId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.collection.CollectionAttachment">
+    insert into collection_attachment (att_id, att_name, att_size, 
+      att_path, att_isJunk, att_date, 
+      att_type, attr_user, att_fk_id, 
+      att_file_type, att_source, is_main
+      )
+    values (#{attId,jdbcType=VARCHAR}, #{attName,jdbcType=VARCHAR}, #{attSize,jdbcType=BIGINT}, 
+      #{attPath,jdbcType=VARCHAR}, #{attIsjunk,jdbcType=CHAR}, #{attDate,jdbcType=TIMESTAMP}, 
+      #{attType,jdbcType=VARCHAR}, #{attrUser,jdbcType=VARCHAR}, #{attFkId,jdbcType=VARCHAR}, 
+      #{attFileType,jdbcType=INTEGER}, #{attSource,jdbcType=VARCHAR}, #{isMain,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.collection.CollectionAttachment">
+    insert into collection_attachment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        att_id,
+      </if>
+      <if test="attName != null">
+        att_name,
+      </if>
+      <if test="attSize != null">
+        att_size,
+      </if>
+      <if test="attPath != null">
+        att_path,
+      </if>
+      <if test="attIsjunk != null">
+        att_isJunk,
+      </if>
+      <if test="attDate != null">
+        att_date,
+      </if>
+      <if test="attType != null">
+        att_type,
+      </if>
+      <if test="attrUser != null">
+        attr_user,
+      </if>
+      <if test="attFkId != null">
+        att_fk_id,
+      </if>
+      <if test="attFileType != null">
+        att_file_type,
+      </if>
+      <if test="attSource != null">
+        att_source,
+      </if>
+      <if test="isMain != null">
+        is_main,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="attId != null">
+        #{attId,jdbcType=VARCHAR},
+      </if>
+      <if test="attName != null">
+        #{attName,jdbcType=VARCHAR},
+      </if>
+      <if test="attSize != null">
+        #{attSize,jdbcType=BIGINT},
+      </if>
+      <if test="attPath != null">
+        #{attPath,jdbcType=VARCHAR},
+      </if>
+      <if test="attIsjunk != null">
+        #{attIsjunk,jdbcType=CHAR},
+      </if>
+      <if test="attDate != null">
+        #{attDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="attType != null">
+        #{attType,jdbcType=VARCHAR},
+      </if>
+      <if test="attrUser != null">
+        #{attrUser,jdbcType=VARCHAR},
+      </if>
+      <if test="attFkId != null">
+        #{attFkId,jdbcType=VARCHAR},
+      </if>
+      <if test="attFileType != null">
+        #{attFileType,jdbcType=INTEGER},
+      </if>
+      <if test="attSource != null">
+        #{attSource,jdbcType=VARCHAR},
+      </if>
+      <if test="isMain != null">
+        #{isMain,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.collection.CollectionAttachment">
+    update collection_attachment
+    <set>
+      <if test="attName != null">
+        att_name = #{attName,jdbcType=VARCHAR},
+      </if>
+      <if test="attSize != null">
+        att_size = #{attSize,jdbcType=BIGINT},
+      </if>
+      <if test="attPath != null">
+        att_path = #{attPath,jdbcType=VARCHAR},
+      </if>
+      <if test="attIsjunk != null">
+        att_isJunk = #{attIsjunk,jdbcType=CHAR},
+      </if>
+      <if test="attDate != null">
+        att_date = #{attDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="attType != null">
+        att_type = #{attType,jdbcType=VARCHAR},
+      </if>
+      <if test="attrUser != null">
+        attr_user = #{attrUser,jdbcType=VARCHAR},
+      </if>
+      <if test="attFkId != null">
+        att_fk_id = #{attFkId,jdbcType=VARCHAR},
+      </if>
+      <if test="attFileType != null">
+        att_file_type = #{attFileType,jdbcType=INTEGER},
+      </if>
+      <if test="attSource != null">
+        att_source = #{attSource,jdbcType=VARCHAR},
+      </if>
+      <if test="isMain != null">
+        is_main = #{isMain,jdbcType=CHAR},
+      </if>
+    </set>
+    where att_id = #{attId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.collection.CollectionAttachment">
+    update collection_attachment
+    set att_name = #{attName,jdbcType=VARCHAR},
+      att_size = #{attSize,jdbcType=BIGINT},
+      att_path = #{attPath,jdbcType=VARCHAR},
+      att_isJunk = #{attIsjunk,jdbcType=CHAR},
+      att_date = #{attDate,jdbcType=TIMESTAMP},
+      att_type = #{attType,jdbcType=VARCHAR},
+      attr_user = #{attrUser,jdbcType=VARCHAR},
+      att_fk_id = #{attFkId,jdbcType=VARCHAR},
+      att_file_type = #{attFileType,jdbcType=INTEGER},
+      att_source = #{attSource,jdbcType=VARCHAR},
+      is_main = #{isMain,jdbcType=CHAR}
+    where att_id = #{attId,jdbcType=VARCHAR}
+  </update>
+
+  <select id="getListByRelationId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from collection_attachment
+    where att_fk_id = #{collectionPictureid}
+    and att_isJunk = "0"
+  </select>
+</mapper>

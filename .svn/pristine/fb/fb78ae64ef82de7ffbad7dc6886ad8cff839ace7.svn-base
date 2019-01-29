@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		丁公刻字陶片
+    		<span>作者 : 王海玉</span>
+    	</div>
+    	<div class="detail-body">
+    		<img src="../images/taopian.jpg" alt="">
+    		<p class="text">
+    			 丁公刻字陶片，1991年发现邹平丁公遗址的1235号灰坑内，呈四边形，上大下小，长7.7-4.6厘米，宽3-3.4厘米，厚0.35厘米，一面经过磨光。磨光面刻有5行11个文字，书写方式为右起竖排体例，右起第一行3个字，余四行各2个字，排列规整，笔画较细，但清晰可见。文字“深入陶胎”、“行走如飞”，发掘者认为是用锐利的尖状工具刻写的。陶片是一大平底盆的一角，浅灰色泥质陶，陶胎较薄，背面有轮旋的痕迹，属于龙山文化晚期，距今约4200-4100年。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                这是目前海岱地区龙山文化发现唯一的文字资料，特别珍贵。对于陶文的性质以及如何释读，学界存在不同的意见和看法：或认为其与甲骨文存在着密切的内在联系；或认为其属于古东夷族的文字，是中国最早的成篇文字之一；或认为这是一种走入歧途并未获得成功的文字。该陶片把中国有文字记载的历史由以往的商代晚期提前了约800年，丁公遗址也因此成为国内外学术界和新闻界关注的焦点，被列为1991年全国十大考古新发现之首。
+            </p>
+    	</div>
+    </body>
+</html>

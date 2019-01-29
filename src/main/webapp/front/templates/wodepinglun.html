@@ -1,0 +1,28 @@
+<ion-content class="hasCommentTitle">
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefreshMyComment()"></ion-refresher>
+    <div class="commentMeListWrap">
+        <div class="myCommentList" ng-repeat="item in myComment">
+            <p>
+                <img src="img/yinleft.png" alt="">
+                <span>{{item.content}}</span>
+                <img src="img/yinright.png" alt="">
+            </p>
+            <div class="commentContentWrap">
+                <div class="sanjiaoTop"></div>
+                <p>
+                    <span class="cezhanName">{{item.curName}}</span>
+                </p>
+            </div>
+            <div class="nidaye">
+                <span class="cezhanNum">评论({{item.totalComm}})</span>
+                <span class="cezhanTime">{{item.publishTimeStr}}</span>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <ion-infinite-scroll on-infinite = "loadMoreMyComment()" distance = "1%" immediate-check = "false" ng-if="moreDataMyComment"></ion-infinite-scroll>
+    </div>
+</ion-content>

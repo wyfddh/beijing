@@ -1,0 +1,21 @@
+#designMainGrid_show .profile-user-info {
+    border: 1px solid #ff0000;
+}
+#designMainGrid_show input[type="text"] {
+    border-bottom: 1px solid #ff0000;
+}
+
+#designMainGrid_show .profile-user-info-striped .profile-info-name {
+    color: #ff0000;
+}
+
+#designMainGrid_show .para-title.level-2 .title-text {
+    color: #ff0000;
+}
+#designMainGrid_show .form-layout-top-toolbar th {
+    color: #ff0000;
+}
+
+#designMainGrid_show .line-title {
+    color: #ff0000;
+}

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.IMuseumPersonMapper">
+    
+	<sql id="museumPersonColumns">
+		a.id AS "id",
+		a.museum_id AS "museumId",
+		a.name AS "name",
+		a.sex AS "sex",
+		a.is_marry AS "isMarry",
+		a.have_children AS "haveChildren",
+		a.nation AS "nation",
+		a.native_place AS "nativePlace",
+		a.id_number AS "idNumber",
+		a.residence_address AS "residenceAddress",
+		a.account_type AS "accountType",
+		a.current_address AS "currentAddress",
+		a.phone AS "phone",
+		a.email AS "email",
+		a.education AS "education",
+		a.graduated_school AS "graduatedSchool",
+		a.political_status AS "politicalStatus",
+		a.job AS "job",
+		a.department AS "department",
+		a.job_title AS "jobTitle",
+		a.employment_relation AS "employmentRelation",
+		a.research_direction AS "researchDirection",
+		a.remarks AS "remarks",
+		a.del_flag AS "flag"
+	</sql>
+	
+	<sql id="museumPersonJoins">
+	</sql>
+	
+	<select id="selectForm" resultType="com.tj720.admin.dto.MuseumPersonDto" >
+		SELECT 
+			<include refid="museumPersonColumns"/>
+		FROM museum_person a
+		<include refid="museumPersonJoins"/>
+		WHERE a.id = #{id} limit 1
+	</select>
+	
+	<!-- 查机构列表数 -->
+    <select id="getCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+    select count(1) from museum_person a 
+    	where a.museum_id= #{museumId} and a.del_flag = #{flag} 
+    	and a.department in 
+    	<foreach collection="departIdList" index="index" item="item" open="(" separator="," close=")">
+  					#{item}
+  		 </foreach>
+  		 <if test="personName != null and personName != ''">
+				AND (a.name like concat('%',#{personName},'%') or a.phone like concat('%',#{personName},'%'))
+		</if>
+	  ORDER BY a.update_date DESC
+    </select>
+    
+	<select id="selectList" resultType="com.tj720.admin.dto.MuseumPersonDto" parameterType="java.util.Map">
+		SELECT 
+			<include refid="museumPersonColumns"/>
+		FROM museum_person a
+		join museum_department b on b.id=a.department
+		<where>
+			a.del_flag = #{flag} and a.museum_id = #{museumId}  and a.department in
+			<foreach collection="departIdList" index="index" item="item" open="(" separator="," close=")">
+  					#{item}
+  		   </foreach>
+  		   <if test="personName != null and personName != ''">
+				AND (a.name like concat('%',#{personName},'%') or a.phone like concat('%',#{personName},'%'))
+			</if>
+		</where>		
+			ORDER BY b.level ASC, a.update_date DESC LIMIT #{start},#{end}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO museum_person(
+			id,
+			museum_id,
+			name,
+			sex,
+			is_marry,
+			have_children,
+			nation,
+			native_place,
+			id_number,
+			residence_address,
+			account_type,
+			current_address,
+			phone,
+			email,
+			education,
+			graduated_school,
+			political_status,
+			job,
+			department,
+			job_title,
+			employment_relation,
+			research_direction,
+			data_completion,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			del_flag
+		) VALUES (
+			#{id},
+			#{museumId},
+			#{name},
+			#{sex},
+			#{isMarry},
+			#{haveChildren},
+			#{nation},
+			#{nativePlace},
+			#{idNumber},
+			#{residenceAddress},
+			#{accountType},
+			#{currentAddress},
+			#{phone},
+			#{email},
+			#{education},
+			#{graduatedSchool},
+			#{politicalStatus},
+			#{job},
+			#{department},
+			#{jobTitle},
+			#{employmentRelation},
+			#{researchDirection},
+			#{dataCompletion},
+			#{creatorId},
+			#{createTime},
+			#{updateId},
+			#{updateTime},
+			#{flag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE museum_person SET 	
+			name = #{name},
+			sex = #{sex},
+			is_marry = #{isMarry},
+			have_children = #{haveChildren},
+			nation = #{nation},
+			native_place = #{nativePlace},
+			id_number = #{idNumber},
+			residence_address = #{residenceAddress},
+			account_type = #{accountType},
+			current_address = #{currentAddress},
+			phone = #{phone},
+			email = #{email},
+			education = #{education},
+			graduated_school = #{graduatedSchool},
+			political_status = #{politicalStatus},
+			job = #{job},
+			job_title = #{jobTitle},
+			employment_relation = #{employmentRelation},
+			research_direction = #{researchDirection},
+			data_completion = #{dataCompletion},
+			update_by = #{updateId},
+			update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+
+	<!--物理删除-->
+	<delete id="deleteByLogic">
+		delete from museum_person 
+		WHERE id = #{id} and del_flag in('1','3')
+	</delete>
+
+	<select id="selectAwardList" resultType="com.tj720.admin.dto.PersonAwardRecordDto" >
+		SELECT a.id AS "id",
+		a.person_id AS "personId",
+		a.award_name AS "awardName",
+		DATE_FORMAT(a.award_time, '%Y-%m-%d')  AS "awardTime",
+		a.award_description AS "awardDescription"
+		FROM person_award_record a
+		<where>
+			a.person_id = #{personId}
+		</where>
+		ORDER BY a.update_date DESC
+	</select>
+
+
+	<select id="selectCertificationList" resultType="com.tj720.admin.dto.PersonCertificationDto" >
+		SELECT a.id AS "id",
+		a.person_id AS "personId",
+		a.certification_name as "certificationName",
+		DATE_FORMAT(a.get_time, '%Y-%m-%d') as "getTime",
+		a.certification_description as "certificationDescription"
+		FROM person_certification a
+		<where>
+			and a.person_id = #{personId}
+		</where>
+				ORDER BY a.update_date DESC
+	</select>
+
+	<insert id="insertCertification">
+		INSERT INTO person_certification(
+		id,
+		person_id,
+		certification_name,
+		<if test="getTime != null and getTime !=''" >	
+		get_time,
+		</if>
+		certification_description,
+		create_by,
+		create_date,
+		update_by,
+		update_date,
+		del_flag
+		) VALUES (
+		#{id},
+		#{personId},
+		#{certificationName},
+		<if test="getTime != null and getTime !=''" >	
+		STR_TO_DATE(#{getTime},'%Y-%m-%d %H:%i:%s'),
+		</if>
+		#{certificationDescription},
+		#{creatorId},
+		#{createTime},
+		#{updateId},
+		#{updateTime},
+		#{flag}
+		)
+	</insert>
+
+	<update id="updateCertification">
+		UPDATE person_certification SET
+		certification_name = #{certificationName},
+		<if test="getTime != null and getTime !=''" >	
+		get_time = STR_TO_DATE(#{getTime},'%Y-%m-%d %H:%i:%s'),
+		</if>
+		<if test="getTime == null or getTime ==''" >	
+		 get_time=null,
+		</if>
+		certification_description = #{certificationDescription},
+		update_by = #{updateId},
+		update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+
+
+	<!--物理删除-->
+	<delete id="deleteCertification">
+		delete from person_certification 
+		WHERE id = #{id} 
+	</delete>
+
+	<insert id="insertAward">
+		INSERT INTO person_award_record(
+		id,
+		person_id,
+		award_name,
+		<if test="awardTime != null and awardTime !=''" >	
+		award_time,
+		</if>
+		award_description,
+		create_by,
+		create_date,
+		update_by,
+		update_date,
+		del_flag
+		) VALUES (
+		#{id},
+		#{personId},
+		#{awardName},
+		<if test="awardTime != null and awardTime !=''" >	
+		STR_TO_DATE(#{awardTime},'%Y-%m-%d %H:%i:%s'),
+		</if>
+		#{awardDescription},
+		#{creatorId},
+		#{createTime},
+		#{updateId},
+		#{updateTime},
+		#{flag}
+		)
+	</insert>
+
+	<update id="updateAward">
+		UPDATE person_award_record SET
+		award_name = #{awardName},
+		<if test="awardTime != null and awardTime !=''" >	
+		award_time = STR_TO_DATE(#{awardTime},'%Y-%m-%d %H:%i:%s'),
+		</if>
+		<if test="awardTime == null or awardTime ==''" >
+		award_time = null,
+		</if>	
+		award_description = #{awardDescription},
+		update_by = #{updateId},
+		update_date = #{updateTime}
+		WHERE id = #{id}
+	</update>
+
+
+	<!--物理删除-->
+	<delete id="deleteAward">
+		delete from person_award_record 
+		WHERE id = #{id}
+	</delete>
+
+	<select id="selectAllPerson" resultType="com.tj720.admin.dto.MuseumPersonDto">
+		SELECT 
+			<include refid="museumPersonColumns"/>
+		FROM museum_person a
+		<include refid="museumPersonJoins"/>
+		<where>
+			a.del_flag = #{1} and a.museum_id = #{0}
+		</where>		
+			ORDER BY a.update_date DESC
+	</select>
+	
+	<delete id="deleteBase">
+    	delete from museum_person
+        where museum_id = #{0} and del_flag = #{1}
+    </delete>
+</mapper>

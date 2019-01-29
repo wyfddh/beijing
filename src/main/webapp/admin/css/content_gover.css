@@ -1,0 +1,57 @@
+/*内容区样式*/
+#issuePerson{
+    margin-left: 11.25rem;
+}
+.displayType{
+    width:5rem;
+    float: left;
+}
+.signl_check{
+    float: left;
+}
+.main_img{
+    width:14rem;
+    height:7.8125rem;
+    float: left;
+}
+.clearfloat:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0
+}
+.clearfloat{zoom:1}
+.main_img img{
+    width:14rem;
+    height:7.8125rem;
+}
+#aside{
+	background: #72cdae;
+	border-right: 1.25rem solid #f7f7f7;
+	height: 66rem;
+}
+.to{
+    /*display: block!important;*/
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.button_wrap{
+    padding-top: 1.1rem;
+    padding-left: 3.7rem;
+}
+.button_wrap .btn-upload{
+    padding-right: 1rem;
+}
+.content_wrap{
+    padding-top: 0.5rem;
+}
+.content_msg{
+    width:28.75rem;
+    border:1px solid #e6e6e6;
+    border-right:1.75rem solid #e6e6e6;
+    text-indent: 2rem;
+    float: left;
+    margin-left: 4rem;
+    margin-top: -0rem;
+}

@@ -1,0 +1,29 @@
+<header class="commonHeader borderNone">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>我的收藏</h2>
+</header>
+<section class="overflow-scroll has-searchHead has-footer">
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png" alt="">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <div class="myCollectionContent" ng-repeat="item in collectionList">
+            <a  href="#/collectionDetail/{{item.id}}"><img ng-src="{{item.pictureThumb}}" alt="" class="bigImg"></a>
+            <div>
+                <p>{{item.name}}</p>
+                <img src="img/starYes.png" alt="" data-id="{{item.id}}" class="starShow" ng-click="cancelCollect(item.id,item.type)">
+                <!--<img src="img/starNo.png" alt="" data-id="{{item.id}}" class="starHide" ng-click="collect($event)">-->
+            </div>
+        </div>
+        <!--<div class="myCollectionContent">-->
+            <!--<img src="img/browse.png" alt="" class="bigImg">-->
+            <!--<div>-->
+                <!--<p>藏品名藏品名藏品名...</p>-->
+                <!--<img src="img/starYes.png" alt="" class="star">-->
+            <!--</div>-->
+        <!--</div>-->
+        <ion-infinite-scroll ng-if="moreData" on-infinite="loadMore()" immediate-check = "false" distance="5%"></ion-infinite-scroll>
+    </ion-content>
+</section>

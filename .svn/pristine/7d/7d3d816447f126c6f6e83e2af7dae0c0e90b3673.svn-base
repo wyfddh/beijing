@@ -1,0 +1,20 @@
+<header class="browse-detail-head">
+    <a href="#/foreignDetail"><img class="detail-left-arrow" src="img/38.png"></a>
+    <h2 ng-bind="head"></h2>
+</header>
+<section class="overflow-scroll browseDetail-top
+ 		scroll-content has-header has-footer" style="z-index:-1;">
+    <div class="browse-detail-name">
+        <img src="img/4t.png">
+        <h2 ng-bind="name"></h2>
+        <img src="img/arrow.png">
+    </div>
+    <div class="browse-detail-type" ng-show="Time">
+        <img src="img/1t.png">
+        <h2 ng-bind="time"></h2>
+    </div>
+    <div class="browse-detail-content">
+        <p ng-bind-html="content">
+        </p>
+    </div>
+</section>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <script src="../js/resizerem.js"></script>
+    <script src="../js/mui/js/mui.js"></script>
+    <link href="../js/mui/css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/qiluwenhua.css">
+</head>
+
+<body>
+    <header>
+        <a class="lf" href="wenbo.html"></a>
+        <a class="rt" href="../../index.html"></a>
+    </header>
+    <div class="detail-title">
+        <i></i>印章、拓印、印染与雕版印刷
+        <span>作者 : 徐战</span>
+    </div>
+<!--     <div class="detail-body">
+        <img style="width: 5.6rem;height:4.3rem;" src="../images/yinzhang.png" alt="">
+    </div> -->
+    <div class="detail-footer">
+        <div class="container">
+            <div>
+                <p class="text">
+                   印章在先秦时就有，一般只有几个字，表示姓名，官职或机构。印文均刻成反体，有阴文、阳文之别。在纸没有出现之前，公文或书信都写在简牍上，写好之后，用绳扎好，在结扎处放粘性泥封结，将印章盖在泥上，称为泥封，泥封就是在泥上印刷，这是当时保密的一种手段。纸张出现之后，泥封演变为纸封，在几张公文纸的接缝处或公文纸袋的封口处盖印。据记载在北齐时（公元550~577年）有人把用于公文纸盖印的印章作得很大，很像一块小小的雕刻版了。
+                </p>
+                <p class="text">
+                    战国（公元前475-前221年）时期的铜印。
+                </p>
+                <p class="text">
+                    晋代著名炼丹家葛洪（公元284~363年）在他著的《抱朴子》中提到道家那时已用了四寸见方（13.5×13.5）有120个字的大木印了。这已经是一块小型的雕版了。
+                </p>
+                <p class="text">
+                    佛教徒为了使佛经更加生动，常把佛像印在佛经的卷首，这种手工木印比手绘省事得多。
+                </p>
+                <p class="text">
+                    碑石拓印技术对雕版印刷技术的发明很有启发作用。刻石的发明，历史很早。初唐在今陕西凤翔发现了十个石鼓，它是公元前8世纪春秋时秦国的石刻。秦始皇出巡，在重要的地方刻石7次。东汉以后，石碑盛行。汉灵帝四年（公元175年）蔡邕建议朝廷，在太学门前树立《诗经》、《尚书》、《周易》、《礼记》、《春秋》、《公羊传》、《论语》等七部儒家经典的石碑，共20.9万字，分刻于46块石碑上每碑高175、宽90、厚20厘米，容字5000，碑的正反面皆刻字。历时8年，全部刻成。成为当时读书人的经典。很多人争相抄写。后来特别是魏晋六朝时，有人趁看管不严或无人看管时，用纸将经文拓印下来，自用或出售。结果使其广为流传。
+                </p>
+                <p class="text">
+                    古人发现在石碑上盖一张微微湿润的纸，用软槌轻打，使纸陷入碑面文字凹下处，待纸干后再用布包上棉花，蘸上墨汁，在纸上轻轻拍打，纸面上就会留下黑地白字跟石碑一模一样的字迹。这样的方法比手抄简便、可靠。于是拓印就出现了。
+                </p>
+                <p class="text">
+                    拓片是印刷技术产生的重要条件之一。印染技术对雕版印刷也有很大的启示作用，印染是在木板上刻出花纹图案，用染料印在布上。中国的印花板有凸纹板和镂空板两种。1972年湖南长沙马王堆一号汉墓（公元前165年左右）出土的两件印花纱就是用凸纹板印的。这种技术可能早于秦汉，而上溯至战国。纸发明后，这种技术就可能用于印刷方面，只要把布改成纸，把染料改成墨，印出来的东西，就成为雕版印刷品了。在敦煌石室中就有唐代凸板和镂空板纸印的佛像。
+                </p>
+                <p class="text">
+                   印章、拓印、印染技术三者相互启发，相互融合，再加上我国人民的经验和智慧，雕版印刷技术就应运而生了。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

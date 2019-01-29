@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <script src="../js/resizerem.js"></script>
+        <script src="../js/mui/js/mui.js"></script>
+        <link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+        <header>
+            <a class="lf" href="cangping.html"></a>
+            <a class="rt" href="../../index.html"></a>
+        </header>
+        <div class="detail-title">
+            <i></i>
+            德化窑观音像
+            <span>作者 : 滕卫</span>
+        </div>
+        <div class="detail-body">
+            <img style="width: 4.8rem;height: 6.4rem;" src="../images/guanyinxiang.jpg" alt="">
+            <p class="text">
+                藏品名称：德化窑观音像
+                <!-- <br><br>
+                藏品一普编号：3701022180000110007354 -->
+            </p>
+            <!-- <a href="javascript:">
+            <span></span>查看藏品</a> -->
+        </div>
+        <div class="detail-footer">
+            <div class="container">
+                <p class="title">
+                    <span>·</span>藏品简介
+                </p>
+                <div>
+                    <p class="text">
+                        明万历德化窑观音像，通高26.4厘米，传世品，现藏山东博物馆。
+                    </p>
+                    <p class="text">
+                        观音曲眉丰颊，鼻梁挺秀，双目低垂，左手执一含苞荷花交腿端坐于莲台之上，容颜端庄慈祥。观音左侧是一站于莲台之上的童子，双手合十，一脸的虔诚。该器胎质细密，釉白温润如脂。
+                    </p>
+                    <p class="text">
+                        寂园叟在《陶雅》中评："德化所出白瓷花盆，瓷质雪白，价廉而式样不俗"，观世音"有彩画者，有坐像、立像者┅┅"。
+                    </p>
+                    <p class="text">
+                        德化窑在今福建德化县，故名。宋、元时已烧制青、白瓷。明代达到高峰，是当时著名民窑之一。以烧白瓷著称，胎、釉浑然一体，光润如白玉，被称为“象牙白”、“猪油白”、“葱根白”、“建白”、“中国白”等，为当时中国白瓷的代表作品。产品以人物塑象最为突出，如观音、达摩等。其它如梅花杯、八仙杯、仿青铜香炉、花瓶、文具等，均名传于世。清代德化窑继续烧制白瓷，但产品以日用器皿为主，釉色不似明代的白中微微闪红，而是白中透青。除白瓷外，明清德化窑还烧制青花和五彩器。建国以后，德化瓷塑继承传统手法，形象刻划深入，衣纹飘洒自如，并把中华民族传统的雕刻技法进一步运用于日用瓷和陈设瓷上，通体不加彩饰，素雅、恬淡。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

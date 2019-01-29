@@ -1,0 +1,8 @@
+{
+  "data":[
+    {"name":"青花瓷0","id":"2266","imgUrl":"./img/twive.jpg","type":"red"},
+    {"name":"青花瓷1","id":"2266","imgUrl":"./img/three.jpg","type":"red"},
+    {"name":"陶器0","id":"223546","imgUrl":"./img/four (2).jpg","type":"green"},
+    {"name":"陶器1","id":"22536","imgUrl":"./img/one.jpg","type":"green"}
+  ]
+}

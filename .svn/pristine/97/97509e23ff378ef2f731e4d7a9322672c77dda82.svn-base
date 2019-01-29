@@ -1,0 +1,1515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0113)http://www.17sucai.com/preview/26827/2014-04-22/%E8%A1%A8%E6%A0%BC%E5%86%BB%E7%BB%93%E7%AA%97%E6%A0%BC/index.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>JQeury实现表格行列冻结3</title>
+
+<style type="text/css"> 
+table{empty-cells:show;border-collapse:collapse;border-spacing:0}
+table{font-family:宋体; font-size:10pt;border:1px green solid;background-color:white;}
+table td{height:20px;text-align:center;border:1px green solid;}
+table .tabTh{color:green;font-weight:bold;background-color:#f1faee;}
+</style>
+
+<script type="text/javascript" src="./JQeury实现表格行列冻结3_files/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./JQeury实现表格行列冻结3_files/TableFreeze.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#tab_Test1").FrozenTable(2,0,0);
+	
+	$("#tab_Test2").FrozenTable(0,0,1);
+	
+	$("#tab_Test3").FrozenTable(1,0,1);
+	
+	$("#tab_Test4").FrozenTable(2,1,1);
+	
+	$("#tab_Test5").FrozenTable(3,1,4);
+	
+	$("#tab_Test6").FrozenTable(2,1,2);
+	
+	$("#tab_Test7").FrozenTable(2,2,1);
+	
+});
+</script>
+
+</head><style type="text/css" id="7837833359"></style>
+<body>
+<!--**************************************-->
+<h3>例0:原始表格上加滚动条效果;</h3>
+<div style="overflow:auto;width:920px;height:229px;">
+	<table id="tab_Test0" border="1" width="900">
+		<tbody><tr class="tabTh">
+			<td width="100px">序号</td>
+			<td width="100px">用户名</td>
+			<td width="100px">姓名</td>
+			<td width="100px">归属机构</td>
+			<td width="100px">密码</td>
+			<td width="100px">用户类型</td>
+			<td width="200px">状 态(0无效/1有效)</td>
+			<td width="100px">备注</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">1</td>
+			<td>admin</td>
+			<td>admin</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">2</td>
+			<td>admin2</td>
+			<td>admin2</td>
+			<td>92</td>
+			<td>******</td>
+			<td>系统管理员2</td>	
+			<td>1</td>
+			<td>it管理员2</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">3</td>
+			<td>admin3</td>
+			<td>admin3</td>
+			<td>93</td>
+			<td>******</td>
+			<td>系统管理员3</td>	
+			<td>1</td>
+			<td>it管理员3</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">4</td>
+			<td>admin4</td>
+			<td>admin4</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员4</td>	
+			<td>14</td>
+			<td>it管理员4</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">5</td>
+			<td>admin5</td>
+			<td>admin5</td>
+			<td>95</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">6</td>
+			<td>admin6</td>
+			<td>admin6</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员6</td>	
+			<td>1</td>
+			<td>it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">7</td>
+			<td>admin7</td>
+			<td>admin7</td>
+			<td>7</td>
+			<td>******</td>
+			<td>系统管理员7</td>	
+			<td>1</td>
+			<td>it管理员7</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">8</td>
+			<td>admin8</td>
+			<td>admin8</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员8</td>	
+			<td>1</td>
+			<td>it管理员8</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">9</td>
+			<td>admin9</td>
+			<td>admin9</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">10</td>
+			<td>admin10</td>
+			<td>admin</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员10</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">11</td>
+			<td>admin11</td>
+			<td>admin11</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员11</td>	
+			<td>1</td>
+			<td>it管理员11</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">12</td>
+			<td>admin12</td>
+			<td>admin12</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员12</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">13</td>
+			<td>admin</td>
+			<td>admin</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">14</td>
+			<td>admin4</td>
+			<td>admin4</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员4</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">15</td>
+			<td>admin</td>
+			<td>admin</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员5</td>	
+			<td>1</td>
+			<td>it管理员5</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">16</td>
+			<td>admin</td>
+			<td>admin6</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理6</td>	
+			<td>1</td>
+			<td>it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">17</td>
+			<td>admin</td>
+			<td>admin</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">18</td>
+			<td>admin</td>
+			<td>admin</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">19</td>
+			<td>admin19</td>
+			<td>admin19</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+		<tr align="center">
+			<td><input type="checkbox">20</td>
+			<td>admin20</td>
+			<td>admin20</td>
+			<td>9</td>
+			<td>******</td>
+			<td>系统管理员</td>	
+			<td>1</td>
+			<td>it管理员</td>
+		</tr>
+	</tbody></table>
+</div>
+<hr>
+
+<!--**************************************-->
+<h3>例一:2行固定 $("#tab_Test1").FrozenTable(2,0,0);</h3>
+<div style="OVERFLOW: auto;width:920px;height:229px;">
+	<table id="tab_Test1" border="1" width="900">
+		<tbody><tr class="tabTh">
+			<td colspan="8" nowrap="nowrap">用户列表</td>
+		</tr>
+		<tr class="tabTh">
+			<td width="100px" nowrap="nowrap">序号</td>
+			<td width="100px" nowrap="nowrap">用户名</td>
+			<td width="100px" nowrap="nowrap">姓名</td>
+			<td width="100px" nowrap="nowrap">归属机构</td>
+			<td width="100px" nowrap="nowrap">密码</td>
+			<td width="100px" nowrap="nowrap">用户类型</td>
+			<td width="200px" nowrap="nowrap">状 态(0无效/1有效)</td>
+			<td width="100px" nowrap="nowrap">备注</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">1</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">2</td>
+			<td nowrap="nowrap">admin2</td>
+			<td nowrap="nowrap">admin2</td>
+			<td nowrap="nowrap">92</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员2</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员2</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">3</td>
+			<td nowrap="nowrap">admin3</td>
+			<td nowrap="nowrap">admin3</td>
+			<td nowrap="nowrap">93</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员3</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员3</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员4</td>	
+			<td nowrap="nowrap">14</td>
+			<td nowrap="nowrap">it管理员4</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">5</td>
+			<td nowrap="nowrap">admin5</td>
+			<td nowrap="nowrap">admin5</td>
+			<td nowrap="nowrap">95</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">6</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员6</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">7</td>
+			<td nowrap="nowrap">admin7</td>
+			<td nowrap="nowrap">admin7</td>
+			<td nowrap="nowrap">7</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员7</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员7</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">8</td>
+			<td nowrap="nowrap">admin8</td>
+			<td nowrap="nowrap">admin8</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员8</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员8</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">9</td>
+			<td nowrap="nowrap">admin9</td>
+			<td nowrap="nowrap">admin9</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">10</td>
+			<td nowrap="nowrap">admin10</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员10</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">11</td>
+			<td nowrap="nowrap">admin11</td>
+			<td nowrap="nowrap">admin11</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员11</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员11</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">12</td>
+			<td nowrap="nowrap">admin12</td>
+			<td nowrap="nowrap">admin12</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员12</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">13</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">14</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员4</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">15</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员5</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员5</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">16</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理6</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">17</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">18</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">19</td>
+			<td nowrap="nowrap">admin19</td>
+			<td nowrap="nowrap">admin19</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">20</td>
+			<td nowrap="nowrap">admin20</td>
+			<td nowrap="nowrap">admin20</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+	</tbody></table>
+</div>
+<hr>
+
+<!--**************************************-->
+<h3>例二:0行1列固定 $("#tab_Test2").FrozenTable(0,0,1);</h3>
+<div style="OVERFLOW: auto;width:718px;height:229px;">
+	<table id="tab_Test2" border="1" width="900">
+		<tbody><tr class="tabTh">
+			<td width="100px" nowrap="nowrap">序号</td>
+			<td width="100px" nowrap="nowrap">用户名</td>
+			<td width="100px" nowrap="nowrap">姓名</td>
+			<td width="100px" nowrap="nowrap">归属机构</td>
+			<td width="100px" nowrap="nowrap">密码</td>
+			<td width="100px" nowrap="nowrap">用户类型</td>
+			<td width="200px" nowrap="nowrap">状 态(0无效/1有效)</td>
+			<td width="100px" nowrap="nowrap">备注</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">1</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">2</td>
+			<td nowrap="nowrap">admin2</td>
+			<td nowrap="nowrap">admin2</td>
+			<td nowrap="nowrap">92</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员2</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员2</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">3</td>
+			<td nowrap="nowrap">admin3</td>
+			<td nowrap="nowrap">admin3</td>
+			<td nowrap="nowrap">93</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员3</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员3</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员4</td>	
+			<td nowrap="nowrap">14</td>
+			<td nowrap="nowrap">it管理员4</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">5</td>
+			<td nowrap="nowrap">admin5</td>
+			<td nowrap="nowrap">admin5</td>
+			<td nowrap="nowrap">95</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">6</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员6</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">7</td>
+			<td nowrap="nowrap">admin7</td>
+			<td nowrap="nowrap">admin7</td>
+			<td nowrap="nowrap">7</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员7</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员7</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">8</td>
+			<td nowrap="nowrap">admin8</td>
+			<td nowrap="nowrap">admin8</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员8</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员8</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">9</td>
+			<td nowrap="nowrap">admin9</td>
+			<td nowrap="nowrap">admin9</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">10</td>
+			<td nowrap="nowrap">admin10</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员10</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">11</td>
+			<td nowrap="nowrap">admin11</td>
+			<td nowrap="nowrap">admin11</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员11</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员11</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">12</td>
+			<td nowrap="nowrap">admin12</td>
+			<td nowrap="nowrap">admin12</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员12</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">13</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">14</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员4</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">15</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员5</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员5</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">16</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理6</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">17</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">18</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">19</td>
+			<td nowrap="nowrap">admin19</td>
+			<td nowrap="nowrap">admin19</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">20</td>
+			<td nowrap="nowrap">admin20</td>
+			<td nowrap="nowrap">admin20</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+	</tbody></table>
+</div>
+<hr>
+
+
+<!--**************************************-->
+<h3>例三:1行1列固定 $("#tab_Test3").FrozenTable(1,0,1);</h3>
+<div id="div_Test3" style="OVERFLOW: auto;width:718px;height:229px;padding:0px">
+	<table id="tab_Test3" border="1" width="900">
+		<tbody><tr class="tabTh">
+			<td width="100px" nowrap="nowrap">序号</td>
+			<td width="100px" nowrap="nowrap">用户名</td>
+			<td width="100px" nowrap="nowrap">姓名</td>
+			<td width="100px" nowrap="nowrap">归属机构</td>
+			<td width="100px" nowrap="nowrap">密码</td>
+			<td width="100px" nowrap="nowrap">用户类型</td>
+			<td width="200px" nowrap="nowrap">状 态(0无效/1有效)</td>
+			<td width="100px" nowrap="nowrap">备注</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">1</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">2</td>
+			<td nowrap="nowrap">admin2</td>
+			<td nowrap="nowrap">admin2</td>
+			<td nowrap="nowrap">92</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员2</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员2</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">3</td>
+			<td nowrap="nowrap">admin3</td>
+			<td nowrap="nowrap">admin3</td>
+			<td nowrap="nowrap">93</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员3</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员3</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员4</td>	
+			<td nowrap="nowrap">14</td>
+			<td nowrap="nowrap">it管理员4</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">5</td>
+			<td nowrap="nowrap">admin5</td>
+			<td nowrap="nowrap">admin5</td>
+			<td nowrap="nowrap">95</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">6</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员6</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">7</td>
+			<td nowrap="nowrap">admin7</td>
+			<td nowrap="nowrap">admin7</td>
+			<td nowrap="nowrap">7</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员7</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员7</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">8</td>
+			<td nowrap="nowrap">admin8</td>
+			<td nowrap="nowrap">admin8</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员8</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员8</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">9</td>
+			<td nowrap="nowrap">admin9</td>
+			<td nowrap="nowrap">admin9</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">10</td>
+			<td nowrap="nowrap">admin10</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员10</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">11</td>
+			<td nowrap="nowrap">admin11</td>
+			<td nowrap="nowrap">admin11</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员11</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员11</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">12</td>
+			<td nowrap="nowrap">admin12</td>
+			<td nowrap="nowrap">admin12</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员12</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">13</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">14</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">admin4</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员4</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">15</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员5</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员5</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">16</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin6</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理6</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员6</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">17</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">18</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">admin</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">19</td>
+			<td nowrap="nowrap">admin19</td>
+			<td nowrap="nowrap">admin19</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+		<tr align="center">
+			<td nowrap="nowrap"><input type="checkbox">20</td>
+			<td nowrap="nowrap">admin20</td>
+			<td nowrap="nowrap">admin20</td>
+			<td nowrap="nowrap">9</td>
+			<td nowrap="nowrap">******</td>
+			<td nowrap="nowrap">系统管理员</td>	
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">it管理员</td>
+		</tr>
+	</tbody></table>
+</div>
+<hr>
+
+
+<!--**************************************-->
+<h3>例四:上2行下1行1列固定 $("#tab_Test4").FrozenTable(2,1,1);</h3>
+<div style="OVERFLOW: auto;width:518px;height:228px;">
+<table id="tab_Test4" border="1" width="800">
+	<tbody>
+		<tr class="tabTh">
+			<td rowspan="2" width="200" nowrap="nowrap">评估险类</td>
+			<td colspan="3" nowrap="nowrap">再保前</td>
+			<td colspan="3" nowrap="nowrap">再保后</td>
+		</tr>
+		<tr class="tabTh">
+			<td width="100" nowrap="nowrap">评估</td>
+			<td width="100" nowrap="nowrap">分摊</td>
+			<td width="100" nowrap="nowrap">差异</td>
+			<td width="100" nowrap="nowrap">评估</td>
+			<td width="100" nowrap="nowrap">分摊</td>
+			<td width="100" nowrap="nowrap">差异</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">106T-保证保险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">107T-车险(交强险)</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">108T-车险(商业险)</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">109T-房屋险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">110T-工程险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">111T-航空险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">112T-核能保险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">113T-货运险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">114T-机损险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+
+		<tr>
+			<td nowrap="nowrap">115T-家财_网络运输</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">116T-健康险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">118T-农业保险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">119T-其他险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">120T-企财险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">121T-石油保险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">122T-责任险D&amp;O</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">123T-责任险EPL</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">124T-责任险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">125T-船舶险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">126T-意外险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">127T-家财险</td>
+			<td nowrap="nowrap">12312.1</td>
+			<td nowrap="nowrap">122341</td>
+			<td nowrap="nowrap">45645.45</td>
+			<td nowrap="nowrap">6786.6</td>
+			<td nowrap="nowrap">2345.43</td>
+			<td nowrap="nowrap">6755.56</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">合计</td>
+			<td nowrap="nowrap">6435656756.45</td>
+			<td nowrap="nowrap">3478787.78</td>
+			<td nowrap="nowrap">9789789.78</td>
+			<td nowrap="nowrap">456456456.4</td>
+			<td nowrap="nowrap">2345.45645</td>
+			<td nowrap="nowrap">2345645.645</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<hr>
+
+
+<!--**************************************-->
+<h3>例五:上3行下1行4列固定 $("#tab_Test5").FrozenTable(3,1,4);</h3>
+<div style="OVERFLOW: auto;width:830px;height:228px;">
+	<table id="tab_Test5" border="1" width="1000">
+		<tbody align="right">
+			<tr class="tabTh">
+				<td rowspan="3" width="100" nowrap="nowrap">险种大类</td>
+				<td colspan="3" nowrap="nowrap">201401</td>
+				<td colspan="3" nowrap="nowrap">201402</td>
+				<td colspan="3" nowrap="nowrap">201403</td>
+			</tr>
+			<tr class="tabTh">
+				<td colspan="3" nowrap="nowrap">保费收入-再保前</td>
+				<td colspan="3" nowrap="nowrap">保费收入-再保前</td>
+				<td colspan="3" nowrap="nowrap">保费收入-再保前</td>
+			</tr>
+			<tr class="tabTh">
+				<td width="100" nowrap="nowrap">业务</td>
+				<td width="100" nowrap="nowrap">财务</td>
+				<td width="100" nowrap="nowrap">差异</td>
+				<td width="100" nowrap="nowrap">业务</td>
+				<td width="100" nowrap="nowrap">财务</td>
+				<td width="100" nowrap="nowrap">差异</td>
+				<td width="100" nowrap="nowrap">业务</td>
+				<td width="100" nowrap="nowrap">财务</td>
+				<td width="100" nowrap="nowrap">差异</td>
+			</tr>
+			<tr><td nowrap="nowrap">106T-保证保险</td><td nowrap="nowrap">1,550,703.52</td><td nowrap="nowrap">1,550,703.52</td><td nowrap="nowrap">0</td><td nowrap="nowrap">33,253.36</td><td nowrap="nowrap">33,751.68</td><td nowrap="nowrap">-498.32</td><td nowrap="nowrap">359,825.44</td><td nowrap="nowrap">359,327.12</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;106T-保证保险&#39;);">498.32</a></td></tr><tr><td nowrap="nowrap">107T-车险（交强险）</td><td nowrap="nowrap">108,968,962.13</td><td nowrap="nowrap">108,975,420.57</td><td nowrap="nowrap">-6,458.44</td><td nowrap="nowrap">59,672,975.8</td><td nowrap="nowrap">59,672,975.8</td><td nowrap="nowrap">0</td><td nowrap="nowrap">93,049,926.62</td><td nowrap="nowrap">93,048,446.62</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;107T-车险（交强险）&#39;);">1,480</a></td></tr><tr><td nowrap="nowrap">108T-车险（商业险）</td><td nowrap="nowrap">260,085,392.36</td><td nowrap="nowrap">260,086,515.73</td><td nowrap="nowrap">-1,123.37</td><td nowrap="nowrap">131,815,686.81</td><td nowrap="nowrap">131,819,291.79</td><td nowrap="nowrap">-3,604.98</td><td nowrap="nowrap">211,276,060.23</td><td nowrap="nowrap">211,279,616.87</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;108T-车险（商业险）&#39;);">-3,556.64</a></td></tr><tr><td nowrap="nowrap">109T-房屋险</td><td nowrap="nowrap">1,107,386.23</td><td nowrap="nowrap">1,119,230.85</td><td nowrap="nowrap">-11,844.62</td><td nowrap="nowrap">369,424.34</td><td nowrap="nowrap">355,734.12</td><td nowrap="nowrap">13,690.22</td><td nowrap="nowrap">960,523.51</td><td nowrap="nowrap">968,921.8</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;109T-房屋险&#39;);">-8,398.29</a></td></tr><tr><td nowrap="nowrap">110T-工程险</td><td nowrap="nowrap">52,470,322.9</td><td nowrap="nowrap">52,507,149.28</td><td nowrap="nowrap">-36,826.38</td><td nowrap="nowrap">14,755,632.67</td><td nowrap="nowrap">14,755,852.67</td><td nowrap="nowrap">-220</td><td nowrap="nowrap">15,896,332.08</td><td nowrap="nowrap">16,042,977.52</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;110T-工程险&#39;);">-146,645.44</a></td></tr><tr><td nowrap="nowrap">111T-航空险</td><td nowrap="nowrap">35,000</td><td nowrap="nowrap">35,000</td><td nowrap="nowrap">0</td><td nowrap="nowrap">24,000</td><td nowrap="nowrap">24,000</td><td nowrap="nowrap">0</td><td nowrap="nowrap">624,139.65</td><td nowrap="nowrap">624,139.65</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;111T-航空险&#39;);">0</a></td></tr><tr><td nowrap="nowrap">112T-核能保险</td><td nowrap="nowrap">-32,310.31</td><td nowrap="nowrap">-32,310.31</td><td nowrap="nowrap">0</td><td nowrap="nowrap">-3,595.88</td><td nowrap="nowrap">-3,595.88</td><td nowrap="nowrap">-0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">613,688.52</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;112T-核能保险&#39;);">-613,688.52</a></td></tr><tr><td nowrap="nowrap">113T-货运险</td><td nowrap="nowrap">43,497,043.86</td><td nowrap="nowrap">30,272,003.63</td><td nowrap="nowrap">13,225,040.23</td><td nowrap="nowrap">30,613,997.26</td><td nowrap="nowrap">43,864,961.78</td><td nowrap="nowrap">-13,250,964.52</td><td nowrap="nowrap">35,183,537.22</td><td nowrap="nowrap">35,178,483.83</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;113T-货运险&#39;);">5,053.39</a></td></tr><tr><td nowrap="nowrap">114T-机损险</td><td nowrap="nowrap">29,099,318</td><td nowrap="nowrap">29,140,225.36</td><td nowrap="nowrap">-40,907.36</td><td nowrap="nowrap">5,191,951.05</td><td nowrap="nowrap">5,251,451.05</td><td nowrap="nowrap">-59,500</td><td nowrap="nowrap">4,391,957.53</td><td nowrap="nowrap">4,410,737.16</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;114T-机损险&#39;);">-18,779.63</a></td></tr><tr><td nowrap="nowrap">115T-家财_网络运输</td><td nowrap="nowrap">46,837,972.77</td><td nowrap="nowrap">46,837,972.77</td><td nowrap="nowrap">0</td><td nowrap="nowrap">29,376,846.16</td><td nowrap="nowrap">28,095,149.71</td><td nowrap="nowrap">1,281,696.45</td><td nowrap="nowrap">52,867,517.14</td><td nowrap="nowrap">52,867,517.14</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;115T-家财_网络运输&#39;);">0</a></td></tr><tr><td nowrap="nowrap">116T-健康险</td><td nowrap="nowrap">3,717,646.85</td><td nowrap="nowrap">3,717,627.85</td><td nowrap="nowrap">19</td><td nowrap="nowrap">879,773.63</td><td nowrap="nowrap">879,773.63</td><td nowrap="nowrap">0</td><td nowrap="nowrap">7,472,994.73</td><td nowrap="nowrap">7,382,280.93</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;116T-健康险&#39;);">90,713.8</a></td></tr><tr><td nowrap="nowrap">118T-农业保险</td><td nowrap="nowrap">1,414,563.84</td><td nowrap="nowrap">1,414,563.84</td><td nowrap="nowrap">0</td><td nowrap="nowrap">-</td><td nowrap="nowrap">-</td><td nowrap="nowrap">-</td><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;118T-农业保险&#39;);">0</a></td></tr><tr><td nowrap="nowrap">119T-其他险</td><td nowrap="nowrap">100,909.35</td><td nowrap="nowrap">102,486.35</td><td nowrap="nowrap">-1,577</td><td nowrap="nowrap">107,333.2</td><td nowrap="nowrap">107,327.26</td><td nowrap="nowrap">5.94</td><td nowrap="nowrap">58,285.9</td><td nowrap="nowrap">53,785.9</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;119T-其他险&#39;);">4,500</a></td></tr><tr><td nowrap="nowrap">120T-企财险</td><td nowrap="nowrap">59,998,291.68</td><td nowrap="nowrap">60,366,903.16</td><td nowrap="nowrap">-368,611.48</td><td nowrap="nowrap">54,224,227.21</td><td nowrap="nowrap">54,277,584.45</td><td nowrap="nowrap">-53,357.24</td><td nowrap="nowrap">35,521,913</td><td nowrap="nowrap">35,698,351.18</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;120T-企财险&#39;);">-176,438.18</a></td></tr><tr><td nowrap="nowrap">121T-石油保险</td><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">0</td><td nowrap="nowrap">10,162,810.36</td><td nowrap="nowrap">10,162,810.34</td><td nowrap="nowrap">0.02</td><td nowrap="nowrap">1,273,794.7</td><td nowrap="nowrap">1,350,044.13</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;121T-石油保险&#39;);">-76,249.43</a></td></tr><tr><td nowrap="nowrap">122T-责任险D&amp;O</td><td nowrap="nowrap">3,625,020.13</td><td nowrap="nowrap">3,819,020.14</td><td nowrap="nowrap">-194,000.01</td><td nowrap="nowrap">5,468,840.52</td><td nowrap="nowrap">5,469,479.46</td><td nowrap="nowrap">-638.94</td><td nowrap="nowrap">4,218,825.8</td><td nowrap="nowrap">4,219,266.33</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;122T-责任险D&amp;O&#39;);">-440.53</a></td></tr><tr><td nowrap="nowrap">123T-责任险EPL</td><td nowrap="nowrap">19,881,666.11</td><td nowrap="nowrap">19,882,001.02</td><td nowrap="nowrap">-334.91</td><td nowrap="nowrap">2,282,775.4</td><td nowrap="nowrap">2,284,408.11</td><td nowrap="nowrap">-1,632.71</td><td nowrap="nowrap">6,306,791.86</td><td nowrap="nowrap">6,318,862.07</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;123T-责任险EPL&#39;);">-12,070.21</a></td></tr><tr><td nowrap="nowrap">124T-责任险</td><td nowrap="nowrap">59,985,249.04</td><td nowrap="nowrap">60,530,443.77</td><td nowrap="nowrap">-545,194.73</td><td nowrap="nowrap">13,735,315.84</td><td nowrap="nowrap">13,877,263.33</td><td nowrap="nowrap">-141,947.49</td><td nowrap="nowrap">43,509,201.62</td><td nowrap="nowrap">43,883,090.48</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;124T-责任险&#39;);">-373,888.86</a></td></tr><tr><td nowrap="nowrap">125T-船舶险</td><td nowrap="nowrap">4,923,672.2</td><td nowrap="nowrap">4,926,172.2</td><td nowrap="nowrap">-2,500</td><td nowrap="nowrap">1,926,401.3</td><td nowrap="nowrap">1,926,398.47</td><td nowrap="nowrap">2.83</td><td nowrap="nowrap">6,749,028.93</td><td nowrap="nowrap">6,684,434.63</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;125T-船舶险&#39;);">64,594.3</a></td></tr><tr><td nowrap="nowrap">126T-意外险</td><td nowrap="nowrap">51,587,871.39</td><td nowrap="nowrap">51,549,092.3</td><td nowrap="nowrap">38,779.09</td><td nowrap="nowrap">13,265,440.72</td><td nowrap="nowrap">13,246,548.4</td><td nowrap="nowrap">18,892.32</td><td nowrap="nowrap">28,865,132.9</td><td nowrap="nowrap">28,968,105.07</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;126T-意外险&#39;);">-102,972.17</a></td></tr><tr><td nowrap="nowrap">127T-家财险</td><td nowrap="nowrap">5,104,985.4</td><td nowrap="nowrap">5,105,175.4</td><td nowrap="nowrap">-190</td><td nowrap="nowrap">2,599,149.11</td><td nowrap="nowrap">2,599,149.11</td><td nowrap="nowrap">0</td><td nowrap="nowrap">4,438,643.37</td><td nowrap="nowrap">4,188,623.37</td><td nowrap="nowrap"><a href="javascript:funDetail(201403,11,&#39;127T-家财险&#39;);">250,020</a></td></tr>
+			<tr class="tabTh">
+				<td nowrap="nowrap">合计</td>			<td nowrap="nowrap">753,959,667.45</td><td nowrap="nowrap">741,905,397.43</td><td nowrap="nowrap">12,054,270.02</td><td nowrap="nowrap">376,502,238.86</td><td nowrap="nowrap">388,700,315.28</td><td nowrap="nowrap">-12,198,076.42</td><td nowrap="nowrap">553,024,432.25</td><td nowrap="nowrap">554,140,700.32</td><td nowrap="nowrap">6,268.07</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<hr>
+
+
+<!--**************************************-->
+<h3>例六:上2行下1行2列固定 $("#tab_Test6").FrozenTable(2,1,2);</h3>
+<div style="OVERFLOW: auto;width:1000px;height:222px;">
+<table id="tab_Test6" border="1" width="1200px">
+	<tbody>
+		<tr class="tabth">
+			<td rowspan="2" width="100px" nowrap="nowrap">事故季度</td>
+			<td rowspan="2" width="100px" nowrap="nowrap">业务线</td>
+			<td width="100px" nowrap="nowrap">IBNR</td>
+			<td colspan="2" nowrap="nowrap">已赚保费(再保后)</td>
+			<td colspan="3" nowrap="nowrap">分摊参考数</td>
+			<td colspan="2" nowrap="nowrap">IBNR分摊</td>
+		</tr>
+		<tr class="tabth">
+			<td nowrap="nowrap">(1)</td>
+			<td width="100px" nowrap="nowrap">机构A<br>(2)</td>
+			<td width="100px" nowrap="nowrap">机构B<br>(3)</td>
+			<td width="150px" nowrap="nowrap">(4)=(2)* 55%1</td>
+			<td width="150px" nowrap="nowrap">(5)=(3)* 30%2</td>
+			<td width="100px" nowrap="nowrap">合计<br>(6)</td>
+			<td width="150px" nowrap="nowrap">机构A<br>(7)=(4)/(6)*(1)</td>
+			<td width="150px" nowrap="nowrap">机构B<br>(8)=(5)/(6)*(1)</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr class="tabth">
+			<td colspan="2" nowrap="nowrap">合计</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<hr>
+
+
+<!--**************************************-->
+<h3>例七:固定列合并 $("#tab_Test7").FrozenTable(2,1,1);</h3>
+<div style="OVERFLOW: auto;width:500px;height:222px;">
+	<table id="tab_Test7" border="1" width="600">
+		<tbody><tr class="tabth">
+			<td rowspan="2" width="150px" nowrap="nowrap">中支</td>
+			<td width="150px" nowrap="nowrap">上季度末IBNR/Case</td>
+			<td width="150px" nowrap="nowrap">截至当月再保后Case</td>
+			<td width="150px" nowrap="nowrap">IBNR</td>
+		</tr>
+		<tr class="tabth">
+			<td nowrap="nowrap">(1)</td>
+			<td nowrap="nowrap">(2)</td>
+			<td nowrap="nowrap">(3)=(1)*(2)</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td rowspan="2" nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+			<td nowrap="nowrap">0.0</td>
+		</tr>
+		
+	</tbody></table>
+</div>
+<hr>
+
+<div id="oDivH_tab_Test1" style="overflow: hidden; width: 903px; position: absolute; z-index: 1002; left: 8px; top: 357.875px;"><table width="900" border="1" style="width: 899px; height: 46px;"><tbody><tr class="tabTh"><td colspan="8" nowrap="nowrap" style="height: 23px; width: 899px;">用户列表</td></tr><tr class="tabTh"><td width="100px" nowrap="nowrap" style="height: 23px; width: 99px;">序号</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 100px;">用户名</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 101px;">姓名</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 99px;">归属机构</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 101px;">密码</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 102px;">用户类型</td><td width="200px" nowrap="nowrap" style="height: 23px; width: 195px;">状 态(0无效/1有效)</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 102px;">备注</td></tr></tbody></table></div><div id="oDivL_tab_Test2" style="overflow: hidden; height: 212px; position: absolute; z-index: 1000; left: 8px; top: 656.313px;"><table width="900" border="1" style="width: 99px; height: 483px;"><tbody><tr class="tabTh"><td width="100px" nowrap="nowrap" style="height: 23px; width: 99px;">序号</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">1</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">2</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">3</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">4</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">5</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">6</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">7</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">8</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">9</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">10</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">11</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">12</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">13</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">14</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">15</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">16</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">17</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">18</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">19</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">20</td></tr></tbody></table></div><table id="oTableLH_tab_Test3" width="900" border="1" style="width: 99px; height: 23px; position: absolute; z-index: 1004; left: 8px; top: 954.75px;"><tbody><tr class="tabTh"><td width="100px" nowrap="nowrap" style="height: 23px; width: 99px;">序号</td></tr></tbody></table><div id="oDivH_tab_Test3" style="overflow: hidden; width: 701px; position: absolute; z-index: 1002; left: 8px; top: 954.75px;"><table width="900" border="1" style="width: 899px; height: 23px;"><tbody><tr class="tabTh"><td width="100px" nowrap="nowrap" style="height: 23px; width: 99px;">序号</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 100px;">用户名</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 101px;">姓名</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 99px;">归属机构</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 101px;">密码</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 102px;">用户类型</td><td width="200px" nowrap="nowrap" style="height: 23px; width: 195px;">状 态(0无效/1有效)</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 102px;">备注</td></tr></tbody></table></div><div id="oDivL_tab_Test3" style="overflow: hidden; height: 212px; position: absolute; z-index: 1000; left: 8px; top: 954.75px;"><table width="900" border="1" style="width: 99px; height: 483px;"><tbody><tr class="tabTh"><td width="100px" nowrap="nowrap" style="height: 23px; width: 99px;">序号</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">1</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">2</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">3</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">4</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">5</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">6</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">7</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">8</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">9</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">10</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">11</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">12</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">13</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">14</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">15</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">16</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">17</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">18</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">19</td></tr><tr align="center"><td nowrap="nowrap" style="height: 23px; width: 99px;"><input type="checkbox">20</td></tr></tbody></table></div><table id="oTableLH_tab_Test4" width="800" border="1" style="width: 194px; height: 46px; position: absolute; z-index: 1004; left: 8px; top: 1253.19px;"><tbody><tr class="tabTh"><td rowspan="2" width="200" nowrap="nowrap" style="height: 46px; width: 194px;">评估险类</td></tr><tr class="tabTh"></tr></tbody></table><table id="oTableLF_tab_Test4" width="800" border="1" style="width: 194px; height: 23px; position: absolute; z-index: 1003; left: 8px; top: 1437.19px;"><tbody><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">合计</td></tr></tbody></table><div id="oDivH_tab_Test4" style="overflow: hidden; width: 501px; position: absolute; z-index: 1002; left: 8px; top: 1253.19px;"><table width="800" border="1" style="width: 799px; height: 46px;"><tbody><tr class="tabTh"><td rowspan="2" width="200" nowrap="nowrap" style="height: 46px; width: 194px;">评估险类</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 302px;">再保前</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 303px;">再保后</td></tr><tr class="tabTh"><td width="100" nowrap="nowrap" style="height: 23px; width: 102px;">评估</td><td width="100" nowrap="nowrap" style="height: 23px; width: 100px;">分摊</td><td width="100" nowrap="nowrap" style="height: 23px; width: 100px;">差异</td><td width="100" nowrap="nowrap" style="height: 23px; width: 101px;">评估</td><td width="100" nowrap="nowrap" style="height: 23px; width: 101px;">分摊</td><td width="100" nowrap="nowrap" style="height: 23px; width: 101px;">差异</td></tr></tbody></table></div><div id="oDivF_tab_Test4" style="overflow: hidden; width: 501px; position: absolute; z-index: 1001; left: 8px; top: 1437.19px;"><table width="800" border="1" style="width: 799px; height: 23px;"><tbody><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">合计</td><td nowrap="nowrap" style="height: 23px; width: 102px;">6435656756.45</td><td nowrap="nowrap" style="height: 23px; width: 100px;">3478787.78</td><td nowrap="nowrap" style="height: 23px; width: 100px;">9789789.78</td><td nowrap="nowrap" style="height: 23px; width: 101px;">456456456.4</td><td nowrap="nowrap" style="height: 23px; width: 101px;">2345.45645</td><td nowrap="nowrap" style="height: 23px; width: 101px;">2345645.645</td></tr></tbody></table></div><div id="oDivL_tab_Test4" style="overflow: hidden; height: 211px; position: absolute; z-index: 1000; left: 8px; top: 1253.19px;"><table width="800" border="1" style="width: 194px; height: 552px;"><tbody><tr class="tabTh"><td rowspan="2" width="200" nowrap="nowrap" style="height: 46px; width: 194px;">评估险类</td></tr><tr class="tabTh"></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">106T-保证保险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">107T-车险(交强险)</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">108T-车险(商业险)</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">109T-房屋险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">110T-工程险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">111T-航空险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">112T-核能保险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">113T-货运险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">114T-机损险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">115T-家财_网络运输</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">116T-健康险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">118T-农业保险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">119T-其他险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">120T-企财险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">121T-石油保险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">122T-责任险D&amp;O</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">123T-责任险EPL</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">124T-责任险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">125T-船舶险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">126T-意外险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">127T-家财险</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 194px;">合计</td></tr></tbody></table></div><table id="oTableLH_tab_Test5" width="1000" border="1" style="width: 466px; height: 69px; position: absolute; z-index: 1004; left: 8px; top: 1550.63px;"><tbody><tr class="tabTh"><td rowspan="3" width="100" nowrap="nowrap" style="height: 69px; width: 129px;">险种大类</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 337px;">201401</td></tr><tr class="tabTh"><td colspan="3" nowrap="nowrap" style="height: 23px; width: 337px;">保费收入-再保前</td></tr><tr class="tabTh"><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">业务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">财务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 107px;">差异</td></tr></tbody></table><table id="oTableLF_tab_Test5" width="1000" border="1" style="width: 466px; height: 23px; position: absolute; z-index: 1003; left: 8px; top: 1734.63px;"><tbody><tr class="tabTh"><td nowrap="nowrap" style="height: 23px; width: 129px;">合计</td><td nowrap="nowrap" style="height: 23px; width: 115px;">753,959,667.45</td><td nowrap="nowrap" style="height: 23px; width: 115px;">741,905,397.43</td><td nowrap="nowrap" style="height: 23px; width: 107px;">12,054,270.02</td></tr></tbody></table><div id="oDivH_tab_Test5" style="overflow: hidden; width: 813px; position: absolute; z-index: 1002; left: 8px; top: 1550.63px;"><table width="1000" border="1" style="width: 1121px; height: 69px;"><tbody><tr class="tabTh"><td rowspan="3" width="100" nowrap="nowrap" style="height: 69px; width: 129px;">险种大类</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 337px;">201401</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 345px;">201402</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 310px;">201403</td></tr><tr class="tabTh"><td colspan="3" nowrap="nowrap" style="height: 23px; width: 337px;">保费收入-再保前</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 345px;">保费收入-再保前</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 310px;">保费收入-再保前</td></tr><tr class="tabTh"><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">业务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">财务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 107px;">差异</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">业务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">财务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">差异</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">业务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">财务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 80px;">差异</td></tr></tbody></table></div><div id="oDivF_tab_Test5" style="overflow: hidden; width: 813px; position: absolute; z-index: 1001; left: 8px; top: 1734.63px;"><table width="1000" border="1" style="width: 1121px; height: 23px;"><tbody><tr class="tabTh"><td nowrap="nowrap" style="height: 23px; width: 129px;">合计</td><td nowrap="nowrap" style="height: 23px; width: 115px;">753,959,667.45</td><td nowrap="nowrap" style="height: 23px; width: 115px;">741,905,397.43</td><td nowrap="nowrap" style="height: 23px; width: 107px;">12,054,270.02</td><td nowrap="nowrap" style="height: 23px; width: 115px;">376,502,238.86</td><td nowrap="nowrap" style="height: 23px; width: 115px;">388,700,315.28</td><td nowrap="nowrap" style="height: 23px; width: 115px;">-12,198,076.42</td><td nowrap="nowrap" style="height: 23px; width: 115px;">553,024,432.25</td><td nowrap="nowrap" style="height: 23px; width: 115px;">554,140,700.32</td><td nowrap="nowrap" style="height: 23px; width: 80px;">6,268.07</td></tr></tbody></table></div><div id="oDivL_tab_Test5" style="overflow: hidden; height: 211px; position: absolute; z-index: 1000; left: 8px; top: 1550.63px;"><table width="1000" border="1" style="width: 466px; height: 575px;"><tbody><tr class="tabTh"><td rowspan="3" width="100" nowrap="nowrap" style="height: 69px; width: 129px;">险种大类</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 337px;">201401</td></tr><tr class="tabTh"><td colspan="3" nowrap="nowrap" style="height: 23px; width: 337px;">保费收入-再保前</td></tr><tr class="tabTh"><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">业务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 115px;">财务</td><td width="100" nowrap="nowrap" style="height: 23px; width: 107px;">差异</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">106T-保证保险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">1,550,703.52</td><td nowrap="nowrap" style="height: 23px; width: 115px;">1,550,703.52</td><td nowrap="nowrap" style="height: 23px; width: 107px;">0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">107T-车险（交强险）</td><td nowrap="nowrap" style="height: 23px; width: 115px;">108,968,962.13</td><td nowrap="nowrap" style="height: 23px; width: 115px;">108,975,420.57</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-6,458.44</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">108T-车险（商业险）</td><td nowrap="nowrap" style="height: 23px; width: 115px;">260,085,392.36</td><td nowrap="nowrap" style="height: 23px; width: 115px;">260,086,515.73</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-1,123.37</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">109T-房屋险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">1,107,386.23</td><td nowrap="nowrap" style="height: 23px; width: 115px;">1,119,230.85</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-11,844.62</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">110T-工程险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">52,470,322.9</td><td nowrap="nowrap" style="height: 23px; width: 115px;">52,507,149.28</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-36,826.38</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">111T-航空险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">35,000</td><td nowrap="nowrap" style="height: 23px; width: 115px;">35,000</td><td nowrap="nowrap" style="height: 23px; width: 107px;">0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">112T-核能保险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">-32,310.31</td><td nowrap="nowrap" style="height: 23px; width: 115px;">-32,310.31</td><td nowrap="nowrap" style="height: 23px; width: 107px;">0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">113T-货运险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">43,497,043.86</td><td nowrap="nowrap" style="height: 23px; width: 115px;">30,272,003.63</td><td nowrap="nowrap" style="height: 23px; width: 107px;">13,225,040.23</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">114T-机损险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">29,099,318</td><td nowrap="nowrap" style="height: 23px; width: 115px;">29,140,225.36</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-40,907.36</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">115T-家财_网络运输</td><td nowrap="nowrap" style="height: 23px; width: 115px;">46,837,972.77</td><td nowrap="nowrap" style="height: 23px; width: 115px;">46,837,972.77</td><td nowrap="nowrap" style="height: 23px; width: 107px;">0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">116T-健康险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">3,717,646.85</td><td nowrap="nowrap" style="height: 23px; width: 115px;">3,717,627.85</td><td nowrap="nowrap" style="height: 23px; width: 107px;">19</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">118T-农业保险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">1,414,563.84</td><td nowrap="nowrap" style="height: 23px; width: 115px;">1,414,563.84</td><td nowrap="nowrap" style="height: 23px; width: 107px;">0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">119T-其他险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">100,909.35</td><td nowrap="nowrap" style="height: 23px; width: 115px;">102,486.35</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-1,577</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">120T-企财险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">59,998,291.68</td><td nowrap="nowrap" style="height: 23px; width: 115px;">60,366,903.16</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-368,611.48</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">121T-石油保险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">0</td><td nowrap="nowrap" style="height: 23px; width: 115px;">0</td><td nowrap="nowrap" style="height: 23px; width: 107px;">0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">122T-责任险D&amp;O</td><td nowrap="nowrap" style="height: 23px; width: 115px;">3,625,020.13</td><td nowrap="nowrap" style="height: 23px; width: 115px;">3,819,020.14</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-194,000.01</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">123T-责任险EPL</td><td nowrap="nowrap" style="height: 23px; width: 115px;">19,881,666.11</td><td nowrap="nowrap" style="height: 23px; width: 115px;">19,882,001.02</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-334.91</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">124T-责任险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">59,985,249.04</td><td nowrap="nowrap" style="height: 23px; width: 115px;">60,530,443.77</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-545,194.73</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">125T-船舶险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">4,923,672.2</td><td nowrap="nowrap" style="height: 23px; width: 115px;">4,926,172.2</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-2,500</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">126T-意外险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">51,587,871.39</td><td nowrap="nowrap" style="height: 23px; width: 115px;">51,549,092.3</td><td nowrap="nowrap" style="height: 23px; width: 107px;">38,779.09</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 129px;">127T-家财险</td><td nowrap="nowrap" style="height: 23px; width: 115px;">5,104,985.4</td><td nowrap="nowrap" style="height: 23px; width: 115px;">5,105,175.4</td><td nowrap="nowrap" style="height: 23px; width: 107px;">-190</td></tr><tr class="tabTh"><td nowrap="nowrap" style="height: 23px; width: 129px;">合计</td><td nowrap="nowrap" style="height: 23px; width: 115px;">753,959,667.45</td><td nowrap="nowrap" style="height: 23px; width: 115px;">741,905,397.43</td><td nowrap="nowrap" style="height: 23px; width: 107px;">12,054,270.02</td></tr></tbody></table></div><table id="oTableLH_tab_Test6" width="1200px" border="1" style="width: 199px; height: 56px; position: absolute; z-index: 1004; left: 8px; top: 1848.06px;"><tbody><tr class="tabth"><td rowspan="2" width="100px" nowrap="nowrap" style="height: 56px; width: 99px;">事故季度</td><td rowspan="2" width="100px" nowrap="nowrap" style="height: 56px; width: 100px;">业务线</td></tr><tr class="tabth"></tr></tbody></table><table id="oTableLF_tab_Test6" width="1200px" border="1" style="width: 199px; height: 23px; position: absolute; z-index: 1003; left: 8px; top: 2026.06px;"><tbody><tr class="tabth"><td colspan="2" nowrap="nowrap" style="height: 23px; width: 199px;">合计</td></tr></tbody></table><div id="oDivH_tab_Test6" style="overflow: hidden; width: 983px; position: absolute; z-index: 1002; left: 8px; top: 1848.06px;"><table width="1200px" border="1" style="width: 1199px; height: 56px;"><tbody><tr class="tabth"><td rowspan="2" width="100px" nowrap="nowrap" style="height: 56px; width: 99px;">事故季度</td><td rowspan="2" width="100px" nowrap="nowrap" style="height: 56px; width: 100px;">业务线</td><td width="100px" nowrap="nowrap" style="height: 23px; width: 100px;">IBNR</td><td colspan="2" nowrap="nowrap" style="height: 23px; width: 202px;">已赚保费(再保后)</td><td colspan="3" nowrap="nowrap" style="height: 23px; width: 398px;">分摊参考数</td><td colspan="2" nowrap="nowrap" style="height: 23px; width: 300px;">IBNR分摊</td></tr><tr class="tabth"><td nowrap="nowrap" style="height: 33px; width: 100px;">(1)</td><td width="100px" nowrap="nowrap" style="height: 33px; width: 101px;">机构A<br>(2)</td><td width="100px" nowrap="nowrap" style="height: 33px; width: 101px;">机构B<br>(3)</td><td width="150px" nowrap="nowrap" style="height: 33px; width: 149px;">(4)=(2)* 55%1</td><td width="150px" nowrap="nowrap" style="height: 33px; width: 149px;">(5)=(3)* 30%2</td><td width="100px" nowrap="nowrap" style="height: 33px; width: 100px;">合计<br>(6)</td><td width="150px" nowrap="nowrap" style="height: 33px; width: 150px;">机构A<br>(7)=(4)/(6)*(1)</td><td width="150px" nowrap="nowrap" style="height: 33px; width: 150px;">机构B<br>(8)=(5)/(6)*(1)</td></tr></tbody></table></div><div id="oDivF_tab_Test6" style="overflow: hidden; width: 983px; position: absolute; z-index: 1001; left: 8px; top: 2026.06px;"><table width="1200px" border="1" style="width: 1199px; height: 23px;"><tbody><tr class="tabth"><td colspan="2" nowrap="nowrap" style="height: 23px; width: 199px;">合计</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 101px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 101px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 149px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 149px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 150px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 150px;">0.0</td></tr></tbody></table></div><div id="oDivL_tab_Test6" style="overflow: hidden; height: 205px; position: absolute; z-index: 1000; left: 8px; top: 1848.06px;"><table width="1200px" border="1" style="width: 199px; height: 447px;"><tbody><tr class="tabth"><td rowspan="2" width="100px" nowrap="nowrap" style="height: 56px; width: 99px;">事故季度</td><td rowspan="2" width="100px" nowrap="nowrap" style="height: 56px; width: 100px;">业务线</td></tr><tr class="tabth"></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 99px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 100px;">0.0</td></tr><tr class="tabth"><td colspan="2" nowrap="nowrap" style="height: 23px; width: 199px;">合计</td></tr></tbody></table></div><table id="oTableLH_tab_Test7" width="600" border="1" style="width: 148px; height: 46px; position: absolute; z-index: 1004; left: 8px; top: 2139.5px;"><tbody><tr class="tabth"><td rowspan="2" width="150px" nowrap="nowrap" style="height: 46px; width: 148px;">中支</td></tr><tr class="tabth"></tr></tbody></table><table id="oTableLF_tab_Test7" width="600" border="1" style="width: 148px; height: 46px; position: absolute; z-index: 1003; left: 8px; top: 2294.5px;"><tbody><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr></tbody></table><div id="oDivH_tab_Test7" style="overflow: hidden; width: 483px; position: absolute; z-index: 1002; left: 8px; top: 2139.5px;"><table width="600" border="1" style="width: 599px; height: 46px;"><tbody><tr class="tabth"><td rowspan="2" width="150px" nowrap="nowrap" style="height: 46px; width: 148px;">中支</td><td width="150px" nowrap="nowrap" style="height: 23px; width: 150px;">上季度末IBNR/Case</td><td width="150px" nowrap="nowrap" style="height: 23px; width: 150px;">截至当月再保后Case</td><td width="150px" nowrap="nowrap" style="height: 23px; width: 151px;">IBNR</td></tr><tr class="tabth"><td nowrap="nowrap" style="height: 23px; width: 150px;">(1)</td><td nowrap="nowrap" style="height: 23px; width: 150px;">(2)</td><td nowrap="nowrap" style="height: 23px; width: 151px;">(3)=(1)*(2)</td></tr></tbody></table></div><div id="oDivF_tab_Test7" style="overflow: hidden; width: 483px; position: absolute; z-index: 1001; left: 8px; top: 2294.5px;"><table width="600" border="1" style="width: 599px; height: 46px;"><tbody><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 150px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 150px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 151px;">0.0</td></tr><tr><td nowrap="nowrap" style="height: 23px; width: 150px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 150px;">0.0</td><td nowrap="nowrap" style="height: 23px; width: 151px;">0.0</td></tr></tbody></table></div><div id="oDivL_tab_Test7" style="overflow: hidden; height: 205px; position: absolute; z-index: 1000; left: 8px; top: 2139.5px;"><table width="600" border="1" style="width: 148px; height: 414px;"><tbody><tr class="tabth"><td rowspan="2" width="150px" nowrap="nowrap" style="height: 46px; width: 148px;">中支</td></tr><tr class="tabth"></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr><tr><td rowspan="2" nowrap="nowrap" style="height: 46px; width: 148px;">0.0</td></tr><tr></tr></tbody></table></div></body></html>

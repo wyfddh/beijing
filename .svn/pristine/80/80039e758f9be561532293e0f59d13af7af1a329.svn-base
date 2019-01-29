@@ -1,0 +1,1249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.collection.CollectionInfoMapper">
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.collection.CollectionInfo">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="collection_name" jdbcType="VARCHAR" property="collectionName" />
+    <result column="collection_year_type" jdbcType="VARCHAR" property="collectionYearType" />
+    <result column="collection_level" jdbcType="VARCHAR" property="collectionLevel" />
+    <result column="collection_category" jdbcType="VARCHAR" property="collectionCategory" />
+    <result column="collection_texture" jdbcType="VARCHAR" property="collectionTexture" />
+    <result column="collection_texture_category" jdbcType="VARCHAR" property="collectionTextureCategory" />
+    <result column="collection_texture_son_category" jdbcType="VARCHAR" property="collectionTextureSonCategory" />
+    <result column="collection_length" jdbcType="DECIMAL" property="collectionLength" />
+    <result column="collection_width" jdbcType="DECIMAL" property="collectionWidth" />
+    <result column="collection_high" jdbcType="DECIMAL" property="collectionHigh" />
+    <result column="collection_specific_size" jdbcType="VARCHAR" property="collectionSpecificSize" />
+    <result column="mass_range" jdbcType="VARCHAR" property="massRange" />
+    <result column="mass_concrete" jdbcType="VARCHAR" property="massConcrete" />
+    <result column="mass_unit" jdbcType="VARCHAR" property="massUnit" />
+    <result column="save_state" jdbcType="VARCHAR" property="saveState" />
+    <result column="degree_disability" jdbcType="VARCHAR" property="degreeDisability" />
+    <result column="residual_status" jdbcType="VARCHAR" property="residualStatus" />
+    <result column="collection_old_name" jdbcType="VARCHAR" property="collectionOldName" />
+    <result column="collection_come_from" jdbcType="VARCHAR" property="collectionComeFrom" />
+    <result column="general_survey_num" jdbcType="VARCHAR" property="generalSurveyNum" />
+    <result column="collection_code_num" jdbcType="VARCHAR" property="collectionCodeNum" />
+    <result column="collection_org_id" jdbcType="VARCHAR" property="collectionOrgId" />
+    <result column="collection_org_name" jdbcType="VARCHAR" property="collectionOrgName" />
+    <result column="collection_org_num" jdbcType="VARCHAR" property="collectionOrgNum" />
+    <result column="collection_code_type" jdbcType="VARCHAR" property="collectionCodeType" />
+    <result column="time_frame" jdbcType="VARCHAR" property="timeFrame" />
+    <result column="collected_year" jdbcType="VARCHAR" property="collectedYear" />
+    <result column="contain_collection_count" jdbcType="VARCHAR" property="containCollectionCount" />
+    <result column="collection_count" jdbcType="VARCHAR" property="collectionCount" />
+    <result column="collection_writer" jdbcType="VARCHAR" property="collectionWriter" />
+    <result column="collection_version" jdbcType="VARCHAR" property="collectionVersion" />
+    <result column="collection_keep_file" jdbcType="VARCHAR" property="collectionKeepFile" />
+    <result column="entry_data_person" jdbcType="VARCHAR" property="entryDataPerson" />
+    <result column="review_person" jdbcType="VARCHAR" property="reviewPerson" />
+    <result column="collection_pictureid" jdbcType="VARCHAR" property="collectionPictureid" />
+    <result column="exhibiting" jdbcType="VARCHAR" property="exhibiting" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="data_state" jdbcType="VARCHAR" property="dataState" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tj720.admin.model.collection.CollectionInfoWithBLOBs">
+    <result column="collection_introduction" jdbcType="LONGVARCHAR" property="collectionIntroduction" />
+    <result column="remark" jdbcType="LONGVARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, collection_name, collection_year_type, collection_level, collection_category, 
+    collection_texture, collection_texture_category, collection_texture_son_category, 
+    collection_length, collection_width, collection_high, collection_specific_size, mass_range, 
+    mass_concrete,mass_unit, save_state, degree_disability, residual_status, collection_old_name, 
+    collection_come_from, general_survey_num, collection_code_num, collection_org_id, 
+    collection_org_name, collection_org_num, collection_code_type, time_frame, collected_year, 
+    contain_collection_count, collection_count, collection_writer, collection_version, 
+    collection_keep_file, entry_data_person, review_person, collection_pictureid, exhibiting, 
+    create_by, create_date, update_by, update_date, data_state
+  </sql>
+  <sql id="Blob_Column_List">
+    collection_introduction, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from collection_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from collection_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.collection.CollectionInfoWithBLOBs">
+    insert into collection_info (id, collection_name, collection_year_type, 
+      collection_level, collection_category, collection_texture, 
+      collection_texture_category, collection_texture_son_category, 
+      collection_length, collection_width, collection_high, 
+      collection_specific_size, mass_range, mass_concrete, mass_unit,
+      save_state, degree_disability, residual_status, 
+      collection_old_name, collection_come_from, 
+      general_survey_num, collection_code_num, collection_org_id, 
+      collection_org_name, collection_org_num, collection_code_type, 
+      time_frame, collected_year, contain_collection_count, 
+      collection_count, collection_writer, collection_version, 
+      collection_keep_file, entry_data_person, review_person, 
+      collection_pictureid, exhibiting, create_by, 
+      create_date, update_by, update_date, 
+      data_state, collection_introduction, 
+      remark)
+    values (#{id,jdbcType=VARCHAR}, #{collectionName,jdbcType=VARCHAR}, #{collectionYearType,jdbcType=VARCHAR}, 
+      #{collectionLevel,jdbcType=VARCHAR}, #{collectionCategory,jdbcType=VARCHAR}, #{collectionTexture,jdbcType=VARCHAR}, 
+      #{collectionTextureCategory,jdbcType=VARCHAR}, #{collectionTextureSonCategory,jdbcType=VARCHAR}, 
+      #{collectionLength,jdbcType=DECIMAL}, #{collectionWidth,jdbcType=DECIMAL}, #{collectionHigh,jdbcType=DECIMAL}, 
+      #{collectionSpecificSize,jdbcType=VARCHAR}, #{massRange,jdbcType=VARCHAR}, #{massConcrete,jdbcType=VARCHAR}, #{massUnit,jdbcType=VARCHAR}, 
+      #{saveState,jdbcType=VARCHAR}, #{degreeDisability,jdbcType=VARCHAR}, #{residualStatus,jdbcType=VARCHAR}, 
+      #{collectionOldName,jdbcType=VARCHAR}, #{collectionComeFrom,jdbcType=VARCHAR}, 
+      #{generalSurveyNum,jdbcType=VARCHAR}, #{collectionCodeNum,jdbcType=VARCHAR}, #{collectionOrgId,jdbcType=VARCHAR}, 
+      #{collectionOrgName,jdbcType=VARCHAR}, #{collectionOrgNum,jdbcType=VARCHAR}, #{collectionCodeType,jdbcType=VARCHAR}, 
+      #{timeFrame,jdbcType=VARCHAR}, #{collectedYear,jdbcType=VARCHAR}, #{containCollectionCount,jdbcType=VARCHAR}, 
+      #{collectionCount,jdbcType=VARCHAR}, #{collectionWriter,jdbcType=VARCHAR}, #{collectionVersion,jdbcType=VARCHAR}, 
+      #{collectionKeepFile,jdbcType=VARCHAR}, #{entryDataPerson,jdbcType=VARCHAR}, #{reviewPerson,jdbcType=VARCHAR}, 
+      #{collectionPictureid,jdbcType=VARCHAR}, #{exhibiting,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{dataState,jdbcType=VARCHAR}, #{collectionIntroduction,jdbcType=LONGVARCHAR}, 
+      #{remark,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.collection.CollectionInfoWithBLOBs">
+    insert into collection_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="collectionName != null">
+        collection_name,
+      </if>
+      <if test="collectionYearType != null">
+        collection_year_type,
+      </if>
+      <if test="collectionLevel != null">
+        collection_level,
+      </if>
+      <if test="collectionCategory != null">
+        collection_category,
+      </if>
+      <if test="collectionTexture != null">
+        collection_texture,
+      </if>
+      <if test="collectionTextureCategory != null">
+        collection_texture_category,
+      </if>
+      <if test="collectionTextureSonCategory != null">
+        collection_texture_son_category,
+      </if>
+      <if test="collectionLength != null">
+        collection_length,
+      </if>
+      <if test="collectionWidth != null">
+        collection_width,
+      </if>
+      <if test="collectionHigh != null">
+        collection_high,
+      </if>
+      <if test="collectionSpecificSize != null">
+        collection_specific_size,
+      </if>
+      <if test="massRange != null">
+        mass_range,
+      </if>
+      <if test="massConcrete != null">
+        mass_concrete,
+      </if>
+      <if test="massUnit != null">
+        mass_unit,
+      </if>
+      <if test="saveState != null">
+        save_state,
+      </if>
+      <if test="degreeDisability != null">
+        degree_disability,
+      </if>
+      <if test="residualStatus != null">
+        residual_status,
+      </if>
+      <if test="collectionOldName != null">
+        collection_old_name,
+      </if>
+      <if test="collectionComeFrom != null">
+        collection_come_from,
+      </if>
+      <if test="generalSurveyNum != null">
+        general_survey_num,
+      </if>
+      <if test="collectionCodeNum != null">
+        collection_code_num,
+      </if>
+      <if test="collectionOrgId != null">
+        collection_org_id,
+      </if>
+      <if test="collectionOrgName != null">
+        collection_org_name,
+      </if>
+      <if test="collectionOrgNum != null">
+        collection_org_num,
+      </if>
+      <if test="collectionCodeType != null">
+        collection_code_type,
+      </if>
+      <if test="timeFrame != null">
+        time_frame,
+      </if>
+      <if test="collectedYear != null">
+        collected_year,
+      </if>
+      <if test="containCollectionCount != null">
+        contain_collection_count,
+      </if>
+      <if test="collectionCount != null">
+        collection_count,
+      </if>
+      <if test="collectionWriter != null">
+        collection_writer,
+      </if>
+      <if test="collectionVersion != null">
+        collection_version,
+      </if>
+      <if test="collectionKeepFile != null">
+        collection_keep_file,
+      </if>
+      <if test="entryDataPerson != null">
+        entry_data_person,
+      </if>
+      <if test="reviewPerson != null">
+        review_person,
+      </if>
+      <if test="collectionPictureid != null">
+        collection_pictureid,
+      </if>
+      <if test="exhibiting != null">
+        exhibiting,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="dataState != null">
+        data_state,
+      </if>
+      <if test="collectionIntroduction != null">
+        collection_introduction,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionName != null">
+        #{collectionName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionYearType != null">
+        #{collectionYearType,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionLevel != null">
+        #{collectionLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCategory != null">
+        #{collectionCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionTexture != null">
+        #{collectionTexture,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionTextureCategory != null">
+        #{collectionTextureCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionTextureSonCategory != null">
+        #{collectionTextureSonCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionLength != null">
+        #{collectionLength,jdbcType=DECIMAL},
+      </if>
+      <if test="collectionWidth != null">
+        #{collectionWidth,jdbcType=DECIMAL},
+      </if>
+      <if test="collectionHigh != null">
+        #{collectionHigh,jdbcType=DECIMAL},
+      </if>
+      <if test="collectionSpecificSize != null">
+        #{collectionSpecificSize,jdbcType=VARCHAR},
+      </if>
+      <if test="massRange != null">
+        #{massRange,jdbcType=VARCHAR},
+      </if>
+      <if test="massConcrete != null">
+        #{massConcrete,jdbcType=VARCHAR},
+      </if>
+      <if test="massUnit != null">
+        #{mass_unit,jdbcType=VARCHAR},
+      </if>
+      <if test="saveState != null">
+        #{saveState,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeDisability != null">
+        #{degreeDisability,jdbcType=VARCHAR},
+      </if>
+      <if test="residualStatus != null">
+        #{residualStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOldName != null">
+        #{collectionOldName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionComeFrom != null">
+        #{collectionComeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="generalSurveyNum != null">
+        #{generalSurveyNum,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCodeNum != null">
+        #{collectionCodeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOrgId != null">
+        #{collectionOrgId,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOrgName != null">
+        #{collectionOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOrgNum != null">
+        #{collectionOrgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCodeType != null">
+        #{collectionCodeType,jdbcType=VARCHAR},
+      </if>
+      <if test="timeFrame != null">
+        #{timeFrame,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedYear != null">
+        #{collectedYear,jdbcType=VARCHAR},
+      </if>
+      <if test="containCollectionCount != null">
+        #{containCollectionCount,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCount != null">
+        #{collectionCount,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionWriter != null">
+        #{collectionWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionVersion != null">
+        #{collectionVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionKeepFile != null">
+        #{collectionKeepFile,jdbcType=VARCHAR},
+      </if>
+      <if test="entryDataPerson != null">
+        #{entryDataPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewPerson != null">
+        #{reviewPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionPictureid != null">
+        #{collectionPictureid,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibiting != null">
+        #{exhibiting,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataState != null">
+        #{dataState,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionIntroduction != null">
+        #{collectionIntroduction,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.collection.CollectionInfoWithBLOBs">
+    update collection_info
+    <set>
+      <if test="collectionName != null">
+        collection_name = #{collectionName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionYearType != null">
+        collection_year_type = #{collectionYearType,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionLevel != null">
+        collection_level = #{collectionLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCategory != null">
+        collection_category = #{collectionCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionTexture != null">
+        collection_texture = #{collectionTexture,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionTextureCategory != null">
+        collection_texture_category = #{collectionTextureCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionTextureSonCategory != null">
+        collection_texture_son_category = #{collectionTextureSonCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionLength != null">
+        collection_length = #{collectionLength,jdbcType=DECIMAL},
+      </if>
+      <if test="collectionWidth != null">
+        collection_width = #{collectionWidth,jdbcType=DECIMAL},
+      </if>
+      <if test="collectionHigh != null">
+        collection_high = #{collectionHigh,jdbcType=DECIMAL},
+      </if>
+      <if test="collectionSpecificSize != null">
+        collection_specific_size = #{collectionSpecificSize,jdbcType=VARCHAR},
+      </if>
+      <if test="massRange != null">
+        mass_range = #{massRange,jdbcType=VARCHAR},
+      </if>
+      <if test="massConcrete != null">
+        mass_concrete = #{massConcrete,jdbcType=VARCHAR},
+      </if>
+      <if test="massUnit != null">
+        mass_unit = #{massUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="saveState != null">
+        save_state = #{saveState,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeDisability != null">
+        degree_disability = #{degreeDisability,jdbcType=VARCHAR},
+      </if>
+      <if test="residualStatus != null">
+        residual_status = #{residualStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOldName != null">
+        collection_old_name = #{collectionOldName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionComeFrom != null">
+        collection_come_from = #{collectionComeFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="generalSurveyNum != null">
+        general_survey_num = #{generalSurveyNum,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCodeNum != null">
+        collection_code_num = #{collectionCodeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOrgId != null">
+        collection_org_id = #{collectionOrgId,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOrgName != null">
+        collection_org_name = #{collectionOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionOrgNum != null">
+        collection_org_num = #{collectionOrgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCodeType != null">
+        collection_code_type = #{collectionCodeType,jdbcType=VARCHAR},
+      </if>
+      <if test="timeFrame != null">
+        time_frame = #{timeFrame,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedYear != null">
+        collected_year = #{collectedYear,jdbcType=VARCHAR},
+      </if>
+      <if test="containCollectionCount != null">
+        contain_collection_count = #{containCollectionCount,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionCount != null">
+        collection_count = #{collectionCount,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionWriter != null">
+        collection_writer = #{collectionWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionVersion != null">
+        collection_version = #{collectionVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionKeepFile != null">
+        collection_keep_file = #{collectionKeepFile,jdbcType=VARCHAR},
+      </if>
+      <if test="entryDataPerson != null">
+        entry_data_person = #{entryDataPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewPerson != null">
+        review_person = #{reviewPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionPictureid != null">
+        collection_pictureid = #{collectionPictureid,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibiting != null">
+        exhibiting = #{exhibiting,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataState != null">
+        data_state = #{dataState,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionIntroduction != null">
+        collection_introduction = #{collectionIntroduction,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tj720.admin.model.collection.CollectionInfoWithBLOBs">
+    update collection_info
+    set collection_name = #{collectionName,jdbcType=VARCHAR},
+      collection_year_type = #{collectionYearType,jdbcType=VARCHAR},
+      collection_level = #{collectionLevel,jdbcType=VARCHAR},
+      collection_category = #{collectionCategory,jdbcType=VARCHAR},
+      collection_texture = #{collectionTexture,jdbcType=VARCHAR},
+      collection_texture_category = #{collectionTextureCategory,jdbcType=VARCHAR},
+      collection_texture_son_category = #{collectionTextureSonCategory,jdbcType=VARCHAR},
+      collection_length = #{collectionLength,jdbcType=DECIMAL},
+      collection_width = #{collectionWidth,jdbcType=DECIMAL},
+      collection_high = #{collectionHigh,jdbcType=DECIMAL},
+      collection_specific_size = #{collectionSpecificSize,jdbcType=VARCHAR},
+      mass_range = #{massRange,jdbcType=VARCHAR},
+      mass_concrete = #{massConcrete,jdbcType=VARCHAR},
+      mass_unit = #{massUnit,jdbcType=VARCHAR},
+      save_state = #{saveState,jdbcType=VARCHAR},
+      degree_disability = #{degreeDisability,jdbcType=VARCHAR},
+      residual_status = #{residualStatus,jdbcType=VARCHAR},
+      collection_old_name = #{collectionOldName,jdbcType=VARCHAR},
+      collection_come_from = #{collectionComeFrom,jdbcType=VARCHAR},
+      general_survey_num = #{generalSurveyNum,jdbcType=VARCHAR},
+      collection_code_num = #{collectionCodeNum,jdbcType=VARCHAR},
+      collection_org_id = #{collectionOrgId,jdbcType=VARCHAR},
+      collection_org_name = #{collectionOrgName,jdbcType=VARCHAR},
+      collection_org_num = #{collectionOrgNum,jdbcType=VARCHAR},
+      collection_code_type = #{collectionCodeType,jdbcType=VARCHAR},
+      time_frame = #{timeFrame,jdbcType=VARCHAR},
+      collected_year = #{collectedYear,jdbcType=VARCHAR},
+      contain_collection_count = #{containCollectionCount,jdbcType=VARCHAR},
+      collection_count = #{collectionCount,jdbcType=VARCHAR},
+      collection_writer = #{collectionWriter,jdbcType=VARCHAR},
+      collection_version = #{collectionVersion,jdbcType=VARCHAR},
+      collection_keep_file = #{collectionKeepFile,jdbcType=VARCHAR},
+      entry_data_person = #{entryDataPerson,jdbcType=VARCHAR},
+      review_person = #{reviewPerson,jdbcType=VARCHAR},
+      collection_pictureid = #{collectionPictureid,jdbcType=VARCHAR},
+      exhibiting = #{exhibiting,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      data_state = #{dataState,jdbcType=VARCHAR},
+      collection_introduction = #{collectionIntroduction,jdbcType=LONGVARCHAR},
+      remark = #{remark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.collection.CollectionInfo">
+    update collection_info
+    set collection_name = #{collectionName,jdbcType=VARCHAR},
+      collection_year_type = #{collectionYearType,jdbcType=VARCHAR},
+      collection_level = #{collectionLevel,jdbcType=VARCHAR},
+      collection_category = #{collectionCategory,jdbcType=VARCHAR},
+      collection_texture = #{collectionTexture,jdbcType=VARCHAR},
+      collection_texture_category = #{collectionTextureCategory,jdbcType=VARCHAR},
+      collection_texture_son_category = #{collectionTextureSonCategory,jdbcType=VARCHAR},
+      collection_length = #{collectionLength,jdbcType=DECIMAL},
+      collection_width = #{collectionWidth,jdbcType=DECIMAL},
+      collection_high = #{collectionHigh,jdbcType=DECIMAL},
+      collection_specific_size = #{collectionSpecificSize,jdbcType=VARCHAR},
+      mass_range = #{massRange,jdbcType=VARCHAR},
+      mass_concrete = #{massConcrete,jdbcType=VARCHAR},
+      mass_unit = #{massUnit,jdbcType=VARCHAR},
+      save_state = #{saveState,jdbcType=VARCHAR},
+      degree_disability = #{degreeDisability,jdbcType=VARCHAR},
+      residual_status = #{residualStatus,jdbcType=VARCHAR},
+      collection_old_name = #{collectionOldName,jdbcType=VARCHAR},
+      collection_come_from = #{collectionComeFrom,jdbcType=VARCHAR},
+      general_survey_num = #{generalSurveyNum,jdbcType=VARCHAR},
+      collection_code_num = #{collectionCodeNum,jdbcType=VARCHAR},
+      collection_org_id = #{collectionOrgId,jdbcType=VARCHAR},
+      collection_org_name = #{collectionOrgName,jdbcType=VARCHAR},
+      collection_org_num = #{collectionOrgNum,jdbcType=VARCHAR},
+      collection_code_type = #{collectionCodeType,jdbcType=VARCHAR},
+      time_frame = #{timeFrame,jdbcType=VARCHAR},
+      collected_year = #{collectedYear,jdbcType=VARCHAR},
+      contain_collection_count = #{containCollectionCount,jdbcType=VARCHAR},
+      collection_count = #{collectionCount,jdbcType=VARCHAR},
+      collection_writer = #{collectionWriter,jdbcType=VARCHAR},
+      collection_version = #{collectionVersion,jdbcType=VARCHAR},
+      collection_keep_file = #{collectionKeepFile,jdbcType=VARCHAR},
+      entry_data_person = #{entryDataPerson,jdbcType=VARCHAR},
+      review_person = #{reviewPerson,jdbcType=VARCHAR},
+      collection_pictureid = #{collectionPictureid,jdbcType=VARCHAR},
+      exhibiting = #{exhibiting,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      data_state = #{dataState,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  
+
+  <select id="countCollectionInfoList" resultType="java.lang.Integer" parameterType="java.util.Map">
+  	select SUM(num) from (
+   		(SELECT count(1) as num FROM collection_info
+		WHERE 1 = 1
+		<if test="autoCheck != null and autoCheck != ''">
+       		and collection_year_type = "320000" 
+	        <if test="repertoryState == 1">
+		        and data_state = #{screenState}
+    	    </if>
+		    <if test="repertoryState == 2">
+		      	and data_state = "4"
+		    </if>
+		    <if test="org != null and org != ''">
+		      	and collection_org_id = #{org}
+		    </if>
+		    <if test="orgType == 2">
+		      	and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+		   	</if>
+	        <if test="collectionCategory != null and collectionCategory != ''">
+	    		<if test="collectionCategory == 999999">
+	    			and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+	    		</if>
+		    	<if test="collectionCategory != 999999">
+			      	and collection_category = #{collectionCategory}
+		    	</if>
+	      	</if>
+	        <if test="collectionYearType != null and collectionYearType != ''">
+	    		<if test="collectionYearType == 999999">
+	    			and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+	    		</if>
+	    		<if test="collectionYearType != 999999">
+		      		and collection_year_type = #{collectionYearType}
+	    		</if>
+	      	</if>
+	      	<if test="collectionLevel != null and collectionLevel != ''">
+	      		and collection_level = #{collectionLevel}
+	      	</if>
+	      	<if test="collectionTexture != null and collectionTexture != ''">
+	      		and collection_texture = #{collectionTexture}
+	      	</if>
+	      	<if test="degreeDisability != null and degreeDisability != ''">
+	      		and degree_disability = #{degreeDisability}
+	      	</if>
+	      	<if test="exhibiting != null and exhibiting != ''">
+	      		and exhibiting = #{exhibiting}
+	      	</if>
+	      	<if test="collectionComeFrom != null and collectionComeFrom != ''">
+	      		and collection_come_from = #{collectionComeFrom}
+	      	</if>
+	      	<if test="saveState != null and saveState != ''">
+	      	and save_state = #{saveState}
+      		</if>
+    		<if test="keys != null and keys.length > 0">
+  			and
+	      	<foreach collection="keys" item="key" open="(" close=")" separator="or">
+	      		<if test="key != null and key != ''">
+	      	 		collection_name like concat('%',#{key},'%')
+	      		</if>
+	      	</foreach>
+    		</if>
+			) 
+					
+     		union all
+     				
+   			(SELECT count(1) as num FROM collection_info
+			WHERE 
+			collection_year_type = "321000" 
+	        <if test="repertoryState == 1">
+		        and data_state = #{screenState}
+    	    </if>
+		    <if test="repertoryState == 2">
+		      	and data_state = "4"
+		    </if>
+		    <if test="org != null and org != ''">
+		      	and collection_org_id = #{org}
+		    </if>
+		    <if test="orgType == 2">
+		      	and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+		   	</if>
+	        <if test="collectionCategory != null and collectionCategory != ''">
+	    		<if test="collectionCategory == 999999">
+	    			and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+	    		</if>
+		    	<if test="collectionCategory != 999999">
+			      	and collection_category = #{collectionCategory}
+		    	</if>
+	      	</if>
+	        <if test="collectionYearType != null and collectionYearType != ''">
+	    		<if test="collectionYearType == 999999">
+	    			and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+	    		</if>
+	    		<if test="collectionYearType != 999999">
+		      		and collection_year_type = #{collectionYearType}
+	    		</if>
+	      	</if>
+	      	<if test="collectionLevel != null and collectionLevel != ''">
+	      		and collection_level = #{collectionLevel}
+	      	</if>
+	      	<if test="collectionTexture != null and collectionTexture != ''">
+	      		and collection_texture = #{collectionTexture}
+	      	</if>
+	      	<if test="degreeDisability != null and degreeDisability != ''">
+	      		and degree_disability = #{degreeDisability}
+	      	</if>
+	      	<if test="exhibiting != null and exhibiting != ''">
+	      		and exhibiting = #{exhibiting}
+	      	</if>
+	      	<if test="collectionComeFrom != null and collectionComeFrom != ''">
+	      		and collection_come_from = #{collectionComeFrom}
+	      	</if>
+	      	<if test="saveState != null and saveState != ''">
+	      		and save_state = #{saveState}
+      		</if>
+    		<if test="keys != null and keys.length > 0">
+  				and
+		      	<foreach collection="keys" item="key" open="(" close=")" separator="or">
+		      		<if test="key != null and key != ''">
+		      	 		collection_name like concat('%',#{key},'%')
+		      		</if>
+		      	</foreach>
+    		</if>
+			) 
+      		
+			union all
+					  
+		    (SELECT count(1) as num FROM collection_info
+			WHERE 
+			collection_year_type = "319000" 
+	        <if test="repertoryState == 1">
+		        and data_state = #{screenState}
+    	    </if>
+		    <if test="repertoryState == 2">
+		      	and data_state = "4"
+		    </if>
+		    <if test="org != null and org != ''">
+		      	and collection_org_id = #{org}
+		    </if>
+		    <if test="orgType == 2">
+		      	and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+		   	</if>
+	        <if test="collectionCategory != null and collectionCategory != ''">
+	    		<if test="collectionCategory == 999999">
+	    			and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+	    		</if>
+		    	<if test="collectionCategory != 999999">
+			      	and collection_category = #{collectionCategory}
+		    	</if>
+	      	</if>
+	        <if test="collectionYearType != null and collectionYearType != ''">
+	    		<if test="collectionYearType == 999999">
+	    			and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+	    		</if>
+	    		<if test="collectionYearType != 999999">
+		      		and collection_year_type = #{collectionYearType}
+	    		</if>
+	      	</if>
+	      	<if test="collectionLevel != null and collectionLevel != ''">
+	      		and collection_level = #{collectionLevel}
+	      	</if>
+	      	<if test="collectionTexture != null and collectionTexture != ''">
+	      		and collection_texture = #{collectionTexture}
+	      	</if>
+	      	<if test="degreeDisability != null and degreeDisability != ''">
+	      		and degree_disability = #{degreeDisability}
+	      	</if>
+	      	<if test="exhibiting != null and exhibiting != ''">
+	      		and exhibiting = #{exhibiting}
+	      	</if>
+	      	<if test="collectionComeFrom != null and collectionComeFrom != ''">
+	      		and collection_come_from = #{collectionComeFrom}
+	      	</if>
+	      	<if test="saveState != null and saveState != ''">
+	      	and save_state = #{saveState}
+      		</if>
+    		<if test="keys != null and keys.length > 0">
+  			and
+	      	<foreach collection="keys" item="key" open="(" close=")" separator="or">
+	      		<if test="key != null and key != ''">
+	      	 		collection_name like concat('%',#{key},'%')
+	      		</if>
+	      	</foreach>
+    		</if>
+			) 
+			
+			union all
+			
+			(SELECT count(1) as num FROM collection_info
+			WHERE 
+			collection_year_type = "451000" 
+	        <if test="repertoryState == 1">
+		        and data_state = #{screenState}
+    	    </if>
+		    <if test="repertoryState == 2">
+		      	and data_state = "4"
+		    </if>
+		    <if test="org != null and org != ''">
+		      	and collection_org_id = #{org}
+		    </if>
+		    <if test="orgType == 2">
+		      	and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+		   	</if>
+	        <if test="collectionCategory != null and collectionCategory != ''">
+	    		<if test="collectionCategory == 999999">
+	    			and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+	    		</if>
+		    	<if test="collectionCategory != 999999">
+			      	and collection_category = #{collectionCategory}
+		    	</if>
+	      	</if>
+	        <if test="collectionYearType != null and collectionYearType != ''">
+	    		<if test="collectionYearType == 999999">
+	    			and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+	    		</if>
+	    		<if test="collectionYearType != 999999">
+		      		and collection_year_type = #{collectionYearType}
+	    		</if>
+	      	</if>
+	      	<if test="collectionLevel != null and collectionLevel != ''">
+	      		and collection_level = #{collectionLevel}
+	      	</if>
+	      	<if test="collectionTexture != null and collectionTexture != ''">
+	      		and collection_texture = #{collectionTexture}
+	      	</if>
+	      	<if test="degreeDisability != null and degreeDisability != ''">
+	      		and degree_disability = #{degreeDisability}
+	      	</if>
+	      	<if test="exhibiting != null and exhibiting != ''">
+	      		and exhibiting = #{exhibiting}
+	      	</if>
+	      	<if test="collectionComeFrom != null and collectionComeFrom != ''">
+	      		and collection_come_from = #{collectionComeFrom}
+	      	</if>
+	      	<if test="saveState != null and saveState != ''">
+	      	and save_state = #{saveState}
+      		</if>
+    		<if test="keys != null and keys.length > 0">
+  			and
+	      	<foreach collection="keys" item="key" open="(" close=")" separator="or">
+	      		<if test="key != null and key != ''">
+	      	 		collection_name like concat('%',#{key},'%')
+	      		</if>
+	      	</foreach>
+    		</if>
+			) 
+			
+			union all
+			
+			(SELECT count(1) as num FROM collection_info
+			WHERE 
+			collection_year_type = "452000" 
+	        <if test="repertoryState == 1">
+		        and data_state = #{screenState}
+    	    </if>
+		    <if test="repertoryState == 2">
+		      	and data_state = "4"
+		    </if>
+		    <if test="org != null and org != ''">
+		      	and collection_org_id = #{org}
+		    </if>
+		    <if test="orgType == 2">
+		      	and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+		   	</if>
+	        <if test="collectionCategory != null and collectionCategory != ''">
+	    		<if test="collectionCategory == 999999">
+	    			and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+	    		</if>
+		    	<if test="collectionCategory != 999999">
+			      	and collection_category = #{collectionCategory}
+		    	</if>
+	      	</if>
+	        <if test="collectionYearType != null and collectionYearType != ''">
+	    		<if test="collectionYearType == 999999">
+	    			and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+	    		</if>
+	    		<if test="collectionYearType != 999999">
+		      		and collection_year_type = #{collectionYearType}
+	    		</if>
+	      	</if>
+	      	<if test="collectionLevel != null and collectionLevel != ''">
+	      		and collection_level = #{collectionLevel}
+	      	</if>
+	      	<if test="collectionTexture != null and collectionTexture != ''">
+	      		and collection_texture = #{collectionTexture}
+	      	</if>
+	      	<if test="degreeDisability != null and degreeDisability != ''">
+	      		and degree_disability = #{degreeDisability}
+	      	</if>
+	      	<if test="exhibiting != null and exhibiting != ''">
+	      		and exhibiting = #{exhibiting}
+	      	</if>
+	      	<if test="collectionComeFrom != null and collectionComeFrom != ''">
+	      		and collection_come_from = #{collectionComeFrom}
+	      	</if>
+	      	<if test="saveState != null and saveState != ''">
+	      	and save_state = #{saveState}
+      		</if>
+    		<if test="keys != null and keys.length > 0">
+  			and
+	      	<foreach collection="keys" item="key" open="(" close=")" separator="or">
+	      		<if test="key != null and key != ''">
+	      	 		collection_name like concat('%',#{key},'%')
+	      		</if>
+	      	</foreach>
+    		</if>
+			) 
+			
+			union all
+			
+			(SELECT count(1) as num FROM collection_info
+			WHERE 
+			collection_year_type = "453000" 
+	        <if test="repertoryState == 1">
+		        and data_state = #{screenState}
+    	    </if>
+		    <if test="repertoryState == 2">
+		      	and data_state = "4"
+		    </if>
+		    <if test="org != null and org != ''">
+		      	and collection_org_id = #{org}
+		    </if>
+		    <if test="orgType == 2">
+		      	and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+		   	</if>
+	        <if test="collectionCategory != null and collectionCategory != ''">
+	    		<if test="collectionCategory == 999999">
+	    			and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+	    		</if>
+		    	<if test="collectionCategory != 999999">
+			      	and collection_category = #{collectionCategory}
+		    	</if>
+	      	</if>
+	        <if test="collectionYearType != null and collectionYearType != ''">
+	    		<if test="collectionYearType == 999999">
+	    			and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+	    		</if>
+	    		<if test="collectionYearType != 999999">
+		      		and collection_year_type = #{collectionYearType}
+	    		</if>
+	      	</if>
+	      	<if test="collectionLevel != null and collectionLevel != ''">
+	      		and collection_level = #{collectionLevel}
+	      	</if>
+	      	<if test="collectionTexture != null and collectionTexture != ''">
+	      		and collection_texture = #{collectionTexture}
+	      	</if>
+	      	<if test="degreeDisability != null and degreeDisability != ''">
+	      		and degree_disability = #{degreeDisability}
+	      	</if>
+	      	<if test="exhibiting != null and exhibiting != ''">
+	      		and exhibiting = #{exhibiting}
+	      	</if>
+	      	<if test="collectionComeFrom != null and collectionComeFrom != ''">
+	      		and collection_come_from = #{collectionComeFrom}
+	      	</if>
+	      	<if test="saveState != null and saveState != ''">
+	      	and save_state = #{saveState}
+      		</if>
+    		<if test="keys != null and keys.length > 0">
+  			and
+	      	<foreach collection="keys" item="key" open="(" close=")" separator="or">
+	      		<if test="key != null and key != ''">
+	      	 		collection_name like concat('%',#{key},'%')
+	      		</if>
+	      	</foreach>
+    		</if>
+			) 
+			) v
+		</if>
+		<if test="autoCheck == null or autoCheck == ''">
+			<if test="repertoryState == 1">
+		      and data_state = #{screenState}
+		    </if>
+		    <if test="repertoryState == 2">
+		      and data_state = "4"
+		    </if>
+		    <if test="org != null and org != ''">
+		      and collection_org_id = #{org}
+		    </if>
+		    <if test="orgType == 2">
+		      and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+		   	</if>
+			<if test="collectionCategory != null and collectionCategory != ''">
+		    	<if test="collectionCategory == 999999">
+		    		and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+		    	</if>
+		    	<if test="collectionCategory != 999999">
+			      	and collection_category = #{collectionCategory}
+		    	</if>
+		    </if>
+		    <if test="collectionYearType != null and collectionYearType != ''">
+		    	<if test="collectionYearType == 999999">
+		    		and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+		    	</if>
+		    	<if test="collectionYearType != 999999">
+			      	and collection_year_type = #{collectionYearType}
+		    	</if>
+		   </if>
+		   <if test="collectionLevel != null and collectionLevel != ''">
+		      and collection_level = #{collectionLevel}
+		   </if>
+		   <if test="collectionTexture != null and collectionTexture != ''">
+		      and collection_texture = #{collectionTexture}
+		   </if>
+		   <if test="degreeDisability != null and degreeDisability != ''">
+		      and degree_disability = #{degreeDisability}
+		   </if>
+		   <if test="exhibiting != null and exhibiting != ''">
+		      and exhibiting = #{exhibiting}
+		   </if>
+		   <if test="collectionComeFrom != null and collectionComeFrom != ''">
+		      and collection_come_from = #{collectionComeFrom}
+		   </if>
+		   <if test="saveState != null and saveState != ''">
+		      and save_state = #{saveState}
+		   </if>
+		   <if test="keys != null and keys.length > 0">
+		   and
+		      <foreach collection="keys" item="key" open="(" close=")" separator="or">
+		      	<if test="key != null and key != ''">
+		      		collection_name like concat('%',#{key},'%')
+		      	</if>
+		      </foreach>
+		   </if>
+		) v)
+		</if>
+  </select>
+  <sql id="Column_List_detail">
+    a.id, a.collection_name, a.collection_year_type,c.name as collectionYearTypeName, a.collection_level, a.collection_category,b.name as collectionCategoryName,
+    a.collection_texture, a.collection_texture_category, a.collection_texture_son_category,
+    a.collection_length, a.collection_width, a.collection_high, a.collection_specific_size, a.mass_range,
+    a.mass_concrete,a.mass_unit, a.save_state, a.degree_disability, a.residual_status, a.collection_old_name,
+    a.collection_come_from, a.general_survey_num, a.collection_code_num, a.collection_org_id,
+    a.collection_org_name, a.collection_org_num, a.collection_code_type, a.time_frame, a.collected_year,
+    a.contain_collection_count, a.collection_count, a.collection_writer, a.collection_version,
+    a.collection_keep_file, a.entry_data_person, a.review_person, a.collection_pictureid, a.exhibiting,
+    a.create_by, a.create_date, a.update_by, a.update_date, a.data_state,a.collection_introduction, a.remark
+  </sql>
+  <sql id="Column_List">
+    a.id, a.collection_name, c.name as collectionYearTypeName, a.collection_level, b.name as collectionCategoryName,
+    a.collection_texture, a.collection_old_name,
+    a.collection_come_from, a.general_survey_num, a.collection_code_num, a.collection_org_id,
+    a.collection_org_name, a.contain_collection_count, a.collection_count,a.exhibiting,
+    a.data_state
+  </sql>
+  <select id="getCollectionInfoList" resultMap="ResultMapWithBLOBs" parameterType="java.util.Map">
+  
+  
+  		SELECT
+			aa.id,
+			aa.collection_name,
+			c. NAME AS collectionYearTypeName,
+			aa.collection_level,
+			b. NAME AS collectionCategoryName,
+			aa.collection_texture,
+			aa.collection_old_name,
+			aa.collection_come_from,
+			aa.general_survey_num,
+			aa.collection_code_num,
+			aa.collection_org_id,
+			aa.collection_org_name,
+			aa.contain_collection_count,
+			aa.collection_count,
+			aa.exhibiting,
+			aa.data_state
+		FROM
+			(
+				SELECT
+					a.id
+				FROM
+					collection_info a
+				WHERE
+					1 = 1
+					<if test="autoCheck != null and autoCheck != ''">
+						AND collection_year_type IN (
+							"451000",
+							"452000",
+							"453000",
+							"319000",
+							"321000",
+							"320000"
+						)
+					</if>
+					<if test="repertoryState == 1">
+			      		and data_state = #{screenState}
+			    	</if>
+			    	<if test="repertoryState == 2">
+			      		and data_state = "4"
+			    	</if>
+			    	<if test="org != null and org != ''">
+			     		and collection_org_id = #{org}
+			    	</if>
+			    	<if test="orgType == 2">
+			     		and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+			   		</if>
+		      		<if test="collectionCategory != null and collectionCategory != ''">
+		    			<if test="collectionCategory == 999999">
+		    				and collection_category in (select id from collection_category where type &lt;&gt; "文物" and status = "1")
+		    			</if>
+		    			<if test="collectionCategory != 999999">
+			      			and collection_category = #{collectionCategory}
+		    			</if>
+		      		</if>
+		      		<if test="collectionYearType != null and collectionYearType != ''">
+		    			<if test="collectionYearType == 999999">
+		    				and collection_year_type in (select code from collection_year_type where parentId &lt;&gt; "46" and status = "1")
+		    			</if>
+		    			<if test="collectionYearType != 999999">
+			      			and collection_year_type = #{collectionYearType}
+		    			</if>
+		      		</if>
+		      		<if test="collectionLevel != null and collectionLevel != ''">
+		      			and collection_level = #{collectionLevel}
+		     		</if>
+		      		<if test="collectionTexture != null and collectionTexture != ''">
+		      			and collection_texture = #{collectionTexture}
+		      		</if>
+		      		<if test="degreeDisability != null and degreeDisability != ''">
+		      			and degree_disability = #{degreeDisability}
+		      		</if>
+		      		<if test="exhibiting != null and exhibiting != ''">
+		      			and exhibiting = #{exhibiting}
+		      		</if>
+		      		<if test="collectionComeFrom != null and collectionComeFrom != ''">
+		      			and collection_come_from = #{collectionComeFrom}
+		      		</if>
+		      		<if test="saveState != null and saveState != ''">
+		      			and save_state = #{saveState}
+		      		</if>
+		      		<if test="keys != null and keys.length > 0">
+		    			and
+		      			<foreach collection="keys" item="key" open="(" close=")" separator="or">
+		      				<if test="key != null and key != ''">
+		      	 				collection_name like concat('%',#{key},'%')
+		      				</if>
+		      			</foreach>
+		      		</if>
+		      		<if test="end != null and end != ''">
+			      		limit #{start},#{end}
+			    	</if>
+				
+			) AS bb
+		LEFT JOIN collection_info aa ON aa.id = bb.id
+		LEFT JOIN collection_category b ON aa.collection_category = b.id
+		LEFT JOIN collection_year_type c ON aa.collection_year_type = c.code
+  		
+  </select>
+
+  <update id="batchUpdateData">
+    update collection_info
+    SET data_state = #{state}
+    where id in
+    <foreach collection="list" item="item" separator="," open="(" close=")">
+      #{item}
+    </foreach>
+  </update>
+  <resultMap id="countResultMap" type="com.tj720.admin.model.collection.collectionCountDto">
+
+  </resultMap>
+  <select id="getCollentionHeadCount" resultMap="countResultMap" parameterType="java.util.Map">
+  	SELECT
+		count(1) as yipuCount,
+		SUM((case when data_state ='1'
+			<if test="autoCheck != null and autoCheck != ''">
+			and collection_year_type IN (
+					"320000",
+					"321000",
+					"319000",
+					"451000",
+					"452000",
+					"453000"
+				) 
+			</if>
+			 then 1 else 0 end)) as screenCount,
+		SUM((case when data_state ='2' 
+			<if test="autoCheck != null and autoCheck != ''">
+			and collection_year_type IN (
+					"320000",
+					"321000",
+					"319000",
+					"451000",
+					"452000",
+					"453000"
+				) 
+			</if> 
+			then 1 else 0 end)) as likeCount,
+		SUM((case when data_state ='3' 
+			<if test="autoCheck != null and autoCheck != ''">
+			and collection_year_type IN (
+					"320000",
+					"321000",
+					"319000",
+					"451000",
+					"452000",
+					"453000"
+				) 
+			</if> 
+			then 1 else 0 end)) as excludeCount,
+		SUM((case when data_state ='4' 
+			<if test="autoCheck != null and autoCheck != ''">
+			and collection_year_type IN (
+					"320000",
+					"321000",
+					"319000",
+					"451000",
+					"452000",
+					"453000"
+				) 
+			</if> 
+			then 1 else 0 end)) as revolutionCount
+		FROM
+			collection_info
+		WHERE
+			"1" = "1"
+		<if test="orgId != null and orgId != ''">
+	      and collection_org_id = #{orgId}
+	    </if>
+	    <if test="orgType == 2">
+	      and collection_org_id in (select id from mip_organization where parent_id = #{orgTypeId})
+	   	</if>
+  </select>
+  <update id="batchExhibiting">
+    update collection_info
+    set exhibiting = #{state}
+    where id IN
+    <foreach collection="list" item="item" separator="," open="(" close=")">
+      #{item}
+    </foreach>
+  </update>
+  <select id="getCollectionById" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+    select
+    <include refid="Column_List_detail"/>
+    from collection_info a
+    left join collection_category b on a.collection_category = b.id
+    left join collection_year_type c on a.collection_year_type = c.code
+    where a.id = #{id}
+  </select>
+</mapper>

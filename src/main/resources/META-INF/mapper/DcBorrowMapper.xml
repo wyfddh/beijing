@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tj720.admin.dao.map.DcBorrowMapper" >
+  <resultMap id="BaseResultMap" type="com.tj720.admin.model.DcBorrow" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="collection_unit" property="collectionUnit" jdbcType="VARCHAR" />
+    <result column="collection_name" property="collectionName" jdbcType="VARCHAR" />
+    <result column="collection_id" property="collectionId" jdbcType="VARCHAR" />
+    <result column="collection_type" property="collectionType" jdbcType="VARCHAR" />
+    <result column="year" property="year" jdbcType="VARCHAR" />
+    <result column="wenwu_type" property="wenwuType" jdbcType="VARCHAR" />
+    <result column="wenwu_leve" property="wenwuLeve" jdbcType="VARCHAR" />
+    <result column="zhidi_type" property="zhidiType" jdbcType="VARCHAR" />
+    <result column="picture_ids" property="pictureIds" jdbcType="VARCHAR" />
+    <result column="gs_No" property="gsNo" jdbcType="VARCHAR" />
+    <result column="formerly" property="formerly" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    <if test="fields == null" >
+      id, status, createTime, collection_unit, collection_name, collection_id, collection_type, 
+      year, wenwu_type, wenwu_leve, zhidi_type, picture_ids, gs_No, formerly
+    </if>
+    <if test="fields != null" >
+      ${fields}
+    </if>
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tj720.admin.model.DcBorrowExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from dc_borrow
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test=" size != 0">
+    	<if test=" startPage == 0">
+			limit #{size}
+    	</if>
+    	<if test=" startPage != 0">
+			limit #{startPage},#{size}
+    	</if>
+	</if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    id,status,createTime,collection_unit,collection_name,collection_id,collection_type,year,wenwu_type,wenwu_leve,zhidi_type,picture_ids,gs_No,formerly
+    from dc_borrow
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dc_borrow
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tj720.admin.model.DcBorrowExample" >
+    delete from dc_borrow
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tj720.admin.model.DcBorrow" >
+    insert into dc_borrow (id, status, createTime, 
+      collection_unit, collection_name, collection_id, 
+      collection_type, year, wenwu_type, 
+      wenwu_leve, zhidi_type, picture_ids, 
+      gs_No, formerly)
+    values (#{id,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{collectionUnit,jdbcType=VARCHAR}, #{collectionName,jdbcType=VARCHAR}, #{collectionId,jdbcType=VARCHAR}, 
+      #{collectionType,jdbcType=VARCHAR}, #{year,jdbcType=VARCHAR}, #{wenwuType,jdbcType=VARCHAR}, 
+      #{wenwuLeve,jdbcType=VARCHAR}, #{zhidiType,jdbcType=VARCHAR}, #{pictureIds,jdbcType=VARCHAR}, 
+      #{gsNo,jdbcType=VARCHAR}, #{formerly,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tj720.admin.model.DcBorrow" >
+    insert into dc_borrow
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="collectionUnit != null" >
+        collection_unit,
+      </if>
+      <if test="collectionName != null" >
+        collection_name,
+      </if>
+      <if test="collectionId != null" >
+        collection_id,
+      </if>
+      <if test="collectionType != null" >
+        collection_type,
+      </if>
+      <if test="year != null" >
+        year,
+      </if>
+      <if test="wenwuType != null" >
+        wenwu_type,
+      </if>
+      <if test="wenwuLeve != null" >
+        wenwu_leve,
+      </if>
+      <if test="zhidiType != null" >
+        zhidi_type,
+      </if>
+      <if test="pictureIds != null" >
+        picture_ids,
+      </if>
+      <if test="gsNo != null" >
+        gs_No,
+      </if>
+      <if test="formerly != null" >
+        formerly,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="collectionUnit != null" >
+        #{collectionUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionName != null" >
+        #{collectionName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionId != null" >
+        #{collectionId,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null" >
+        #{collectionType,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="wenwuType != null" >
+        #{wenwuType,jdbcType=VARCHAR},
+      </if>
+      <if test="wenwuLeve != null" >
+        #{wenwuLeve,jdbcType=VARCHAR},
+      </if>
+      <if test="zhidiType != null" >
+        #{zhidiType,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureIds != null" >
+        #{pictureIds,jdbcType=VARCHAR},
+      </if>
+      <if test="gsNo != null" >
+        #{gsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="formerly != null" >
+        #{formerly,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tj720.admin.model.DcBorrowExample" resultType="java.lang.Integer" >
+    select count(*) from dc_borrow
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update dc_borrow
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.createtime != null" >
+        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.collectionUnit != null" >
+        collection_unit = #{record.collectionUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.collectionName != null" >
+        collection_name = #{record.collectionName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.collectionId != null" >
+        collection_id = #{record.collectionId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.collectionType != null" >
+        collection_type = #{record.collectionType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.year != null" >
+        year = #{record.year,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wenwuType != null" >
+        wenwu_type = #{record.wenwuType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wenwuLeve != null" >
+        wenwu_leve = #{record.wenwuLeve,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhidiType != null" >
+        zhidi_type = #{record.zhidiType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pictureIds != null" >
+        picture_ids = #{record.pictureIds,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gsNo != null" >
+        gs_No = #{record.gsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.formerly != null" >
+        formerly = #{record.formerly,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update dc_borrow
+    set id = #{record.id,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=TINYINT},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      collection_unit = #{record.collectionUnit,jdbcType=VARCHAR},
+      collection_name = #{record.collectionName,jdbcType=VARCHAR},
+      collection_id = #{record.collectionId,jdbcType=VARCHAR},
+      collection_type = #{record.collectionType,jdbcType=VARCHAR},
+      year = #{record.year,jdbcType=VARCHAR},
+      wenwu_type = #{record.wenwuType,jdbcType=VARCHAR},
+      wenwu_leve = #{record.wenwuLeve,jdbcType=VARCHAR},
+      zhidi_type = #{record.zhidiType,jdbcType=VARCHAR},
+      picture_ids = #{record.pictureIds,jdbcType=VARCHAR},
+      gs_No = #{record.gsNo,jdbcType=VARCHAR},
+      formerly = #{record.formerly,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tj720.admin.model.DcBorrow" >
+    update dc_borrow
+    <set >
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="collectionUnit != null" >
+        collection_unit = #{collectionUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionName != null" >
+        collection_name = #{collectionName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionId != null" >
+        collection_id = #{collectionId,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null" >
+        collection_type = #{collectionType,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        year = #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="wenwuType != null" >
+        wenwu_type = #{wenwuType,jdbcType=VARCHAR},
+      </if>
+      <if test="wenwuLeve != null" >
+        wenwu_leve = #{wenwuLeve,jdbcType=VARCHAR},
+      </if>
+      <if test="zhidiType != null" >
+        zhidi_type = #{zhidiType,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureIds != null" >
+        picture_ids = #{pictureIds,jdbcType=VARCHAR},
+      </if>
+      <if test="gsNo != null" >
+        gs_No = #{gsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="formerly != null" >
+        formerly = #{formerly,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tj720.admin.model.DcBorrow" >
+    update dc_borrow
+    set status = #{status,jdbcType=TINYINT},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      collection_unit = #{collectionUnit,jdbcType=VARCHAR},
+      collection_name = #{collectionName,jdbcType=VARCHAR},
+      collection_id = #{collectionId,jdbcType=VARCHAR},
+      collection_type = #{collectionType,jdbcType=VARCHAR},
+      year = #{year,jdbcType=VARCHAR},
+      wenwu_type = #{wenwuType,jdbcType=VARCHAR},
+      wenwu_leve = #{wenwuLeve,jdbcType=VARCHAR},
+      zhidi_type = #{zhidiType,jdbcType=VARCHAR},
+      picture_ids = #{pictureIds,jdbcType=VARCHAR},
+      gs_No = #{gsNo,jdbcType=VARCHAR},
+      formerly = #{formerly,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

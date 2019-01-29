@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <script src="../js/resizerem.js"></script>
+        <script src="../js/mui/js/mui.js"></script>
+        <link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+        <header>
+            <a class="lf" href="cangping.html"></a>
+            <a class="rt" href="../../index.html"></a>
+        </header>
+        <div class="detail-title">
+            <i></i>
+            明嘉靖黄釉青花葫芦瓶  
+            <span>作者 : 孙洋</span>
+        </div>
+        <div class="detail-body">
+            <img src="../images/qinghuahu.jpg" alt="">
+            <p class="text">
+                藏品名称：明嘉靖黄釉青花葫芦瓶 
+                <!-- <br><br>
+                藏品一普编号：37090a2180000380000035 -->
+            </p>
+            <!-- <a href="javascript:">
+            <span></span>查看藏品</a> -->
+        </div>
+        <div class="detail-footer">
+            <div class="container">
+                <p class="title">
+                    <span>·</span>藏品简介
+                </p>
+                <div>
+                    <p class="text">
+                        明嘉靖黄釉青花葫芦瓶，泰安市博物馆收藏。清乾隆五十二年（公元1787年）御赐岱庙，泰山镇山三宝之一。通高22.5厘米，口径3.1厘米，上腹径7.3厘米，下腹径10.9厘米，底径6.3厘米。半圆形盖，蘑菇形钮，子母口，束腰呈葫芦形，卧足。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="title">
+                    <span>·</span>简介
+                </p>
+                <div>
+                    <p class="text">
+                        黄釉青花葫芦瓶通体以黄釉为底色，上饰青花缠枝莲纹，仅在束腰处饰九朵梅花纹，瓶底有 “大明嘉靖年制”楷书青花款。此瓶系明嘉靖年间景德镇御窑烧制，嘉靖时期的官窑青花瓷，采用了西域的回青料，色彩浓翠艳丽，蓝中泛紫，黄釉青花葫芦瓶胎质细腻，釉面肥润光亮，青花色泽浓艳，纹饰典雅有序，造型古朴敦厚，是典型的明代景德镇官窑器。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

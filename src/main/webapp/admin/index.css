@@ -1,0 +1,49 @@
+.list{
+    width:980px;
+    height:auto;
+    padding-left:53px;
+    padding-top:27px;
+}
+.list .item{
+    float:left;
+    margin-right:20px;
+    margin-bottom: 20px;
+}
+.list .item:nth-of-type(1) input{
+    background:#fcfcfc;
+}
+.list .item:nth-of-type(2) input{
+    width:190px;
+}
+.list .item:nth-of-type(3) input{
+    width:172px;
+    background:#fcfcfc;
+}
+.list .item:nth-of-type(4) input{
+    width:180px;
+    background:#fcfcfc;
+}
+.btn-success-outline{
+    position:absolute;
+    left:100px;
+    top:140px;
+}
+.btn-danger-outline{
+    position:absolute;
+    left:170px;
+    top:140px;
+}
+i{
+   font-style:normal;
+}
+.data-num{
+    color:red;
+}
+.data{
+    position:absolute;
+    left:20px;
+    top:190px;
+}
+.table-box{
+    margin-top:140px;
+}

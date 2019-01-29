@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <script src="../js/resizerem.js"></script>
+    <script src="../js/mui/js/mui.js"></script>
+    <script src="../js/mui/js/mui.zoom.js"></script>
+    <script src="../js/mui/js/mui.previewimage.js"></script>
+    <link href="../js/mui/css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/qiluwenhua.css">
+</head>
+
+<body>
+    <header>
+        <a class="lf" href="wenbo.html"></a>
+        <a class="rt" href="../../index.html"></a>
+    </header>
+    <div class="detail-title">
+        <i></i> 后李文化
+        <span>作者 : 王海玉</span>
+    </div>
+    <div class="detail-body">
+        <img src="../images/houli01.jpg" alt="" data-preview-src="" data-preview-group="1">
+    </div>
+    <div class="detail-footer">
+        <div class="container">
+            <div>
+                <p class="text">
+                    后李文化距今9000-7300年，1988年首先在淄博市临淄区后李官庄遗址发现，故以此地命名为后李文化。
+                </p>
+                <p class="text">
+                    后李文化分布于在泰沂山北麓山前冲积平原地带，是山东一支新石器时代早中期考古学文化，重要遗址有临淄后李、章丘小荆山、章丘西河、济南张马屯、长清月庄、长清万德西南、邹平孙家、潍坊前埠下等。目前发现了后李文化的房址、灰坑、墓葬、环壕、陶窑等遗迹，房子多为半地穴式，面积多在20到30平方米以上，西河遗址发现面积达50余平方米的大房子，房内居室地面多经过加工，室内可分为炊灶区、储藏区、睡眠区等功能区。西河聚落的房屋可分多组，每组一般有一座带炊灶的大房子和一座或几座不带炊灶的小房子组成，大房子分区明显，推测这可能是一个母系大家庭的消费单位。从墓葬来看，这一时期都是单人葬，基本未见随葬品，尚无贫富分化的现象，表明人们生产生活资料公有，共同劳动，共同消费，平均分配。小荆山遗址发现了周长1130米的的环壕，这是海岱地区目前所见的时代最早、结构最清楚的环壕聚落。结合西河、月庄、张马屯、小荆山等遗址的动植物考古研究及骨骼同位素分析，可推测这一时期是以狩猎采集捕捞经济为主，并开始了早期的粟、黍、稻等作物栽培和家猪驯养等初级农业生产活动。
+                </p>
+                <img src="../images/houli02.jpg" alt="" data-preview-src="" data-preview-group="1">
+                <p class="text">
+                    石器是主要的生产工具，打制为主，兼用琢制和磨制，主要有斧、锤、凿、研磨器、磨盘、磨棒等器形，用于开垦土地和木材加工等的石斧数量最多，石磨盘、石磨棒则用于加工谷物和坚果等。
+                </p>
+                <p class="text">
+                    后李文化的陶器以素面为主，均为夹砂红陶或红褐陶，原料直接选用自然黏土，手制而成，采用手工捏塑和泥条盘筑等方式成型，再以拍打、刮抹、压划等打磨工序修整成器，烧成温度低，器形单一且不甚规整，以圜底器为主，有陶釜、碗、盆、壶等，陶釜作为蒸煮用的炊器，占出土陶器总数的70-80%，为后李文化的代表性器物。
+                </p>
+            </div>
+        </div>
+    </div>
+   <!--  <script>
+        mui.previewImage();
+    </script>
+    <div id="__MUI_PREVIEWIMAGE" class="mui-slider mui-preview-image mui-fullscreen" data-slider="1" style="display: none;">
+        <div class="mui-preview-header"><span class="mui-preview-indicator">1/2</span></div>
+        <div class="mui-slider-group" style="transform: translate3d(0px, 0px, 0px) translateZ(0px); transition-duration: 0ms;">
+            <div class="mui-slider-item mui-zoom-wrapper mui-active" data-zoomer="">
+                <div class="mui-zoom-scroller" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"><img src="../images/houli01.jpg" data-preview-lazyload="" style="transition-duration: 0.5s; transform: translate3d(0px, -78px, 0px) scale(0.9375);" class="mui-zoom"></div>
+            </div>
+            <div class="mui-slider-item mui-zoom-wrapper " data-zoomer="">
+                <div class="mui-zoom-scroller"><img src="../images/houli02.jpg" data-preview-lazyload="" style="-webkit-transform:translate3d(0,0,0) scale(0.9375);transform:translate3d(0,0,0) scale(0.9375)" class="mui-zoom"></div>
+            </div>
+        </div>
+        <div class="mui-preview-footer mui-hidden"></div>
+        <div class="mui-preview-loading"><span class="mui-spinner mui-spinner-white"></span></div>
+    </div> -->
+</body>
+
+
+</html>

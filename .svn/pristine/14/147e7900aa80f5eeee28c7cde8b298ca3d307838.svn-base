@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		八角星纹彩陶豆
+    		<span>作者 : 王海玉</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 5.3rem;height: 6.4rem;" src="../images/caitao.jpg" alt="">
+    		<p class="text">
+    			 八角星纹彩陶豆，新石器时代大汶口文化，1978年出土于山东泰安大汶口遗址，现藏于山东博物馆。陶豆口颈26厘米，足径14.5厘米，通高28.4厘米。泥质红陶，豆盘为圆唇斜口、深腹，喇叭形高圈足，腹和圈足部位涂抹了一层深红色陶衣，斜口沿面绘白色彩地，其上用褐、红等彩色绘出半月形与若干竖线段相间组成的图案，腹部用白彩在深红色陶衣之上绘五个方心八角星状纹样，各八角星之间同样用两列白彩竖线段间隔；圈足部位绘两圈褐色彩带，彩带之上用白彩绘贝形纹样。这是一件典型的大汶口文化彩陶器。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+            <p class="text">
+                海岱地区的彩陶最早见于北辛文化时期，最初只是在陶钵的口沿处绘红色或黑色的彩带，在大汶口文化时期发展成熟。大汶口文化彩陶的纹样题材以自然界中植物的花叶纹样和各式几何纹为主，常见花瓣纹、八角星纹、勾连回旋纹、菱形纹、云雷纹、网纹等，施彩技法有两种：一种是在塑制好的陶坯上直接施彩作画，叫作原地绘画，一般只绘红或黑色单色，纹样比较简单；另外一种是先在陶器需要作画的部位涂一层加了彩色的泥浆，叫作施陶衣，然后再行绘画。陶衣之上多绘白、褐、黄、黑等多种彩色，图案也比较复杂，讲究构图对称、色彩对比和层次效果。这件彩陶豆在纹样构图和施彩作画方面集中体现了大汶口文化彩陶艺术的较高水平，是一件极其宝贵的原始艺术珍品。
+            </p>
+            <p class="text">
+                八角星纹样在大汶口文化的彩陶器中较为多见，可以说是我国东方先民共同认可和喜爱的图案。关于这种纹样的含意，有研究者认为是表现光芒四射的太阳；也有学者认为四射的八角寓义无际的天空，中间的方形像征着大地，有天圆地方之喻意。用途：从出土情况看，彩陶豆多来自墓葬，豆盘内往往盛装着猪蹄、颚骨、猪头等供品。如此精美的彩陶，应该是先民最重视的祭祀活动中的礼仪用品。
+            </p>
+    	</div>
+    </body>
+</html>

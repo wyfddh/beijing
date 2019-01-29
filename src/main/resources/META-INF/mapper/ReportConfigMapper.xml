@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj720.admin.dao.map.ReportConfigMapper">
+    <select id="getPriviewData" resultType="java.util.Map">
+        ${sqlStr}
+    </select>
+    
+    <select id="getReportData" resultType="java.util.Map">
+        ${sqlStr}
+    </select>
+    
+    <select id="getCollectionCountByCondition" resultType="java.lang.Integer">
+        select count(1) as count from mip_open_culturalrelic_info m,mip_organization g,mip_area l
+        where m.status = 4 and m.collection_unit = g.id and g.city_id = l.id
+        <if test="unitId != null and unitId != ''">
+          and m.collection_unit = #{unitId}
+        </if>
+        <if test="areaId != null and areaId != ''">
+          and l.id = #{areaId}
+        </if>
+        
+    </select>
+    
+    <select id="getArea" resultType="java.util.HashMap">
+        select id as value,name as name from mip_area
+        where pid = #{pid}        
+    </select>
+    <select id="getUnit" resultType="java.util.HashMap">
+        select id as value,name as name from mip_organization where
+        city_id in 
+        (select id from mip_area WHERE pid = #{pid}
+        ) 
+        <if test="areaId != null and areaId != ''">
+          and city_id = #{areaId}
+        </if>   
+    </select>
+</mapper>

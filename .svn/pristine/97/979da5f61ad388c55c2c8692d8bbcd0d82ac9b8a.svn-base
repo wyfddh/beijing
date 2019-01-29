@@ -1,0 +1,140 @@
+<header class="commonHeader borderNone">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>{{introduceAll.seriesName}}</h2>
+</header>
+<section class="overflow-scroll scroll-content hasCommonHeader hasCommonFooter" style="z-index: -1;width: 100%;">
+    <ion-content>
+        <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+        <iframe id="iframe" scrolling="yes" src=""></iframe>
+
+        <!--拿到iframe里边的图片-->
+        <div id="picWrap" hidden>{{cezhanImgArr}}</div>
+
+        <div class="cezhan-detail-xinxi">
+            <h2>展览简介</h2>
+            <img src="img/89.png">
+        </div>
+        <div class="cezhan-detail-content">
+            <p class="youCover">
+                {{introduceAll.seriesDescription}}
+            </p>
+            <div class="coverPp">
+                <span class="dianwozhankai" ng-show="disnwo" ng-click="dianwozhankai($event)"><img src="img/jiantou.png" alt=""></span>
+                <span class="dianwoshouqi" ng-show="!disnwo" ng-click="dianwoshouqi($event)"><img src="img/jiantou.png" alt=""></span>
+            </div>
+        </div>
+
+        <!--策展列表-->
+        <div class="cezhan-detail-people">
+            <img class="dianzan" id="zan" src="img/6493.png" ng-if="showDianzan" ng-click="dianzan()"><span class="dianzanWords" ng-if="showDianzan">点赞</span>
+            <img class="dianzan" src="img/zanDone.png" alt="" ng-if="!showDianzan"><span class="dianzanWords" ng-if="!showDianzan">已赞</span>
+            <span class="cezhanrenName">策展人：<span>{{introduceAll.author}}</span></span>
+        </div>
+        <div class="seriesListWrap">
+            <div class="seriesList" ng-repeat="item in imgArr">
+                <div class="titleWrap">
+                    <div ng-class="{true:'diNzhangActive',false:'diNzhang'}[dinzhangClass == $index]" ng-bind="changeNum(item.seriesNum)"></div>
+                    <div ng-class="{true:'titNameActive',false:'titName'}[dinzhangClass == $index]"><span class="xiaoName">{{item.title}}</span><span class="zhanshiNone" ng-show="dinzhangClass == $index">正在展示...</span></div>
+                </div>
+                <div class="seriesContent">
+                    <div ng-class="{true:'seriesImgWrap111',false:'seriesImgWrap'}[dinzhangClass == $index]" ng-click="changCezhan($event,$index)">
+                        <img ng-src="{{item.image1}}" alt="">
+                    </div>
+                    <div class="describe">
+                        <p class="shouqiP">{{item.description}}</p>
+                        <div class="wordCover"></div>
+                        <img src="img/jiantou.png" class="zhankaispan" alt="" ng-click="zhankai($event)">
+                        <img src="img/jiantou.png" class="shouqispan" alt=""ng-click="shouqilai($event)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--评论区-->
+        <div class="pinglunqu">
+            <h2>评论区</h2>
+        </div>
+        <div class="comment" ng-repeat="item in pinglunArr">
+            <img ng-src="{{item.avatarUrl}}" ng-if="item.avatarUrl">
+            <img src="img/person.png" ng-if="!item.avatarUrl">
+            <h2>{{item.userName}}</h2>
+            <span class="comment-time">{{item.publishTimeStr}}</span>
+            <p class="pHeight">{{item.content}}</p>
+            <span class="huifu">回复</span>
+            <span class="lookAll checkAll" ng-click="lookall($event)">展开查看所有</span>
+            <span class="closeAll checkAll" ng-click="closeall($event)">收起</span>
+        </div>
+        <!--<div class="comment">-->
+            <!--<img src="img/1466.png">-->
+            <!--<h2>今夕无痕</h2>-->
+            <!--<span class="comment-time">1小时前</span>-->
+            <!--<p class="pHeight">很有创意啊，喜欢  ，特效很炫，希望阁下能在这个平台多发策展作品很有创意啊，喜欢，特效很炫，希望阁下能在这个平台多发策展作</p>-->
+            <!--&lt;!&ndash;<span class="huifu">回复</span>&ndash;&gt;-->
+            <!--<span class="lookAll checkAll" ng-click="lookall($event)">展开查看所有</span>-->
+            <!--<span class="closeAll checkAll" ng-click="closeall($event)">收起</span>-->
+        <!--</div>-->
+        <ion-infinite-scroll on-infinite = "loadMore()" distance = "1%" immediate-check = "false" ng-if="moreData"></ion-infinite-scroll>
+    </ion-content>
+</section>
+<!--遮罩-->
+<div class="comment-hope">
+    <div class="comment-hope-write">
+        <input id="hope-write" type="text" ng-click="discuss()" placeholder="期待你的评论"/>
+    </div>
+    <!--<img src="img/comment.png">-->
+</div>
+<div class="comment-hope-area" ng-if="showCover">
+    <textarea class="hope-write-area" id="saytext" name="saytext"></textarea>
+    <img class="emotion" src="img/emotion.png">
+    <button class="submitPingLun" ng-click="submitPinglun()">评论</button>
+</div>
+<div class="comment-hope-shadow" ng-if="showCover" ng-click="hidecover()"></div>
+<script>
+$(".cezhan-detail-xinxi img").on("click",function(){
+    var audio111 = $("#iframe").contents().find("#audio")[0];
+    audio111.pause();
+    layer.open({
+        type: 2,
+        content: '3d-141113221250/index.html',
+        area: ['100%', '100%'],
+        title:'策展',
+        maxmin: true,
+        end:function () {
+            audio111.play();
+        }
+    });
+});
+    $(function() {
+
+    $('.emotion').qqFace({
+
+    id: 'facebox',
+
+    assign: 'saytext',
+
+    path: 'arclist/'	//表情存放的路径
+
+    });
+});
+function replace_em(str){
+
+    str = str.replace(/\</g,'&lt;');
+
+    str = str.replace(/\>/g,'&gt;');
+
+    str = str.replace(/\n/g,'<br/>');
+
+    str = str.replace(/\[em_([0-9]*)\]/g,'<img src="arclist/$1.gif" border="0" />');
+
+    return str;
+
+}
+//$(".comment-hope-shadow").on("click",function(){
+//    $(this).hide();
+//    $(".comment-hope-area").hide();
+//});
+//$("#hope-write").on("focus",function(){
+//    $(".comment-hope-shadow").show();
+//    $(".comment-hope-area").show();
+//});
+</script>

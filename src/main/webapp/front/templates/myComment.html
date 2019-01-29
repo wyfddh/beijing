@@ -1,0 +1,13 @@
+<header class="commonHeader borderNone box-shadow-bottom">
+    <div class="back" ng-click="back()"><i class="icon ion-chevron-left"></i></div>
+    <h2>评论</h2>
+</header>
+<section class="overflow-scroll hasCommentHeader scroll-content hasCommonFooter cezhan-top" style="z-index: -1;width: 100%;">
+    <div class="commentTabWrap">
+        <ul>
+            <li ui-sref="myComment.pinglunwode" ng-class="{true:'commentTabActive',false:''}[tabIndex == '0']" ng-click="changeTab(0)">评论我的</li>
+            <li ui-sref="myComment.wodepinglun" ng-class="{true:'commentTabActive',false:''}[tabIndex == '1']" ng-click="changeTab(1)">我的评论</li>
+        </ul>
+    </div>
+    <div ui-view></div>
+</section>

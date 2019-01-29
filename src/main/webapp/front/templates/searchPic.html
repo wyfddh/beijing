@@ -1,0 +1,54 @@
+<div class="search-head">
+    <a href="#/home"><img src="img/39.png"></a>
+    <h2>以图搜图</h2>
+    <div class="camera" ng-click="getPic()"><img id="zan" style="width:auto;" src="img/12.png"></div>
+
+    <form action="" id="upload" enctype="multipart/form-data" method="post" >
+        <input type="file" accept='image/*' multiple name="file" hidden input-on-change="uploadDown">
+    </form>
+</div>
+<section class="overflow-scroll has-searchHead has-footer">
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png" alt="">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <img ng-if="islogin" id="searchLogin" style="width:9.35rem;height: 9.35rem;margin-left:0.3rem;" src="img/searchLogin.gif" alt="">
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <!--<div class="list" ng-repeat="n in collectionData.data.mociList">-->
+            <!--<a class="item item-thumbnail-left" ng-click="getIndex($index)" href="#/collectionDetail/{{collectionDataID}}">-->
+                <!--<img ng-src={{n.picture.thumb3}}>-->
+                <!--<div class="collection-item-left">-->
+                    <!--<h2>{{n.mipOpenCulturalrelicInfo.name}}</h2>-->
+                    <!--<p class="year">{{n.mipOpenCulturalrelicInfo.yearType}}</p>-->
+                    <!--<p class="zhonglei">{{n.mipOpenCulturalrelicInfo.collectionsCategory}}</p>-->
+                    <!--<div class="collection-media-box">-->
+                        <!--<span ng-if="n.mipOpenCulturalrelicInfo.threeDimensionalCollection!=''">3D</span>-->
+                        <!--<span ng-if="n.mipOpenCulturalrelicInfo.fVideo!=''">视频</span>-->
+                        <!--<span ng-if="n.mipOpenCulturalrelicInfo.fAudio!=''">语音</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <div class="searchList" ng-repeat = "item in dataList">
+            <!--ui-sref="collectiondetails({type:(i.mipOpenCulturalrelicInfo?'Relic':'specimen'),id:i.mipOpenCulturalrelicInfo.id||i.mipOpenFossilInfo.id})"-->
+
+            <a ng-click="getIndex(item.id,item.type)">
+                <img ng-src="{{item.thumb3}}">
+                <div class="collection-item-left">
+                    <h2>{{item.name}}</h2>
+                    <p class="year">{{item.yearType}}</p>
+                    <p class="zhonglei">{{item.collectionsCategory}}</p>
+                    <div class="collection-media-box">
+                        <span ng-if="item.threeDimensionalCollection == '1'">3D</span>
+                        <span ng-if="item.fVideo == '1'">视频</span>
+                        <span ng-if="item.fAudio == '1'">语音</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!--<img src="{{imgSrc}}" alt="">-->
+        <!--<div>{{dataInfo.url}}</div>-->
+        <ion-infinite-scroll ng-if="hasMore" on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
+    </ion-content>
+</section>

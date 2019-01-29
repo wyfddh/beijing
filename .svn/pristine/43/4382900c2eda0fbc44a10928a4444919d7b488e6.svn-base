@@ -1,0 +1,23 @@
+<header class="province-detail-head">
+    <a href="#/homebrowse"><img class="detail-left-arrow" src="img/5arrow.png"></a>
+    <h2>省外展览</h2>
+</header>
+<section class="overflow-scroll browse-top provinceDetail-top
+ 		scroll-content has-footer" style="z-index:-1;">
+    <!--<div class="list">-->
+        <!--<a class="item item-thumbnail-left">-->
+            <!--<img src="img/3081.png">-->
+            <!--<h2>海洋生物化石展</h2>-->
+            <!--<div class="browse-date"><img src="img/1t.png">2015.12.1-2016.12.1</div>-->
+            <!--<div class="browse-museum"><img src="img/4t.png">山东省博物馆</div>-->
+        <!--</a>-->
+    <!--</div>-->
+    <ion-content>
+        <div class="down-list"></div>
+        <ion-infinite-scroll
+                ng-if="hasMore"
+                on-infinite="load()"
+                distance="5%">
+        </ion-infinite-scroll>
+    </ion-content>
+</section>

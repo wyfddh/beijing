@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="cangping.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		东汉日月星象画像石
+    		<span>作者 : 肖贵田</span>
+    	</div>
+    	<div class="detail-body">
+    		<img src="../images/huashixiang.jpg" alt="">
+    		<p class="text">
+    			 东汉，纵88、横190、厚 21厘米，滕州市官桥镇大康留村出土，为一石祠的顶盖石，现藏于滕州市汉画像石馆。为剔地刻浅浮雕，主体图像为凤鸟负日、苍龙抱月。凤鸟在左侧，背负一圆轮，圆轮内线刻三足乌和长尾狐，三足乌背上另驮一小鸟。三足乌是太阳的象征，故圆轮代表太阳。苍龙在右侧，首尾相接呈环抱状，正中一圆轮，圆轮中刻画四肢舞蹈的蟾蜍和蹲地捣药的玉兔。蟾蜍和玉兔均是月亮的象征，故圆轮代表月亮。苍龙两侧分别刻一位人首蛇身的神仙，有学者认为是古代传说中的羲和、常羲，分别象征太阳和月亮。凤鸟和苍龙周围，除云气纹和肖飞鸟之外，有35颗圆点，有人认为是星辰。该石一侧面雕刻两条盘绕一起的魑龙。
+    		</p>
+       <!--      <a href="javascript:">
+            <span></span>查看藏品</a> -->
+    	</div>
+    </body>
+</html>

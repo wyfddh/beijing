@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="226px" height="48px" viewBox="0 0 226 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <g>
+                <g id="Group" fill-rule="nonzero">
+                    <rect id="Rectangle-2" fill="#B9BABA" x="10" y="23" width="28" height="3" rx="1.5"></rect>
+                    <rect id="Rectangle-2" fill="#B9BABA" transform="translate(24.000000, 24.500000) rotate(-270.000000) translate(-24.000000, -24.500000) " x="10" y="23" width="28" height="3" rx="1.5"></rect>
+                    <circle id="Oval" stroke="#B9BABA" stroke-width="3" cx="24" cy="24" r="22.5"></circle>
+                </g>
+                <text id="添加到新专题" font-family="PingFang-SC-Heavy, PingFang SC" font-size="26" font-weight="600" letter-spacing="0.104999997" fill="#A5A5A5">
+                    <tspan x="70.185" y="33">添加到新专题</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

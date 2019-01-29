@@ -1,0 +1,42 @@
+#nav_bar{
+    background: #008582!important;
+}
+.listColor{
+    border:none;
+    font-size: 1rem;
+    color:#ffffff!important
+}
+.listColor:nth-child(odd){
+    background: #369593;
+}
+.listColor:nth-child(even){
+    background: #b6dbdb;
+}
+.listColor ul li{
+    background: #b6dbdb!important;
+}
+.Hui-aside .menu_dropdown dt{
+    border:none!important;
+}
+
+.Hui-aside .menu_dropdown dd li a{
+    color: #369593;
+    font-size: 0.75rem;
+}
+#picture+#word_msg{
+    font-family:Arial, "Helvetica Neue", Helvetica, sans-serif
+}
+#word_msg{
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+.tabBar{
+    border-bottom:0.15rem solid #047b78!important
+}
+#content_warp{
+    font-size: 0.75em!important;
+}
+.tabBar{
+	border: 0 !important;
+	margin-bottom: 12px;
+}

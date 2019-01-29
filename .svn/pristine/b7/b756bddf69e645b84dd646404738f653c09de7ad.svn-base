@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <script src="../js/resizerem.js"></script>
+        <script src="../js/mui/js/mui.js"></script>
+        <link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/yachouyue.css">
+    </head>
+    <body>
+        <header>
+            <a class="lf" href="cangping.html"></a>
+            <a class="rt" href="../../index.html"></a>
+        </header>
+        <div class="detail-title">
+            <i></i>
+            清乾隆沉香狮子   
+            <span>作者 : 孙洋</span>
+        </div>
+        <div class="detail-body">
+            <img src="../images/shizi.jpg" alt="">
+            <p class="text">
+                藏品名称：清乾隆沉香狮子 
+                <!-- <br><br>
+                藏品一普编号：37090a2180000380000124 -->
+            </p>
+            <!-- <a href="javascript:">
+            <span></span>查看藏品</a> -->
+        </div>
+        <div class="detail-footer">
+            <div class="container">
+                <p class="title">
+                    <span>·</span>藏品简介
+                </p>
+                <div>
+                    <p class="text">
+                        乾隆二十七年（公元1762年）御赐岱庙，泰山镇山三宝之一，现藏泰安市博物馆。沉香狮子为一对，此件藏品高36厘米，长38厘米，重3.75公斤。利用沉香的天然形态，巧妙地雕刻粘合而成，沉香木上的凹凸疙瘩恰似狮子身上的蜷毛。狮子前腿直立，臀部坐式，尾巴高高翘起，双目圆睁，炯炯有神，嘴微微张开，露出整齐的牙齿和前伸的舌头。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <p class="title">
+                    <span>·</span>简介
+                </p>
+                <div>
+                    <p class="text">
+                        乾隆对泰山非常崇拜，一生曾十次到泰山祭拜，其中六次登上泰山玉皇极顶，留下140多首咏颂诗、130多块碑碣，是中国古代帝王中到泰山祭祀次数最多、留下诗篇最多、碑碣最多的一位皇帝。每次到泰山祭祀，乾隆都要带去丰厚的祭器。据《泰山志▪盛典记》记载，从1742年到1795年的53年间，朝廷御赐泰山岱庙祭器30多次，祭器数量多达300多件。其中，温凉玉圭、黄釉青花葫芦瓶与沉香狮子被誉为“泰山三宝”。它们不但都是绝世珍品，而且每一件都有着特殊的意义，其中，沉香狮子喻意吉祥浪漫。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

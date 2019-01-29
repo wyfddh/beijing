@@ -1,0 +1,22 @@
+<div class="registerStepOne-head">
+    <a href="#/login"><img src="img/39.png"></a>
+    <h2>忘记密码</h2>
+</div>
+<div class="registerStepOne-content">
+    <div class="registerPhone">
+        <input type="tel" ng-trim="true" ng-minlength="11" ng-maxlength="11" ng-keyup="phoneTest()" ng-pattern="/^1[3-9][0-9]\d{8}$/" maxlength="11" id="tel" placeholder="请输入您的手机号" type="tel" name="registerTel"
+               ng-model="pwdTel" required>
+    </div>
+    <div class="registerPhone message">
+        <input ng-trim="true" ng-minlength="11" ng-maxlength="11" ng-pattern="/^1[3-9][0-9]\d{8}$/" maxlength="11" id="passMessage" placeholder="请输入您的手机验证码" type="tel" name="registerTel"
+               ng-model="pwdMsg" required>
+        <button ng-click="messageYz()" ng-disabled="getMessage" id="messageYz" href="javascript:">获取</button>
+    </div>
+    <div class="mistake-box">
+        <span class="help-block has-error" ng-show="isPhoneAir"><img src="img/cha.png"><i>手机号不能为空</i></span>
+        <span class="registerTel-tip" ng-if="isPhoneTrue"><img src="img/cha.png"><i>请输入11位有效手机号</i></span>
+        <span class="help-block isMessageTrue" ng-show="isMessageTrue"><img src="img/cha.png"><i>验证失败/超时，请重新输入</i></span>
+    </div>
+
+    <button class="button" ng-click="next()" ng-disabled="isChecked">下一步</button>
+</div>

@@ -1,0 +1,33 @@
+<ion-content class="cezhan-content dafabuTop">
+    <div class="search-none" ng-show="searchNone">
+        <img src="img/searchNone.png">
+        <p>对不起，没有找到相关数据！</p>
+    </div>
+    <div class="miaoshu" ng-if="miaoshu">
+        <div>
+            <img class="war" src="img/shuoming.png" alt="">
+            <p>已下架的策展可以重新发布。</p>
+            <img class="guanbi" src="img/chacha.png" ng-click="guanbi()" alt="">
+        </div>
+    </div>
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div class="list">
+        <div class="wodecezhanListWrap">
+            <div class="cezhanImgWrap">
+                <img src="img/chacha.png">
+            </div>
+            <img src="img/xilie.png" alt="" class="jiaobiao">
+            <div class="wrapWords">
+                <h2 class="cezhan-h2 hh2">这是一个策展</h2>
+                <!--<h2 class="cezhan-h2" ng-if="item.isSeries == 1">{{item.seriesName}}</h2>-->
+                <div class="cezhanTalk">
+                    <img src="img/talk.png" class="zanImg">
+                    <span class="zanNum">15</span>
+                </div>
+                <button class="chongxinfabu">重新发布</button>
+            </div>
+            <p>宋朝瓷器文物展展出了宋朝年间一批精美的瓷器文物，再现了宋代劳宋朝瓷器文物展展出了宋朝年间一...</p>
+        </div>
+        <ion-infinite-scroll on-infinite = "loadMore()" distance = "1%" immediate-check = "false" ng-if="moreData"></ion-infinite-scroll>
+    </div>
+</ion-content>

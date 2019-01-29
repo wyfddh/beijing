@@ -1,0 +1,99 @@
+<div class="collectionDetail-box">
+	<header class="detail-head">
+		<img class="detail-left-arrow" src="img/38.png" ng-click="goBack()">
+		<h2 ng-bind="name"></h2>
+	</header>
+	<section class="overflow-scroll has-header scroll-content collectionDetail-top">
+		<div class="detail-pic">
+			 <img id='imges' src={{pic}} alt="图片显示区" data-preview-src={{bigPic}} />
+			<!--  <img id='imges' src='img/two.jpg' alt="图片显示区" data-preview-src="img/two.jpg" data-preview-group="1" /> -->
+		</div>
+		<nav class="basic-message" style="position: relative">
+			<img ng-show="successed" ng-click="collectionSuccess()" class="wujiaoxing" src="img/wujiaoxing.png">
+			<img ng-show="successedd" ng-click="collectionSuccessFalse()" class="wujiaoxing" src="img/shixinwjx.png">
+			<span class="ncichakan"><img src="img/eye.png" class="xiayan" alt=""><span>{{clickCounts}}次查看</span></span>
+		</nav>
+		<nav class="basic-message">
+			<h2 class="message-h2">基本信息</h2>
+	    </nav>
+		<div class="message-content">
+			<div class="zhonglei">
+				<p class="zhonglei-p">类别：</p>
+				<span class="zhonglei-span" ng-bind="lei"></span>
+				<div class="media-box">
+					<img class="audio" src="img/audioClose.png" ng-show="isAudio">
+					<img class="video" src="img/video.png" ng-show="isVideo">
+					<img class="threeD" src="img/188.png" ng-show="isThreeD" ng-click="toThreeD()">
+				</div>
+				<audio ng-src={{sce(collectionAudio)}}></audio>
+			</div>
+			<div class="zhonglei">
+				<p class="zhonglei-p">朝代：</p>
+				<span class="zhonglei-span" ng-bind="chaodai"></span>
+			</div>
+			<div class="zhonglei">
+				<p class="zhonglei-p">级别：</p>
+				<span class="zhonglei-span" ng-bind="level"></span>
+			</div>
+			<div class="zhonglei">
+				<p class="zhonglei-p">收藏单位：</p>
+				<span class="zhonglei-span" ng-bind="danwei"></span>
+			</div>
+			<a href="#/daolan/{{collectionGsNo}}">
+				<div class="enter-daolan">
+					<span>进入导览</span>
+					<img src="img/arrow.png">
+				</div>
+			</a>
+			<!--<a href="#/waiting">-->
+				<!--<div class="bkct">-->
+					<!--<span>百科词条</span>-->
+					<!--<img src="img/arrow.png">-->
+				<!--</div>-->
+			<!--</a>-->
+		</div>
+		<nav class="basic-message">
+			<h2 class="message-h2">藏品简介</h2>
+		</nav>
+		<div class="collection-message">
+			<p ng-bind="inform">
+
+			</p>
+		</div>
+		<nav class="basic-message">
+			<h2 class="message-h2">同馆藏品</h2>
+		</nav>
+		<div class="xiangguan">
+			<div class="swiper-box">
+				<div class="swiper-one swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" ng-repeat="x in detailData.data.otherMofiList" repeat-done="swiperFn()" ng-click="otherMofiList($index)"><img ng-src={{x.picture.thumb3}}><p>{{x.mipOpenCulturalrelicInfo.name}}</p></div>
+					</div>
+					<!--<div class="swiper-button-prev"></div>-->
+					<!--<div class="swiper-button-next"></div>-->
+				</div>
+			</div>
+		</div>
+		<nav class="basic-message-two">
+			<h2 class="message-h2">相关藏品</h2>
+		</nav>
+		<div class="xiangguan">
+			<div class="swiper-box">
+				<div class="swiper-two swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" ng-repeat="x in detailData.data.relations" repeat-do="swiperTwoFn()" ng-click="relations($index)"><img ng-src={{x.picture.thumb3}}><p>{{x.mipOpenCulturalrelicInfo.name}}</p></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+<div class="video-box">
+	<div id="mediaplayer"></div>
+	<img class="return" src="img/return.png">
+</div>
+
+<div id="imgCoverWrap">
+	<img src={{pic}} alt="" ng-click="hideCover()">
+</div>

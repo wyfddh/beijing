@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mapp">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<head>
+    <meta charset="UTF-8">
+    <title>文物山东</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- 添加到主屏后的标题（iOS 6 新增） -->
+    <meta name="apple-mobile-web-app-title" content="">
+    <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） -->
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!--下面三个是清除缓存 微信浏览器缓存严重又无刷新；这个方法调试的时候很方便-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/dropload.css">
+    <link rel="stylesheet" type="text/css" href="lib/Swiper-3.4.1/dist/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="skin/default/layer.css">
+    <link rel="stylesheet" href="baike/js/mui/css/mui.imageviewer.css">
+    <script src="baike/js/mui/js/mui.js"></script>
+    <!-- <script src="baike/js/mui/js/mui.zoom.js"></script>
+    <script src="baike/js/mui/js/mui.previewimage.js"></script> -->
+    <script src="lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.qqFace.js"></script>
+    <script src="lib/layer.js"></script>
+    <script src="lib/dropload.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="lib/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="lib/angular-cookies.min.js"></script>
+    <script src="lib/angular-sanitize.min.js"></script>
+    <script src="lib/jwplayer.js"></script>
+    <script src="lib/jwpsrv.js"></script>
+    <script src="lib/echarts.min.js"></script>
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="100229030" charset="utf-8"></script>
+</head>
+<body>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    <div ui-view></div>
+<div id="headAudio-c" class="music-c"></div>
+<i id="headAudio-note" class="music-note"><audio id="headAudio" src="" autoplay preload loop></audio></i>
+    <footer class="tabs tabs-icon-top" ng-if="hideFoot">
+        <div id="homebtn" ui-sref="home" class="tab-item" ui-sref-active="active">
+            <i class="icon shouye"></i>
+            首页
+        </div>
+        <!--ui-sref-active="active"-->
+        <div ui-sref="collection" class="tab-item" ui-sref-active="active">
+            <i class="icon cangpin"></i>
+            藏品
+        </div>
+        <div ui-sref="museum" class="tab-item has-badge" ui-sref-active="active">
+            <i class="icon bowuguan"></i>
+            博物馆
+        </div>
+        <div ui-sref="browse" class="tab-item" ui-sref-active="active">
+            <i class="icon cezhan"></i>
+            展览
+        </div>
+        <div ui-sref="person" class="tab-item" ui-sref-active="active">
+            <i class="icon geren"></i>
+            个人
+        </div>
+    </footer>
+
+    <script src="js/routes/app.js"></script>
+    <script src="js/controllers/controller.js"></script>
+    <script src="js/controllers/museum.js"></script>
+    <script src="js/controllers/cezhan.js"></script>
+    <script src="js/controllers/cezhanDetail.js"></script>
+    <script src="js/controllers/person.js"></script>
+    <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/registerStepOne.js"></script>
+    <script src="js/controllers/registerStepTwo.js"></script>
+    <script src="js/controllers/registerStepThree.js"></script>
+    <script src="js/controllers/registerSuccess.js"></script>
+    <script src="js/controllers/collection.js"></script>
+    <script src="js/controllers/collectionSpecimen.js"></script>
+    <script src="js/controllers/collectionSpecimenDetail.js"></script>
+	<script src="js/controllers/hot.js"></script>
+    <script src="js/controllers/new.js"></script>
+	<script src="js/controllers/collectionDetail.js"></script>
+    <script src="js/controllers/home-browse.js"></script>
+    <script src="js/controllers/home-browse-before.js"></script>
+    <script src="js/controllers/browseDetail.js"></script>
+    <script src="js/controllers/provinceDetail.js"></script>
+    <script src="js/controllers/foreignDetail.js"></script>
+    <script src="js/controllers/provinceDetailContent.js"></script>
+    <script src="js/controllers/foreignDetailContent.js"></script>
+    <script src="js/controllers/musuemDetail.js"></script>
+    <script src="js/controllers/moreCollection.js"></script>
+    <script src="js/controllers/virtualMuseum.js"></script>
+    <script src="js/controllers/daolan.js"></script>
+    <script src="js/controllers/daolanSpecimen.js"></script>
+    <script src="js/controllers/waiting.js"></script>
+    <script src="js/controllers/searchPic.js"></script>
+    <script src="js/controllers/myCollection.js"></script>
+    <script src="js/controllers/statisticProvince.js"></script>
+    <script src="js/controllers/collectionUnit.js"></script>
+    <script src="js/controllers/statisticCity.js"></script>
+    <script src="js/controllers/collectionUnitName.js"></script>
+    <script src="js/controllers/canMoveCollectionArea.js"></script>
+    <script src="js/controllers/canMoveCollectionCity.js"></script>
+    <script src="js/controllers/canMoveBaceProvince.js"></script>
+    <script src="js/controllers/myComment.js"></script>
+    <script src="js/controllers/pinglunwode.js"></script>
+    <script src="js/controllers/wodepinglun.js"></script>
+    <script src="js/controllers/wodecezhan.js"></script>
+    <script src="js/controllers/daifabu.js"></script>
+    <script src="js/controllers/yifabu.js"></script>
+    <script src="js/controllers/yixiajia.js"></script>
+    <script src="js/controllers/forgotPassword.js"></script>
+    <script src="js/controllers/forgotPasswordTwo.js"></script>
+    <script src="js/controllers/forgotPasswordSuccess.js"></script>
+    <script src="js/controllers/changePassWord.js"></script>
+<!--<script src="js/controllers/service.js"></script>-->
+<script>
+    var url;
+    $.ajax({
+        url : "../audio/getBGAudio.do",
+        type : "get",
+        data :  "",
+        dataType:"json",
+        async: false,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            console.log(data);
+            if(data.success == 1){
+                url = data.data;
+//                console.log(url);
+                $("#headAudio").attr("src",url);
+
+                //有的话就自动播放
+                function audioAutoPlay() {
+                    var audio = $('#headAudio').get(0);
+                    audio.play();
+                    document.addEventListener("WeixinJSBridgeReady", function () {
+                        audio.play();
+                        $('#headAudio-note').show();
+                        $('#headAudio-c').get(0).style.animationPlayState = "running";
+                    }, false);
+                }
+                audioAutoPlay();
+                if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+                    $('#headAudio-note').hide();
+                    $('.music-c').get(0).style.animationPlayState = "running";
+                    $(document).one('touchstart',function(e) {
+                        $('#headAudio').get(0).touchstart = true;
+                        $('#headAudio').get(0).play();
+                        $('#headAudio-note').show();
+                        $('#headAudio-c').get(0).style.animationPlayState = "running";
+                        return false;
+                    });
+                }
+                //可以暂停逻辑
+                var isPlay = true; //是否在播放
+                $("#headAudio-c").click(function() {
+                    if (isPlay) {
+                        isPlay = false;
+                    } else {
+                        isPlay = true;
+                    }
+                });
+                setInterval(function () {
+                    var href = window.location.href;
+                    if((href.indexOf("cezhanDetail") != -1) || (href.indexOf("museumDetail") != -1)
+                        ||(href.indexOf("collectionDetail") != -1) ||(href.indexOf("daolan") != -1)
+                        ||(href.indexOf("browseDetail") != -1)){
+                        $('#headAudio').get(0).pause();
+                        $('#headAudio-note').hide();
+                        $('#headAudio-c').hide();
+                    }else if(!isPlay){
+                        $("#headAudio-c").show();
+                        $('#headAudio-note').show();
+                        $('#headAudio').get(0).pause();
+                        $('#headAudio-c').get(0).style.animationPlayState = "paused";
+                    }
+                    else {
+                        $('#headAudio').get(0).play();
+                        $('#headAudio-note').show();
+                        $('#headAudio-c').show().get(0).style.animationPlayState = "running";
+                    }
+                },100)
+            }else if(data.success == 0){
+                $("#headAudio-c").remove();
+                $("#headAudio-note").remove();
+            }
+//            else {
+//                layer.alert(data.data,{
+//                    icon:0,
+//                    skin:"layer-ext-moon"
+//                })
+//            }
+        }
+    });
+</script>
+<script>
+//    var scale = 1 / devicePixelRatio;
+//    document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+$(document).ready(function(){
+
+});
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?88ee730abc91ccd90332c3e3f4b452dc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

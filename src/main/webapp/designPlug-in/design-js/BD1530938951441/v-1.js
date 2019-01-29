@@ -1,0 +1,16 @@
+/**--单击事件备注信息--******/
+try{
+	$("[id='select_type_T_checkbox_15309490040001424_402881e9645ee2d801645f2d198f0004']").click(function(){
+		/**--执行方法体-start--******/
+			$.saveData(false);
+		/**--执行方法体-end--******/
+	});
+}catch(e){}
+/**--单击事件备注信息--******/
+try{
+	$("[id='select_type_T_checkbox_15309490040001424_f63e90a463f7d48c0163f81569d00030']").click(function(){
+		/**--执行方法体-start--******/
+			$.saveData(false);
+		/**--执行方法体-end--******/
+	});
+}catch(e){}

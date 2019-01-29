@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/qiluwenhua.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="wenbo.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		青州龙兴寺佛像窖藏 
+    		<span>作者 : 肖贵田</span>
+    	</div>
+    	<div class="detail-body">
+    		<img style="width: 4.99rem;height:6.4rem; " src="../images/fo01.jpg" alt="">
+    	</div>
+    	<div class="detail-footer">
+    		<div class="container">
+    			<div>
+    				<p class="text">
+    					1996年在山东青州龙兴寺遗址内发现了一座佛像窖藏坑，出土佛教造像400余尊，以石造像为主，还有少量铁质、陶质、木质造像，为北魏至北宋时期遗物，其中以北朝造像为多。窖藏坑的建造和埋藏年代推测为宋金时期。这批造像虽然多数残损，但其雕刻精美，装饰华丽，造像风格独树一帜，引起了国内外学术界和社会的极大关注，并被评为1996年度全国十大考古新发现。青州龙兴寺窖藏造像成就主要体现在以下几个方面。
+    				</p>
+    				<img style="width:3.46rem;height: 6.4rem;" src="../images/fo02.jpg" alt="">
+    				<p class="text">
+    					其一，精湛的高浮雕和圆雕技术。背屏造像均为高浮雕，几乎雕刻出人像的三分之二，侧面均有表现，立体感十分强烈。圆雕像细部雕刻精细，特别是圆雕菩萨像，从头到脚，装饰十分繁缛，充分显示了山东工匠的高超水平。青州造像体量均较大，最大的背屏造像通高310厘米，最高的单体圆雕像达200厘米，一般高120厘米左右。
+    				</p>
+                    <p class="text">
+                        其二，华丽的贴金和彩绘装饰。青州出土的造像上保留了大量的贴金和彩绘装饰，这种现象十分罕见。贴金施于造像皮肤的裸露处，如面部和袒露的胸部、手臂等部位，有的珠宝首饰也贴金。彩绘施于发髻和服饰，颜色以黑、红、白、绿为多。
+                    </p>
+                    <p class="text">
+                        其三，薄衣贴体的造像风格。所谓“薄衣贴体”，是指佛像外衣轻薄贴体，有的甚至隐现肌体，颇有“曹衣出水”之感。北齐画家曹仲达创造了“曹衣出水”的绘画风格，就像人刚从水里出来一样，衣服紧贴皮肤。尽管说法不一，但有一点大家均认同，青州薄衣贴体式造像在吸收外来因素的基础上，融合了本土特色，最终形成了具有山东特色的造像风格。
+                    </p>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>

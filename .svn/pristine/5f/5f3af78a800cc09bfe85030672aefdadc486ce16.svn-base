@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<script src="../js/resizerem.js"></script>
+		<script src="../js/mui/js/mui.js"></script>
+		<link href="../js/mui/css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/qiluwenhua.css">
+    </head>
+    <body>
+    	<header>
+    		<a class="lf" href="wenbo.html"></a>
+    		<a class="rt" href="../../index.html"></a>
+    	</header>
+    	<div class="detail-title">
+    		<i></i>
+    		济南神通寺
+    		<span>作者 : 肖贵田</span>
+    	</div>
+    	<div class="detail-body">
+             <img style="width:2.22rem;height: 6.4rem;" src="../images/tongsi01.jpg" alt="">
+    	</div>
+    	<div class="detail-footer">
+    		<div class="container">
+    			<div>
+    				<p class="text">
+    					济南神通寺位于济南市历城区柳埠镇，坐落在泰山北麓的金舆谷中,是山东现存最早的一座佛寺。公元351年由僧人竺僧朗创建，故名“朗公寺”。朗公为当时的名僧，不但德行高洁，且颇有灵异之术，能伏魔降兽，追随者甚众。十六国时期，虽然北方政权更迭频繁，但当朝皇帝对朗公均很仰慕，纷纷致书赐物。南燕国主慕容德曾封朗公“东齐王”，并给朗公两个县的租税。几十年间，朗公寺由初创时的“数十间”房屋发展到的“千余间”，不但是山东地区的佛教中心，同时也跻身于全国名寺之列。隋代改名为“神通寺”，传说与隋文帝杨坚寻母一事有关。杨坚母亲祖籍济南，乱世之中与母亲家离散，杨坚称帝后，派人寻找，但遍访不到，故而愈加思念母亲，一次梦中受神人指点，得知有亲人在济南郡，其后果然在此找到了母亲的侄子和堂弟。为纪念此事，隋文帝杨坚以“通征屡感，改朗公寺名为“神通寺”。神通寺虽代有兴废，但均得到历朝官府的支持，至今尚保留众多文物和古迹。其中以隋代四门塔、唐代千佛崖、唐代龙虎塔、金元明时期塔林最为著名。
+    				</p>
+    			     <img style="width: 4.99rem;height:6.4rem; " src="../images/tongsi03.jpg" alt="">
+    				<p class="text">
+    					四门塔为方形塔，以石块垒成，通高约15米，因四面各开一门，故俗称“四门塔”，是全国迄今保存最好的一座隋代石塔。1972年维修石塔时，在塔心柱中部发现了一个小石圹，石矿内有一石函，石函内放置玻璃瓶、佛珠、铜钱等物。石塔的四门之内各供奉着一尊石佛像，代表着四方佛，其中东方的阿閦佛还发生了一段“失而复得”的传奇故事。1997年3月，阿閦佛头部被盗，此事震惊全国，被列为文物盗窃大案，虽历时两年，将盗窃分子抓获归案，但被盗佛首已流落海外，不知所踪。台湾一基金会曾从海外购得一尊佛首，经多方核实后，确定为四门塔被盗文物。 2002年12月，台湾有关方面将佛首送回神通寺四门塔，终使阿閦佛完好如初。
+    				</p>
+                    <p class="text">
+                        神通寺内有一处壁立的摩崖，在长65米的崖面雕刻大小不等的佛像210余尊，号为“千佛”，故有“千佛崖”之称。千佛崖主要为唐代早期的造像，其中以南平长公主造像、赵王造像、驸马刘玄意造像最为著名。南平长公主是唐太宗李世民的第三女，赵王是唐太宗李世民的第三子，驸马刘玄意是南平长公主的丈夫。
+                    </p>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>

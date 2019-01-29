@@ -1,0 +1,76 @@
+.listColor{
+    color: #ffffff!important;
+}
+.listColor:hover{
+    background: #16b57f;
+}
+#menu-comments li a:hover{
+    background: #16b57f;
+}
+.Hui-aside .menu_dropdown dt{
+    border:none;
+    font-size: 1rem;
+}
+.fabu-aside>div{
+	padding-top:21px;
+	width: 82px;
+	margin: 0 auto;
+	text-align: center;
+}
+.fabu-aside>div>p{
+	width: 82px;
+	height: 82px;
+	/* border:4px solid #F1F2F7; */
+	border-radius:50%;
+	overflow: hidden;
+}
+.fabu-aside>p{
+	text-align:center;
+}
+.fabu-aside>ul>li{
+	height:98px;
+	text-align:center;
+	cursor:pointer;
+	/* line-height:98px; */
+}
+.fabu-aside>ul>li.fabu{
+	background: rgba(42,161,188,0.5);
+	border-left:3px solid #2aa1bc;
+}
+.fabu-aside>ul>li.cangpin{
+	background:  rgba(235,104,93,0.5);
+	border-left:3px solid #eb685d;
+}
+.fabu-aside>ul>li.dongtai{
+	background:  rgba(234,140,93,0.5);
+	border-left:3px solid #ea8c5d;
+}
+.fabu-aside>ul>li.weihu{
+	background:rgba(186,117,86,0.5);
+	border-left:3px solid #d8825a;
+}
+.fabu-aside>ul>li.xingzhengguanli{
+	background: rgba(241,140,147,0.5);
+	border-left:3px solid #EB8C5D;
+}
+.fabu-aside>ul>li.gongyingshang{
+	background: #FDF3EE;
+	border-left:3px solid #EB8C5D;
+}
+.fabu-aside>ul>li>a>img{
+	margin-top: 20px;
+	margin-bottom:8px;
+}
+.fabu-aside>ul>li>a>span{
+	margin-left:-5px;
+	font-size: 16px;
+}
+.fabu-aside>ul>li>a{
+	text-decoration: none;
+	color: #333333;
+	width: 100%;
+	height: 100%;
+	    display: inline-block;
+}
+/* input::-ms-input-placeholder{text-align: center;}
+input::-webkit-input-placeholder{text-align: center;} */
